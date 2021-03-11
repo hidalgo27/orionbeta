@@ -1425,7 +1425,7 @@
         }
 
         if (this._settings.source === '') {
-          throw new Error('Source url was not defined. Please specify a url in your CardRefresh source option.');
+          throw new Error('Source url was not defined. Please specify a url in your CardRefresh source options.');
         }
       }
 

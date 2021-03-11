@@ -29,5 +29,12 @@
         "tailwindcss": "^2.0.1",
         "vue": "^3.0.5",
         "vue-loader": "^16.1.2"
+    },
+    "dependencies": {
+        "moment": "^2.29.1",
+        "owl.carousel": "^2.3.4",
+        "vee-validate": "^4.2.2",
+        "vue-owl-carousel": "^2.0.3",
+        "vue-owl-carousel2": "^2.0.7"
     }
 }

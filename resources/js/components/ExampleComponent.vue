@@ -1,27 +1,55 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
 
-                    <div class="card-body">
-                        I'm an example component. {{ greeting }}
-                    </div>
-                </div>
+        <div class="owl-carousel owl-theme">
+            <div class="item" v-for="video in videos">
+                <img v-bind:src="video.url">
             </div>
         </div>
-    </div>
+
 </template>
 
 <script>
-import { ref } from "vue"
-    export default {
-        setup() {
-            const greeting = ref("Hello")
-            return {
-                greeting
-            }
+export default {
+    data(){
+        return {
+            videos: [],
         }
-    }
+    },
+    created() {
+        fetch("https://jsonplaceholder.typicode.com/photos?_start=10&_limit=10")
+            .then(res => res.json())
+            .then(data => {
+                this.videos = data;
+                this.$nextTick(() => {
+                    var owl = $('.owl-carousel');
+                    owl.owlCarousel({
+                        items: 4,
+                        loop: true,
+                        margin: 10,
+                        autoplay: true,
+                        autoplayTimeout: 900,
+                        autoplayHoverPause: true,
+                        responsiveClass: true,
+                        responsive: {
+                            0: {
+                                items: 1,
+                                nav: true
+                            },
+                            600: {
+                                items: 3,
+                                nav: false
+                            },
+                            1000: {
+                                items: 5,
+                                nav: true,
+                                loop: false,
+                                margin: 20
+                            }
+                        }
+                    });
+                })
+            });
+    },
+
+}
 </script>

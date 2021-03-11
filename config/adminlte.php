@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'AdminOrion',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -200,7 +200,7 @@ return [
     | Laravel Mix
     |--------------------------------------------------------------------------
     |
-    | Here we can enable the Laravel Mix option for the admin panel.
+    | Here we can enable the Laravel Mix options for the admin panel.
     |
     | For detailed instructions you can look the laravel mix section here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/9.-Other-Configuration
@@ -208,7 +208,7 @@ return [
     */
 
     'enabled_laravel_mix' => false,
-    'laravel_mix_css_path' => 'css/main.css',
+    'laravel_mix_css_path' => 'css/app.css',
     'laravel_mix_js_path' => 'js/app.js',
 
     /*
@@ -228,6 +228,11 @@ return [
             'text' => 'search',
             'search' => true,
             'topnav' => true,
+        ],
+        [
+            'text' => 'blog',
+            'url'  => 'admin/blog',
+            'can'  => 'manage-blog',
         ],
         [
             'text'        => 'Dashboard',

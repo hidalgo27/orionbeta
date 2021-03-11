@@ -1188,7 +1188,7 @@ function computeStyle(data, options) {
   // Remove this legacy support in Popper.js v2
   const legacyGpuAccelerationOption = find(data.instance.modifiers, modifier => modifier.name === 'applyStyle').gpuAcceleration;
   if (legacyGpuAccelerationOption !== undefined) {
-    console.warn('WARNING: `gpuAcceleration` option moved to `computeStyle` modifier and will not be supported in future versions of Popper.js!');
+    console.warn('WARNING: `gpuAcceleration` options moved to `computeStyle` modifier and will not be supported in future versions of Popper.js!');
   }
   const gpuAcceleration = legacyGpuAccelerationOption !== undefined ? legacyGpuAccelerationOption : options.gpuAcceleration;
 
@@ -1389,7 +1389,7 @@ function getOppositeVariation(variation) {
 }
 
 /**
- * List of accepted placements to use as values of the `placement` option.<br />
+ * List of accepted placements to use as values of the `placement` options.<br />
  * Valid placements are:
  * - `auto`
  * - `top`
@@ -2253,7 +2253,7 @@ var modifiers = {
 /**
  * Default options provided to Popper.js constructor.<br />
  * These can be overridden using the `options` argument of Popper.js.<br />
- * To override an option, simply pass an object with the same
+ * To override an options, simply pass an object with the same
  * structure of the `options` object, as the 3rd argument. For example:
  * ```
  * new Popper(ref, pop, {
