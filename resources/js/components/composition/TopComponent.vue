@@ -3,7 +3,7 @@
         <div class="product-item">
             <a :href="'/product/'+product.id" class="product-img">
                 <template v-for="(photos, index) in product.photos" :key="photos.id">
-                    <img :src="'http://orion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
+                    <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                 </template>
                 <div class="product-absolute-options">
                     <span class="offer-badge-1" v-if="badge_new">{{ cat }}</span>
