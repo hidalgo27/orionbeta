@@ -112,7 +112,7 @@
         <div class="top-header-group">
             <div class="top-header">
                 <div class="res_main_logo">
-                    <a href="/"><img src="/images/dark-logo-1.svg" alt=""></a>
+                    <a href="/"><img src="/images/logo-orion.png" alt=""></a>
                 </div>
                 <div class="main_logo" id="logo">
                     <a href="/"><img src="/images/logo-orion.png" alt="" class="p-4"></a>
