@@ -356,7 +356,7 @@
                 </div>
                 <div class="category-model-content modal-content">
                     <div class="cate-header">
-                        <h4>Seleccione Categoria</h4>
+                        <h4>Inicie Sesión</h4>
                     </div>
 
                     <div class="sign-form">
@@ -386,15 +386,15 @@
                                             <input name="password" v-model="password" type="password" placeholder="Enter Password" class="form-control lgn_input" required>
                                             <i class="uil uil-padlock lgn_icon"></i>
                                         </div>
-                                        <button class="login-btn hover-btn" type="submit">Iniciar Sesión Ahora</button>
+                                        <button class="login-btn hover-btn mb-21" type="submit">Iniciar Sesión Ahora</button>
                                     </form>
                                 </div>
-                                <div class="password-forgor">
-                                    <a href="forgot_password.html">Forgot Password?</a>
-                                </div>
-                                <div class="signup-link">
-                                    <p>¿No tiene una cuenta? - <a href="sign_up.html">Registrarse</a></p>
-                                </div>
+<!--                                <div class="password-forgor">-->
+<!--                                    <a href="forgot_password.html">Forgot Password?</a>-->
+<!--                                </div>-->
+<!--                                <div class="signup-link">-->
+<!--                                    <p>¿No tiene una cuenta? - <a href="sign_up.html">Registrarse</a></p>-->
+<!--                                </div>-->
                             </div>
                         </div>
                     </div>
@@ -462,12 +462,12 @@
                                             <input name="password_confirmation" v-model="password_confirmation" type="password" placeholder="New Password" class="form-control lgn_input" required="">
                                             <i class="uil uil-padlock lgn_icon"></i>
                                         </div>
-                                        <button class="login-btn hover-btn" type="submit">Registarme Ahora</button>
+                                        <button class="login-btn hover-btn mb-21" type="submit">Registarme Ahora</button>
                                     </form>
                                 </div>
-                                <div class="signup-link">
-                                    <p>I have an account? - <button type="button" data-toggle="modal" data-target="#session_model" title="Session">Sign In Now</button></p>
-                                </div>
+<!--                                <div class="signup-link">-->
+<!--                                    <p>I have an account? - <button type="button" data-toggle="modal" data-target="#session_model" title="Session">Sign In Now</button></p>-->
+<!--                                </div>-->
                             </div>
                         </div>
                     </div>
@@ -535,6 +535,9 @@
                                     <div class="checkout-step-body">
                                         <div class="checout-address-step">
                                             <div class="row">
+                                                <div class="col-12 mb-21">
+                                                    <p class="font-weight-bold mb-21">Envié su pedido a un familiar, amigos...etc. Llevaremos su pedido a la dirección que proporcione previa validación de nuestros asesores de ventas.</p>
+                                                </div>
                                                 <div class="col-lg-12">
                                                     <form class="">
                                                         <!-- Multiple Radios (inline) -->
@@ -639,20 +642,20 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label class="control-label">Seleccione Fecha y Hora*</label>
+                                                    <label class="control-label font-weight-bold">Seleccione la Fecha y Hora que enviaremos su pedido.</label>
                                                     <div class="date-slider-group">
                                                         <div class="owl-carousel date-slider owl-theme">
                                                             <div class="item">
 <!--                                                                {{picked_fecha}}-->
                                                                 <div class="date-now">
                                                                     <input type="radio" id="dd1" name="address1" :value="today" v-model="picked_fecha">
-                                                                    <label for="dd1">{{ today }}</label>
+                                                                    <label for="dd1">Hoy</label>
                                                                 </div>
                                                             </div>
                                                             <div class="item">
                                                                 <div class="date-now">
                                                                     <input type="radio" id="dd2" name="address1" :value="tomorrow" v-model="picked_fecha">
-                                                                    <label for="dd2">{{ tomorrow }}</label>
+                                                                    <label for="dd2">Mañana</label>
                                                                 </div>
                                                             </div>
                                                             <div class="item">
@@ -748,20 +751,21 @@
                                         <div class="payment_method-checkout">
                                             <div class="row">
                                                 <div class="col-md-12">
+                                                    <p>Por le momento solo contamos con servicio contra entrega.</p>
                                                     <div class="rpt100">
                                                         <ul class="radio--group-inline-container_1">
                                                             <li>
                                                                 <div class="radio-item_1">
                                                                     <input id="cashondelivery1" value="contraentrega" name="paymentmethod" type="radio" v-model="picked_metodo" data-minimum="50.0">
-                                                                    <label for="cashondelivery1" class="radio-label_1">Pago Contraentrega</label>
+                                                                    <label for="cashondelivery1" class="radio-label_1">Pago Contra entrega</label>
                                                                 </div>
                                                             </li>
-                                                            <li>
-                                                                <div class="radio-item_1">
-                                                                    <input id="card1" value="pagotarjeta" name="paymentmethod" type="radio" data-minimum="50.0" v-model="picked_metodo">
-                                                                    <label  for="card1" class="radio-label_1">Tarjeta de crédito / Tarjeta de débito </label>
-                                                                </div>
-                                                            </li>
+<!--                                                            <li>-->
+<!--                                                                <div class="radio-item_1">-->
+<!--                                                                    <input id="card1" value="pagotarjeta" name="paymentmethod" type="radio" data-minimum="50.0" v-model="picked_metodo">-->
+<!--                                                                    <label  for="card1" class="radio-label_1">Tarjeta de crédito / Tarjeta de débito </label>-->
+<!--                                                                </div>-->
+<!--                                                            </li>-->
                                                         </ul>
                                                     </div>
                                                     <div class="form-group return-departure-dts" data-method="cashondelivery">

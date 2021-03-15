@@ -180,14 +180,26 @@
                                                         <li>
                                                             <div class="qty-product">
                                                                 <div class="quantity buttons_added">
-                                                                    <button type="button"  class="minus minus-btn" @click="removeToCart(products)">-</button>
-                                                                    <!--                                <input type="number" step="1" name="quantity" :value="prodCart.quantity" class="input-text qty text">-->
-                                                                    <span class="qty text px-2">{{products.quantity}}</span>
-                                                                    <button type="button" value="+" class="plus plus-btn" :disabled="products.stock === 0" @click="addToCart(products)">+</button>
+<!--                                                                    <button type="button"  class="minus minus-btn" @click="removeToCart(products)">-</button>-->
+<!--                                                                    &lt;!&ndash;                                <input type="number" step="1" name="quantity" :value="prodCart.quantity" class="input-text qty text">&ndash;&gt;-->
+<!--                                                                    <span class="qty text px-2">{{products.quantity}}</span>-->
+<!--                                                                    <button type="button" value="+" class="plus plus-btn" :disabled="products.stock === 0" @click="addToCart(products)">+</button>-->
+
+                                                                    <template v-for="carts in cart">
+                                                                        <template v-if="carts.id === products.id">
+                                                                            <button type="button" class="minus minus-btn" @click="removeToCart(products)">-</button>
+                                                                            <span class="qty px-2 text">{{carts.quantity}}</span>
+                                                                            <button type="button" :disabled="products.stock === 0" class="plus plus-btn" @click="addToCart(products)">+</button>
+                                                                        </template>
+                                                                        <!--                            <template v-else>-->
+                                                                        <!--                                <span class="qty px-2 text">{{product.quantity}}</span>-->
+                                                                        <!--                            </template>-->
+                                                                    </template>
+
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                        <li><span class="like-icon save-icon" title="wishlist"></span></li>
+<!--                                                        <li><span class="like-icon save-icon" title="wishlist"></span></li>-->
                                                     </ul>
                                                     <ul class="ordr-crt-share">
                                                         <li><button class="add-cart-btn hover-btn" :disabled="products.stock === 0" @click="addToCart(products)"><i class="uil uil-shopping-cart-alt"></i>Agregar a Carro</button></li>
@@ -238,22 +250,31 @@
                                                     <img :src="'http://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                                                 </template>
 <!--                                                <span class="offer-badge" v-for="categorias in pord_fam.categorias">{{ categorias.name }}</span>-->
-                                                <template v-for="(cate, index) in pord_fam.categorias">
-                                                    <span class="offer-badge" v-if="index === 0">{{ cate.name }}</span>
-                                                </template>
+<!--                                                <template v-for="(cate, index) in pord_fam.categorias">-->
+<!--                                                    <span class="offer-badge" v-if="index === 0">{{ cate.name }}</span>-->
+<!--                                                </template>-->
                                             </a>
                                             <div class="cart-text">
                                                 <h4>{{ pord_fam.name }}</h4>
                                                 <div class="qty-group">
                                                     <div class="quantity buttons_added">
-                                                        <button type="button"  class="minus minus-btn" @click="removeToCart(pord_fam)">-</button>
-                                                        <!--                                <input type="number" step="1" name="quantity" :value="prodCart.quantity" class="input-text qty text">-->
-                                                        <span class="qty text px-2">{{pord_fam.quantity}}</span>
-                                                        <button type="button" value="+" class="plus plus-btn" :disabled="pord_fam.stock === 0" @click="addToCart(pord_fam)">+</button>
+<!--                                                        <button type="button"  class="minus minus-btn" @click="removeToCart(pord_fam)">-</button>-->
+<!--                                                        &lt;!&ndash;                                <input type="number" step="1" name="quantity" :value="prodCart.quantity" class="input-text qty text">&ndash;&gt;-->
+<!--                                                        <span class="qty text px-2">{{pord_fam.quantity}}</span>-->
+<!--                                                        <button type="button" value="+" class="plus plus-btn" :disabled="pord_fam.stock === 0" @click="addToCart(pord_fam)">+</button>-->
 
-<!--                                                        <input type="button" value="-" class="minus minus-btn">-->
-<!--                                                        <input type="number" step="1" name="quantity" value="1" class="input-text qty text">-->
-<!--                                                        <input type="button" value="+" class="plus plus-btn">-->
+                                                        <template v-for="carts in cart">
+                                                            <template v-if="carts.id === pord_fam.id">
+                                                                <button type="button" class="minus minus-btn" @click="removeToCart(pord_fam)">-</button>
+                                                                <span class="qty px-2 text">{{carts.quantity}}</span>
+                                                                <button type="button" :disabled="pord_fam.stock === 0" class="plus plus-btn" @click="addToCart(pord_fam)">+</button>
+                                                            </template>
+                                                            <!--                            <template v-else>-->
+                                                            <!--                                <span class="qty px-2 text">{{product.quantity}}</span>-->
+                                                            <!--                            </template>-->
+                                                        </template>
+                                                        <button type="button" class="cart-icon btn" :disabled="pord_fam.stock === 0" @click="addToCart(pord_fam)"><i class="uil uil-shopping-cart-alt"></i></button>
+
                                                     </div>
                                                     <div class="cart-item-price">
                                                         S/{{ new Intl.NumberFormat("es-PE").format(pord_fam.price) }}
@@ -304,7 +325,7 @@
                         <div class="owl-carousel owl-theme" :class="{ 'featured-slider-top': featured_slider_top, 'featured-slider': featured_slider }">
 
                             <top-component
-                                v-for="product in products"
+                                v-for="product in products_top"
                                 :key="product.name"
                                 :product="product"
                                 @sendtocart="addToCart($event)"
@@ -357,14 +378,24 @@ export default {
                             return  prod.categorias.filter(ca => ca.name)
                         }
                     )
-
                     const cat = product.categorias.filter(ca => ca.name == p_d[0].categorias[0].name && ca.state == '1')
                     if (cat != "") {
                         badge_new.value = true
                         return product.categorias.filter(ca => ca.name == p_d[0].categorias[0].name && ca.state == '1')
                     }
+                }).slice(0, 10)
+            }),
+
+            products_top : computed(() => {
+                return products.value.filter((product) => {
+                    const cat = product.categorias.filter(ca => ca.name == 'TOP' && ca.state > '0')
+                    if (cat != "") {
+                        badge_new.value = true
+                        return product.categorias.filter(ca => ca.name == 'TOP' && ca.state > '0')
+                    }
                 })
             })
+
         });
 
         // const products_details = computed(() => {
