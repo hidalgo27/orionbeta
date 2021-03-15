@@ -32,7 +32,7 @@
                 >
                     <div class="cart-product-img">
                         <template v-for="(photos, index) in prodCart.photos" :key="prodCart.name">
-                            <img :src="'http://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
+                            <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                         </template>
 <!--                        <div class="offer-badge">6% OFF</div>-->
                     </div>
@@ -119,7 +119,7 @@
                                                 <template v-for="image in products.photos">
                                                     <template v-if="image.state === 0">
                                                         <div class="item">
-                                                            <img :src="'http://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+image.photo" alt="">
+                                                            <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+image.photo" alt="">
                                                         </div>
                                                     </template>
                                                 </template>
@@ -128,7 +128,7 @@
                                                 <template v-for="image in products.photos">
                                                     <template v-if="image.state === 1">
                                                         <div class="item">
-                                                            <img :src="'http://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+image.photo" alt="">
+                                                            <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+image.photo" alt="">
                                                         </div>
                                                     </template>
                                                 </template>
@@ -247,7 +247,7 @@
                                         >
                                             <a :href="'/product/'+pord_fam.id" class="cart-product-img">
                                                 <template v-for="(photos, index) in pord_fam.photos" :key="photos.name">
-                                                    <img :src="'http://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
+                                                    <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                                                 </template>
 <!--                                                <span class="offer-badge" v-for="categorias in pord_fam.categorias">{{ categorias.name }}</span>-->
 <!--                                                <template v-for="(cate, index) in pord_fam.categorias">-->
@@ -507,7 +507,7 @@ export default {
         let dataP = JSON.parse(sessionStorage.getItem('local-prod'));
         if (dataP === null){
             // localStorage.removeItem('local-prod')
-            fetch("http://sistemaorion.nebulaperu.com/api/v1/products")
+            fetch("http://sistemaorion.green.com.pe/api/v1/products")
                 .then(res => res.json())
                 .then(data => {
                     products.value = data;

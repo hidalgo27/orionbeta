@@ -23,7 +23,7 @@
                 >
                     <div class="cart-product-img">
                         <template v-for="(photos, index) in prodCart.photos" :key="prodCart.name">
-                            <img :src="'http://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
+                            <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                         </template>
 <!--                        <div class="offer-badge">6% OFF</div>-->
                     </div>
@@ -370,7 +370,7 @@ export default {
 
             // console.log("hola 1")
             // localStorage.removeItem('local-prod')
-            fetch("http://sistemaorion.nebulaperu.com/api/v1/products")
+            fetch("http://sistemaorion.green.com.pe/api/v1/products")
                 .then(res => res.json())
                 .then(data => {
                     // console.log("pre carga 2")

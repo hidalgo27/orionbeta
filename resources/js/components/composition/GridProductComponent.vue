@@ -285,7 +285,7 @@
                 >
                     <div class="cart-product-img">
                         <template v-for="(photos, index) in prodCart.photos" :key="prodCart.name">
-                            <img :src="'http://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
+                            <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                         </template>
                         <div class="offer-badge">6% OFF</div>
                     </div>
@@ -396,7 +396,7 @@
                             <div class="product-item mb-30">
                                 <a :href="'/product/'+product.id" class="product-img">
                                     <template v-for="(photos, index) in product.photos" :key="photos.name">
-                                        <img :src="'http://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
+                                        <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                                     </template>
                                     <div class="product-absolute-options">
                                         <span class="offer-badge-1" v-for="category in is_category">{{ category.name }}</span>
@@ -494,7 +494,7 @@ export default {
             })
         });
 
-        fetch("http://sistemaorion.nebulaperu.com/api/v1/categories")
+        fetch("http://sistemaorion.green.com.pe/api/v1/categories")
             .then(res => res.json())
             .then(data => {
                 console.log("pre carga category")
@@ -621,7 +621,7 @@ export default {
         let dataP = JSON.parse(sessionStorage.getItem('local-prod'));
         if (dataP === null){
             // localStorage.removeItem('local-prod')
-            fetch("http://sistemaorion.nebulaperu.com/api/v1/products")
+            fetch("http://sistemaorion.green.com.pe/api/v1/products")
                 .then(res => res.json())
                 .then(data => {
                     products.value = data;
