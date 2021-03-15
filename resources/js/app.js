@@ -20,7 +20,6 @@ import CheckoutComponent from "./components/composition/CheckoutComponent";
 import DashboardComponent from "./components/composition/client/DashboardComponent";
 import OrderComponent from "./components/composition/client/OrderComponent";
 import HistorialComponent from "./components/composition/client/HistorialComponent";
-
 import HomeComponent from "./components/composition/HomeComponent";
 import carousel from 'vue-owl-carousel'
 createApp({
