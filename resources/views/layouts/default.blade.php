@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, shrink-to-fit=9">
-    <meta name="description" content="Gambolthemes">
-    <meta name="author" content="Gambolthemes">
-    <title>Gambo - Index</title>
+    <meta name="description" content="Orion supermercado. El especialista de precios bajos">
+    <meta name="author" content="Hidalgo">
+    <title>Orion Supermercado</title>
 
     <!-- Favicon Icon -->
     <link rel="icon" type="image/png" href="{{asset('images/fav.png')}}">
@@ -19,17 +19,17 @@
     {{--    <link href="css/style.css" rel="stylesheet">--}}
     {{--    <link href="css/responsive.css" rel="stylesheet">--}}
     {{--    <link href="css/night-mode.css" rel="stylesheet">--}}
-
 <!-- Vendor Stylesheets -->
     {{--    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">--}}
     <link href="{{asset('fontawesome-free/css/all.min.css')}}" rel="stylesheet">
     {{--    <link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">--}}
     {{--    <link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">--}}
-    {{--    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">--}}
+        <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+{{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">--}}
     <link rel="stylesheet" href="{{mix("css/app.css")}}">
     <link rel="stylesheet" href="{{mix("css/plugins.css")}}">
-    <link rel="stylesheet" href="{{mix("css/library.css")}}">
-    {{--    <link rel="stylesheet" type="text/css" href="vendor/semantic/semantic.min.css">--}}
+{{--    <link rel="stylesheet" href="{{mix("css/library.css")}}">--}}
+        <link rel="stylesheet" type="text/css" href="{{asset('vendor/semantic/semantic.min.css')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
@@ -170,10 +170,13 @@
 <!-- Footer End -->
 </div>
 <!-- Javascripts -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 <script src="{{asset("js/app.js")}}"></script>
 <script src="{{asset("js/plugins.js")}}"></script>
-{{--<script src="js/jquery-3.3.1.min.js"></script>--}}
-{{--<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>--}}
+{{--<script src="/js/jquery-3.3.1.min.js"></script>--}}
+{{--<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>--}}
 {{--<script src="vendor/OwlCarousel/owl.carousel.js"></script>--}}
 {{--<script src="vendor/semantic/semantic.min.js"></script>--}}
 {{--<script src="js/jquery.countdown.min.js"></script>--}}

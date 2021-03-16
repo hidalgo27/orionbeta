@@ -10,7 +10,7 @@ require('alpinejs');
 // require('library/night-mode');
 
 import {createApp} from 'vue'
-import ExampleComponent from  './components/ExampleComponent';
+// import ExampleComponent from  './components/ExampleComponent';
 import OptionComponent from  './components/options/OptionComponent';
 import CompositionComponent from "./components/composition/CompositionComponent";
 import IndexComponent from "./components/composition/IndexComponent";
@@ -24,7 +24,7 @@ import HomeComponent from "./components/composition/HomeComponent";
 import carousel from 'vue-owl-carousel'
 createApp({
     components: {
-        ExampleComponent,
+
         OptionComponent,
         CompositionComponent,
         carousel,
