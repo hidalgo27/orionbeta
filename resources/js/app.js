@@ -1,5 +1,5 @@
 require('./bootstrap');
-require('alpinejs');
+// require('alpinejs');
 // import owl from 'owl.carousel/dist/owl.carousel'
 // require('owl.carousel/dist/owl.carousel');
 // require('/resources/js/library/product.thumbnail.slider');
@@ -21,13 +21,11 @@ import DashboardComponent from "./components/composition/client/DashboardCompone
 import OrderComponent from "./components/composition/client/OrderComponent";
 import HistorialComponent from "./components/composition/client/HistorialComponent";
 import HomeComponent from "./components/composition/HomeComponent";
-import carousel from 'vue-owl-carousel'
 createApp({
     components: {
 
         OptionComponent,
         CompositionComponent,
-        carousel,
         IndexComponent,
         DetailProductComponent,
         GridProductComponent,
