@@ -208,6 +208,7 @@ import CategoryComponent from "./CategoryComponent";
 import TopComponent from "./TopComponent";
 import BestComponent from "./BestComponent";
 import NewComponent from "./NewComponent";
+
 import {ref, toRefs, nextTick, reactive, computed} from "vue";
 export default {
     components: { carousel, OfferComponent, CategoryComponent, TopComponent, BestComponent, NewComponent, HeaderComponent },

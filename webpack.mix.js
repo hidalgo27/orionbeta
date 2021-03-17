@@ -13,17 +13,14 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .vue()
-
     .postCss('resources/css/main.css', 'public/css', [
         require('postcss-import'),
         require('tailwindcss'),
         require('autoprefixer'),
     ])
-    .sass('resources/sass/app.scss', 'public/css')
-    .sourceMaps();
 
 mix.postCss('resources/css/plugins/plugins.css', 'public/css')
-mix.postCss('resources/css/vendor/library.css', 'public/css')
+// mix.postCss('resources/css/vendor/library.css', 'public/css')
 
 mix.scripts([
     'resources/js/vendor/OwlCarousel/owl.carousel.min.js',

@@ -13,12 +13,13 @@
     <link rel="icon" type="image/png" href="{{asset('images/fav.png')}}">
 
     <!-- Stylesheets -->
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+{{--    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">--}}
     {{--    <link href='vendor/unicons-2.0.1/css/unicons.css' rel='stylesheet'>--}}
     <link href="{{asset('unicons-2.0.1/css/unicons.css')}}" rel="stylesheet">
-    {{--    <link href="css/style.css" rel="stylesheet">--}}
-    {{--    <link href="css/responsive.css" rel="stylesheet">--}}
-    {{--    <link href="css/night-mode.css" rel="stylesheet">--}}
+{{--        <link href="{{asset('css/style.css')}}" rel="stylesheet">--}}
+{{--        <link href="{{asset('css/responsive.css')}}" rel="stylesheet">--}}
+{{--        <link href="{{asset('css/night-mode.css')}}" rel="stylesheet">--}}
+    <link rel="stylesheet" href="{{mix("css/plugins.css")}}">
 <!-- Vendor Stylesheets -->
     {{--    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">--}}
     <link href="{{asset('fontawesome-free/css/all.min.css')}}" rel="stylesheet">
@@ -26,8 +27,7 @@
     {{--    <link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">--}}
         <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 {{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">--}}
-    <link rel="stylesheet" href="{{mix("css/app.css")}}">
-    <link rel="stylesheet" href="{{mix("css/plugins.css")}}">
+{{--    <link rel="stylesheet" href="{{mix("css/app.css")}}">--}}
 {{--    <link rel="stylesheet" href="{{mix("css/library.css")}}">--}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
