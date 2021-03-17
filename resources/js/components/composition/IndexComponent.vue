@@ -372,7 +372,7 @@ export default {
 
             // console.log("hola 1")
             // localStorage.removeItem('local-prod')
-            fetch("http://sistemaorion.green.com.pe/api/v1/products")
+            fetch("http://sistemaorion.green.com.pe/api/v1/products/others/secciones")
                 .then(res => res.json())
                 .then(data => {
                     // console.log("pre carga 2")

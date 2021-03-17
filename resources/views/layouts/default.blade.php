@@ -35,8 +35,7 @@
 <body>
 <div id="app">
 
-<!-- Body Start -->
-{{--<div class="wrapper">--}}
+
     @yield('content')
 {{--</div>--}}
 <!-- Body End -->
