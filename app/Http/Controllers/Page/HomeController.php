@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,8 @@ class HomeController extends Controller
         }else{
             $user = 0;
         }
-        return view('page.index', compact('user'));
+        $category = Category::where('state', '1')->get();
+        return view('page.index', compact('user', 'category'));
     }
 
     public function detailProduct(Request $request){
@@ -25,7 +27,8 @@ class HomeController extends Controller
             $user = 0;
         }
         $id = $request->id;
-        return view('page.detailProduct', compact('id', 'user'));
+        $category = Category::where('state', '1')->get();
+        return view('page.detailProduct', compact('id', 'user', 'category'));
     }
     public function categoryProduct(Request $request){
         if (Auth::user()){
@@ -33,8 +36,9 @@ class HomeController extends Controller
         }else{
             $user = 0;
         }
+        $category = Category::where('state', '1')->get();
         $name_category = $request->id;
-        return view('page.gridProduct', compact('name_category', 'user'));
+        return view('page.gridProduct', compact('name_category', 'user', 'category'));
     }
     public function checkout(Request $request){
         if (Auth::user()){
@@ -42,7 +46,8 @@ class HomeController extends Controller
         }else{
             $user = 0;
         }
-        return view('page.checkout', compact('user'));
+        $category = Category::where('state', '1')->get();
+        return view('page.checkout', compact('user','category'));
     }
 
 

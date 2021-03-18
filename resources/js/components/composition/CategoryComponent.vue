@@ -2,14 +2,14 @@
     <div class="section145">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="main-title-tt">
-                        <div class="main-title-left">
-                            <span>Comprar Por</span>
-                            <h2>Categorias</h2>
-                        </div>
-                    </div>
-                </div>
+<!--                <div class="col-md-12">-->
+<!--                    <div class="main-title-tt">-->
+<!--                        <div class="main-title-left">-->
+<!--                            <span>Comprar Por</span>-->
+<!--                            <h2>Categorias</h2>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <div class="col-md-12">
                     <div class="owl-carousel cate-slider owl-theme">
                         <div class="item" v-for="category in is_category">

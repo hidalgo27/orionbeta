@@ -81,24 +81,9 @@
     </div>
     <!-- Cart Sidebar Offsetl End-->
     <!-- Header Start -->
-    <header-component :cart = "cart.length" :user="user"></header-component>
+<!--    <header-component :cart = "cart.length" :user="user"></header-component>-->
     <!-- Header End -->
-    <div class="wrapper">
-            <div class="col p-0">
-                <div class="owl-carousel cate-banners owl-theme">
-                    <div class="item">
-                        <a href="#" class="">
-                                <img src="/images/banners/beneficios-galaxy.jpg" alt="" class="w-100">
-<!--                            <h4 class="capitalize">{{ MaysPrimera(category.name.toLowerCase()) }}</h4>-->
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#" class="">
-                            <img src="/images/banners/sabor-peruano.jpg" alt="" class="w-100">
-                        </a>
-                    </div>
-                </div>
-            </div>
+
         <div class="main-banner-slider">
             <div class="container">
                 <div class="row">
@@ -127,8 +112,6 @@
                 </div>
             </div>
         </div>
-
-        <category-component></category-component>
 
         <!-- Top productos-->
         <div class="section145">
@@ -198,7 +181,6 @@
         </div>
         <!-- End new-->
 
-    </div>
 </template>
 <script>
 import carousel from 'vue-owl-carousel'

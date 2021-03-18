@@ -20,6 +20,7 @@ import CheckoutComponent from "./components/composition/CheckoutComponent";
 import DashboardComponent from "./components/composition/client/DashboardComponent";
 import OrderComponent from "./components/composition/client/OrderComponent";
 import HistorialComponent from "./components/composition/client/HistorialComponent";
+import CartLength from "./components/composition/CartLength";
 // import HomeComponent from "./components/composition/HomeComponent";
 createApp({
     components: {
@@ -30,5 +31,6 @@ createApp({
         DashboardComponent,
         OrderComponent,
         HistorialComponent,
+        CartLength,
     }
-}).mount('#app');
+}).mount('#app')

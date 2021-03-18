@@ -90,7 +90,7 @@
     </div>
     <!-- Cart Sidebar Offsetl End-->
     <!-- Header Start -->
-    <header-component :cart = "cart.length" :user="user"></header-component>
+<!--    <header-component :cart = "cart.length" :user="user"></header-component>-->
     <div class="wrapper">
         <template v-for="products in products_details" :key="products.id">
                 <div class="gambo-Breadcrumb">
@@ -507,7 +507,7 @@ export default {
         let dataP = JSON.parse(sessionStorage.getItem('local-prod'));
         if (dataP === null){
             // localStorage.removeItem('local-prod')
-            fetch("http://sistemaorion.green.com.pe/api/v1/products/others/secciones")
+            fetch("http://sistemaorion.green.com.pe/api/v1/products")
                 .then(res => res.json())
                 .then(data => {
                     products.value = data;

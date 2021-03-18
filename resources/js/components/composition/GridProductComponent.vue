@@ -343,7 +343,7 @@
     </div>
     <!-- Cart Sidebar Offsetl End-->
     <!-- Header Start -->
-    <header-component :cart = "cart.length" :user="user"></header-component>
+<!--    <header-component :cart = "cart.length" :user="user"></header-component>-->
     <div class="wrapper">
         <div class="gambo-Breadcrumb">
             <div class="container">

@@ -1,232 +1,50 @@
 @extends('layouts.default')
 @section('content')
-    <index-component :user="{{$user}}"></index-component>
-    <!-- Offers Start -->
-
-    <!-- Offers End -->
-    <!-- Categories Start -->
-
-    <!-- Categories End -->
-    <!-- Featured Products Start -->
-
-    <!-- Featured Products End -->
-    <!-- Best Values Offers Start -->
-
-    <!-- Best Values Offers End -->
-    <!-- Vegetables and Fruits Start -->
-    <div class="section145 d-none">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="main-title-tt">
-                        <div class="main-title-left">
-                            <span>For You</span>
-                            <h2>Fresh Vegetables & Fruits</h2>
-                        </div>
-                        <a href="#" class="see-more-btn">See All</a>
-                    </div>
+    <div class="wrapper">
+        <div class="col p-0">
+            <div class="owl-carousel cate-banners owl-theme">
+                <div class="item">
+                    <a href="#" class="">
+                        <img src="/images/banners/beneficios-galaxy.jpg" alt="" class="w-100">
+                    </a>
                 </div>
-                <div class="col-md-12">
-                    <div class="owl-carousel featured-slider owl-theme">
-                        <div class="item">
-                            <div class="product-item">
-                                <a href="http://gambolthemes.net/html-items/gambo_supermarket_demo/single_product_view.html" class="product-img">
-                                    <img src="images/product/img-11.jpg" alt="">
-                                    <div class="product-absolute-options">
-                                        <span class="offer-badge-1">6% off</span>
-                                        <span class="like-icon" title="wishlist"></span>
+                <div class="item">
+                    <a href="#" class="">
+                        <img src="/images/banners/sabor-peruano.jpg" alt="" class="w-100">
+                    </a>
+                </div>
+            </div>
+        </div>
+{{--        <category-component></category-component>--}}
+        <div class="section145">
+            <div class="container">
+                <div class="row">
+                    <!--                <div class="col-md-12">-->
+                    <!--                    <div class="main-title-tt">-->
+                    <!--                        <div class="main-title-left">-->
+                    <!--                            <span>Comprar Por</span>-->
+                    <!--                            <h2>Categorias</h2>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                </div>-->
+                    <div class="col-md-12">
+                        <div class="owl-carousel cate-slider owl-theme">
+                            @foreach($category as $categories)
+                            <div class="item">
+                                <a href="{{route('product.category', [strtolower($categories->name)])}}" class="category-item">
+                                    <div class="cate-img">
+                                        <img src="http://sistemaorion.green.com.pe/api/v1/categories/imagen/{{$categories->photo}}" alt="">
                                     </div>
+                                    <h4 class="capitalize">{{ucwords(strtolower($categories->name))}}</h4>
                                 </a>
-                                <div class="product-text-dt">
-                                    <p>Available<span>(In Stock)</span></p>
-                                    <h4>Product Title Here</h4>
-                                    <div class="product-price">$12 <span>$15</span></div>
-                                    <div class="qty-cart">
-                                        <div class="quantity buttons_added">
-                                            <input type="button" value="-" class="minus minus-btn">
-                                            <input type="number" step="1" name="quantity" value="1" class="input-text qty text">
-                                            <input type="button" value="+" class="plus plus-btn">
-                                        </div>
-                                        <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <a href="http://gambolthemes.net/html-items/gambo_supermarket_demo/single_product_view.html" class="product-img">
-                                    <img src="images/product/img-12.jpg" alt="">
-                                    <div class="product-absolute-options">
-                                        <span class="offer-badge-1">2% off</span>
-                                        <span class="like-icon" title="wishlist"></span>
-                                    </div>
-                                </a>
-                                <div class="product-text-dt">
-                                    <p>Available<span>(In Stock)</span></p>
-                                    <h4>Product Title Here</h4>
-                                    <div class="product-price">$10 <span>$13</span></div>
-                                    <div class="qty-cart">
-                                        <div class="quantity buttons_added">
-                                            <input type="button" value="-" class="minus minus-btn">
-                                            <input type="number" step="1" name="quantity" value="1" class="input-text qty text">
-                                            <input type="button" value="+" class="plus plus-btn">
-                                        </div>
-                                        <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <a href="http://gambolthemes.net/html-items/gambo_supermarket_demo/single_product_view.html" class="product-img">
-                                    <img src="images/product/img-13.jpg" alt="">
-                                    <div class="product-absolute-options">
-                                        <span class="offer-badge-1">5% off</span>
-                                        <span class="like-icon" title="wishlist"></span>
-                                    </div>
-                                </a>
-                                <div class="product-text-dt">
-                                    <p>Available<span>(In Stock)</span></p>
-                                    <h4>Product Title Here</h4>
-                                    <div class="product-price">$5 <span>$8</span></div>
-                                    <div class="qty-cart">
-                                        <div class="quantity buttons_added">
-                                            <input type="button" value="-" class="minus minus-btn">
-                                            <input type="number" step="1" name="quantity" value="1" class="input-text qty text">
-                                            <input type="button" value="+" class="plus plus-btn">
-                                        </div>
-                                        <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <a href="http://gambolthemes.net/html-items/gambo_supermarket_demo/single_product_view.html" class="product-img">
-                                    <img src="images/product/img-1.jpg" alt="">
-                                    <div class="product-absolute-options">
-                                        <span class="offer-badge-1">3% off</span>
-                                        <span class="like-icon" title="wishlist"></span>
-                                    </div>
-                                </a>
-                                <div class="product-text-dt">
-                                    <p>Available<span>(In Stock)</span></p>
-                                    <h4>Product Title Here</h4>
-                                    <div class="product-price">$15 <span>$20</span></div>
-                                    <div class="qty-cart">
-                                        <div class="quantity buttons_added">
-                                            <input type="button" value="-" class="minus minus-btn">
-                                            <input type="number" step="1" name="quantity" value="1" class="input-text qty text">
-                                            <input type="button" value="+" class="plus plus-btn">
-                                        </div>
-                                        <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <a href="http://gambolthemes.net/html-items/gambo_supermarket_demo/single_product_view.html" class="product-img">
-                                    <img src="images/product/img-5.jpg" alt="">
-                                    <div class="product-absolute-options">
-                                        <span class="offer-badge-1">2% off</span>
-                                        <span class="like-icon" title="wishlist"></span>
-                                    </div>
-                                </a>
-                                <div class="product-text-dt">
-                                    <p>Available<span>(In Stock)</span></p>
-                                    <h4>Product Title Here</h4>
-                                    <div class="product-price">$9 <span>$10</span></div>
-                                    <div class="qty-cart">
-                                        <div class="quantity buttons_added">
-                                            <input type="button" value="-" class="minus minus-btn">
-                                            <input type="number" step="1" name="quantity" value="1" class="input-text qty text">
-                                            <input type="button" value="+" class="plus plus-btn">
-                                        </div>
-                                        <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <a href="http://gambolthemes.net/html-items/gambo_supermarket_demo/single_product_view.html" class="product-img">
-                                    <img src="images/product/img-6.jpg" alt="">
-                                    <div class="product-absolute-options">
-                                        <span class="offer-badge-1">2% off</span>
-                                        <span class="like-icon" title="wishlist"></span>
-                                    </div>
-                                </a>
-                                <div class="product-text-dt">
-                                    <p>Available<span>(In Stock)</span></p>
-                                    <h4>Product Title Here</h4>
-                                    <div class="product-price">$7 <span>$8</span></div>
-                                    <div class="qty-cart">
-                                        <div class="quantity buttons_added">
-                                            <input type="button" value="-" class="minus minus-btn">
-                                            <input type="number" step="1" name="quantity" value="1" class="input-text qty text">
-                                            <input type="button" value="+" class="plus plus-btn">
-                                        </div>
-                                        <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <a href="http://gambolthemes.net/html-items/gambo_supermarket_demo/single_product_view.html" class="product-img">
-                                    <img src="images/product/img-14.jpg" alt="">
-                                    <div class="product-absolute-options">
-                                        <span class="offer-badge-1">1% off</span>
-                                        <span class="like-icon" title="wishlist"></span>
-                                    </div>
-                                </a>
-                                <div class="product-text-dt">
-                                    <p>Available<span>(In Stock)</span></p>
-                                    <h4>Product Title Here</h4>
-                                    <div class="product-price">$6.95 <span>$7</span></div>
-                                    <div class="qty-cart">
-                                        <div class="quantity buttons_added">
-                                            <input type="button" value="-" class="minus minus-btn">
-                                            <input type="number" step="1" name="quantity" value="1" class="input-text qty text">
-                                            <input type="button" value="+" class="plus plus-btn">
-                                        </div>
-                                        <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <a href="http://gambolthemes.net/html-items/gambo_supermarket_demo/single_product_view.html" class="product-img">
-                                    <img src="images/product/img-3.jpg" alt="">
-                                    <div class="product-absolute-options">
-                                        <span class="offer-badge-1">3% off</span>
-                                        <span class="like-icon" title="wishlist"></span>
-                                    </div>
-                                </a>
-                                <div class="product-text-dt">
-                                    <p>Available<span>(In Stock)</span></p>
-                                    <h4>Product Title Here</h4>
-                                    <div class="product-price">$8 <span>$10</span></div>
-                                    <div class="qty-cart">
-                                        <div class="quantity buttons_added">
-                                            <input type="button" value="-" class="minus minus-btn">
-                                            <input type="number" step="1" name="quantity" value="1" class="input-text qty text">
-                                            <input type="button" value="+" class="plus plus-btn">
-                                        </div>
-                                        <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Vegetables and Fruits Products End -->
-    <!-- New Products Start -->
 
-    <!-- New Products End -->
+        <index-component :user="{{$user}}"></index-component>
+    </div>
 @endsection
