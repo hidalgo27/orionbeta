@@ -14,7 +14,7 @@
                     </div>
                     <ul class="category-by-cat">
                         <li v-for="category in is_category">
-                            <a :href="'/products/category/'+category.id" class="single-cat-item">
+                            <a :href="'/products/category/'+(category.name.toLowerCase())" class="single-cat-item">
                                 <div class="icon">
                                     <img :src="'http://sistemaorion.green.com.pe/api/v1/categories/imagen/'+category.photo" alt="">
                                 </div>
@@ -163,14 +163,14 @@
 <!--                </div>-->
 
 
-<!--                <div class="search120">-->
-<!--                    <div class="ui search">-->
-<!--                        <div class="ui left icon input swdh10">-->
-<!--                            <input class="prompt srch10" type="text" placeholder="Search for products..">-->
-<!--                            <i class='uil uil-search-alt icon icon1'></i>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <div class="search120">
+                    <div class="ui search">
+                        <div class="ui left icon input swdh10">
+                            <input class="prompt srch10" type="text" placeholder="Search for products..">
+                            <i class='uil uil-search-alt icon icon1'></i>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="header_right">
                     <ul>

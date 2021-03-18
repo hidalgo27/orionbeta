@@ -391,7 +391,7 @@
                 <div class="product-list-view">
                     <div class="row">
                         <div class="col-lg-3 col-md-6"
-                             v-for="product in products_category"
+                             v-for="product in products"
                         >
                             <div class="product-item mb-30">
                                 <a :href="'/product/'+product.id" class="product-img">
@@ -460,7 +460,7 @@ import orderBy from 'lodash/orderBy'
 import {ref, toRefs, nextTick, reactive, computed} from "vue";
 export default {
     components: { HeaderComponent, TopComponent },
-    props: ["idcategory", "user"],
+    props: ["namecategory", "user"],
     setup(props){
         const products = ref([]);
         const featured_slider_top = ref(true);
@@ -479,16 +479,16 @@ export default {
                     return prevPrice * prevQuantity + curr.price * curr.quantity;
                 }, 0);
             }),
-            products_category : computed(() => {
-                return orderBy(products.value.filter((product) => {
-                    const cat = product.categorias.filter(ca => ca.id == props.idcategory)
-                    // console.log(cat)
-                    if (cat != "") {
-                        // badge_new.value = true
-                        return product.categorias.filter(ca => ca.id == props.idcategory)
-                    }
-                }), cartState.o_x, cartState.o_ad)
-            }),
+            // products_category : computed(() => {
+            //     return orderBy(products.value.filter((product) => {
+            //         const cat = product.categorias.filter(ca => ca.id == props.idcategory)
+            //         // console.log(cat)
+            //         if (cat != "") {
+            //             // badge_new.value = true
+            //             return product.categorias.filter(ca => ca.id == props.idcategory)
+            //         }
+            //     }), cartState.o_x, cartState.o_ad)
+            // }),
             is_category : computed(() => {
                 return categories.value.filter(category => category.id == props.idcategory)
             })
@@ -535,7 +535,7 @@ export default {
                 cartState.cart[cartIndex].stock = products.value[prodIndex].stock;
                 products.value[prodIndex].quantity = cartState.cart[cartIndex].quantity;
                 sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
-                sessionStorage.setItem('local-prod', JSON.stringify(products.value));
+                // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
             }else{
                 if (cartIndex >= 0) {
                     cartState.cart[cartIndex].quantity += 1;
@@ -544,7 +544,7 @@ export default {
                 }
                 products.value[prodIndex].stock -= 1;
                 sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
-                sessionStorage.setItem('local-prod', JSON.stringify(products.value));
+                // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
             }
         }
         function removeToCart(product){
@@ -562,14 +562,14 @@ export default {
                     cartState.cart[cartIndex].stock = products.value[prodIndex].stock;
                     products.value[prodIndex].quantity = cartState.cart[cartIndex].quantity;
                     sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
-                    sessionStorage.setItem('local-prod', JSON.stringify(products.value));
+                    // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
                 }
                 else {
                     cartState.cart.splice(cartIndex, 1);
                     products.value[prodIndex].stock += 1;
                     products.value[prodIndex].quantity = 1;
                     sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
-                    sessionStorage.setItem('local-prod', JSON.stringify(products.value));
+                    // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
                 }
 
             }else{
@@ -581,7 +581,7 @@ export default {
                 }
                 products.value[prodIndex].stock += 1;
                 sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
-                sessionStorage.setItem('local-prod', JSON.stringify(products.value));
+                // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
             }
 
         }
@@ -595,7 +595,7 @@ export default {
                 products.value[prodIndex].quantity = 1;
                 products.value[prodIndex].stock += qua;
                 sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
-                sessionStorage.setItem('local-prod', JSON.stringify(products.value));
+                // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
             }
             // else {
             //     axios.post('/session/remove')
@@ -621,7 +621,7 @@ export default {
         let dataP = JSON.parse(sessionStorage.getItem('local-prod'));
         if (dataP === null){
             // localStorage.removeItem('local-prod')
-            fetch("http://sistemaorion.green.com.pe/api/v1/products")
+            fetch("http://sistemaorion.green.com.pe/api/v1/products/others/listado/"+props.namecategory)
                 .then(res => res.json())
                 .then(data => {
                     products.value = data;
@@ -640,6 +640,7 @@ export default {
             products,
             featured_slider_top,
             featured_slider,
+
 
             addToCart,
             removeToCart,

@@ -17,9 +17,7 @@ class HomeController extends Controller
         }
         return view('page.index', compact('user'));
     }
-    public function platzi(){
-        return view('page.platzi');
-    }
+
     public function detailProduct(Request $request){
         if (Auth::user()){
             $user = Auth::user();
@@ -35,8 +33,8 @@ class HomeController extends Controller
         }else{
             $user = 0;
         }
-        $id = $request->id;
-        return view('page.gridProduct', compact('id', 'user'));
+        $name_category = $request->id;
+        return view('page.gridProduct', compact('name_category', 'user'));
     }
     public function checkout(Request $request){
         if (Auth::user()){

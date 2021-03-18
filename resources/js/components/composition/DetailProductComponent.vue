@@ -421,7 +421,7 @@ export default {
                 cartState.cart[cartIndex].stock = products.value[prodIndex].stock;
                 products.value[prodIndex].quantity = cartState.cart[cartIndex].quantity;
                 sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
-                sessionStorage.setItem('local-prod', JSON.stringify(products.value));
+                // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
             }else{
                 if (cartIndex >= 0) {
                     cartState.cart[cartIndex].quantity += 1;
@@ -430,7 +430,7 @@ export default {
                 }
                 products.value[prodIndex].stock -= 1;
                 sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
-                sessionStorage.setItem('local-prod', JSON.stringify(products.value));
+                // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
             }
         }
         function removeToCart(product){
@@ -448,14 +448,14 @@ export default {
                     cartState.cart[cartIndex].stock = products.value[prodIndex].stock;
                     products.value[prodIndex].quantity = cartState.cart[cartIndex].quantity;
                     sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
-                    sessionStorage.setItem('local-prod', JSON.stringify(products.value));
+                    // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
                 }
                 else {
                     cartState.cart.splice(cartIndex, 1);
                     products.value[prodIndex].stock += 1;
                     products.value[prodIndex].quantity = 1;
                     sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
-                    sessionStorage.setItem('local-prod', JSON.stringify(products.value));
+                    // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
                 }
 
             }else{
@@ -467,7 +467,7 @@ export default {
                 }
                 products.value[prodIndex].stock += 1;
                 sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
-                sessionStorage.setItem('local-prod', JSON.stringify(products.value));
+                // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
             }
 
         }
@@ -481,7 +481,7 @@ export default {
                 products.value[prodIndex].quantity = 1;
                 products.value[prodIndex].stock += qua;
                 sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
-                sessionStorage.setItem('local-prod', JSON.stringify(products.value));
+                // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
             }
             // else {
             //     axios.post('/session/remove')
@@ -507,7 +507,7 @@ export default {
         let dataP = JSON.parse(sessionStorage.getItem('local-prod'));
         if (dataP === null){
             // localStorage.removeItem('local-prod')
-            fetch("http://sistemaorion.green.com.pe/api/v1/products")
+            fetch("http://sistemaorion.green.com.pe/api/v1/products/others/secciones")
                 .then(res => res.json())
                 .then(data => {
                     products.value = data;

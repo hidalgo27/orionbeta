@@ -1,4 +1,5 @@
 @extends('layouts.default')
 @section('content')
-    <grid-product-component :idcategory="{{$id}}" :user="{{$user}}"></grid-product-component>
+{{--    {{$name_category}}--}}
+    <grid-product-component :namecategory="'{{strtolower($name_category)}}'" :user="{{$user}}"></grid-product-component>
 @endsection
