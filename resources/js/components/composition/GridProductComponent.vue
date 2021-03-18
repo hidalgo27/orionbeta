@@ -391,7 +391,7 @@
                 <div class="product-list-view">
                     <div class="row">
                         <div class="col-lg-3 col-md-6"
-                             v-for="product in products"
+                             v-for="product in products_category"
                         >
                             <div class="product-item mb-30">
                                 <a :href="'/product/'+product.id" class="product-img">
@@ -479,16 +479,16 @@ export default {
                     return prevPrice * prevQuantity + curr.price * curr.quantity;
                 }, 0);
             }),
-            // products_category : computed(() => {
-            //     return orderBy(products.value.filter((product) => {
-            //         const cat = product.categorias.filter(ca => ca.id == props.idcategory)
-            //         // console.log(cat)
-            //         if (cat != "") {
-            //             // badge_new.value = true
-            //             return product.categorias.filter(ca => ca.id == props.idcategory)
-            //         }
-            //     }), cartState.o_x, cartState.o_ad)
-            // }),
+            products_category : computed(() => {
+                return orderBy(products.value.filter((product) => {
+                    const cat = product.categorias.filter(ca => ca.id == props.idcategory)
+                    // console.log(cat)
+                    if (cat != "") {
+                        // badge_new.value = true
+                        return product.categorias.filter(ca => ca.id == props.idcategory)
+                    }
+                }), cartState.o_x, cartState.o_ad)
+            }),
             is_category : computed(() => {
                 return categories.value.filter(category => category.id == props.idcategory)
             })
