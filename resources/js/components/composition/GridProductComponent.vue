@@ -376,7 +376,7 @@
                                     <div class="menu">
 <!--                                        <div class="item" data-value="0">Popularity</div>-->
                                         <div class="item" data-value="1" @click="OrderName('price', 'desc')">Precio - Menor a Mayor</div>
-                                        <div class="item" data-value="2" @click="OrderName('price', 'asc')">Pricio - Mayor a Menor</div>
+                                        <div class="item" data-value="2" @click="OrderName('price', 'asc')">Precio - Mayor a Menor</div>
                                         <div class="item" data-value="3" @click="OrderName('name', 'desc')">Alfabético (a - z)</div>
                                         <div class="item" data-value="3" @click="OrderName('name', 'asc')">Alfabético (z - a)</div>
 <!--                                        <div class="item" data-value="4">Saving - High to Low</div>-->
@@ -481,16 +481,17 @@ export default {
             }),
             products_category : computed(() => {
                 return orderBy(products.value.filter((product) => {
-                    const cat = product.categorias.filter(ca => ca.id == props.idcategory)
-                    // console.log(cat)
+                    const cat = product.categorias.filter(
+                        ca => ca.name == props.namecategory.toUpperCase()
+                    )
                     if (cat != "") {
                         // badge_new.value = true
-                        return product.categorias.filter(ca => ca.id == props.idcategory)
+                        return product.categorias.filter(ca => ca.name == props.namecategory.toUpperCase())
                     }
                 }), cartState.o_x, cartState.o_ad)
             }),
             is_category : computed(() => {
-                return categories.value.filter(category => category.id == props.idcategory)
+                return categories.value.filter(category => category.name == props.namecategory)
             })
         });
 
