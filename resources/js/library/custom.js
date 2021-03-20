@@ -150,7 +150,7 @@ $('.cate-banners').owlCarousel({
     nav:false,
     dots:false,
     autoplay:true,
-    autoplayTimeout: 3000,
+    autoplayTimeout: 20000,
     autoplayHoverPause:true,
     responsive:{
         0:{

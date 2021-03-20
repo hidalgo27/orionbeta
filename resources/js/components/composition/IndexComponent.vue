@@ -248,10 +248,10 @@ export default {
 
             products_top : computed(() => {
                 return products.value.filter((product) => {
-                    const cat = product.categorias.filter(ca => ca.name == 'TOP' && ca.state > '0')
+                    const cat = product.categorias.filter(ca => ca.name == 'DESTACADOS' && ca.state > '0')
                     if (cat != "") {
                         badge_new.value = true
-                        return product.categorias.filter(ca => ca.name == 'TOP' && ca.state > '0')
+                        return product.categorias.filter(ca => ca.name == 'DESTACADOS' && ca.state > '0')
                     }
                 })
             })

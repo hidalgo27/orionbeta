@@ -1,3 +1,21 @@
 @import "/resources/css/plugins/style.css";
 @import "/resources/css/plugins/responsive.css";
 @import "/resources/css/plugins/night-mode.css";
+.new-top-video {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.new-top-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}

@@ -293,7 +293,7 @@
                             <ul class="navbar-nav main_nav align-self-stretch">
                                 <li class="nav-item"><a href="/" class="nav-link active" title="Home">Inicio</a></li>
                                 <li class="nav-item"><a href="/products/category/nuevos" class="nav-link new_item" title="New Products">Nuevos Productos</a></li>
-                                <li class="nav-item"><a href="/products/category/top" class="nav-link" title="Featured Products">Top Productos</a></li>
+                                <li class="nav-item"><a href="/products/category/destacados" class="nav-link" title="Featured Products">Top Productos</a></li>
                                 <li class="nav-item"><a href="/products/category/fechas festivas" class="nav-link active" title="Featured Products">Productos por Semana Santa</a></li>
                                 <!--                                <li class="nav-item">-->
                                 <!--                                    <div class="ui icon top left dropdown nav__menu">-->
