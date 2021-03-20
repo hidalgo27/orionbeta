@@ -273,10 +273,10 @@
                     <h4>Orion Super Mercado</h4>
                     <span>S/{{ new Intl.NumberFormat("es-PE").format(total) }}</span>
                 </div>
-                <div class="cart-total-dil pt-2">
-                    <h4>Delivery</h4>
-                    <span>S/{{tax}}</span>
-                </div>
+<!--                <div class="cart-total-dil pt-2">-->
+<!--                    <h4>Delivery</h4>-->
+<!--                    <span>S/{{tax}}</span>-->
+<!--                </div>-->
             </div>
             <div class="side-cart-items">
                 <div class="cart-item"
@@ -333,7 +333,7 @@
             <!--            </div>-->
             <div class="main-total-cart">
                 <h2>Total</h2>
-                <span>S/{{ new Intl.NumberFormat("es-PE").format(total + tax) }}</span>
+                <span>S/{{ new Intl.NumberFormat("es-PE").format(total) }}</span>
             </div>
             <div class="checkout-cart">
                 <!--                <a href="#" class="promo-code">Have a promocode?</a>-->
@@ -587,13 +587,16 @@
                                                                     <div class="form-group">
                                                                         <label class="control-label">Cusco/ <span class="text-muted">Distrito</span> *</label>
 <!--                                                                        <input id="street" name="distrito" v-model="distrito" type="text" placeholder="Ejm: Wanchaq" class="form-control input-md">-->
-                                                                        <select class="form-select form-control" aria-label="Default select example" v-model="distrito">
+                                                                        <select class="form-select form-control" aria-label="Default select example" v-model="distrito" :change="distrito_ch(distrito)">
                                                                             <option disabled value="">Seleccione un distrito</option>
-                                                                            <option value="Cusco">Cusco</option>
-                                                                            <option value="Santiago">Santiago</option>
-                                                                            <option value="San Sebastian">San Sebastian</option>
-                                                                            <option value="San Jeronimo">San Jeronimo</option>
-                                                                            <option value="Wanchaq">Wanchaq</option>
+                                                                            <template v-for="options_t in options_tax">
+                                                                                <option :value="options_t.price">
+                                                                                    {{ options_t.country }}</option>
+                                                                            </template>
+<!--                                                                            <option value="2">Santiago</option>-->
+<!--                                                                            <option value="3">San Sebastian</option>-->
+<!--                                                                            <option value="4">San Jeronimo</option>-->
+<!--                                                                            <option value="5">Wanchaq</option>-->
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -646,7 +649,7 @@
                                                             <div class="item">
 <!--                                                                {{picked_fecha}}-->
                                                                 <div class="date-now">
-                                                                    <input type="radio" id="dd1" name="address1" :value="today" v-model="picked_fecha">
+                                                                    <input type="radio" id="dd1" name="address1" checked :value="today" v-model="picked_fecha">
                                                                     <label for="dd1">Hoy</label>
                                                                 </div>
                                                             </div>
@@ -699,34 +702,34 @@
                                                             <div class="grouped fields">
                                                                 <div class="field">
                                                                     <div class="ui radio checkbox chck-rdio">
-                                                                        <input type="radio" name="fruit" tabindex="0" class="hidden" value="8.00AM - 10.00AM" v-model="picked_hora">
-                                                                        <label>8.00AM - 10.00AM</label>
+                                                                        <input type="radio" name="fruit" tabindex="0" checked class="hidden" value="8:00AM - 12:00AM" v-model="picked_hora">
+                                                                        <label>8:00AM - 12:00AM</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="field">
                                                                     <div class="ui radio checkbox chck-rdio">
-                                                                        <input type="radio" name="fruit" tabindex="0" class="hidden" value="10.00AM - 12.00PM" v-model="picked_hora">
-                                                                        <label>10.00AM - 12.00PM</label>
+                                                                        <input type="radio" name="fruit" tabindex="0" class="hidden" value="2:00PM - 6:00PM" v-model="picked_hora">
+                                                                        <label>2:00PM - 6:00PM</label>
                                                                     </div>
                                                                 </div>
-                                                                <div class="field">
-                                                                    <div class="ui radio checkbox chck-rdio">
-                                                                        <input type="radio" name="fruit" tabindex="0" class="hidden" value="12.00PM - 2.00PM" v-model="picked_hora">
-                                                                        <label>12.00PM - 2.00PM</label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="field">
-                                                                    <div class="ui radio checkbox chck-rdio">
-                                                                        <input type="radio" name="fruit" tabindex="0" class="hidden" value="2.00PM - 4.00PM" v-model="picked_hora">
-                                                                        <label>2.00PM - 4.00PM</label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="field">
-                                                                    <div class="ui radio checkbox chck-rdio">
-                                                                        <input type="radio" name="fruit" tabindex="0" class="hidden" value="4.00PM - 6.00PM" v-model="picked_hora">
-                                                                        <label>4.00PM - 6.00PM</label>
-                                                                    </div>
-                                                                </div>
+<!--                                                                <div class="field">-->
+<!--                                                                    <div class="ui radio checkbox chck-rdio">-->
+<!--                                                                        <input type="radio" name="fruit" tabindex="0" class="hidden" value="12.00PM - 2.00PM" v-model="picked_hora">-->
+<!--                                                                        <label>12.00PM - 2.00PM</label>-->
+<!--                                                                    </div>-->
+<!--                                                                </div>-->
+<!--                                                                <div class="field">-->
+<!--                                                                    <div class="ui radio checkbox chck-rdio">-->
+<!--                                                                        <input type="radio" name="fruit" tabindex="0" class="hidden" value="2.00PM - 4.00PM" v-model="picked_hora">-->
+<!--                                                                        <label>2.00PM - 4.00PM</label>-->
+<!--                                                                    </div>-->
+<!--                                                                </div>-->
+<!--                                                                <div class="field">-->
+<!--                                                                    <div class="ui radio checkbox chck-rdio">-->
+<!--                                                                        <input type="radio" name="fruit" tabindex="0" class="hidden" value="4.00PM - 6.00PM" v-model="picked_hora">-->
+<!--                                                                        <label>4.00PM - 6.00PM</label>-->
+<!--                                                                    </div>-->
+<!--                                                                </div>-->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -754,7 +757,7 @@
                                                         <ul class="radio--group-inline-container_1">
                                                             <li>
                                                                 <div class="radio-item_1">
-                                                                    <input id="cashondelivery1" value="contraentrega" name="paymentmethod" type="radio" v-model="picked_metodo" data-minimum="50.0">
+                                                                    <input id="cashondelivery1" value="contraentrega" checked name="paymentmethod" type="radio" v-model="picked_metodo" data-minimum="50.0">
                                                                     <label for="cashondelivery1" class="radio-label_1">Pago Contra entrega</label>
                                                                 </div>
                                                             </li>
@@ -892,12 +895,13 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="total-checkout-group">
-<!--                                <div class="cart-total-dil">-->
-<!--                                    <h4>Gambo Super Market</h4>-->
-<!--                                    <span>$15</span>-->
-<!--                                </div>-->
-                                <div class="cart-total-dil pt-3">
+                                <div class="cart-total-dil">
+                                    <h4>Orion Super Mercado</h4>
+                                    <span>S/{{ new Intl.NumberFormat("es-PE").format(parseFloat(total)) }}</span>
+                                </div>
+                                <div class="cart-total-dil pt-3" v-if="tax.length != 0">
                                     <h4>Delivery</h4>
                                     <span>S/{{tax}}</span>
                                 </div>
@@ -906,9 +910,9 @@
 <!--                                <h4>Total Saving</h4>-->
 <!--                                <span>$3</span>-->
 <!--                            </div>-->
-                            <div class="main-total-cart">
+                            <div class="main-total-cart" v-if="tax.length != 0">
                                 <h2>Total</h2>
-                                <span>S/{{ new Intl.NumberFormat("es-PE").format(total + tax) }}</span>
+                                <span>S/{{ new Intl.NumberFormat("es-PE").format(parseFloat(total) + parseFloat(tax)) }}</span>
                             </div>
                             <div class="payment-secure">
                                 <i class="uil uil-padlock"></i>Pago seguro
@@ -970,12 +974,11 @@ export default {
         const picked_fecha = ref("");
         const picked_hora = ref("");
         const picked_metodo = ref("");
-        const tax = ref(1);
+        const tax = ref("");
 
         const cartState = reactive({
             cartOpen: false,
             cart: [],
-            tax: 1,
             o_ad: 'asc',
             o_x: 'name',
             error_v: [],
@@ -989,6 +992,18 @@ export default {
             }),
         });
 
+        const options_tax = [
+            {price: '5', country: 'Cusco'},
+            {price: '6', country: 'Santiago'},
+            {price: '7', country: 'San Jeronimo'},
+            {price: '7', country: 'San Sebastian'},
+            {price: '5', country: 'Wanchaq'},
+            ];
+
+        function distrito_ch(event){
+            console.log(event);
+            tax.value = event;
+        }
 
         function onSubmitAll() {
                 cartState.error_v = [];
@@ -1224,6 +1239,8 @@ export default {
             picked_hora,
             picked_metodo,
             tax,
+            options_tax,
+            distrito_ch
         };
     }
 }

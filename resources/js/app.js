@@ -23,7 +23,7 @@ import HistorialComponent from "./components/composition/client/HistorialCompone
 import CartLength from "./components/composition/CartLength";
 // import HomeComponent from "./components/composition/HomeComponent";
 import mitt from "mitt";
-const eventBus = mitt()
+const emitter = mitt()
 const app = createApp({
     components: {
         IndexComponent,
@@ -36,5 +36,5 @@ const app = createApp({
         CartLength,
     }
 })
-app.config.globalProperties.eventBus = eventBus
+app.provide('emitter', emitter);
 app.mount('#app')

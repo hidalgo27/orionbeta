@@ -217,7 +217,7 @@
                             <a href="#" class="offer-link"><i class="uil uil-phone-alt"></i></a>
                         </li>
                         <li>
-                            <a href="offers.html" class="offer-link"><i class="uil uil-gift"></i>Ofertas</a>
+                            <a href="/products/category/ofertas" class="offer-link"><i class="uil uil-gift"></i>Ofertas</a>
                         </li>
                         <li>
                             <a href="faq.html" class="offer-link"><i class="uil uil-question-circle"></i>Preguntas Frecuentes</a>
@@ -292,8 +292,9 @@
                         <div class="collapse navbar-collapse d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end bg-dark1 p-3 p-lg-0 mt-lg-0 mobileMenu" id="navbarSupportedContent">
                             <ul class="navbar-nav main_nav align-self-stretch">
                                 <li class="nav-item"><a href="/" class="nav-link active" title="Home">Inicio</a></li>
-                                <li class="nav-item"><a href="/products/category/6" class="nav-link new_item" title="New Products">Nuevos Productos</a></li>
-                                <li class="nav-item"><a href="/products/category/6" class="nav-link" title="Featured Products">Top Productos</a></li>
+                                <li class="nav-item"><a href="/products/category/nuevos" class="nav-link new_item" title="New Products">Nuevos Productos</a></li>
+                                <li class="nav-item"><a href="/products/category/top" class="nav-link" title="Featured Products">Top Productos</a></li>
+                                <li class="nav-item"><a href="/products/category/fechas festivas" class="nav-link active" title="Featured Products">Productos por Semana Santa</a></li>
                                 <!--                                <li class="nav-item">-->
                                 <!--                                    <div class="ui icon top left dropdown nav__menu">-->
                                 <!--                                        <a class="nav-link" title="Pages">Pages <i class="uil uil-angle-down"></i></a>-->
@@ -337,7 +338,7 @@
                     <a href="#" class="cate__btn" data-toggle="modal" data-target="#category_model" title="Categories"><i class="uil uil-apps"></i></a>
                 </div>
                 <div class="header_cart order-1">
-                    <a href="#" class="cart__btn hover-btn pull-bs-canvas-left" title="Cart"><i class="uil uil-shopping-cart-alt"></i><span>Ver Carrito</span><ins></ins><i class="uil uil-angle-down"></i></a>
+                    <a href="#" class="cart__btn hover-btn pull-bs-canvas-left" title="Cart"><i class="uil uil-shopping-cart-alt"></i><span>Ver Carrito</span><ins> <cart-length></cart-length> </ins><i class="uil uil-angle-down"></i></a>
                 </div>
                 <div class="search__icon order-1">
                     <a href="#" class="search__btn hover-btn" data-toggle="modal" data-target="#search_model" title="Search"><i class="uil uil-search"></i></a>

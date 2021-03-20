@@ -273,10 +273,10 @@
                     <h4>Orion Super Mercado</h4>
                     <span>S/{{ new Intl.NumberFormat("es-PE").format(total) }}</span>
                 </div>
-                <div class="cart-total-dil pt-2">
-                    <h4>Delivery</h4>
-                    <span>S/{{tax}}</span>
-                </div>
+<!--                <div class="cart-total-dil pt-2">-->
+<!--                    <h4>Delivery</h4>-->
+<!--                    <span>S/{{tax}}</span>-->
+<!--                </div>-->
             </div>
             <div class="side-cart-items">
                 <div class="cart-item"
@@ -333,7 +333,7 @@
             <!--            </div>-->
             <div class="main-total-cart">
                 <h2>Total</h2>
-                <span>S/.{{ new Intl.NumberFormat("es-PE").format(total + tax) }}</span>
+                <span>S/.{{ new Intl.NumberFormat("es-PE").format(total) }}</span>
             </div>
             <div class="checkout-cart">
                 <!--                <a href="#" class="promo-code">Have a promocode?</a>-->
@@ -435,7 +435,7 @@
                                         <!--                    <button :disabled="product.stock === 0" @click="sendToCart()">-->
                                         <!--                        Agregar al carrito-->
                                         <!--                    </button>-->
-                                        <button type="button" class="cart-icon btn" :disabled="product.stock === 0" @click="addToCart(product)"><i class="uil uil-shopping-cart-alt"></i></button>
+                                        <button type="button" class="cart-icon btn btn-small btn-success" :disabled="product.stock === 0" @click="addToCart(product)"><i class="uil uil-shopping-cart-alt"></i> Agregar</button>
                                     </div>
                                 </div>
                             </div>
@@ -457,7 +457,7 @@
 import HeaderComponent from "./HeaderComponent";
 import TopComponent from "./TopComponent";
 import orderBy from 'lodash/orderBy'
-import {ref, toRefs, nextTick, reactive, computed} from "vue";
+import {ref, toRefs, nextTick, reactive, computed, inject} from "vue";
 export default {
     components: { HeaderComponent, TopComponent },
     props: ["namecategory", "user"],
@@ -467,6 +467,7 @@ export default {
         const featured_slider = ref(false);
         const categories = ref([]);
         const tax = ref(1);
+        const emitter = inject("emitter");
         const cartState = reactive({
             cartOpen: false,
             cart: [],
@@ -547,6 +548,7 @@ export default {
                 sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
                 // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
             }
+            emitter.emit("myevent", cartState.cart.length);
         }
         function removeToCart(product){
             const cartIndex = cartState.cart.findIndex(prod => prod.id === product.id);
@@ -584,7 +586,7 @@ export default {
                 sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
                 // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
             }
-
+            emitter.emit("myevent", cartState.cart.length);
         }
         function deleteToCart(product){
             const cartIndex = cartState.cart.findIndex(prod => prod.id === product.id);
@@ -607,6 +609,7 @@ export default {
             // }
             // console.log(prodIndex);
             // console.log(prodIndex);
+            emitter.emit("myevent", cartState.cart.length);
         }
 
         let dataB = JSON.parse(sessionStorage.getItem('local-cart'));
@@ -642,13 +645,13 @@ export default {
             featured_slider_top,
             featured_slider,
 
-
             addToCart,
             removeToCart,
             deleteToCart,
 
             OrderName,
-            tax
+            tax,
+            emitter
         };
     }
 }

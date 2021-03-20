@@ -20,10 +20,10 @@
                     <h4>Orion Super Mercado</h4>
                     <span>S/.{{ new Intl.NumberFormat("es-PE").format(total) }}</span>
                 </div>
-                <div class="cart-total-dil pt-2">
-                    <h4>Delivery</h4>
-                    <span>S/{{tax}}</span>
-                </div>
+<!--                <div class="cart-total-dil pt-2">-->
+<!--                    <h4>Delivery</h4>-->
+<!--                    <span>S/{{tax}}</span>-->
+<!--                </div>-->
             </div>
             <div class="side-cart-items">
                 <div class="cart-item"
@@ -80,7 +80,7 @@
             <!--            </div>-->
             <div class="main-total-cart">
                 <h2>Total</h2>
-                <span>S/.{{ new Intl.NumberFormat("es-PE").format(total + tax) }}</span>
+                <span>S/.{{ new Intl.NumberFormat("es-PE").format(total) }}</span>
             </div>
             <div class="checkout-cart">
                 <!--                <a href="#" class="promo-code">Have a promocode?</a>-->
@@ -203,7 +203,7 @@
                                                     </ul>
                                                     <ul class="ordr-crt-share">
                                                         <li><button class="add-cart-btn hover-btn" :disabled="products.stock === 0" @click="addToCart(products)"><i class="uil uil-shopping-cart-alt"></i>Agregar a Carro</button></li>
-                                                        <li><a href="/checkout" class="btn-link font-weight-bold">Comprar Ahora</a></li>
+                                                        <li><a href="/checkout" class="btn-primary btn btn-lg">Comprar Ahora</a></li>
                                                     </ul>
                                                 </div>
                                                 <div class="pdp-details">
@@ -273,7 +273,7 @@
                                                             <!--                                <span class="qty px-2 text">{{product.quantity}}</span>-->
                                                             <!--                            </template>-->
                                                         </template>
-                                                        <button type="button" class="cart-icon btn" :disabled="pord_fam.stock === 0" @click="addToCart(pord_fam)"><i class="uil uil-shopping-cart-alt"></i></button>
+                                                        <button type="button" class="cart-icon btn btn-link text-success" :disabled="pord_fam.stock === 0" @click="addToCart(pord_fam)"><i class="uil uil-shopping-cart-alt"></i> Agregar</button>
 
                                                     </div>
                                                     <div class="cart-item-price">
@@ -346,7 +346,7 @@
 import HeaderComponent from "./HeaderComponent";
 import TopComponent from "./TopComponent";
 
-import {ref, toRefs, nextTick, reactive, computed} from "vue";
+import {ref, toRefs, nextTick, reactive, computed, inject} from "vue";
 export default {
     components: { HeaderComponent, TopComponent },
     props: ["idproduct", "user"],
@@ -356,6 +356,7 @@ export default {
         const featured_slider = ref(false);
         const badge_new = ref(false);
         const tax = ref(1);
+        const emitter = inject("emitter");
 
         const cartState = reactive({
             cartOpen: false,
@@ -432,6 +433,7 @@ export default {
                 sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
                 // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
             }
+            emitter.emit("myevent", cartState.cart.length);
         }
         function removeToCart(product){
             const cartIndex = cartState.cart.findIndex(prod => prod.id === product.id);
@@ -469,7 +471,7 @@ export default {
                 sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
                 // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
             }
-
+            emitter.emit("myevent", cartState.cart.length);
         }
         function deleteToCart(product){
             const cartIndex = cartState.cart.findIndex(prod => prod.id === product.id);
@@ -492,6 +494,7 @@ export default {
             // }
             // console.log(prodIndex);
             // console.log(prodIndex);
+            emitter.emit("myevent", cartState.cart.length);
         }
 
         let dataB = JSON.parse(sessionStorage.getItem('local-cart'));
@@ -636,7 +639,8 @@ export default {
             removeToCart,
             deleteToCart,
 
-            tax
+            tax,
+            emitter
 
         };
     }

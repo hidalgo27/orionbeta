@@ -11,10 +11,10 @@
                     <h4>Orion Super Mercado</h4>
                     <span>S/.{{ new Intl.NumberFormat("es-PE").format(total) }}</span>
                 </div>
-                <div class="cart-total-dil pt-2">
-                    <h4>Delivery</h4>
-                    <span>S/{{tax}}</span>
-                </div>
+<!--                <div class="cart-total-dil pt-2">-->
+<!--                    <h4>Delivery</h4>-->
+<!--                    <span>S/{{tax}}</span>-->
+<!--                </div>-->
             </div>
             <div class="side-cart-items">
                 <div class="cart-item"
@@ -71,7 +71,7 @@
 <!--            </div>-->
             <div class="main-total-cart">
                 <h2>Total</h2>
-                <span>S/.{{ new Intl.NumberFormat("es-PE").format(total + tax) }}</span>
+                <span>S/.{{ new Intl.NumberFormat("es-PE").format(total) }}</span>
             </div>
             <div class="checkout-cart">
 <!--                <a href="#" class="promo-code">Have a promocode?</a>-->
@@ -95,11 +95,14 @@
                                 <div class="offer-item">
                                     <div class="offer-item-img">
                                         <div class="gambo-overlay"></div>
-                                        <img src="images/banners/offer-1.jpg" alt="">
+<!--                                        <img src="images/banners/offer-1.jpg" alt="">-->
+                                        <template v-for="(photos, index) in prod_off.photos" :key="photos.id">
+                                            <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
+                                        </template>
                                     </div>
                                     <div class="offer-text-dt">
                                         <div class="offer-top-text-banner">
-                                            <p>6% Descuento</p>
+                                            <p>OFERTAS</p>
                                             <div class="top-text-1">Compre Más y Ahorre Más</div>
                                             <span>{{ prod_off.name }}</span>
                                         </div>
@@ -191,7 +194,7 @@ import TopComponent from "./TopComponent";
 import BestComponent from "./BestComponent";
 import NewComponent from "./NewComponent";
 
-import {ref, toRefs, nextTick, reactive, computed} from "vue";
+import {ref, toRefs, nextTick, reactive, computed, inject} from "vue";
 export default {
     components: { carousel, OfferComponent, CategoryComponent, TopComponent, BestComponent, NewComponent, HeaderComponent },
     props: ['user'],
@@ -206,6 +209,8 @@ export default {
         const offers_banner = ref(false);
 
         const tax = ref(1);
+
+        const emitter = inject("emitter");
 
         const cartState = reactive({
             cartOpen: false,
@@ -223,20 +228,20 @@ export default {
 
             products_new : computed(() => {
                 return products.value.filter((product) => {
-                    const cat = product.categorias.filter(ca => ca.name == 'NUEVO' && ca.state > '0')
+                    const cat = product.categorias.filter(ca => ca.name == 'NUEVOS' && ca.state > '0')
                     if (cat != "") {
                         badge_new.value = true
-                        return product.categorias.filter(ca => ca.name == 'NUEVO' && ca.state > '0')
+                        return product.categorias.filter(ca => ca.name == 'NUEVOS' && ca.state > '0')
                     }
                 })
             }),
 
             products_offers : computed(() => {
                 return products.value.filter((product) => {
-                    const cat = product.categorias.filter(ca => ca.name == 'NUEVO' && ca.state > '0')
+                    const cat = product.categorias.filter(ca => ca.name == 'OFERTAS' && ca.state > '0')
                     if (cat != "") {
                         badge_new.value = true
-                        return product.categorias.filter(ca => ca.name == 'NUEVO' && ca.state > '0')
+                        return product.categorias.filter(ca => ca.name == 'OFERTAS' && ca.state > '0')
                     }
                 })
             }),
@@ -253,9 +258,7 @@ export default {
 
         });
 
-        function emitEvent() {
-            this.eventBus.emit('test', 'Welcome to MNP!')
-        }
+
         function addToCart(product){
             const cartIndex = cartState.cart.findIndex(prod => prod.id === product.id);
             const prodIndex = products.value.findIndex(p => p.id === product.id);
@@ -281,6 +284,8 @@ export default {
                 sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
                 // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
             }
+            emitter.emit("myevent", cartState.cart.length);
+
         }
         function removeToCart(product){
             const cartIndex = cartState.cart.findIndex(prod => prod.id === product.id);
@@ -318,7 +323,7 @@ export default {
                 sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
                 // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
             }
-
+            emitter.emit("myevent", cartState.cart.length);
         }
         function deleteToCart(product){
             const cartIndex = cartState.cart.findIndex(prod => prod.id === product.id);
@@ -340,7 +345,8 @@ export default {
             //         });
             // }
             // console.log(prodIndex);
-            // console.log(prodIndex);
+
+            emitter.emit("myevent", cartState.cart.length);
         }
 
         let dataB = JSON.parse(sessionStorage.getItem('local-cart'));
@@ -443,7 +449,7 @@ export default {
             deleteToCart,
             badge_new,
             tax,
-            emitEvent
+            emitter
 
         };
     }

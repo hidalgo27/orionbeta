@@ -1,27 +1,37 @@
 <template>
-    {{ cart.length }}
+    {{ len }}
 </template>
 
 <script>
-import {reactive, toRefs} from "vue";
+import {inject, reactive, ref, toRefs} from "vue";
 
 export default {
     setup(){
-        const cartState = reactive({
-            cart: [],
-        });
+        // const cartState = reactive({
+        //     cart: [],
+        // });
+        const len = ref(0);
 
         let dataB = JSON.parse(sessionStorage.getItem('local-cart'));
         if (dataB === null){
-            cartState.cart = []
+            len.value = 0
         }else{
-            cartState.cart = dataB
+            // len.value = dataB
+            len.value = dataB.length;
         }
 
+        const emitter = inject("emitter");   // Inject `emitter`
+        emitter.on("myevent", (value) => {   // *Listen* for event
+            console.log("myevent received!", `${value}`);
+            // console.log()
 
+            len.value = value;
+        });
 
         return {
-            ...toRefs(cartState)
+            // ...toRefs(cartState),
+            emitter,
+            len
         }
     }
 }
