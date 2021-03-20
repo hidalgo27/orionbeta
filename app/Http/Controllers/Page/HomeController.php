@@ -50,6 +50,36 @@ class HomeController extends Controller
         return view('page.checkout', compact('user','category'));
     }
 
+    public function faq(){
+        if (Auth::user()){
+            $user = Auth::user();
+        }else{
+            $user = 0;
+        }
+        $category = Category::where('state', '1')->get();
+        return view('page.faq', compact('user','category'));
+    }
+
+    public function about(){
+        if (Auth::user()){
+            $user = Auth::user();
+        }else{
+            $user = 0;
+        }
+        $category = Category::where('state', '1')->get();
+        return view('page.about', compact('user','category'));
+    }
+
+    public function contacto(){
+        if (Auth::user()){
+            $user = Auth::user();
+        }else{
+            $user = 0;
+        }
+        $category = Category::where('state', '1')->get();
+        return view('page.contact', compact('user','category'));
+    }
+
 
 
     public function json(Request $request){

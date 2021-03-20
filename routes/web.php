@@ -26,6 +26,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/product/{id}', [HomeController::class, 'detailProduct'])->name('product');
 Route::get('/products/category/{id}', [HomeController::class, 'categoryProduct'])->name('product.category');
 Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
+Route::get('/preguntas-frecuentes', [HomeController::class, 'faq'])->name('faq');
+Route::get('/sobre-nosotros', [HomeController::class, 'about'])->name('about');
+Route::get('/contacto', [HomeController::class, 'contacto'])->name('contacto');
 
 Route::post('/checkout/json', [HomeController::class, 'json'])->name('checkout.json');
 //Route::get('/', [HomeController::class, 'platzi'])->name('platzi');

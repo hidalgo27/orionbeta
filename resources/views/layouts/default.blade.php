@@ -220,7 +220,7 @@
                             <a href="/products/category/ofertas" class="offer-link"><i class="uil uil-gift"></i>Ofertas</a>
                         </li>
                         <li>
-                            <a href="faq.html" class="offer-link"><i class="uil uil-question-circle"></i>Preguntas Frecuentes</a>
+                            <a href="{{route('faq')}}" class="offer-link"><i class="uil uil-question-circle"></i>Preguntas Frecuentes</a>
                         </li>
                         <!--                        <li>-->
                         <!--                            <a href="dashboard_my_wishlist.html" class="option_links" title="Wishlist"><i class='uil uil-heart icon_wishlist'></i><span class="noti_count1">3</span></a>-->
@@ -327,8 +327,8 @@
                                 <!--                                        </div>-->
                                 <!--                                    </div>-->
                                 <!--                                </li>-->
-                                <li class="nav-item"><a href="contact_us.html" class="nav-link" title="Contact">Nuestros Locles</a></li>
-                                <li class="nav-item"><a href="contact_us.html" class="nav-link" title="Contact">Acerca de Nosotros</a></li>
+                                <li class="nav-item"><a href="{{route('about')}}" class="nav-link" title="Contact">Acerca de Nosotros</a></li>
+                                <li class="nav-item"><a href="{{route('contacto')}}" class="nav-link" title="Contact">Locales y Contacto</a></li>
 
                             </ul>
                         </div>
