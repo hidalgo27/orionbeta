@@ -253,6 +253,9 @@ export default {
 
         });
 
+        function emitEvent() {
+            this.eventBus.emit('test', 'Welcome to MNP!')
+        }
         function addToCart(product){
             const cartIndex = cartState.cart.findIndex(prod => prod.id === product.id);
             const prodIndex = products.value.findIndex(p => p.id === product.id);
@@ -440,6 +443,7 @@ export default {
             deleteToCart,
             badge_new,
             tax,
+            emitEvent
 
         };
     }

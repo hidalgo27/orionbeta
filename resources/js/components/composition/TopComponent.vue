@@ -42,7 +42,7 @@
 <!--                    <button :disabled="product.stock === 0" @click="sendToCart()">-->
 <!--                        Agregar al carrito-->
 <!--                    </button>-->
-                    <button type="button" class="cart-icon btn" :disabled="product.stock === 0" @click="sendToCart()"><i class="uil uil-shopping-cart-alt"></i></button>
+                    <button type="button" class="cart-icon btn btn-small btn-success" :disabled="product.stock === 0" @click="sendToCart()"><i class="uil uil-shopping-cart-alt"></i> Agregar</button>
                 </div>
             </div>
         </div>

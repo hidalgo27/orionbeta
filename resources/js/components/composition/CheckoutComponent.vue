@@ -285,7 +285,7 @@
                 >
                     <div class="cart-product-img">
                         <template v-for="(photos, index) in prodCart.photos" :key="prodCart.name">
-                            <img :src="'http://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
+                            <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                         </template>
                         <div class="offer-badge">6% OFF</div>
                     </div>
@@ -361,7 +361,7 @@
 
                     <div class="sign-form">
                         <div class="sign-inner">
-                            <div class="sign-logo mt-5" id="logo">
+                            <div class="sign-logo mt-5">
                                 <a href="index.html"><img src="/images/logo-orion.png" alt=""></a>
                                 <a href="index.html"><img class="logo-inverse" src="/images/logo-orion-white.png" alt=""></a>
                             </div>
@@ -871,6 +871,7 @@
                             <div class="right-cart-dt-body"
                                  v-for="(prodCart, index) in cart"
                                  :key="prodCart.id"
+
                             >
                                 <div class="cart-item border_radius">
                                     <div class="cart-product-img">
@@ -878,7 +879,7 @@
 <!--                                            <img :src="photos.photo" alt="" v-if="index === 0">-->
 <!--                                        </template>-->
                                         <template v-for="(photos, index) in prodCart.photos" :key="prodCart.name">
-                                            <img :src="'http://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
+                                            <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                                         </template>
 <!--                                        <div class="offer-badge">4% OFF</div>-->
                                     </div>
@@ -934,6 +935,7 @@ import moment from "moment"
 // import { useField, useForm } from "vee-validate"
 
 import {ref, toRefs, reactive, computed} from "vue";
+import axios from "axios";
 export default {
     components: { HeaderComponent, TopComponent },
     props: ['user'],
@@ -1032,7 +1034,7 @@ export default {
                     total_price: cartState.total
                 };
 
-                axios.post('http://sistemaorion.nebulaperu.com/api/v1/orders', {form_data: form, cart: cartState.cart })
+                axios.post('http://sistemaorion.green.com.pe/api/v1/orders', {form_data: form, cart: cartState.cart })
                     .then(function(response) {
                         console.log(response.data.status);
                         if(response.data.status > 0){
@@ -1168,7 +1170,7 @@ export default {
         let dataP = JSON.parse(sessionStorage.getItem('local-prod'));
         if (dataP === null){
             // localStorage.removeItem('local-prod')
-            fetch("http://sistemaorion.nebulaperu.com/api/v1/products")
+            fetch("http://sistemaorion.green.com.pe/api/v1/products")
                 .then(res => res.json())
                 .then(data => {
                     products.value = data;

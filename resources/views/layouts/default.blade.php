@@ -29,6 +29,7 @@
 {{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">--}}
 {{--    <link rel="stylesheet" href="{{mix("css/app.css")}}">--}}
 {{--    <link rel="stylesheet" href="{{mix("css/library.css")}}">--}}
+    <link rel="stylesheet" type="text/css" href="{{asset('vendor/semantic/semantic.min.css')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
@@ -51,7 +52,7 @@
                     <ul class="category-by-cat">
                         @foreach($category as $categories)
                         <li>
-                            <a href="" class="single-cat-item">
+                            <a href="{{route('product.category', [strtolower($categories->name)])}}" class="single-cat-item">
                                 <div class="icon">
                                     <img src="http://sistemaorion.green.com.pe/api/v1/categories/imagen/{{$categories->photo}}" alt="">
                                 </div>
@@ -481,7 +482,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 <script src="{{asset("js/app.js")}}"></script>
 <script src="{{asset("js/plugins.js")}}"></script>
-<link rel="stylesheet" type="text/css" href="{{asset('vendor/semantic/semantic.min.css')}}">
 {{--<script src="/js/jquery-3.3.1.min.js"></script>--}}
 {{--<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>--}}
 {{--<script src="/vendor/OwlCarousel/owl.carousel.js"></script>--}}
@@ -490,34 +490,6 @@
 {{--<script src="js/custom.js"></script>--}}
 {{--<script src="js/offset_overlay.js"></script>--}}
 {{--<script src="js/night-mode.js"></script>--}}
-<script>
-    $('.cate-banners').owlCarousel({
-        loop:true,
-        margin:30,
-        nav:false,
-        dots:false,
-        autoplay:true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause:true,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:1
-            },
-            1000:{
-                items:1
-            },
-            1200:{
-                items:1
-            },
-            1400:{
-                items:1
-            }
-        }
-    })
-</script>
 
 </body>
 </html>

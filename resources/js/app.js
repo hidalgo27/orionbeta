@@ -22,7 +22,9 @@ import OrderComponent from "./components/composition/client/OrderComponent";
 import HistorialComponent from "./components/composition/client/HistorialComponent";
 import CartLength from "./components/composition/CartLength";
 // import HomeComponent from "./components/composition/HomeComponent";
-createApp({
+import mitt from "mitt";
+const eventBus = mitt()
+const app = createApp({
     components: {
         IndexComponent,
         DetailProductComponent,
@@ -33,4 +35,6 @@ createApp({
         HistorialComponent,
         CartLength,
     }
-}).mount('#app')
+})
+app.config.globalProperties.eventBus = eventBus
+app.mount('#app')
