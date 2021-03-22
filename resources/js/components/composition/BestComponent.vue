@@ -26,27 +26,9 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <a href="#" class="best-offer-item" data-bs-toggle="modal" data-bs-target="#beneficios-g">
+                    <a href="#" class="best-offer-item" data-toggle="modal" data-target="#beneficio-g">
                         <img src="/images/banners/beneficios-galaxy-2.jpg" alt="">
                     </a>
-                    <!-- Modal -->
-                    <div class="modal fade" id="beneficios-g" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <a href="#" class="best-offer-item offr-none">
