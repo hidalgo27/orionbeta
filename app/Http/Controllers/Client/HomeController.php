@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,7 +15,8 @@ class HomeController extends Controller
         }else{
             $user = 0;
         }
-        return view('page.client.dashboard', compact('user'));
+        $category = Category::where('state', '1')->get();
+        return view('page.client.dashboard', compact('user','category'));
     }
 
     public function pedidos(Request $request){
@@ -23,7 +25,8 @@ class HomeController extends Controller
         }else{
             $user = 0;
         }
-        return view('page.client.pedidos', compact('user'));
+        $category = Category::where('state', '1')->get();
+        return view('page.client.pedidos', compact('user', 'category'));
     }
     public function history(Request $request){
         if (Auth::user()){
@@ -31,7 +34,8 @@ class HomeController extends Controller
         }else{
             $user = 0;
         }
-        return view('page.client.history', compact('user'));
+        $category = Category::where('state', '1')->get();
+        return view('page.client.history', compact('user','category'));
     }
 
 }

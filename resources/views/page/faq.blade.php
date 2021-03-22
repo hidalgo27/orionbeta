@@ -1,5 +1,6 @@
 @extends('layouts.default')
 @section('content')
+    <cart-blade></cart-blade>
     <div class="wrapper">
         <div class="gambo-Breadcrumb">
             <div class="container">

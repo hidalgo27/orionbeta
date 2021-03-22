@@ -7,7 +7,7 @@
             <a href="/client/history" class="user-item"><i class="uil uil-wallet"></i>Mi Historial</a>
             <!--                                <a href="dashboard_my_wishlist.html" class="user-item"><i class="uil uil-heart"></i>Shopping Wishlist</a>-->
 <!--            <a href="dashboard_my_addresses.html" class="user-item"><i class="uil uil-location-point"></i>Mis Direcciones</a>-->
-            <form id="logout-form" action="http://orion.nu/logout" method="POST">
+            <form action="http://orion.nu/logout" method="POST">
                 <input type="hidden" name="_token" v-model="token">
                 <button type="submit" class="user-item btn-block border-0"><i class="uil uil-exit"></i> Cerrar sesion</button>
             </form>
@@ -24,7 +24,6 @@ export default {
     setup(){
         const csrf= ref(document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
         const token = ref(csrf);
-
         return {
             csrf,
             token
@@ -32,7 +31,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-
-</style>

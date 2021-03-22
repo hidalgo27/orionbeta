@@ -81,16 +81,15 @@
 </template>
 
 <script>
-import {computed, reactive, toRefs} from "vue";
+import {computed, reactive, ref, toRefs} from "vue";
 import mitt from "mitt";
 export default {
-    props: ['cart'],
     setup(props){
         // const products = ref([]);
         const emitter = mitt()
         const cartState = reactive({
             cartOpen: false,
-            cart: props.cart,
+            cart: [],
             total: computed(()=>{
                 return  cartState.cart.reduce((prev, curr) => {
                     const prevPrice = prev.price || prev;
@@ -196,14 +195,15 @@ export default {
             emitter.emit("myevent", cartState.cart.length);
         }
 
-        // let dataB = JSON.parse(sessionStorage.getItem('local-cart'));
-        // if (dataB === null){
-        //     cartState.cart = []
-        // }else{
-        //     cartState.cart = dataB
-        //     // console.log(cartState.cart)
-        //     // // console.log(products)
-        // }
+
+        let dataB = JSON.parse(sessionStorage.getItem('local-cart'));
+        if (dataB === null){
+            cartState.cart = []
+        }else{
+            cartState.cart = dataB
+            // console.log(cartState.cart)
+            // // console.log(products)
+        }
 
         return {
             ...toRefs(cartState),

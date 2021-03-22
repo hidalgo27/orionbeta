@@ -1,38 +1,40 @@
 @extends('layouts.default')
 @section('content')
+    <cart-blade></cart-blade>
     <div class="wrapper">
-        <div class="default-dt">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="default_tabs">
-                            <nav>
-                                <div class="nav nav-tabs tab_default  justify-content-center">
-                                    <a class="nav-item nav-link active" href="about_us.html">About</a>
-                                    <a class="nav-item nav-link" href="our_blog.html">Blog</a>
-                                    <a class="nav-item nav-link" href="career.html">Careers</a>
-                                    <a class="nav-item nav-link" href="press.html">Press</a>
-                                </div>
-                            </nav>
-                        </div>
-                        <div class="title129">
-                            <h2>About Us</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--        <div class="default-dt">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-lg-12 col-md-12">--}}
+{{--                        <div class="default_tabs">--}}
+{{--                            <nav>--}}
+{{--                                <div class="nav nav-tabs tab_default  justify-content-center">--}}
+{{--                                    <a class="nav-item nav-link active" href="about_us.html">About</a>--}}
+{{--                                    <a class="nav-item nav-link" href="our_blog.html">Blog</a>--}}
+{{--                                    <a class="nav-item nav-link" href="career.html">Careers</a>--}}
+{{--                                    <a class="nav-item nav-link" href="press.html">Press</a>--}}
+{{--                                </div>--}}
+{{--                            </nav>--}}
+{{--                        </div>--}}
+{{--                        <div class="title129">--}}
+{{--                            <h2>About Us</h2>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <div class="life-gambo">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="default-title left-text">
-                            <h2>About Gambo</h2>
-                            <p>Customers Deserve Better</p>
+                            <h2>Orion Supermercados</h2>
+                            <p>La Estrella de los Precios Bajos</p>
                             <img src="images/line.svg" alt="">
                         </div>
                         <div class="about-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac sodales sapien. Sed pellentesque, quam in ornare tincidunt, magna augue placerat nunc, ut facilisis nibh ipsum non ipsum. Cras ac eros non neque viverra consequat sed at est. Fusce efficitur, lacus nec dignissim tincidunt, diam sapien rhoncus neque, at tristique sapien nibh sed neque. Proin in neque in purus luctus facilisis. Donec viverra ligula quis lorem viverra consequat. Aliquam condimentum id enim volutpat rutrum. Donec semper iaculis convallis. Praesent quis elit eget ligula facilisis mattis. Praesent sed euismod dui. Suspendisse imperdiet vel quam nec venenatis. Suspendisse dictum blandit quam, vitae auctor enim gravida et. Sed id dictum nibh. Proin egestas massa sit amet tincidunt aliquet.</p>
+                            <p>A lo largo de la trayectoria de Supermercados ORION hemos sido protagonistas y testigos del crecimiento de una empresa que día a día ha confiado en las fortalezas y actitudes positivas de los Cuzqueños.</p>
+                            <p>La perseverancia y constancia de sus fundadores, fueron y son en la actualidad un pilar firme donde se cimentan todas las virtudes y capacidades del personal.</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -41,6 +43,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="about-steps-group white-bg">
@@ -85,13 +88,41 @@
                 </div>
             </div>
         </div>
+
         <div class="life-gambo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="about-img">
+                            <img src="images/about.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="default-title left-text">
+                            <h2>Nuestra Misión</h2>
+                        </div>
+                        <div class="about-content">
+                            <p>Ser la cadena de supermercados más importante de región y tener el grupo más efectivo e innovador, ofreciendo la más amplia gama de productos a precios accesibles y con un excelente servicio.</p>
+                        </div>
+                        <div class="default-title left-text mt-5">
+                            <h2>Nuestra Visión</h2>
+                        </div>
+                        <div class="about-content">
+                            <p>Abastecer a las familias con la más alta variedad de productos, con la mejor relación- calidad, en un ambiente cordial higiénico y seguro. De igual manera, tenemos como objetivo el crecimiento sostenido de la empresa y el desarrollo de sus colaboradores.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="life-gambo bg-white">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="default-title">
-                            <h2>Our Team</h2>
-                            <p>Teamwork Makes the Dream Work</p>
+                            <h2>Nuestro Equipo</h2>
+                            <p>Un trabajo en equipo hace realidad nuestros sueños</p>
                             <img src="images/line.svg" alt="">
                         </div>
                         <div class="dd-content">
@@ -101,11 +132,11 @@
                                         <div class="team-img">
                                             <img src="images/team/img-1.jpg" alt="">
                                         </div>
-                                        <h4>Joginder Singh</h4>
-                                        <span>CEO & Co-Founder</span>
+                                        <h4>Jose Farfan</h4>
+                                        <span>CEO & Fundador</span>
                                         <ul class="team-social">
-                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-linkedin-in"></i></a></li>
+{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-facebook-f"></i></a></li>--}}
+{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-linkedin-in"></i></a></li>--}}
                                         </ul>
                                     </div>
                                 </div>
@@ -114,11 +145,11 @@
                                         <div class="team-img">
                                             <img src="images/team/img-2.jpg" alt="">
                                         </div>
-                                        <h4>John Doe</h4>
-                                        <span>CTO & Senior Developer</span>
+                                        <h4>Joe Farfan</h4>
+                                        <span>CEO</span>
                                         <ul class="team-social">
-                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-linkedin-in"></i></a></li>
+{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-facebook-f"></i></a></li>--}}
+{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-linkedin-in"></i></a></li>--}}
                                         </ul>
                                     </div>
                                 </div>
@@ -127,11 +158,11 @@
                                         <div class="team-img">
                                             <img src="images/team/img-3.jpg" alt="">
                                         </div>
-                                        <h4>Jassica William</h4>
-                                        <span>HR Manager</span>
+                                        <h4>Juan Farfan</h4>
+                                        <span>Administrador</span>
                                         <ul class="team-social">
-                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-linkedin-in"></i></a></li>
+{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-facebook-f"></i></a></li>--}}
+{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-linkedin-in"></i></a></li>--}}
                                         </ul>
                                     </div>
                                 </div>
@@ -140,11 +171,11 @@
                                         <div class="team-img">
                                             <img src="images/team/img-4.jpg" alt="">
                                         </div>
-                                        <h4>Zoena Singh</h4>
-                                        <span>Senior Sales Manager</span>
+                                        <h4>Evelyn</h4>
+                                        <span>Contadora</span>
                                         <ul class="team-social">
-                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-linkedin-in"></i></a></li>
+{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-facebook-f"></i></a></li>--}}
+{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-linkedin-in"></i></a></li>--}}
                                         </ul>
                                     </div>
                                 </div>
@@ -154,13 +185,13 @@
                 </div>
             </div>
         </div>
-        <div class="how-order-gambo">
+        <div class="how-order-gambo mt-5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="default-title">
-                            <h2>How Do I Order?</h2>
-                            <p>How Do I order on Gambo</p>
+                            <h2>¿Cómo hago un pedido?</h2>
+                            <p>¿Cómo hago un pedido en Orion?</p>
                             <img src="images/line.svg" alt="">
                         </div>
                     </div>
@@ -169,7 +200,7 @@
                             <div class="how-order-icon">
                                 <i class="uil uil-search"></i>
                             </div>
-                            <h4>Browse gambo.com for products or use the search feature</h4>
+                            <h4>Busque productos en orion.com.pe o utilice la función de búsqueda</h4>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -177,7 +208,7 @@
                             <div class="how-order-icon">
                                 <i class="uil uil-shopping-basket"></i>
                             </div>
-                            <h4>Add item to your shopping Basket</h4>
+                            <h4>Agregar artículo a su carrito de compras</h4>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -185,7 +216,7 @@
                             <div class="how-order-icon">
                                 <i class="uil uil-stopwatch"></i>
                             </div>
-                            <h4>Choose a convenient delivery time from our 5 Slots* a day</h4>
+                            <h4>Elija un tiempo de entrega conveniente</h4>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -193,7 +224,7 @@
                             <div class="how-order-icon">
                                 <i class="uil uil-money-bill"></i>
                             </div>
-                            <h4>Select suitable payment option(Cash, Master, Credit Card, Discover)</h4>
+                            <h4>Seleccione la opción de pago adecuada (Efectivo, Tarjeta de crédito)</h4>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -201,7 +232,7 @@
                             <div class="how-order-icon">
                                 <i class="uil uil-truck"></i>
                             </div>
-                            <h4>Your products will be home-delivered as per your order.</h4>
+                            <h4>Sus productos serán entregados a domicilio según su pedido.</h4>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -209,7 +240,7 @@
                             <div class="how-order-icon">
                                 <i class="uil uil-smile"></i>
                             </div>
-                            <h4>Happy Curstomers</h4>
+                            <h4>Clientes felices</h4>
                         </div>
                     </div>
                 </div>
@@ -217,3 +248,9 @@
         </div>
     </div>
 @endsection
+        <script>
+            import CartBlade from "../../js/components/composition/CartBlade";
+            export default {
+                components: {CartBlade}
+            }
+        </script>

@@ -8,7 +8,7 @@
                             <img :src="user.profile_photo_url" alt="">
                             <div class="img-add">
                                 <input type="file" id="file">
-                                <label for="file"><i class="uil uil-camera-plus"></i></label>
+<!--                                <label for="file"><i class="uil uil-camera-plus"></i></label>-->
                             </div>
                         </div>
                         <h4>{{user.name}}</h4>
@@ -30,6 +30,3 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>

@@ -383,14 +383,11 @@
                     <div class="second-row-item">
                         <h4>Categorias</h4>
                         <ul>
-                            <li><a href="#">Lacteos</a></li>
-                            <li><a href="#">Conservas</a></li>
-                            <li><a href="#">Embutidos</a></li>
-                            <li><a href="#">Limpieza</a></li>
-                            <li><a href="#">Aceites</a></li>
-                            <li><a href="#">Desayunos</a></li>
-                            <li><a href="#">Cafe para pasar</a></li>
-                            <li><a href="#">Abarrotes</a></li>
+                            @foreach($category->take(5) as $categories)
+                                <li><a href="{{route('product.category', [strtolower($categories->name)])}}">{{ucwords(strtolower($categories->name))}}</a></li>
+                            @endforeach
+                            <li>...</li>
+                            <li><a href="#" data-toggle="modal" data-target="#category_model">Ver todas las categorias</a></li>
                         </ul>
                     </div>
                 </div>
@@ -398,19 +395,19 @@
                     <div class="second-row-item">
                         <h4>Links útiles</h4>
                         <ul>
-                            <li><a href="about_us.html">Sobre Nosotros</a></li>
-                            <li><a href="shop_grid.html">Top Productos</a></li>
-                            <li><a href="shop_grid.html">Productos Nuevos</a></li>
-                            <li><a href="shop_grid.html">Preguntas Frecuentes</a></li>
+                            <li><a href="{{route('about')}}">Sobre Nosotros</a></li>
+                            <li><a href="/products/category/destacados">Top Productos</a></li>
+                            <li><a href="/products/category/ofertas">Productos en Oferta</a></li>
+                            <li><a href="{{route('faq')}}">Preguntas Frecuentes</a></li>
                         </ul>
                     </div>
                 </div>
+
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="second-row-item">
                         <h4>Locales</h4>
                         <ul>
-                            <li><a href="#">Orion Marcavalle</a></li>
-                            <li><a href="#">Orion Garcilazo</a></li>
+                            <li><a href="{{route('contacto')}}">Locales y Contacto</a></li>
                         </ul>
                     </div>
                 </div>
@@ -461,15 +458,15 @@
                 <div class="col-md-12">
                     <div class="footer-bottom-links">
                         <ul>
-                            <li><a href="#">Sobre Nosotros</a></li>
-                            <li><a href="#">Contáctenos</a></li>
-                            <li><a href="#">Politicas de Privacidad</a></li>
+                            <li><a href="{{route('about')}}">Sobre Nosotros</a></li>
+                            <li><a href="{{route('contacto')}}">Contáctenos</a></li>
+{{--                            <li><a href="#">Politicas de Privacidad</a></li>--}}
                             <li><a href="#">Terminos y Condiciones</a></li>
                             <li><a href="#">Política de reembolso y devolución</a></li>
                         </ul>
                     </div>
                     <div class="copyright-text">
-                        <i class="uil uil-copyright"></i>Copyright 2021 <b>Nebula</b> . All rights reserved
+                        <i class="uil uil-copyright"></i>Copyright 2021 <a href="http://nebulaperu.com/" target="_blank">Nebula Perú</a>. All rights reserved
                     </div>
                 </div>
             </div>
