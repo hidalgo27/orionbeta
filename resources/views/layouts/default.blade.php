@@ -7,10 +7,7 @@
     <meta name="viewport" content="width=device-width, shrink-to-fit=9">
     <meta name="description" content="Orion supermercado. El especialista de precios bajos">
     <meta name="author" content="Hidalgo">
-    <title>Orion Supermercado</title>
-
-    <!-- Favicon Icon -->
-    <link rel="icon" type="image/png" href="{{asset('images/fav.png')}}">
+    <title>Orion Supermercados | Cusco</title>
 
     <!-- Stylesheets -->
 {{--    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">--}}
@@ -31,6 +28,27 @@
 {{--    <link rel="stylesheet" href="{{mix("css/library.css")}}">--}}
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/semantic/semantic.min.css')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Favicon Icon -->
+{{--    <link rel="icon" type="image/png" href="{{asset('images/fav.png')}}">--}}
+
+    <link rel="apple-touch-icon" sizes="57x57" href="{{asset('favicon/apple-icon-57x57.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{asset('favicon/apple-icon-60x60.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('favicon/apple-icon-72x72.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('favicon/apple-icon-76x76.png')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('favicon/apple-icon-114x114.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{asset('favicon/apple-icon-120x120.png')}}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{asset('favicon/apple-icon-144x144.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('favicon/apple-icon-152x152.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('favicon/apple-icon-180x180.png')}}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{asset('favicon/android-icon-192x192.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('favicon/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{asset('favicon/favicon-96x96.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('favicon/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{asset('favicon/manifest.json')}}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -205,7 +223,7 @@
                 <div class="search120">
                     <div class="ui search">
                         <div class="ui left icon input swdh10">
-                            <input class="prompt srch10" type="text" placeholder="Search for products..">
+                            <input class="prompt srch10" type="text" placeholder="Buscar productos..">
                             <i class='uil uil-search-alt icon icon1'></i>
                         </div>
                     </div>
@@ -461,8 +479,8 @@
                             <li><a href="{{route('about')}}">Sobre Nosotros</a></li>
                             <li><a href="{{route('contacto')}}">Contáctenos</a></li>
 {{--                            <li><a href="#">Politicas de Privacidad</a></li>--}}
-                            <li><a href="#">Terminos y Condiciones</a></li>
-                            <li><a href="#">Política de reembolso y devolución</a></li>
+                            <li><a href="{{asset('terminos-condiciones-orion.pdf')}}" target="_blank">Términos, Condiciones y Política de reembolso</a></li>
+{{--                            <li><a href="#">Política de reembolso y devolución</a></li>--}}
                         </ul>
                     </div>
                     <div class="copyright-text">

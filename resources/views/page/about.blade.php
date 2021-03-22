@@ -39,7 +39,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="about-img">
-                            <img src="images/about.svg" alt="">
+                            <img src="{{asset('images/about/about.png')}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -52,37 +52,37 @@
                     <div class="col-lg-3">
                         <div class="about-step">
                             <div class="about-step-img">
-                                <img src="images/about/icon-1.svg" alt="">
+                                <img src="/images/about/icon-1.svg" alt="">
                             </div>
-                            <h4>400+</h4>
-                            <p>People have joined the Gambo team in the past six months</p>
+                            <h4>10 años!</h4>
+                            <p>Sirviendo a la comunidad Cusqueña</p>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="about-step">
                             <div class="about-step-img">
-                                <img src="images/about/icon-2.svg" alt="">
+                                <img src="/images/about/icon-2.svg" alt="">
                             </div>
-                            <h4>2x</h4>
-                            <p>Rate of growth in our monthly user base</p>
+                            <h4>#1</h4>
+                            <p>Somos numero uno en descuentos</p>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="about-step">
                             <div class="about-step-img">
-                                <img src="images/about/icon-3.svg" alt="">
+                                <img src="/images/about/icon-3.svg" alt="">
                             </div>
-                            <h4>10 days</h4>
-                            <p>Time taken to launch in 8 cities across India</p>
+                            <h4>7 Locales</h4>
+                            <p>Siempre habrá un Orion cerca de ti</p>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="about-step">
                             <div class="about-step-img">
-                                <img src="images/about/icon-4.svg" alt="">
+                                <img src="/images/about/icon-4.svg" alt="">
                             </div>
-                            <h4>95k</h4>
-                            <p>App downloads on iOS and Android</p>
+                            <h4>Galaxy Card</h4>
+                            <p>El programa número uno de Descuentos en Cusco</p>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="about-img">
-                            <img src="images/about.svg" alt="">
+                            <img src="{{asset('images/banners/ave-cultura.jpg')}}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-6">
