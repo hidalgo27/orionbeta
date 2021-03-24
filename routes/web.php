@@ -29,6 +29,8 @@ Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 Route::get('/preguntas-frecuentes', [HomeController::class, 'faq'])->name('faq');
 Route::get('/sobre-nosotros', [HomeController::class, 'about'])->name('about');
 Route::get('/contacto', [HomeController::class, 'contacto'])->name('contacto');
+Route::post('/formulario', [HomeController::class, 'formulario'])->name('formulario');
+Route::post('/subscribete', [HomeController::class, 'subscribete'])->name('subscribete');
 
 Route::post('/checkout/json', [HomeController::class, 'json'])->name('checkout.json');
 //Route::get('/', [HomeController::class, 'platzi'])->name('platzi');

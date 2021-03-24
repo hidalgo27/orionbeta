@@ -72,7 +72,7 @@
                             <div class="about-step-img">
                                 <img src="/images/about/icon-3.svg" alt="">
                             </div>
-                            <h4>7 Locales</h4>
+                            <h4>6 Locales</h4>
                             <p>Siempre habrá un Orion cerca de ti</p>
                         </div>
                     </div>

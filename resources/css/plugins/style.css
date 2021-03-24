@@ -72,7 +72,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video;{
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -1095,7 +1095,7 @@ i.icon1 {
 }
 
 .search-ground-area {
-	max-width: 400px !important;
+	max-width: 600px !important;
 }
 
 .search-header {
@@ -2070,7 +2070,7 @@ span.like-icon {
     font-size: 12px;
     font-weight: 500;
     color: #fff;
-    background: #ee2342;
+    background: #28a745;
     padding: 3px 10px;
     border-radius: 3px;
     line-height: 20px;
@@ -5347,7 +5347,7 @@ textarea {
 }
 
 .blog-breadcrumb .breadcrumb-item a:hover {
-    color: rgba(255,255,255) !important;
+    color: rgba(255,255,255,255) !important;
 }
 
 .title129 .blog-titlebar-heading {

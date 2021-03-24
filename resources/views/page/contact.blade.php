@@ -8,8 +8,8 @@
                     <div class="col-md-12">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Locales y Contacto</li>
                             </ol>
                         </nav>
                     </div>
@@ -119,8 +119,14 @@
                             <h2>Atención al cliente</h2>
                             <p>Si tiene alguna pregunta sobre nuestro servicio o tiene un problema que informar, envíe una solicitud y nos comunicaremos con usted lo antes posible.</p>
                         </div>
+                        @if (session('status'))
+                            <div class="bg-primary text-white p-4 mt-4 rounded shadow-sm">
+                                Su mensaje se envío correctamente. Gracias por contactar con nosotros.
+                            </div>
+                        @endif
                         <div class="contact-form">
-                            <form>
+                            <form method="post" action="{{route('formulario')}}">
+                                @csrf
                                 <div class="form-group mt-1">
                                     <label class="control-label">Nombre Completo*</label>
                                     <div class="ui search focus">

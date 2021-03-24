@@ -21,9 +21,9 @@
                             <div class="col-md-12">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="shop_grid.html">Vegetables & Fruits</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Product Title</li>
+                                        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+<!--                                        <li class="breadcrumb-item"><a href="shop_grid.html">Vegetables & Fruits</a></li>-->
+                                        <li class="breadcrumb-item active" aria-current="page">{{ products.name }}</li>
                                     </ol>
                                 </nav>
                             </div>

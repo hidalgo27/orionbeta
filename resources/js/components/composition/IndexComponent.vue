@@ -25,7 +25,7 @@
                                     <div class="offer-text-dt">
                                         <div class="offer-top-text-banner">
                                             <p>OFERTAS</p>
-                                            <div class="top-text-1">Compre Más y Ahorre Más</div>
+                                            <div class="top-text-1">Precio oferta S/{{ new Intl.NumberFormat("es-PE").format(prod_off.price) }}</div>
                                             <span>{{ prod_off.name }}</span>
                                         </div>
                                         <a :href="'/product/'+prod_off.id" class="Offer-shop-btn hover-btn">Comprar Ahora</a>

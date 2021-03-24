@@ -273,8 +273,8 @@
                     <div class="col-md-12">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Vegetables & Fruits</li>
+                                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{MaysPrimera(namecategory.toLowerCase())}}</li>
                             </ol>
                         </nav>
                     </div>
@@ -289,7 +289,7 @@
                             <div class="product-left-title">
                                 <h2>{{MaysPrimera(namecategory.toLowerCase())}}</h2>
                             </div>
-                            <a href="#" class="filter-btn pull-bs-canvas-right">Filters</a>
+<!--                            <a href="#" class="filter-btn pull-bs-canvas-right">Filters</a>-->
                             <div class="product-sort">
                                 <div class="ui selection dropdown vchrt-dropdown">
                                     <input name="gender" type="hidden" value="default">

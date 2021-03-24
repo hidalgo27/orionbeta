@@ -4,13 +4,18 @@ namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Product;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
     public function index(){
+
+//        $productos = Product::with('categorias')->get();
+
         if (Auth::user()){
             $user = Auth::user();
         }else{
@@ -81,6 +86,54 @@ class HomeController extends Controller
     }
 
 
+    public function formulario(Request $request){
+        $from = "hidalgochponce@gmail.com";
+        $name = $request->sendername;
+        $email = $request->emailaddress;
+        $asunto= $request->sendersubject;
+        $sendermessage = $request->sendermessage;
+
+        try {
+            Mail::send(['html' => 'notifications.page'], ['name' => $name], function ($messaje) use ($email, $name) {
+                $messaje->to($email, $name)
+                    ->subject('Orion Super Mercados')
+                    /*->attach('ruta')*/
+                    ->from('info@orion.com.pe', 'Orion Super Mercados');
+            });
+
+            Mail::send(['html' => 'notifications.admin'], [
+                'name' => $name,
+                'email' => $email,
+                'asunto' => $asunto,
+                'sendermessage' => $sendermessage,
+            ], function ($messaje) use ($from) {
+                $messaje->to($from, 'Orion Super Mercados')
+                    ->subject('Orion Super Mercados')
+//                    ->cc($from2, 'GotoPeru')
+                    /*->attach('ruta')*/
+                    ->from('info@orion.com.pe', 'Orion Super Mercados');
+            });
+
+
+            return redirect(route('contacto'))->with('status', 'Registro satisfactorio.');
+
+        }
+        catch (Exception $e){
+            return $e;
+        }
+//        return view('page.index');
+    }
+
+    public function subscribete(Request $request){
+
+        $alumnos = new Suscripcion();
+        $alumnos->email = $request->input('email');
+        $alumnos->save();
+
+        return redirect(route('home'))->with('suscripcion', 'Gracias por su suscripción.');
+
+//        return view('page.home')->with('status', 'Successfully updated video');;
+    }
 
     public function json(Request $request){
 //        $form=$request->form_data;

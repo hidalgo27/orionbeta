@@ -52,8 +52,29 @@
 </head>
 
 <body>
-<div id="app">
-
+<div id="app" class="position-relative">
+{{--    <table class="table">--}}
+{{--        <thead>--}}
+{{--        <tr>--}}
+{{--            <th scope="col">Codigo</th>--}}
+{{--            <th scope="col">Categoria</th>--}}
+{{--            <th scope="col">Producto</th>--}}
+{{--        </tr>--}}
+{{--        </thead>--}}
+{{--        <tbody>--}}
+{{--        @foreach($productos as $product)--}}
+{{--        <tr>--}}
+{{--            <th scope="row">{{$product->code}}</th>--}}
+{{--            <td>--}}
+{{--            @foreach($product->categorias as $cat)--}}
+{{--            {{$cat->name}},--}}
+{{--            @endforeach--}}
+{{--            </td>--}}
+{{--            <td>{{$product->name}}</td>--}}
+{{--        </tr>--}}
+{{--        @endforeach--}}
+{{--        </tbody>--}}
+{{--    </table>--}}
     <!-- Category Model Start-->
     <div id="category_model" class="header-cate-model main-gambo-model modal fade" tabindex="-1" role="dialog" aria-modal="false">
         <div class="modal-dialog category-area" role="document">
@@ -86,83 +107,7 @@
     </div>
     <!-- Category Model End-->
     <!-- Search Model Start-->
-    <div id="search_model" class="header-cate-model main-gambo-model modal fade" tabindex="-1" role="dialog" aria-modal="false">
-        <div class="modal-dialog search-ground-area" role="document">
-            <div class="category-area-inner">
-                <div class="modal-header">
-                    <button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close">
-                        <i class="uil uil-multiply"></i>
-                    </button>
-                </div>
-                <div class="category-model-content modal-content">
-                    <div class="search-header">
-                        <form action="#">
-                            <input type="search" placeholder="Search for products...">
-                            <button type="submit"><i class="uil uil-search"></i></button>
-                        </form>
-                    </div>
-                    <div class="search-by-cat d-none">
-                        <!--                        <a href="#" class="single-cat">-->
-                        <!--                            <div class="icon">-->
-                        <!--                                <img src="images/category/icon-1.svg" alt="">-->
-                        <!--                            </div>-->
-                        <!--                            <div class="text">-->
-                        <!--                                Fruits and Vegetables-->
-                        <!--                            </div>-->
-                        <!--                        </a>-->
-                        <!--                        <a href="#" class="single-cat">-->
-                        <!--                            <div class="icon">-->
-                        <!--                                <img src="images/category/icon-2.svg" alt="">-->
-                        <!--                            </div>-->
-                        <!--                            <div class="text"> Grocery & Staples </div>-->
-                        <!--                        </a>-->
-                        <!--                        <a href="#" class="single-cat">-->
-                        <!--                            <div class="icon">-->
-                        <!--                                <img src="images/category/icon-3.svg" alt="">-->
-                        <!--                            </div>-->
-                        <!--                            <div class="text"> Dairy & Eggs </div>-->
-                        <!--                        </a>-->
-                        <!--                        <a href="#" class="single-cat">-->
-                        <!--                            <div class="icon">-->
-                        <!--                                <img src="images/category/icon-4.svg" alt="">-->
-                        <!--                            </div>-->
-                        <!--                            <div class="text"> Beverages </div>-->
-                        <!--                        </a>-->
-                        <!--                        <a href="#" class="single-cat">-->
-                        <!--                            <div class="icon">-->
-                        <!--                                <img src="images/category/icon-5.svg" alt="">-->
-                        <!--                            </div>-->
-                        <!--                            <div class="text"> Snacks </div>-->
-                        <!--                        </a>-->
-                        <!--                        <a href="#" class="single-cat">-->
-                        <!--                            <div class="icon">-->
-                        <!--                                <img src="images/category/icon-6.svg" alt="">-->
-                        <!--                            </div>-->
-                        <!--                            <div class="text"> Home Care </div>-->
-                        <!--                        </a>-->
-                        <!--                        <a href="#" class="single-cat">-->
-                        <!--                            <div class="icon">-->
-                        <!--                                <img src="images/category/icon-7.svg" alt="">-->
-                        <!--                            </div>-->
-                        <!--                            <div class="text"> Noodles & Sauces </div>-->
-                        <!--                        </a>-->
-                        <!--                        <a href="#" class="single-cat">-->
-                        <!--                            <div class="icon">-->
-                        <!--                                <img src="images/category/icon-8.svg" alt="">-->
-                        <!--                            </div>-->
-                        <!--                            <div class="text"> Personal Care </div>-->
-                        <!--                        </a>-->
-                        <!--                        <a href="#" class="single-cat">-->
-                        <!--                            <div class="icon">-->
-                        <!--                                <img src="images/category/icon-9.svg" alt="">-->
-                        <!--                            </div>-->
-                        <!--                            <div class="text"> Pet Care </div>-->
-                        <!--                        </a>-->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <search-component></search-component>
     <!-- Search Model End-->
 
     <header class="header clearfix">
@@ -221,13 +166,17 @@
 
 
                 <div class="search120">
-                    <div class="ui search">
-                        <div class="ui left icon input swdh10">
-                            <input class="prompt srch10" type="text" placeholder="Buscar productos..">
-                            <i class='uil uil-search-alt icon icon1'></i>
-                        </div>
-                    </div>
+                    <span class="text-muted">La estrella de los precios bajos</span>
                 </div>
+
+{{--                <div class="search120">--}}
+{{--                    <div class="ui search">--}}
+{{--                        <div class="ui left icon input swdh10">--}}
+{{--                            <input class="prompt srch10" type="text" placeholder="Buscar productos.." data-toggle="modal" data-target="#search_model">--}}
+{{--                            <i class='uil uil-search-alt icon icon1'></i>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
                 <div class="header_right">
                     <ul>
@@ -287,8 +236,8 @@
                                 <!--                                <a href="dashboard_my_addresses.html" class="item channel_item"><i class="uil uil-location-point icon__1"></i>My Address</a>-->
                                 <!--                                <a href="offers.html" class="item channel_item"><i class="uil uil-gift icon__1"></i>Offers</a>-->
                                 <!--                                <a href="faq.html" class="item channel_item"><i class="uil uil-info-circle icon__1"></i>Faq</a>-->
-                                <form id="logout-form" action="http://orion.nu/logout" method="POST">
-                                    <input type="hidden" name="_token" v-model="token">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                    @csrf
                                     <button type="submit" class="item channel_item p-3 w-100 text-left border-0"><i class="uil uil-lock-alt icon__1"></i> Cerrar sesion</button>
                                 </form>
                                 <!--                                <a href="/logout" class="item channel_item"><i class="uil uil-lock-alt icon__1"></i>Logout</a>-->
@@ -303,6 +252,7 @@
             <div class="sub-header">
                 <div class="ui dropdown">
                     <a href="#" class="category_drop hover-btn" data-toggle="modal" data-target="#category_model" title="Categories"><i class="uil uil-apps"></i><span class="cate__icon">Seleccione Categoria</span></a>
+                    <a href="#" class="search__btn hover-btn" data-toggle="modal" data-target="#search_model" title="Search"><i class="uil uil-search"></i></a>
                 </div>
                 <nav class="navbar navbar-expand-lg navbar-light py-3">
                     <div class="container-fluid">
@@ -312,7 +262,7 @@
                                 <li class="nav-item"><a href="/" class="nav-link active" title="Home">Inicio</a></li>
                                 <li class="nav-item"><a href="/products/category/nuevos" class="nav-link new_item" title="New Products">Nuevos Productos</a></li>
                                 <li class="nav-item"><a href="/products/category/destacados" class="nav-link" title="Featured Products">Top Productos</a></li>
-                                <li class="nav-item"><a href="/products/category/fechas festivas" class="nav-link active" title="Featured Products">Productos por Semana Santa</a></li>
+                                <li class="nav-item"><a href="/products/category/fechas festivas" class="nav-link active" title="Featured Products">Productos por Campaña</a></li>
                                 <!--                                <li class="nav-item">-->
                                 <!--                                    <div class="ui icon top left dropdown nav__menu">-->
                                 <!--                                        <a class="nav-link" title="Pages">Pages <i class="uil uil-angle-down"></i></a>-->
@@ -358,9 +308,9 @@
                 <div class="header_cart order-1">
                     <a href="#" class="cart__btn hover-btn pull-bs-canvas-left" title="Cart"><i class="uil uil-shopping-cart-alt"></i><span>Ver Carrito</span><ins> <cart-length></cart-length> </ins><i class="uil uil-angle-down"></i></a>
                 </div>
-                <div class="search__icon order-1">
-                    <a href="#" class="search__btn hover-btn" data-toggle="modal" data-target="#search_model" title="Search"><i class="uil uil-search"></i></a>
-                </div>
+{{--                <div class="search__icon order-1">--}}
+{{--                    <a href="#" class="search__btn hover-btn" data-toggle="modal" data-target="#search_model" title="Search"><i class="uil uil-search"></i></a>--}}
+{{--                </div>--}}
             </div>
         </div>
     </header>
@@ -461,9 +411,17 @@
                     </div>
                     <div class="second-row-item-payment">
                         <h4>Subscribete</h4>
+                        @if (session('status'))
+                            <div class="bg-primary text-white p-4 mt-4 rounded shadow-sm">
+                                Gracias por su suscripción.
+                            </div>
+                        @endif
                         <div class="newsletter-input">
-                            <input id="email" name="email" type="text" placeholder="Email" class="form-control input-md" required="">
-                            <button class="newsletter-btn hover-btn" type="submit"><i class="uil uil-telegram-alt"></i></button>
+                            <form action="{{route('subscribete')}}" method="post">
+                                @csrf
+                                <input id="email" name="email" type="text" placeholder="Email" class="form-control input-md" required>
+                                <button type="submit" class="newsletter-btn hover-btn"><i class="uil uil-telegram-alt"></i></button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -492,13 +450,21 @@
     </div>
 </footer>
 <!-- Footer End -->
+
 </div>
+
+
 <!-- Javascripts -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+{{--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>--}}
+{{--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>--}}
+<script src="{{asset("js/jquery-3.3.1.min.js")}}"></script>
 <script src="{{asset("js/app.js")}}"></script>
 <script src="{{asset("js/plugins.js")}}"></script>
+<script src="{{asset("vendor/bootstrap/js/bootstrap.bundle.js")}}"></script>
 {{--<script src="/js/jquery-3.3.1.min.js"></script>--}}
+<script>
+    $('.toast').toast(show)
+</script>
 {{--<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>--}}
 {{--<script src="/vendor/OwlCarousel/owl.carousel.js"></script>--}}
 {{--<script src="vendor/semantic/semantic.min.js"></script>--}}
@@ -506,6 +472,5 @@
 {{--<script src="js/custom.js"></script>--}}
 {{--<script src="js/offset_overlay.js"></script>--}}
 {{--<script src="js/night-mode.js"></script>--}}
-
 </body>
 </html>

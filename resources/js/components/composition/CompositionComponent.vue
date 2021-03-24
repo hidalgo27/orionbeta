@@ -101,6 +101,7 @@ export default {
             });
 
         const filteredProducts = computed(() => {
+            console.log(filtro.value)
             if (filtro.value != "") {
                 return products.value.filter((product) =>
                     product.name.toUpperCase().includes(filtro.value.toUpperCase())

@@ -22,6 +22,7 @@ import OrderComponent from "./components/composition/client/OrderComponent";
 import HistorialComponent from "./components/composition/client/HistorialComponent";
 import CartLength from "./components/composition/CartLength";
 import CartBlade from "./components/composition/CartBlade";
+import SearchComponent from "./components/composition/SearchComponent";
 // import HomeComponent from "./components/composition/HomeComponent";
 import mitt from "mitt";
 const emitter = mitt()
@@ -35,7 +36,8 @@ const app = createApp({
         OrderComponent,
         HistorialComponent,
         CartLength,
-        CartBlade
+        CartBlade,
+        SearchComponent
     }
 })
 app.provide('emitter', emitter);

@@ -6,7 +6,7 @@
                     <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                 </template>
                 <div class="product-absolute-options">
-                    <span class="offer-badge-1" v-if="badge_new">{{ cat }}</span>
+                    <span class="offer-badge-1 bg-black" v-if="badge_new">{{ cat }}</span>
 <!--                    <span class="like-icon" title="wishlist"></span>-->
                 </div>
             </a>
@@ -24,7 +24,7 @@
 <!--                        Ultima unidad disponible!-->
 <!--                    </p>-->
 <!--                </template>-->
-                <h4>{{ product.id }} {{ product.name }} {{v_no}}</h4>
+                <h4>{{ product.name }}</h4>
                 <div class="product-price">
                     S/{{ new Intl.NumberFormat("es-PE").format(product.price) }}
 <!--                    <span>$15</span>-->

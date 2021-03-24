@@ -20,8 +20,8 @@
                     <div class="col-md-12">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Homed</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">My Orders</li>
+                                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Mis Pedidos</li>
                             </ol>
                         </nav>
                     </div>
