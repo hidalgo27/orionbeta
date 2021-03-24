@@ -332,12 +332,12 @@
                 <div class="col-md-6 col-sm-6">
                     <div class="social-links-footer">
                         <ul>
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a href="https://www.facebook.com/OrionCusco" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+{{--                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>--}}
+{{--                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>--}}
+{{--                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>--}}
+                            <li><a href="https://www.instagram.com/orioncusco" target="_blank"><i class="fab fa-instagram"></i></a></li>
+{{--                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>--}}
                         </ul>
                     </div>
                 </div>
@@ -409,21 +409,21 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="second-row-item-payment">
-                        <h4>Subscribete</h4>
-                        @if (session('status'))
-                            <div class="bg-primary text-white p-4 mt-4 rounded shadow-sm">
-                                Gracias por su suscripción.
-                            </div>
-                        @endif
-                        <div class="newsletter-input">
-                            <form action="{{route('subscribete')}}" method="post">
-                                @csrf
-                                <input id="email" name="email" type="text" placeholder="Email" class="form-control input-md" required>
-                                <button type="submit" class="newsletter-btn hover-btn"><i class="uil uil-telegram-alt"></i></button>
-                            </form>
-                        </div>
-                    </div>
+{{--                    <div class="second-row-item-payment">--}}
+{{--                        <h4>Subscribete</h4>--}}
+{{--                        @if (session('status'))--}}
+{{--                            <div class="bg-primary text-white p-4 mt-4 rounded shadow-sm">--}}
+{{--                                Gracias por su suscripción.--}}
+{{--                            </div>--}}
+{{--                        @endif--}}
+{{--                        <div class="newsletter-input">--}}
+{{--                            <form action="{{route('subscribete')}}" method="post">--}}
+{{--                                @csrf--}}
+{{--                                <input id="email" name="email" type="text" placeholder="Email" class="form-control input-md" required>--}}
+{{--                                <button type="submit" class="newsletter-btn hover-btn"><i class="uil uil-telegram-alt"></i></button>--}}
+{{--                            </form>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>

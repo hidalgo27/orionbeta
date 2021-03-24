@@ -1,11 +1,11 @@
 <template>
     <!-- Share Icons Start-->
     <div class="icon-bar">
-        <a href="#" class="facebook" title="Share"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="twitter" title="Share"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="google" title="Share"><i class="fab fa-google"></i></a>
-        <a href="#" class="linkedin" title="Share"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="whatsapp" title="Share"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/OrionCusco" target="_blank" class="facebook" title="Share"><i class="fab fa-facebook-f"></i></a>
+        <!--        <a href="#" class="twitter" title="Share"><i class="fab fa-twitter"></i></a>-->
+        <!--        <a href="#" class="google" title="Share"><i class="fab fa-google"></i></a>-->
+        <!--        <a href="#" class="linkedin" title="Share"><i class="fab fa-linkedin-in"></i></a>-->
+        <a href="https://www.instagram.com/orioncusco" target="_blank" class="twitter" title="Share"><i class="fab fa-instagram"></i></a>
     </div>
     <!-- Share Icons End-->
     <!-- Cart Sidebar Offset Start-->
@@ -136,7 +136,7 @@
                                                                 <button class="btn-danger btn" @click="addToCart(products)"><i class="uil uil-shopping-cart-alt"></i>Agregar a Carro </button>
                                                             </template>
                                                         </li>
-                                                        <li><a href="/checkout" class="btn-primary btn">Comprar Ahora</a></li>
+                                                        <li><a href="/checkout" class="btn-primary btn">Pasar por Caja Ahora</a></li>
                                                     </ul>
                                                 </div>
                                                 <div class="pdp-details">

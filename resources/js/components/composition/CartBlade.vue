@@ -27,7 +27,7 @@
                         <!--                        <div class="offer-badge">6% OFF</div>-->
                     </div>
                     <div class="cart-text">
-                        <h4>{{ prodCart.name }} | {{prodCart.stock}} | {{prodCart.quantity}}</h4>
+                        <h4>{{ prodCart.name }}</h4>
                         <!--                        <div class="cart-radio">-->
                         <!--                            <ul class="kggrm-now">-->
                         <!--                                <li>-->
