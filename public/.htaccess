@@ -5,8 +5,8 @@
 
     RewriteEngine On
 
-#    RewriteCond %{HTTPS} !=on
-#    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     RewriteCond %{HTTP_HOST} ^www.orion.com.pe [NC]
     RewriteRule ^(.*)$ http://orion.com.pe/$1 [L,R=301]
