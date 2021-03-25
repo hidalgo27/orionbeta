@@ -305,6 +305,7 @@ export default {
                     // console.log("pre carga 2")
                     products.value = data;
                     nextTick(() => {
+                        
                         $('.featured-slider-top').owlCarousel({
                             items: 8,
                             loop:false,
