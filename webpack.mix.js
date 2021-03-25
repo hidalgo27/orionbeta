@@ -23,13 +23,13 @@ mix.postCss('resources/css/plugins/plugins.css', 'public/css')
 // mix.postCss('resources/css/vendor/library.css', 'public/css')
 
 mix.scripts([
-    'resources/js/vendor/OwlCarousel/owl.carousel.min.js',
+    // 'resources/js/vendor/OwlCarousel/owl.carousel.min.js',
     // 'resources/js/vendor/bootstrap/js/bootstrap.bundle.js',
     // 'resources/js/vendor/bootstrap/js/bootstrap.bundle.js',
     // 'resources/js/vendor/bootstrap/js/bootstrap.bundle.min.js',
     'resources/js/vendor/semantic/semantic.min.js',
     'resources/js/library/jquery.countdown.min.js',
-    'resources/js/library/custom.js',
+    // 'resources/js/library/custom.js',
     'resources/js/library/product.thumbnail.slider.js',
     'resources/js/library/offset_overlay.js',
     'resources/js/library/night-mode.js',

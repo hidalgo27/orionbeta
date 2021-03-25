@@ -296,7 +296,6 @@ export default {
 
         let dataP = JSON.parse(sessionStorage.getItem('local-prod'));
         if (dataP === null){
-
             // console.log("hola 1")
             // localStorage.removeItem('local-prod')
             fetch("https://sistemaorion.nebulaperu.com/api/v1/products/others/secciones")
@@ -392,3 +391,42 @@ export default {
     }
 }
 </script>
+<style>
+.owl-next {
+    font-size: 20px !important;
+    position: absolute;
+    right: -20px;
+    top: 35%;
+    padding: 4px 0 !important;
+    text-align: center;
+    height: 30px !important;
+    width: 30px !important;
+    color: #2b2f4c !important;
+    background: #fff !important;
+    border-radius: 100% !important;
+    border: 1px solid #e5e5e5 !important;
+    box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 7%);
+}
+.owl-prev {
+    left: -20px;
+    font-size: 20px !important;
+    position: absolute;
+    top: 35%;
+    text-align: center;
+    height: 30px !important;
+    width: 30px !important;
+    padding: 4px 0 !important;
+    color: #2b2f4c !important;
+    background: #fff !important;
+    border-radius: 100% !important;
+    border: 1px solid #e5e5e5 !important;
+    box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 7%);
+}
+.owl-prev:hover, .owl-next:hover {
+    color: #fff !important;
+    opacity: 1;
+    border: 1px solid #ee2342 !important;
+    background: #ee2342 !important;
+    box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 7%);
+}
+</style>

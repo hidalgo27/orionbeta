@@ -20,8 +20,8 @@
 <!-- Vendor Stylesheets -->
     {{--    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">--}}
     <link href="{{asset('fontawesome-free/css/all.min.css')}}" rel="stylesheet">
-    {{--    <link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">--}}
-    {{--    <link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">--}}
+{{--        <link href="{{asset('vendor/OwlCarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">--}}
+{{--        <link href="{{asset('vendor/OwlCarousel/assets/owl.theme.default.min.css')}}" rel="stylesheet">--}}
         <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 {{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">--}}
 {{--    <link rel="stylesheet" href="{{mix("css/app.css")}}">--}}
@@ -480,12 +480,13 @@
 <script src="{{asset("js/app.js")}}"></script>
 <script src="{{asset("js/plugins.js")}}"></script>
 <script src="{{asset("vendor/bootstrap/js/bootstrap.bundle.js")}}"></script>
+<script src="{{asset("vendor/OwlCarousel/owl.carousel.min.js")}}"></script>
 {{--<script src="/js/jquery-3.3.1.min.js"></script>--}}
 {{--<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>--}}
 {{--<script src="/vendor/OwlCarousel/owl.carousel.js"></script>--}}
 {{--<script src="vendor/semantic/semantic.min.js"></script>--}}
 {{--<script src="js/jquery.countdown.min.js"></script>--}}
-{{--<script src="js/custom.js"></script>--}}
+<script src="{{asset('js/custom.js')}}"></script>
 {{--<script src="js/offset_overlay.js"></script>--}}
 {{--<script src="js/night-mode.js"></script>--}}
 </body>
