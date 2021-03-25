@@ -4,8 +4,8 @@
         <a href="https://www.facebook.com/OrionCusco" target="_blank" class="facebook" title="Share"><i class="fab fa-facebook-f"></i></a>
         <!--        <a href="#" class="twitter" title="Share"><i class="fab fa-twitter"></i></a>-->
         <!--        <a href="#" class="google" title="Share"><i class="fab fa-google"></i></a>-->
-        <!--        <a href="#" class="linkedin" title="Share"><i class="fab fa-linkedin-in"></i></a>-->
         <a href="https://www.instagram.com/orioncusco" target="_blank" class="twitter" title="Share"><i class="fab fa-instagram"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=51965642784" target="_blank" class="whatsapp" title="Share"><i class="fab fa-whatsapp"></i></a>
     </div>
     <!-- Share Icons End-->
     <!-- Cart Sidebar Offset Start-->
@@ -41,7 +41,7 @@
                                                 <template v-for="image in products.photos">
                                                     <template v-if="image.state === 0">
                                                         <div class="item">
-                                                            <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+image.photo" alt="">
+                                                            <img :src="'https://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+image.photo" alt="">
                                                         </div>
                                                     </template>
                                                 </template>
@@ -50,7 +50,7 @@
                                                 <template v-for="image in products.photos">
                                                     <template v-if="image.state === 1">
                                                         <div class="item">
-                                                            <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+image.photo" alt="">
+                                                            <img :src="'https://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+image.photo" alt="">
                                                         </div>
                                                     </template>
                                                 </template>
@@ -146,7 +146,9 @@
                                                                 <div class="pdp-icon"><i class="uil uil-usd-circle"></i></div>
                                                                 <div class="pdp-text-dt">
                                                                     <span>Precio más bajo garantizado</span>
-                                                                    <p>Obtenga el reembolso de la diferencia si lo encuentra más barato en cualquier otro lugar.</p>
+                                                                    <p>Obtén más descuentos con tu tarjeta
+                                                                        <a href="#" data-toggle="modal" data-target="#beneficio-g">Galaxy Card.</a></p>
+
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -180,7 +182,7 @@
                                         >
                                             <a :href="'/product/'+pord_fam.id" class="cart-product-img">
                                                 <template v-for="(photos, index) in pord_fam.photos" :key="photos.name">
-                                                    <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
+                                                    <img :src="'https://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                                                 </template>
 <!--                                                <span class="offer-badge" v-for="categorias in pord_fam.categorias">{{ categorias.name }}</span>-->
 <!--                                                <template v-for="(cate, index) in pord_fam.categorias">-->
@@ -468,7 +470,7 @@ export default {
         let dataP = JSON.parse(sessionStorage.getItem('local-prod'));
         if (dataP === null){
             // localStorage.removeItem('local-prod')
-            fetch("http://sistemaorion.green.com.pe/api/v1/products")
+            fetch("https://sistemaorion.nebulaperu.com/api/v1/products")
                 .then(res => res.json())
                 .then(data => {
                     products.value = data;

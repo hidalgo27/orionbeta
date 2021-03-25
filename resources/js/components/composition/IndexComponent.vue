@@ -1,4 +1,12 @@
 <template>
+    <div class="icon-bar">
+        <a href="https://www.facebook.com/OrionCusco" target="_blank" class="facebook" title="Share"><i class="fab fa-facebook-f"></i></a>
+        <!--        <a href="#" class="twitter" title="Share"><i class="fab fa-twitter"></i></a>-->
+        <!--        <a href="#" class="google" title="Share"><i class="fab fa-google"></i></a>-->
+        <!--        <a href="#" class="linkedin" title="Share"><i class="fab fa-linkedin-in"></i></a>-->
+        <a href="https://www.instagram.com/orioncusco" target="_blank" class="twitter" title="Share"><i class="fab fa-instagram"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=51965642784" target="_blank" class="whatsapp" title="Share"><i class="fab fa-whatsapp"></i></a>
+    </div>
     <!-- Cart Sidebar Offset Start-->
         <cart-component :cart="cart"></cart-component>
     <!-- Cart Sidebar Offsetl End-->
@@ -19,7 +27,7 @@
                                         <div class="gambo-overlay"></div>
 <!--                                        <img src="images/banners/offer-1.jpg" alt="">-->
                                         <template v-for="(photos, index) in prod_off.photos" :key="photos.id">
-                                            <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
+                                            <img :src="'https://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                                         </template>
                                     </div>
                                     <div class="offer-text-dt">
@@ -291,7 +299,7 @@ export default {
 
             // console.log("hola 1")
             // localStorage.removeItem('local-prod')
-            fetch("http://sistemaorion.green.com.pe/api/v1/products/others/secciones")
+            fetch("https://sistemaorion.nebulaperu.com/api/v1/products/others/secciones")
                 .then(res => res.json())
                 .then(data => {
                     // console.log("pre carga 2")

@@ -46,9 +46,25 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{{asset('favicon/favicon-96x96.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('favicon/favicon-16x16.png')}}">
     <link rel="manifest" href="{{asset('favicon/manifest.json')}}">
-    <meta name="msapplication-TileColor" content="#ffffff">
+{{--    <meta name="msapplication-TileColor" content="#ffffff">--}}
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+{{--    <meta name="theme-color" content="#ffffff">--}}
+
+    <!-- begin olark code -->
+    <script type="text/javascript">
+        ;(function(o,l,a,r,k,y){if(o.olark)return;
+            r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0];
+            y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r);
+            y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)};
+            y.extend=function(i,j){y("extend",i,j)};
+            y.identify=function(i){y("identify",k.i=i)};
+            y.configure=function(i,j){y("configure",i,j);k.c[i]=j};
+            k=y._={s:[],t:[+new Date],c:{},l:a};
+        })(window,document,"static.olark.com/jsclient/loader.js");
+        /* Add configuration calls below this comment */
+        olark.identify('1517-423-10-2650');</script>
+    <!-- end olark code -->
+
 </head>
 
 <body>
@@ -93,7 +109,7 @@
                         <li>
                             <a href="{{route('product.category', [strtolower($categories->name)])}}" class="single-cat-item">
                                 <div class="icon">
-                                    <img src="http://sistemaorion.green.com.pe/api/v1/categories/imagen/{{$categories->photo}}" alt="">
+                                    <img src="https://sistemaorion.nebulaperu.com/api/v1/categories/imagen/{{$categories->photo}}" alt="">
                                 </div>
                                 <div class="text"> {{ucwords(strtolower($categories->name))}} </div>
                             </a>
@@ -181,7 +197,10 @@
                 <div class="header_right">
                     <ul>
                         <li>
-                            <a href="#" class="offer-link"><i class="uil uil-phone-alt"></i></a>
+                            <a href="{{asset('encarte-orion-abril-semana-santa.pdf')}}" class="offer-link" target="_blank"><i class="uil uil-file-alt"></i>Encarte Abril (Semana Santa)</a>
+                        </li>
+                        <li>
+                            <a href="https://api.whatsapp.com/send?phone=51965642784" class="offer-link" target="_blank"><i class="uil uil-whatsapp text-success"></i> 965 642 784</a>
                         </li>
                         <li>
                             <a href="/products/category/ofertas" class="offer-link"><i class="uil uil-gift"></i>Ofertas</a>
@@ -262,7 +281,7 @@
                                 <li class="nav-item"><a href="/" class="nav-link active" title="Home">Inicio</a></li>
                                 <li class="nav-item"><a href="/products/category/nuevos" class="nav-link new_item" title="New Products">Nuevos Productos</a></li>
                                 <li class="nav-item"><a href="/products/category/destacados" class="nav-link" title="Featured Products">Top Productos</a></li>
-                                <li class="nav-item"><a href="/products/category/fechas festivas" class="nav-link active" title="Featured Products">Productos por Campaña</a></li>
+                                <li class="nav-item"><a href="/products/category/fechas festivas" class="nav-link font-weight-bold" title="Featured Products">Productos por Campaña</a></li>
                                 <!--                                <li class="nav-item">-->
                                 <!--                                    <div class="ui icon top left dropdown nav__menu">-->
                                 <!--                                        <a class="nav-link" title="Pages">Pages <i class="uil uil-angle-down"></i></a>-->
@@ -325,7 +344,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6">
                     <ul class="call-email-alt">
-                        <li><a href="#" class="callemail"><i class="uil uil-dialpad-alt"></i>-- -- -- --</a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=51965642784" class="callemail" target="_blank"><i class="uil uil-dialpad-alt"></i>965 642 784</a></li>
                         <li><a href="#" class="callemail"><i class="uil uil-envelope-alt"></i>info@orion.com.pe</a></li>
                     </ul>
                 </div>

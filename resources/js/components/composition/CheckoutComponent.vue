@@ -513,6 +513,13 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" name="terminos" id="terminos" v-model="terminos">
+                                                        <label class="custom-control-label" for="terminos">He leído y acepto los
+                                                            <a href="/terminos-condiciones-orion.pdf" target="_blank">Términos y Condiciones</a> de compra del sitio</label>
+                                                    </div>
+
                                                     <button type="button" class="next-btn16 hover-btn" @click="onSubmitAll()">Realizar Pedido</button>
                                                     <div class="alert alert-danger mt-21" v-if="error_v.length > 0">
                                                         <ul>
@@ -547,7 +554,7 @@
 <!--                                            <img :src="photos.photo" alt="" v-if="index === 0">-->
 <!--                                        </template>-->
                                         <template v-for="(photos, index) in prodCart.photos" :key="prodCart.name">
-                                            <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
+                                            <img :src="'https://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                                         </template>
 <!--                                        <div class="offer-badge">4% OFF</div>-->
                                     </div>
@@ -639,6 +646,9 @@ export default {
         const picked_fecha = ref(today);
         const picked_hora = ref("8:00AM - 12:00AM");
         const picked_metodo = ref("contraentrega");
+
+        const terminos = ref([]);
+
         const tax = ref("");
 
         const cartState = reactive({
@@ -700,6 +710,9 @@ export default {
                 if (cartState.cart.length === 0){
                     cartState.error_v.push('Requiere agregar productos para proceder con el pago')
                 }
+                if (terminos.value.length === 0){
+                    cartState.error_v.push('Acepte términos y condiciones')
+                }
             if (cartState.error_v.length === 0){
                 let form = {
                     id_user: props.user.id,
@@ -714,7 +727,7 @@ export default {
                     total_price: cartState.total
                 };
 
-                axios.post('http://sistemaorion.green.com.pe/api/v1/orders', {form_data: form, cart: cartState.cart })
+                axios.post('https://sistemaorion.nebulaperu.com/api/v1/orders', {form_data: form, cart: cartState.cart })
                     .then(function(response) {
                         console.log(response.data.status);
                         if(response.data.status > 0){
@@ -757,7 +770,29 @@ export default {
             cartState.cart = dataB
         }
 
+        function deleteToCart(product){
+            const cartIndex = cartState.cart.findIndex(prod => prod.id === product.id);
+            // const prodIndex = products.value.findIndex(p => p.id === product.id);
+            if (cartState.cart.length > 0){
+                let qua = cartState.cart[cartIndex].quantity;
+                // console.log(product.name);
+                cartState.cart.splice(cartIndex, 1);
+                // products.value[prodIndex].quantity = 1;
+                // products.value[prodIndex].stock += qua;
+                sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart));
+                // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
+            }
+            // else {
+            //     axios.post('/session/remove')
+            //         .then((res) =>{
+            //             // console.log(res)
+            //             // cartState.cart.push(res);
+            //         });
+            // }
+            // console.log(prodIndex);
 
+            emitter.emit("myevent", cartState.cart.length);
+        }
 
         return {
             ...toRefs(cartState),
@@ -767,6 +802,7 @@ export default {
             onSubmit,
             onSubmitReg,
             onSubmitAll,
+            deleteToCart,
 
             name,
             email,
@@ -796,6 +832,7 @@ export default {
             picked_fecha,
             picked_hora,
             picked_metodo,
+            terminos,
             tax,
             options_tax,
             distrito_ch

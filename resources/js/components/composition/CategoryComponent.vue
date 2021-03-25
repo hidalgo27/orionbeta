@@ -15,7 +15,7 @@
                         <div class="item" v-for="category in is_category">
                             <a :href="'/products/category/'+category.id" class="category-item">
                                 <div class="cate-img">
-                                    <img :src="'http://sistemaorion.green.com.pe/api/v1/categories/imagen/'+category.photo" alt="">
+                                    <img :src="'https://sistemaorion.nebulaperu.com/api/v1/categories/imagen/'+category.photo" alt="">
                                 </div>
                                 <h4 class="capitalize">{{ MaysPrimera(category.name.toLowerCase()) }}</h4>
                             </a>
@@ -38,7 +38,7 @@ export default {
             })
         })
 
-        fetch("http://sistemaorion.green.com.pe/api/v1/categories")
+        fetch("https://sistemaorion.nebulaperu.com/api/v1/categories")
             .then(res => res.json())
             .then(data => {
                 // console.log("pre carga category")

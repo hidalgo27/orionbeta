@@ -21,7 +21,7 @@
                         <a :href="'/product/'+product.id" class="single-cat" v-for="product in filteredProducts" :key="product.id">
                             <div class="icon">
                                 <template v-for="(photos, index) in product.photos" :key="photos.id">
-                                    <img :src="'http://sistemaorion.green.com.pe/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
+                                    <img :src="'https://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                                 </template>
                             </div>
                             <div class="text text-capitalize">
@@ -45,7 +45,7 @@ export default {
         const filtro = ref("");
         function searchStatus(){
             if (filtro.value.length > 0){
-                fetch("http://sistemaorion.green.com.pe/api/v1/products")
+                fetch("https://sistemaorion.nebulaperu.com/api/v1/products")
                     .then(res => res.json())
                     .then(data => {
                         console.log("pre carga products")

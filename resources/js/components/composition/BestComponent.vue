@@ -21,9 +21,9 @@
 <!--                    </a>-->
 <!--                </div>-->
                 <div class="col-lg-4 col-md-6">
-                    <a href="#" class="best-offer-item">
-                        <img src="/images/banners/bio.gif" alt="">
-                    </a>
+
+                        <img src="/images/banners/bio.gif" alt="bioseguridad orion" class="w-100 rounded">
+
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <a href="#" class="best-offer-item" data-toggle="modal" data-target="#beneficio-g">
@@ -31,8 +31,8 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <a href="#" class="best-offer-item offr-none">
-                        <img src="/images/banners/sabor.jpg" alt="">
+                    <a href="/products/category/fechas festivas" class="best-offer-item offr-none">
+                        <img src="/images/banners/semana-santa.jpg" alt="">
 <!--                        <div class="cmtk_dt">-->
 <!--                            <div class="product_countdown-timer offer-counter-text" data-countdown="2021/01/06"></div>-->
 <!--                        </div>-->

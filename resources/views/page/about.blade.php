@@ -116,76 +116,8 @@
             </div>
         </div>
 
-        <div class="life-gambo bg-white">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="default-title">
-                            <h2>Nuestro Equipo</h2>
-                            <p>Un trabajo en equipo hace realidad nuestros sueños</p>
-                            <img src="images/line.svg" alt="">
-                        </div>
-                        <div class="dd-content">
-                            <div class="owl-carousel team-slider owl-theme">
-                                <div class="item">
-                                    <div class="team-item">
-                                        <div class="team-img">
-                                            <img src="images/team/img-1.jpg" alt="">
-                                        </div>
-                                        <h4>Jose Farfan</h4>
-                                        <span>CEO & Fundador</span>
-                                        <ul class="team-social">
-{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-facebook-f"></i></a></li>--}}
-{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-linkedin-in"></i></a></li>--}}
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="team-item">
-                                        <div class="team-img">
-                                            <img src="images/team/img-2.jpg" alt="">
-                                        </div>
-                                        <h4>Joe Farfan</h4>
-                                        <span>CEO</span>
-                                        <ul class="team-social">
-{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-facebook-f"></i></a></li>--}}
-{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-linkedin-in"></i></a></li>--}}
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="team-item">
-                                        <div class="team-img">
-                                            <img src="images/team/img-3.jpg" alt="">
-                                        </div>
-                                        <h4>Juan Farfan</h4>
-                                        <span>Administrador</span>
-                                        <ul class="team-social">
-{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-facebook-f"></i></a></li>--}}
-{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-linkedin-in"></i></a></li>--}}
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="team-item">
-                                        <div class="team-img">
-                                            <img src="images/team/img-4.jpg" alt="">
-                                        </div>
-                                        <h4>Evelyn</h4>
-                                        <span>Contadora</span>
-                                        <ul class="team-social">
-{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-facebook-f"></i></a></li>--}}
-{{--                                            <li><a href="#" class="scl-btn hover-btn"><i class="fab fa-linkedin-in"></i></a></li>--}}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="how-order-gambo mt-5">
+
+        <div class="how-order-gambo bg'white mt-5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">

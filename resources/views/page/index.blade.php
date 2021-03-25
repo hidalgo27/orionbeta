@@ -44,7 +44,7 @@
                             <div class="item">
                                 <a href="{{route('product.category', [strtolower($categories->name)])}}" class="category-item">
                                     <div class="cate-img">
-                                        <img src="http://sistemaorion.green.com.pe/api/v1/categories/imagen/{{$categories->photo}}" alt="">
+                                        <img src="https://sistemaorion.nebulaperu.com/api/v1/categories/imagen/{{$categories->photo}}" alt="">
                                     </div>
                                     <h4 class="capitalize">{{ucwords(strtolower($categories->name))}}</h4>
                                 </a>
@@ -70,7 +70,7 @@
 {{--                    </button>--}}
 {{--                </div>--}}
                 <div class="modal-body">
-                    <img src="{{asset('images/banners/beneficios-galaxy-card-5x4m.png')}}" alt="" class="w-100">
+                    <img src="{{asset('images/banners/beneficios-galaxy-card-5x4m.jpg')}}" alt="" class="w-100">
                 </div>
             </div>
         </div>
