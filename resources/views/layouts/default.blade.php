@@ -50,20 +50,20 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 {{--    <meta name="theme-color" content="#ffffff">--}}
 
-    <!-- begin olark code -->
-    <script type="text/javascript">
-        ;(function(o,l,a,r,k,y){if(o.olark)return;
-            r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0];
-            y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r);
-            y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)};
-            y.extend=function(i,j){y("extend",i,j)};
-            y.identify=function(i){y("identify",k.i=i)};
-            y.configure=function(i,j){y("configure",i,j);k.c[i]=j};
-            k=y._={s:[],t:[+new Date],c:{},l:a};
-        })(window,document,"static.olark.com/jsclient/loader.js");
-        /* Add configuration calls below this comment */
-        olark.identify('1517-423-10-2650');</script>
-    <!-- end olark code -->
+{{--    <!-- begin olark code -->--}}
+{{--    <script type="text/javascript">--}}
+{{--        ;(function(o,l,a,r,k,y){if(o.olark)return;--}}
+{{--            r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0];--}}
+{{--            y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r);--}}
+{{--            y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)};--}}
+{{--            y.extend=function(i,j){y("extend",i,j)};--}}
+{{--            y.identify=function(i){y("identify",k.i=i)};--}}
+{{--            y.configure=function(i,j){y("configure",i,j);k.c[i]=j};--}}
+{{--            k=y._={s:[],t:[+new Date],c:{},l:a};--}}
+{{--        })(window,document,"static.olark.com/jsclient/loader.js");--}}
+{{--        /* Add configuration calls below this comment */--}}
+{{--        olark.identify('1517-423-10-2650');</script>--}}
+{{--    <!-- end olark code -->--}}
 
 </head>
 
@@ -481,9 +481,6 @@
 <script src="{{asset("js/plugins.js")}}"></script>
 <script src="{{asset("vendor/bootstrap/js/bootstrap.bundle.js")}}"></script>
 {{--<script src="/js/jquery-3.3.1.min.js"></script>--}}
-<script>
-    $('.toast').toast(show)
-</script>
 {{--<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>--}}
 {{--<script src="/vendor/OwlCarousel/owl.carousel.js"></script>--}}
 {{--<script src="vendor/semantic/semantic.min.js"></script>--}}
