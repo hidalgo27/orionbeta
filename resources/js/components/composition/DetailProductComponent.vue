@@ -156,8 +156,8 @@
                                                             <div class="pdp-group-dt">
                                                                 <div class="pdp-icon"><i class="uil uil-cloud-redo"></i></div>
                                                                 <div class="pdp-text-dt">
-                                                                    <span>Devoluciones y reembolsos fáciles</span>
-                                                                    <p>Devuelva los productos y obtenga un reembolso en segundos.</p>
+                                                                    <span>Llevamos sus productos</span>
+                                                                    <p>A su puerta de su casa.</p>
                                                                 </div>
                                                             </div>
                                                         </li>

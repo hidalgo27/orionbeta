@@ -367,8 +367,8 @@
                                                             <div class="grouped fields">
                                                                 <div class="field">
                                                                     <div class="ui radio checkbox chck-rdio">
-                                                                        <input type="radio" name="fruit" tabindex="0" checked class="hidden" value="8:00AM - 12:00AM" v-model="picked_hora">
-                                                                        <label>8:00AM - 12:00AM</label>
+                                                                        <input type="radio" name="fruit" tabindex="0" checked class="hidden" value="8:00AM - 12:00PM" v-model="picked_hora">
+                                                                        <label>8:00AM - 12:00PM</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="field">
