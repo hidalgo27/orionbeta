@@ -1,5 +1,5 @@
 // require('./bootstrap');
-// require('alpinejs');
+require('alpinejs');
 // import owl from 'owl.carousel/dist/owl.carousel'
 // require('owl.carousel/dist/owl.carousel');
 // require('/resources/js/library/product.thumbnail.slider');
