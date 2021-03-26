@@ -48,11 +48,11 @@
                                         <input type="hidden" name="_token" v-model="token">
                                         <div class="form-title"><h6>Iniciar sesión</h6></div>
                                         <div class="form-group pos_rel">
-                                            <input name="email" v-model="email" type="text" placeholder="Enter Phone Number" class="form-control lgn_input" required>
+                                            <input name="email" v-model="email" type="text" placeholder="Tu email" class="form-control lgn_input" required>
                                             <i class="uil uil-mobile-android-alt lgn_icon"></i>
                                         </div>
                                         <div class="form-group pos_rel">
-                                            <input name="password" v-model="password" type="password" placeholder="Enter Password" class="form-control lgn_input" required>
+                                            <input name="password" v-model="password" type="password" placeholder="Tu contraseña" class="form-control lgn_input" required>
                                             <i class="uil uil-padlock lgn_icon"></i>
                                         </div>
                                         <button class="login-btn hover-btn mb-21" type="submit">Iniciar Sesión Ahora</button>
@@ -116,19 +116,19 @@
                                         <input type="hidden" name="_token" v-model="token">
                                         <div class="form-title"><h6>Nuevo Registro</h6></div>
                                         <div class="form-group pos_rel">
-                                            <input id="full[name]" name="name" type="text" v-model="name" placeholder="Full name" class="form-control lgn_input" required="">
+                                            <input id="full[name]" name="name" type="text" v-model="name" placeholder="Nombre Completo" class="form-control lgn_input" required="">
                                             <i class="uil uil-user-circle lgn_icon"></i>
                                         </div>
                                         <div class="form-group pos_rel">
-                                            <input id="email[address]" name="email" v-model="email" type="email" placeholder="Email Address" class="form-control lgn_input" required="">
+                                            <input id="email[address]" name="email" v-model="email" type="email" placeholder="Email" class="form-control lgn_input" required="">
                                             <i class="uil uil-envelope lgn_icon"></i>
                                         </div>
                                         <div class="form-group pos_rel">
-                                            <input name="password" v-model="password" type="password" placeholder="New Password" class="form-control lgn_input" required="">
+                                            <input name="password" v-model="password" type="password" placeholder="Nuevo Password" class="form-control lgn_input" required="">
                                             <i class="uil uil-padlock lgn_icon"></i>
                                         </div>
                                         <div class="form-group pos_rel">
-                                            <input name="password_confirmation" v-model="password_confirmation" type="password" placeholder="New Password" class="form-control lgn_input" required="">
+                                            <input name="password_confirmation" v-model="password_confirmation" type="password" placeholder="Confirmar Password" class="form-control lgn_input" required="">
                                             <i class="uil uil-padlock lgn_icon"></i>
                                         </div>
                                         <button class="login-btn hover-btn mb-21" type="submit">Registarme Ahora</button>
@@ -645,7 +645,7 @@ export default {
         const distrito = ref([]);
         const celular = ref([]);
         const picked_fecha = ref(today);
-        const picked_hora = ref("8:00AM - 12:00AM");
+        const picked_hora = ref("8:00AM - 12:00PM");
         const picked_metodo = ref("contraentrega");
 
         const terminos = ref([]);
