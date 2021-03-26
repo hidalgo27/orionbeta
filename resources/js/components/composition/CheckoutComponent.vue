@@ -611,7 +611,7 @@ import moment from "moment";
 import CartComponent from "./CartComponent";
 // import { useField, useForm } from "vee-validate"
 
-import {ref, toRefs, reactive, computed} from "vue";
+import {ref, toRefs, reactive, computed, inject} from "vue";
 import axios from "axios";
 export default {
     components: { HeaderComponent, TopComponent, CartComponent },
@@ -627,6 +627,7 @@ export default {
 
         const modalShow= ref(true);
         const error = ref("");
+        const emitter = inject("emitter");
 
         const today = moment().locale("es").format("DD MMMM YYYY");
         const tomorrow = moment().locale("es").add(1, 'd').format("DD MMMM YYYY");
@@ -676,7 +677,7 @@ export default {
             ];
 
         function distrito_ch(event){
-            console.log(event);
+            // console.log(event);
             tax.value = event;
         }
 
@@ -758,7 +759,7 @@ export default {
                     error.value = ""
                     window.location = '/checkout'
                 }, function (er) {
-                    console.log(er.response.data)
+                    // console.log(er.response.data)
                     error.value = er.response.data
                 });
         }
@@ -835,7 +836,8 @@ export default {
             terminos,
             tax,
             options_tax,
-            distrito_ch
+            distrito_ch,
+            emitter
         };
     }
 }

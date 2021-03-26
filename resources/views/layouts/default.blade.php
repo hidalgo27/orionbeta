@@ -471,7 +471,7 @@
 {{--<script src="/vendor/OwlCarousel/owl.carousel.js"></script>--}}
 {{--<script src="vendor/semantic/semantic.min.js"></script>--}}
 {{--<script src="js/jquery.countdown.min.js"></script>--}}
-<script src="{{asset('js/custom.js')}}"></script>
+{{--<script src="{{asset('js/custom.js')}}"></script>--}}
 {{--<script src="js/offset_overlay.js"></script>--}}
 {{--<script src="js/night-mode.js"></script>--}}
 
