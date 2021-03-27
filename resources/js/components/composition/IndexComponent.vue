@@ -186,6 +186,68 @@ export default {
 
         });
 
+        fetch("https://sistemaorion.nebulaperu.com/api/v1/products/others/secciones")
+            .then(res => res.json())
+            .then(data => {
+                // console.log("pre carga 2")
+                products.value = data;
+                nextTick(() => {
+
+                    $('.featured-slider-top').owlCarousel({
+                        items: 8,
+                        loop:false,
+                        margin:10,
+                        nav:true,
+                        dots:false,
+                        navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
+                        responsive:{
+                            0:{
+                                items:1
+                            },
+                            600:{
+                                items:2
+                            },
+
+                            1000:{
+                                items:3
+                            },
+                            1200:{
+                                items:4
+                            },
+                            1400:{
+                                items:4
+                            }
+                        }
+                    })
+
+                    $('.offers-banner-top').owlCarousel({
+                        loop:true,
+                        margin:30,
+                        nav:false,
+                        dots:false,
+                        autoplay:true,
+                        autoplayTimeout: 3000,
+                        autoplayHoverPause:true,
+                        responsive:{
+                            0:{
+                                items:1
+                            },
+                            600:{
+                                items:2
+                            },
+                            1000:{
+                                items:2
+                            },
+                            1200:{
+                                items:3
+                            },
+                            1400:{
+                                items:3
+                            }
+                        }
+                    })
+                })
+            });
 
         function addToCart(product){
             const cartIndex = cartState.cart.findIndex(prod => prod.id === product.id);
@@ -292,80 +354,80 @@ export default {
             // console.log(products)
         }
 
-        let dataP = JSON.parse(sessionStorage.getItem('local-prod'));
-        if (dataP === null){
-            // console.log("hola 1")
-            // localStorage.removeItem('local-prod')
-            fetch("https://sistemaorion.nebulaperu.com/api/v1/products/others/secciones")
-                .then(res => res.json())
-                .then(data => {
-                    // console.log("pre carga 2")
-                    products.value = data;
-                    nextTick(() => {
-
-                        $('.featured-slider-top').owlCarousel({
-                            items: 8,
-                            loop:false,
-                            margin:10,
-                            nav:true,
-                            dots:false,
-                            navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
-                            responsive:{
-                                0:{
-                                    items:1
-                                },
-                                600:{
-                                    items:2
-                                },
-
-                                1000:{
-                                    items:3
-                                },
-                                1200:{
-                                    items:4
-                                },
-                                1400:{
-                                    items:4
-                                }
-                            }
-                        })
-
-                        $('.offers-banner-top').owlCarousel({
-                            loop:true,
-                            margin:30,
-                            nav:false,
-                            dots:false,
-                            autoplay:true,
-                            autoplayTimeout: 3000,
-                            autoplayHoverPause:true,
-                            responsive:{
-                                0:{
-                                    items:1
-                                },
-                                600:{
-                                    items:2
-                                },
-                                1000:{
-                                    items:2
-                                },
-                                1200:{
-                                    items:3
-                                },
-                                1400:{
-                                    items:3
-                                }
-                            }
-                        })
-                    })
-                });
-        }else{
-            products.value = dataP;
-            // localStorage.removeItem('local-prod');
-            featured_slider_top.value = false
-            featured_slider.value = true
-            offers_banner_top.value = false
-            offers_banner.value = true
-        }
+        // let dataP = JSON.parse(sessionStorage.getItem('local-prod'));
+        // if (dataP === null){
+        //     // console.log("hola 1")
+        //     // localStorage.removeItem('local-prod')
+        //     fetch("https://sistemaorion.nebulaperu.com/api/v1/products/others/secciones")
+        //         .then(res => res.json())
+        //         .then(data => {
+        //             // console.log("pre carga 2")
+        //             products.value = data;
+        //             nextTick(() => {
+        //
+        //                 $('.featured-slider-top').owlCarousel({
+        //                     items: 8,
+        //                     loop:false,
+        //                     margin:10,
+        //                     nav:true,
+        //                     dots:false,
+        //                     navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
+        //                     responsive:{
+        //                         0:{
+        //                             items:1
+        //                         },
+        //                         600:{
+        //                             items:2
+        //                         },
+        //
+        //                         1000:{
+        //                             items:3
+        //                         },
+        //                         1200:{
+        //                             items:4
+        //                         },
+        //                         1400:{
+        //                             items:4
+        //                         }
+        //                     }
+        //                 })
+        //
+        //                 $('.offers-banner-top').owlCarousel({
+        //                     loop:true,
+        //                     margin:30,
+        //                     nav:false,
+        //                     dots:false,
+        //                     autoplay:true,
+        //                     autoplayTimeout: 3000,
+        //                     autoplayHoverPause:true,
+        //                     responsive:{
+        //                         0:{
+        //                             items:1
+        //                         },
+        //                         600:{
+        //                             items:2
+        //                         },
+        //                         1000:{
+        //                             items:2
+        //                         },
+        //                         1200:{
+        //                             items:3
+        //                         },
+        //                         1400:{
+        //                             items:3
+        //                         }
+        //                     }
+        //                 })
+        //             })
+        //         });
+        // }else{
+        //     products.value = dataP;
+        //     // localStorage.removeItem('local-prod');
+        //     featured_slider_top.value = false
+        //     featured_slider.value = true
+        //     offers_banner_top.value = false
+        //     offers_banner.value = true
+        // }
 
 
         return {
