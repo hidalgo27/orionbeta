@@ -114,3 +114,274 @@ $(".product_countdown-timer").each(function(){
 	});
 });
 
+
+// === Banner Home === //
+// $('.offers-banner').owlCarousel({
+//     loop:true,
+//     margin:30,
+//     nav:false,
+//     dots:false,
+//     autoplay:true,
+//     autoplayTimeout: 3000,
+//     autoplayHoverPause:true,
+//     responsive:{
+//         0:{
+//             items:1
+//         },
+//         600:{
+//             items:2
+//         },
+//         1000:{
+//             items:2
+//         },
+//         1200:{
+//             items:3
+//         },
+//         1400:{
+//             items:3
+//         }
+//     }
+// })
+
+// === Banner Home === //
+// $('.cate-banners').owlCarousel({
+//     loop:true,
+//     margin:30,
+//     nav:false,
+//     dots:false,
+//     autoplay:true,
+//     autoplayTimeout: 20000,
+//     autoplayHoverPause:true,
+//     responsive:{
+//         0:{
+//             items:1
+//         },
+//         600:{
+//             items:1
+//         },
+//         1000:{
+//             items:1
+//         },
+//         1200:{
+//             items:1
+//         },
+//         1400:{
+//             items:1
+//         }
+//     }
+// })
+
+// Category Slider
+// $('.cate-slider').owlCarousel({
+//     loop:true,
+//     margin:30,
+//     nav:true,
+//     dots:false,
+//     navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
+//     responsive:{
+//         0:{
+//             items:2
+//         },
+//         600:{
+//             items:2
+//         },
+//         1000:{
+//             items:4
+//         },
+//         1200:{
+//             items:6
+//         },
+//         1400:{
+//             items:6
+//         }
+//     }
+// })
+// Featured Slider
+
+// $('.featured-slider').owlCarousel({
+//     items: 8,
+//     loop:false,
+//     margin:10,
+//     nav:true,
+//     dots:false,
+//     navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
+//     responsive:{
+//         0:{
+//             items:1
+//         },
+//         600:{
+//             items:2
+//         },
+//         1000:{
+//             items:3
+//         },
+//         1200:{
+//             items:4
+//         },
+//         1400:{
+//             items:4
+//         }
+//     }
+// })
+
+// === Date Slider === //
+// $('.date-slider').owlCarousel({
+//     loop:false,
+//     margin:10,
+//     nav:false,
+//     dots:false,
+//     responsive:{
+//         0:{
+//             items:3
+//         },
+//         600:{
+//             items:4
+//         },
+//         1000:{
+//             items:5
+//         },
+//         1200:{
+//             items:6
+//         },
+//         1400:{
+//             items:7
+//         }
+//     }
+// })
+
+// === Banner Home === //
+// $('.life-slider').owlCarousel({
+//     loop:true,
+//     margin:30,
+//     nav:true,
+//     dots:false,
+//     autoplay:true,
+//     autoplayTimeout: 3000,
+//     autoplayHoverPause:true,
+//     navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
+//     responsive:{
+//         0:{
+//             items:1
+//         },
+//         600:{
+//             items:2
+//         },
+//         1000:{
+//             items:2
+//         },
+//         1200:{
+//             items:3
+//         },
+//         1400:{
+//             items:3
+//         }
+//     }
+// })
+
+// === Testimonials Slider === //
+// $('.testimonial-slider').owlCarousel({
+//     loop:true,
+//     margin:30,
+//     nav:true,
+//     dots:false,
+//     autoplay:true,
+//     autoplayTimeout: 3000,
+//     autoplayHoverPause:true,
+//     navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
+//     responsive:{
+//         0:{
+//             items:1
+//         },
+//         600:{
+//             items:2
+//         },
+//         1000:{
+//             items:2
+//         },
+//         1200:{
+//             items:3
+//         },
+//         1400:{
+//             items:3
+//         }
+//     }
+// })
+
+// Category Slider
+// $('.team-slider').owlCarousel({
+//     loop:true,
+//     margin:30,
+//     nav:false,
+//     dots:false,
+//     responsive:{
+//         0:{
+//             items:1
+//         },
+//         600:{
+//             items:2
+//         },
+//         1000:{
+//             items:3
+//         },
+//         1200:{
+//             items:4
+//         },
+//         1400:{
+//             items:4
+//         }
+//     }
+// })
+
+// $('.featured-slider-top').owlCarousel({
+//     items: 8,
+//     loop:false,
+//     margin:10,
+//     nav:true,
+//     dots:false,
+//     navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
+//     responsive:{
+//         0:{
+//             items:1
+//         },
+//         600:{
+//             items:2
+//         },
+//
+//         1000:{
+//             items:3
+//         },
+//         1200:{
+//             items:4
+//         },
+//         1400:{
+//             items:4
+//         }
+//     }
+// })
+
+// $('.offers-banner-top').owlCarousel({
+//     loop:true,
+//     margin:30,
+//     nav:false,
+//     dots:false,
+//     autoplay:true,
+//     autoplayTimeout: 3000,
+//     autoplayHoverPause:true,
+//     responsive:{
+//         0:{
+//             items:1
+//         },
+//         600:{
+//             items:2
+//         },
+//         1000:{
+//             items:2
+//         },
+//         1200:{
+//             items:3
+//         },
+//         1400:{
+//             items:3
+//         }
+//     }
+// })

@@ -113,7 +113,6 @@
             </div>
         </div>
         <!-- End new-->
-
 </template>
 <script>
 import carousel from 'vue-owl-carousel'
@@ -155,7 +154,6 @@ export default {
                     return p_total
                 }, 0);
             }),
-
             products_new : computed(() => {
                 return products.value.filter((product) => {
                     const cat = product.categorias.filter(ca => ca.name == 'NUEVOS' && ca.state > '0')
@@ -358,7 +356,6 @@ export default {
                                 }
                             }
                         })
-
                     })
                 });
         }else{

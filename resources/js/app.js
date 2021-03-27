@@ -8,6 +8,7 @@
 // require('library/custom');
 // require('library/offset_overlay');
 // require('library/night-mode');
+// require('vendor/OwlCarousel');
 
 import { createApp } from 'vue'
 // import ExampleComponent from  './components/ExampleComponent';

@@ -124,11 +124,11 @@
                                             <i class="uil uil-envelope lgn_icon"></i>
                                         </div>
                                         <div class="form-group pos_rel">
-                                            <input name="password" v-model="password" type="password" placeholder="Nuevo Password" class="form-control lgn_input" required="">
+                                            <input name="password" v-model="password" type="password" placeholder="Ingrese Contraseña" class="form-control lgn_input" required="">
                                             <i class="uil uil-padlock lgn_icon"></i>
                                         </div>
                                         <div class="form-group pos_rel">
-                                            <input name="password_confirmation" v-model="password_confirmation" type="password" placeholder="Confirmar Password" class="form-control lgn_input" required="">
+                                            <input name="password_confirmation" v-model="password_confirmation" type="password" placeholder="Confirmar Contraseña" class="form-control lgn_input" required="">
                                             <i class="uil uil-padlock lgn_icon"></i>
                                         </div>
                                         <button class="login-btn hover-btn mb-21" type="submit">Registarme Ahora</button>
