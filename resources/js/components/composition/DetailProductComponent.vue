@@ -71,27 +71,10 @@
                                                     <p class="stock-qty" v-else-if="products.stock === 1">
                                                         Ultima unidad disponible!
                                                     </p>
+                                                    <p class="stock-qty" v-else-if="products.stock === 0">
+                                                        Sin Stock
+                                                    </p>
                                                 </div>
-                                                <!--                                        <div class="product-radio">-->
-                                                <!--                                            <ul class="product-now">-->
-                                                <!--                                                <li>-->
-                                                <!--                                                    <input type="radio" id="p1" name="product1">-->
-                                                <!--                                                    <label for="p1">500g</label>-->
-                                                <!--                                                </li>-->
-                                                <!--                                                <li>-->
-                                                <!--                                                    <input type="radio" id="p2" name="product1">-->
-                                                <!--                                                    <label for="p2">1kg</label>-->
-                                                <!--                                                </li>-->
-                                                <!--                                                <li>-->
-                                                <!--                                                    <input type="radio" id="p3" name="product1">-->
-                                                <!--                                                    <label for="p3">2kg</label>-->
-                                                <!--                                                </li>-->
-                                                <!--                                                <li>-->
-                                                <!--                                                    <input type="radio" id="p4" name="product1">-->
-                                                <!--                                                    <label for="p4">3kg</label>-->
-                                                <!--                                                </li>-->
-                                                <!--                                            </ul>-->
-                                                <!--                                        </div>-->
                                                 <p class="pp-descp">{{ products.description }}</p>
                                                 <div class="product-group-dt">
                                                     <ul>
@@ -124,6 +107,7 @@
 <!--                                                        <li><span class="like-icon save-icon" title="wishlist"></span></li>-->
                                                     </ul>
                                                     <ul class="ordr-crt-share">
+                                                        <template v-if="products.stock > 0">
                                                         <li>
                                                             <template v-if="vs(products.id)">
                                                                 <template v-for="carts in cart">
@@ -136,6 +120,7 @@
                                                                 <button class="btn-danger btn" @click="addToCart(products)"><i class="uil uil-shopping-cart-alt"></i>Agregar a Carro </button>
                                                             </template>
                                                         </li>
+                                                        </template>
                                                         <li><a href="/checkout" class="btn-primary btn">Pasar por Caja Ahora</a></li>
                                                     </ul>
                                                 </div>
@@ -192,23 +177,15 @@
                                             <div class="cart-text">
                                                 <h4>{{ pord_fam.name }}</h4>
                                                 <div class="qty-group">
+                                                    <template v-if="pord_fam.stock > 0">
                                                     <div class="quantity buttons_added">
-<!--                                                        <button type="button"  class="minus minus-btn" @click="removeToCart(pord_fam)">-</button>-->
-<!--                                                        &lt;!&ndash;                                <input type="number" step="1" name="quantity" :value="prodCart.quantity" class="input-text qty text">&ndash;&gt;-->
-<!--                                                        <span class="qty text px-2">{{pord_fam.quantity}}</span>-->
-<!--                                                        <button type="button" value="+" class="plus plus-btn" :disabled="pord_fam.stock === 0" @click="addToCart(pord_fam)">+</button>-->
-
                                                         <template v-for="carts in cart">
                                                             <template v-if="carts.id === pord_fam.id">
                                                                 <button type="button" class="minus minus-btn" @click="removeToCart(pord_fam)">-</button>
                                                                 <span class="qty px-2 text">{{carts.quantity}}</span>
                                                                 <button type="button" :disabled="pord_fam.stock === 0" class="plus plus-btn" @click="addToCart(pord_fam)">+</button>
                                                             </template>
-                                                            <!--                            <template v-else>-->
-                                                            <!--                                <span class="qty px-2 text">{{product.quantity}}</span>-->
-                                                            <!--                            </template>-->
                                                         </template>
-
                                                         <template v-if="vs(pord_fam.id)">
                                                             <template v-for="carts in cart">
                                                                 <template v-if="carts.id === pord_fam.id">
@@ -219,8 +196,11 @@
                                                         <template v-else>
                                                             <button type="button" class="cart-icon btn btn-link text-primary font-weight-bold" @click="addToCart(pord_fam)"><i class="uil uil-shopping-cart-alt"></i> Agregar</button>
                                                         </template>
-
                                                     </div>
+                                                    </template>
+                                                    <template v-else>
+                                                        <span class="font-weight-bold">Sin Stock</span>
+                                                    </template>
                                                     <div class="cart-item-price">
                                                         S/{{ new Intl.NumberFormat("es-PE").format(pord_fam.price) }}
 <!--                                                        <span>$15</span>-->

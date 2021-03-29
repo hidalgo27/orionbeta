@@ -11,28 +11,25 @@
                 </div>
             </a>
             <div class="product-text-dt">
-<!--                <template v-if="cart.length === 0">-->
-                    <p><span>(en stock)</span></p>
-<!--                </template>-->
-<!--                <template v-else>-->
-<!--                    <p v-if="product.stock >= 3"><span>(en stock)</span></p>-->
-<!--                    <p v-if="product.stock === 3">Quedan pocas unidades!<span>(In Stock)</span></p>-->
-<!--                    <p v-else-if="product.stock === 2">-->
-<!--                        El producto esta por terminarse!-->
-<!--                    </p>-->
-<!--                    <p v-else-if="product.stock === 1">-->
-<!--                        Ultima unidad disponible!-->
-<!--                    </p>-->
-<!--                </template>-->
+                <p v-if="product.stock >= 3"><span>(en stock)</span></p>
+                <p v-if="product.stock === 3">Quedan pocas unidades!<span>(In Stock)</span></p>
+                <p v-else-if="product.stock === 2">
+                    El producto esta por terminarse!
+                </p>
+                <p v-else-if="product.stock === 1">
+                    Ultima unidad disponible!
+                </p>
+                <p v-else-if="product.stock === 0">
+                    Sin Stock
+                </p>
                 <h4>{{ product.name }}</h4>
                 <div class="product-price">
                     S/{{ new Intl.NumberFormat("es-PE").format(product.price) }}
 <!--                    <span>$15</span>-->
                 </div>
+                <template v-if="product.stock > 0">
                 <div class="qty-cart">
                     <div class="quantity buttons_added">
-
-<!--                        <input type="number" step="1" name="quantity" :value="product.quantity" class="input-text qty text">-->
                         <template v-if="vs(product.id)">
                             <template v-for="carts in cart">
                                 <template v-if="carts.id === product.id">
@@ -43,17 +40,6 @@
                             </template>
                         </template>
                     </div>
-
-<!--                    <template v-if="v_s">-->
-<!--                        <template v-for="carts in cart">-->
-<!--                            <template v-if="carts.id === product.id">-->
-<!--                                <button type="button" class="cart-icon btn btn-small btn-success" :disabled="carts.stock === 0" @click="sendToCart()"><i class="uil uil-shopping-cart-alt"></i> Agregar</button>-->
-<!--                            </template>-->
-<!--                        </template>-->
-<!--                    </template>-->
-<!--                    <template v-else>-->
-<!--                        <button type="button" class="cart-icon btn btn-small btn-primary" @click="sendToCart()"><i class="uil uil-shopping-cart-alt"></i> Agregar</button>-->
-<!--                    </template>-->
 
                     <template v-if="vs(product.id)">
                         <template v-for="carts in cart">
@@ -67,6 +53,7 @@
                     </template>
 
                 </div>
+                </template>
             </div>
         </div>
     </div>
