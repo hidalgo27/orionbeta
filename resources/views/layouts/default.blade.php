@@ -511,7 +511,7 @@
         nav:false,
         dots:false,
         autoplay:true,
-        autoplayTimeout: 20000,
+        autoplayTimeout: 58000,
         autoplayHoverPause:true,
         responsive:{
             0:{

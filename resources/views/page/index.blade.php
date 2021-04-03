@@ -13,10 +13,10 @@
 {{--                        <source src="{{asset('images/banners/WhatsApp Video 2021-03-19 at 13.09.01.mp4')}}" type="video/webm" />--}}
 {{--                        <source  src="{{asset('images/banners/WhatsApp Video 2021-03-19 at 13.09.01.mp4')}}" type="video/ogg" />--}}
 {{--                    </video>--}}
-{{--                    <video autoplay muted loop class="w-100">--}}
-{{--                        <source src="{{asset('images/banners/galaxy.gif')}}" type="video/mp4" class="w-100">--}}
-{{--                    </video>--}}
-                    <img src="{{asset('images/banners/galaxy.gif')}}" alt="">
+                    <video autoplay muted loop class="w-100">
+                        <source src="{{asset('images/banners/ecommerce-web.mp4')}}" type="video/mp4" class="w-100">
+                    </video>
+{{--                    <img src="{{asset('images/banners/galaxy.gif')}}" alt="">--}}
                 </div>
                 <div class="item">
 {{--                    <video autoplay muted loop class="w-100">--}}
