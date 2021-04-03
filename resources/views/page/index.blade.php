@@ -16,13 +16,14 @@
                     <video autoplay muted loop class="w-100">
                         <source src="{{asset('images/banners/ecommerce-web.mp4')}}" type="video/mp4" class="w-100">
                     </video>
-{{--                    <img src="{{asset('images/banners/galaxy.gif')}}" alt="">--}}
+
                 </div>
                 <div class="item">
 {{--                    <video autoplay muted loop class="w-100">--}}
 {{--                        <source src="{{asset('images/banners/WhatsApp Video 2021-03-20 at 12.06.09.mp4')}}" type="video/mp4" class="w-100">--}}
 {{--                    </video>--}}
-                    <img src="{{asset('images/banners/ecommerce.gif')}}" alt="">
+{{--                    <img src="{{asset('images/banners/ecommerce.gif')}}" alt="">--}}
+                    <img src="{{asset('images/banners/galaxy.gif')}}" alt="">
                 </div>
             </div>
         </div>
