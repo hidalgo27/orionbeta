@@ -9,8 +9,6 @@
     <meta name="author" content="Hidalgo">
     <title>Orion Supermercados | Cusco</title>
 
-    <script src="{{asset("js/jquery-3.3.1.min.js")}}"></script>
-    <script src="{{asset("js/app.js")}}"></script>
     <!-- Stylesheets -->
 {{--    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">--}}
     {{--    <link href='vendor/unicons-2.0.1/css/unicons.css' rel='stylesheet'>--}}
@@ -51,7 +49,6 @@
 {{--    <meta name="msapplication-TileColor" content="#ffffff">--}}
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 {{--    <meta name="theme-color" content="#ffffff">--}}
-
 </head>
 
 <body>
@@ -463,6 +460,8 @@
 <!-- Javascripts -->
 {{--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>--}}
 {{--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>--}}
+<script src="{{asset("js/jquery-3.3.1.min.js")}}"></script>
+<script src="{{asset("js/app.js")}}"></script>
 <script src="{{asset("js/plugins.js")}}"></script>
 <script src="{{asset("vendor/bootstrap/js/bootstrap.bundle.js")}}"></script>
 <script src="{{asset("vendor/OwlCarousel/owl.carousel.min.js")}}"></script>
