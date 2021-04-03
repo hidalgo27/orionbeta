@@ -186,13 +186,13 @@ export default {
 
         });
 
+
         fetch("https://sistemaorion.nebulaperu.com/api/v1/products/others/secciones")
             .then(res => res.json())
             .then(data => {
                 // console.log("pre carga 2")
                 products.value = data;
                 nextTick(() => {
-
                     $('.featured-slider-top').owlCarousel({
                         items: 8,
                         loop:false,
@@ -246,8 +246,9 @@ export default {
                             }
                         }
                     })
-                })
+                });
             });
+
 
         function addToCart(product){
             const cartIndex = cartState.cart.findIndex(prod => prod.id === product.id);

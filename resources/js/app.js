@@ -1,4 +1,4 @@
-// require('./bootstrap');
+require('./bootstrap');
 // require('alpinejs');
 // import owl from 'owl.carousel/dist/owl.carousel'
 // require('owl.carousel/dist/owl.carousel');
@@ -38,7 +38,7 @@ const app = createApp({
         HistorialComponent,
         CartLength,
         CartBlade,
-        SearchComponent
+        SearchComponent,
     }
 })
 app.provide('emitter', emitter);
