@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="owl-carousel owl-theme" :class="{ 'featured-slider-top': featured_slider_top, 'featured-slider': featured_slider }">
+                        <div class="owl-carousel featured-slider-top owl-theme">
                             <top-component
                                 v-for="products in products_top"
                                 :key="products.id"

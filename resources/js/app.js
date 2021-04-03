@@ -1,4 +1,4 @@
-require('./bootstrap');
+// require('./bootstrap');
 // require('alpinejs');
 // import owl from 'owl.carousel/dist/owl.carousel'
 // require('owl.carousel/dist/owl.carousel');
