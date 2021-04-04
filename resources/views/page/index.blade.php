@@ -1,9 +1,9 @@
 @extends('layouts.default')
 @section('content')
     <div class="wrapper">
-{{--        <div class="col p-0">--}}
-{{--            <div class="owl-carousel cate-banners owl-theme">--}}
-{{--                <div class="item">--}}
+        <div class="col p-0">
+            <div class="owl-carousel cate-banners owl-theme">
+                <div class="item">
 {{--                    <a href="#" class="">--}}
 {{--                        <img src="/images/banners/beneficios-galaxy.jpg" alt="" class="w-100">--}}
 {{--                    </a>--}}
@@ -13,11 +13,11 @@
 {{--                        <source src="{{asset('images/banners/WhatsApp Video 2021-03-19 at 13.09.01.mp4')}}" type="video/webm" />--}}
 {{--                        <source  src="{{asset('images/banners/WhatsApp Video 2021-03-19 at 13.09.01.mp4')}}" type="video/ogg" />--}}
 {{--                    </video>--}}
-{{--                    <video autoplay muted loop class="w-100">--}}
-{{--                        <source src="{{asset('images/banners/ecommerce-web.mp4')}}" type="video/mp4" class="w-100">--}}
-{{--                    </video>--}}
+                    <video autoplay muted loop class="w-100">
+                        <source src="{{asset('images/banners/ecommerce-web.mp4')}}" type="video/mp4" class="w-100">
+                    </video>
 
-{{--                </div>--}}
+                </div>
 {{--                <div class="item">--}}
 {{--                    <video autoplay muted loop class="w-100">--}}
 {{--                        <source src="{{asset('images/banners/WhatsApp Video 2021-03-20 at 12.06.09.mp4')}}" type="video/mp4" class="w-100">--}}
@@ -25,9 +25,9 @@
 {{--                    <img src="{{asset('images/banners/ecommerce.gif')}}" alt="">--}}
 {{--                    <img src="{{asset('images/banners/galaxy.gif')}}" alt="">--}}
 {{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-        <slider-home></slider-home>
+            </div>
+        </div>
+{{--        <slider-home></slider-home>--}}
         <category-component></category-component>
 {{--        <div class="section145">--}}
 {{--            <div class="container">--}}

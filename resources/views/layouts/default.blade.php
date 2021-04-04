@@ -461,7 +461,7 @@
 {{--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>--}}
 {{--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>--}}
 <script src="{{asset("js/jquery-3.3.1.min.js")}}"></script>
-<script src="{{asset("js/app.js")}}" async></script>
+<script src="{{asset("js/app.js")}}" async="true"></script>
 <script src="{{asset("js/plugins.js")}}"></script>
 <script src="{{asset("vendor/bootstrap/js/bootstrap.bundle.js")}}"></script>
 <script src="{{asset("vendor/OwlCarousel/owl.carousel.min.js")}}"></script>
@@ -474,41 +474,32 @@
 {{--<script src="js/offset_overlay.js"></script>--}}
 {{--<script src="js/night-mode.js"></script>--}}
 <script>
-    if ('loading' in HTMLImageElement.prototype) {
-            console.log('El navegador soporta `lazy-loading`...');
-          } else {
-            console.log('`lazy-loading` no soportado...');
-          }
-    7</script>
-<script>
-    // === Banner Home === //
-
-    // Category Slider
-    // $('.cate-slider').owlCarousel({
-    //     loop:true,
-    //     margin:30,
-    //     nav:true,
-    //     dots:false,
-    //     navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
-    //     responsive:{
-    //         0:{
-    //             items:2
-    //         },
-    //         600:{
-    //             items:2
-    //         },
-    //         1000:{
-    //             items:4
-    //         },
-    //         1200:{
-    //             items:6
-    //         },
-    //         1400:{
-    //             items:6
-    //         }
-    //     }
-    // })
-    // Featured Slider
+    $('.cate-banners').owlCarousel({
+        loop:true,
+        margin:30,
+        nav:false,
+        dots:false,
+        autoplay:true,
+        autoplayTimeout: 58000,
+        autoplayHoverPause:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            },
+            1200:{
+                items:1
+            },
+            1400:{
+                items:1
+            }
+        }
+    })
 </script>
 <!-- begin olark code -->
 <script type="text/javascript">

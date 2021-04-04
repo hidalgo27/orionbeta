@@ -14,7 +14,7 @@ import { createApp } from 'vue'
 // import ExampleComponent from  './components/ExampleComponent';
 // import OptionComponent from  './components/options/OptionComponent';
 // import CompositionComponent from "./components/composition/CompositionComponent";
-import SliderHome from "./components/composition/SliderHome";
+// import SliderHome from "./components/composition/SliderHome";
 import IndexComponent from "./components/composition/IndexComponent";
 import DetailProductComponent from "./components/composition/DetailProductComponent";
 import GridProductComponent from "./components/composition/GridProductComponent";
@@ -41,8 +41,7 @@ const app = createApp({
         CartLength,
         CartBlade,
         SearchComponent,
-        CategoryComponent,
-        SliderHome
+        CategoryComponent
     }
 })
 app.provide('emitter', emitter);
