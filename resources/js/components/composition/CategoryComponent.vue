@@ -13,7 +13,7 @@
                 <div class="col-md-12">
                     <div class="owl-carousel cate-slider owl-theme">
                         <div class="item" v-for="category in is_category">
-                            <a :href="'/products/category/'+category.id" class="category-item">
+                            <a :href="'/products/category/'+category.name.toLowerCase()" class="category-item">
                                 <div class="cate-img">
                                     <img :src="'https://sistemaorion.nebulaperu.com/api/v1/categories/imagen/'+category.photo" alt="">
                                 </div>

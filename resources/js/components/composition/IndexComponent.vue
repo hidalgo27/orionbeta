@@ -116,16 +116,12 @@
 </template>
 <script>
 import carousel from 'vue-owl-carousel'
-import HeaderComponent from "./HeaderComponent";
-import OfferComponent from "./OfferComponent";
-import CategoryComponent from "./CategoryComponent";
 import TopComponent from "./TopComponent";
 import BestComponent from "./BestComponent";
-import NewComponent from "./NewComponent";
 import CartComponent from "./CartComponent";
 import {ref, toRefs, nextTick, reactive, computed, inject} from "vue";
 export default {
-    components: { carousel, OfferComponent, CategoryComponent, TopComponent, BestComponent, NewComponent, HeaderComponent, CartComponent },
+    components: { carousel, TopComponent, BestComponent, CartComponent },
     props: ['user'],
     setup(props){
         const products = ref([]);
