@@ -459,8 +459,5 @@ export default {
     border: 3px solid white;
     background-color: #ee2342;
 }
-.product-item{
-    height: 430px;
-}
 
 </style>
