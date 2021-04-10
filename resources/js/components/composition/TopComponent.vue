@@ -1,5 +1,5 @@
 <template>
-    <div class="item">
+
         <div class="product-item">
             <a :href="'/product/'+product.id" class="product-img">
                 <template v-for="(photos, index) in product.photos" :key="photos.id">
@@ -56,7 +56,7 @@
                 </template>
             </div>
         </div>
-    </div>
+
 </template>
 <script>
 

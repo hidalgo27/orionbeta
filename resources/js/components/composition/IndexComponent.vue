@@ -18,14 +18,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="owl-carousel owl-theme" :class="{ 'offers-banner-top': offers_banner_top, 'offers-banner': offers_banner }">
-                            <div class="item"
-                                 v-for="prod_off in products_offers"
-                            >
+                        <carousel :settings="settings" :breakpoints="breakpoints">
+                            <slide v-for="prod_off in products_offers" :key="prod_off">
                                 <div class="offer-item">
                                     <div class="offer-item-img">
                                         <div class="gambo-overlay"></div>
-<!--                                        <img src="images/banners/offer-1.jpg" alt="">-->
+                                        <!--                                        <img src="images/banners/offer-1.jpg" alt="">-->
                                         <template v-for="(photos, index) in prod_off.photos" :key="photos.id">
                                             <img :src="'https://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
                                         </template>
@@ -39,14 +37,21 @@
                                         <a :href="'/product/'+prod_off.id" class="Offer-shop-btn hover-btn">Comprar Ahora</a>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </slide>
+
+                            <template #addons>
+                                <Navigation />
+                            </template>
+                        </carousel>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Top productos-->
+
+
+
+    <!-- Top productos-->
         <div class="section145">
             <div class="container">
                 <div class="row">
@@ -60,18 +65,22 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="owl-carousel featured-slider-top owl-theme">
-                            <top-component
-                                v-for="products in products_top"
-                                :key="products.id"
-                                :product="products"
-                                @sendtocart="addToCart($event)"
-                                @sendtocartr="removeToCart($event)"
-                                :cart = "cart"
-                                :badge_new = "badge_new"
-                                :cat = "'Top'"
-                            ></top-component>
-                        </div>
+                        <carousel :settings="settings" :breakpoints="top_pro">
+                            <slide v-for="products in products_top" :key="products">
+                                <top-component
+                                    :product="products"
+                                    @sendtocart="addToCart($event)"
+                                    @sendtocartr="removeToCart($event)"
+                                    :cart = "cart"
+                                    :badge_new = "badge_new"
+                                    :cat = "'Top'"
+                                ></top-component>
+                            </slide>
+
+                            <template #addons>
+                                <Navigation />
+                            </template>
+                        </carousel>
                     </div>
                 </div>
             </div>
@@ -96,18 +105,21 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="owl-carousel owl-theme" :class="{ 'featured-slider-top': featured_slider_top, 'featured-slider': featured_slider }">
-                            <top-component
-                                v-for="products in products_new"
-                                :key="products.id"
-                                :product="products"
-                                @sendtocart="addToCart($event)"
-                                @sendtocartr="removeToCart($event)"
-                                :cart = "cart"
-                                :badge_new = "badge_new"
-                                :cat = "'Nuevo'"
-                            ></top-component>
-                        </div>
+                        <carousel :settings="settings" :breakpoints="top_pro">
+                            <slide v-for="products in products_new" :key="products.id">
+                                <top-component
+                                    :product="products"
+                                    @sendtocart="addToCart($event)"
+                                    @sendtocartr="removeToCart($event)"
+                                    :cart = "cart"
+                                    :badge_new = "badge_new"
+                                    :cat = "'Nuevo'"
+                                ></top-component>
+                            </slide>
+                            <template #addons>
+                                <Navigation />
+                            </template>
+                        </carousel>
                     </div>
                 </div>
             </div>
@@ -115,13 +127,14 @@
         <!-- End new-->
 </template>
 <script>
-import carousel from 'vue-owl-carousel'
 import TopComponent from "./TopComponent";
 import BestComponent from "./BestComponent";
 import CartComponent from "./CartComponent";
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 import {ref, toRefs, nextTick, reactive, computed, inject} from "vue";
 export default {
-    components: { carousel, TopComponent, BestComponent, CartComponent },
+    components: { Carousel, Slide, Pagination, Navigation, TopComponent, BestComponent, CartComponent },
     props: ['user'],
     setup(props){
         const products = ref([]);
@@ -140,6 +153,37 @@ export default {
         const cartState = reactive({
             cartOpen: false,
             cart: [],
+            settings: {
+                itemsToShow: 1,
+                snapAlign: 'center',
+                // wrapAround: 'true'
+            },
+            // breakpoints are mobile first
+            // any settings not specified will fallback to the carousel settings
+            breakpoints: {
+                // 700px and up
+                700: {
+                    itemsToShow: 3.5,
+                    snapAlign: 'center',
+                },
+                // 1024 and up
+                1024: {
+                    itemsToShow: 3,
+                    snapAlign: 'start',
+                },
+            },
+            top_pro: {
+                // 700px and up
+                700: {
+                    itemsToShow: 3,
+                    snapAlign: 'center',
+                },
+                // 1024 and up
+                1024: {
+                    itemsToShow: 4,
+                    snapAlign: 'start',
+                },
+            },
             total: computed(()=>{
                 return  cartState.cart.reduce((prev, curr) => {
                     const prevPrice = prev.price || prev;
@@ -188,61 +232,6 @@ export default {
             .then(data => {
                 // console.log("pre carga 2")
                 products.value = data;
-                nextTick(() => {
-                    $('.featured-slider-top').owlCarousel({
-                        items: 8,
-                        loop:false,
-                        margin:10,
-                        nav:true,
-                        dots:false,
-                        navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
-                        responsive:{
-                            0:{
-                                items:1
-                            },
-                            600:{
-                                items:2
-                            },
-
-                            1000:{
-                                items:3
-                            },
-                            1200:{
-                                items:4
-                            },
-                            1400:{
-                                items:4
-                            }
-                        }
-                    })
-
-                    $('.offers-banner-top').owlCarousel({
-                        loop:true,
-                        margin:30,
-                        nav:false,
-                        dots:false,
-                        autoplay:true,
-                        autoplayTimeout: 3000,
-                        autoplayHoverPause:true,
-                        responsive:{
-                            0:{
-                                items:1
-                            },
-                            600:{
-                                items:2
-                            },
-                            1000:{
-                                items:2
-                            },
-                            1200:{
-                                items:3
-                            },
-                            1400:{
-                                items:3
-                            }
-                        }
-                    })
-                });
             });
 
 
@@ -448,41 +437,30 @@ export default {
 }
 </script>
 <style>
-.owl-next {
-    font-size: 20px !important;
-    position: absolute;
-    right: -20px;
-    top: 35%;
-    padding: 4px 0 !important;
-    text-align: center;
-    height: 30px !important;
-    width: 30px !important;
-    color: #2b2f4c !important;
-    background: #fff !important;
-    border-radius: 100% !important;
-    border: 1px solid #e5e5e5 !important;
-    box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 7%);
+.carousel__item {
+    min-height: 200px;
+    width: 100%;
+    /*background-color: #ee2342;*/
+    color:  var(--carousel-color-white);
+    font-size: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.owl-prev {
-    left: -20px;
-    font-size: 20px !important;
-    position: absolute;
-    top: 35%;
-    text-align: center;
-    height: 30px !important;
-    width: 30px !important;
-    padding: 4px 0 !important;
-    color: #2b2f4c !important;
-    background: #fff !important;
-    border-radius: 100% !important;
-    border: 1px solid #e5e5e5 !important;
-    box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 7%);
+
+.carousel__slide {
+    padding: 5px;
 }
-.owl-prev:hover, .owl-next:hover {
-    color: #fff !important;
-    opacity: 1;
-    border: 1px solid #ee2342 !important;
-    background: #ee2342 !important;
-    box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 7%);
+
+.carousel__prev,
+.carousel__next {
+    box-sizing: content-box;
+    border: 3px solid white;
+    background-color: #ee2342;
 }
+.product-item{
+    height: 430px;
+}
+
 </style>

@@ -247,17 +247,23 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="owl-carousel owl-theme" :class="{ 'featured-slider-top': featured_slider_top, 'featured-slider': featured_slider }">
+                        <carousel :settings="settings" :breakpoints="top_pro">
+                            <slide v-for="products in products_top" :key="products">
+                                <top-component
+                                    :product="products"
+                                    @sendtocart="addToCart($event)"
+                                    @sendtocartr="removeToCart($event)"
+                                    :cart = "cart"
+                                    :badge_new = "badge_new"
+                                    :cat = "'Top'"
+                                ></top-component>
+                            </slide>
 
-                            <top-component
-                                v-for="product in products_top"
-                                :key="product.name"
-                                :product="product"
-                                @sendtocart="addToCart($event)"
-                                @sendtocartr="removeToCart($event)"
-                                :cart = "cart"
-                            ></top-component>
-                        </div>
+                            <template #addons>
+                                <Navigation />
+                            </template>
+                        </carousel>
+
                     </div>
                 </div>
             </div>
@@ -271,9 +277,11 @@
 import HeaderComponent from "./HeaderComponent";
 import TopComponent from "./TopComponent";
 import CartComponent from "./CartComponent";
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 import {ref, toRefs, nextTick, reactive, computed, inject} from "vue";
 export default {
-    components: { HeaderComponent, TopComponent, CartComponent },
+    components: { Carousel, Slide, Pagination, Navigation, HeaderComponent, TopComponent, CartComponent },
     props: ["idproduct", "user"],
     setup(props){
         const products = ref([]);
@@ -286,6 +294,26 @@ export default {
         const cartState = reactive({
             cartOpen: false,
             cart: [],
+            settings: {
+                itemsToShow: 1,
+                snapAlign: 'center',
+                // wrapAround: 'true'
+            },
+            // breakpoints are mobile first
+            // any settings not specified will fallback to the carousel settings
+            top_pro: {
+                // 700px and up
+                700: {
+                    itemsToShow: 3,
+                    snapAlign: 'center',
+                },
+                // 1024 and up
+                1024: {
+                    itemsToShow: 4,
+                    snapAlign: 'start',
+                },
+            },
+
             total: computed(()=>{
                 return  cartState.cart.reduce((prev, curr) => {
                     const prevPrice = prev.price || prev;
@@ -454,110 +482,6 @@ export default {
                 .then(res => res.json())
                 .then(data => {
                     products.value = data;
-                    nextTick(() => {
-                        $('.featured-slider-top').owlCarousel({
-                            items: 8,
-                            loop:false,
-                            margin:10,
-                            nav:true,
-                            dots:false,
-                            navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
-                            responsive:{
-                                0:{
-                                    items:3
-                                },
-                                600:{
-                                    items:2
-                                },
-                                1000:{
-                                    items:3
-                                },
-                                1200:{
-                                    items:4
-                                },
-                                1400:{
-                                    items:4
-                                }
-                            }
-                        })
-
-                        var sync1 = $("#sync1");
-                        var sync2 = $("#sync2");
-                        var slidesPerPage = 4; //globaly define number of elements per page
-                        var syncedSecondary = true;
-
-                        sync1.owlCarousel({
-                            items: 1,
-                            slideSpeed: 2000,
-                            nav: true,
-                            autoplay: false,
-                            dots: false,
-                            loop: true,
-                            responsiveRefreshRate: 200,
-                            navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
-                        }).on('changed.owl.carousel', syncPosition);
-
-                        sync2
-                            .on('initialized.owl.carousel', function() {
-                                sync2.find(".owl-item").eq(0).addClass("current");
-                            })
-                            .owlCarousel({
-                                items: slidesPerPage,
-                                dots: false,
-                                nav: true,
-                                smartSpeed: 200,
-                                slideSpeed: 500,
-                                slideBy: slidesPerPage, //alternatively you can slide by 1, this way the active slide will stick to the first item in the second carousel
-                                responsiveRefreshRate: 100,
-                            }).on('changed.owl.carousel', syncPosition2);
-
-                        function syncPosition(el) {
-                            //if you set loop to false, you have to restore this next line
-                            //var current = el.item.index;
-
-                            //if you disable loop you have to comment this block
-                            var count = el.item.count - 1;
-                            var current = Math.round(el.item.index - (el.item.count / 2) - .5);
-
-                            if (current < 0) {
-                                current = count;
-                            }
-                            if (current > count) {
-                                current = 0;
-                            }
-
-                            //end block
-
-                            sync2
-                                .find(".owl-item")
-                                .removeClass("current")
-                                .eq(current)
-                                .addClass("current");
-                            var onscreen = sync2.find('.owl-item.active').length - 1;
-                            var start = sync2.find('.owl-item.active').first().index();
-                            var end = sync2.find('.owl-item.active').last().index();
-
-                            if (current > end) {
-                                sync2.data('owl.carousel').to(current, 100, true);
-                            }
-                            if (current < start) {
-                                sync2.data('owl.carousel').to(current - onscreen, 100, true);
-                            }
-                        }
-
-                        function syncPosition2(el) {
-                            if (syncedSecondary) {
-                                var number = el.item.index;
-                                sync1.data('owl.carousel').to(number, 100, true);
-                            }
-                        }
-
-                        sync2.on("click", ".owl-item", function(e) {
-                            e.preventDefault();
-                            var number = $(this).index();
-                            sync1.data('owl.carousel').to(number, 300, true);
-                        });
-                    })
                 });
         }else{
             products.value = dataP;

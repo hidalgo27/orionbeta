@@ -20,7 +20,7 @@
 <!-- Vendor Stylesheets -->
     {{--    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">--}}
     <link href="{{asset('fontawesome-free/css/all.min.css')}}" rel="stylesheet">
-{{--        <link href="{{asset('vendor/OwlCarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">--}}
+        <link href="{{asset('vendor/OwlCarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 {{--        <link href="{{asset('vendor/OwlCarousel/assets/owl.theme.default.min.css')}}" rel="stylesheet">--}}
         <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 {{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">--}}
@@ -500,20 +500,46 @@
             }
         }
     })
+
+    $('.cate-slider').owlCarousel({
+        items: 1,
+        loop:false,
+        margin:10,
+        nav:true,
+        dots:false,
+        navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
+        responsive:{
+            0:{
+                items:2
+            },
+            600:{
+                items:2
+            },
+            1000:{
+                items:4
+            },
+            1200:{
+                items:6
+            },
+            1400:{
+                items:6
+            }
+        }
+    })
 </script>
 <!-- begin olark code -->
-<script type="text/javascript">
-    ;(function(o,l,a,r,k,y){if(o.olark)return;
-        r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0];
-        y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r);
-        y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)};
-        y.extend=function(i,j){y("extend",i,j)};
-        y.identify=function(i){y("identify",k.i=i)};
-        y.configure=function(i,j){y("configure",i,j);k.c[i]=j};
-        k=y._={s:[],t:[+new Date],c:{},l:a};
-    })(window,document,"static.olark.com/jsclient/loader.js");
-    /* Add configuration calls below this comment */
-    olark.identify('1517-423-10-2650');</script>
+{{--<script type="text/javascript">--}}
+{{--    ;(function(o,l,a,r,k,y){if(o.olark)return;--}}
+{{--        r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0];--}}
+{{--        y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r);--}}
+{{--        y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)};--}}
+{{--        y.extend=function(i,j){y("extend",i,j)};--}}
+{{--        y.identify=function(i){y("identify",k.i=i)};--}}
+{{--        y.configure=function(i,j){y("configure",i,j);k.c[i]=j};--}}
+{{--        k=y._={s:[],t:[+new Date],c:{},l:a};--}}
+{{--    })(window,document,"static.olark.com/jsclient/loader.js");--}}
+{{--    /* Add configuration calls below this comment */--}}
+{{--    olark.identify('1517-423-10-2650');</script>--}}
 <!-- end olark code -->
 </body>
 </html>
