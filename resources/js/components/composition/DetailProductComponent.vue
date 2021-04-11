@@ -37,24 +37,26 @@
                                 <div class="product-dt-view">
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4">
-                                            <div id="sync1" class="owl-carousel owl-caro owl-theme">
-                                                <template v-for="image in products.photos">
-                                                    <template v-if="image.state === 0">
-                                                        <div class="item">
-                                                            <img :src="'https://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+image.photo" alt="">
-                                                        </div>
-                                                    </template>
+<!--                                            <div id="sync1" class="owl-carousel owl-caro owl-theme">-->
+                                            <carousel>
+                                                <slide v-for="image in products.photos" :key="image">
+                                                    <img :src="'https://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+image.photo" alt="" class="w-100">
+                                                </slide>
+                                                <template #addons>
+                                                    <Navigation />
+                                                    <Pagination />
                                                 </template>
-                                            </div>
-                                            <div id="sync2" class="owl-carousel owl-caro owl-theme">
-                                                <template v-for="image in products.photos">
-                                                    <template v-if="image.state === 1">
-                                                        <div class="item">
-                                                            <img :src="'https://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+image.photo" alt="">
-                                                        </div>
-                                                    </template>
-                                                </template>
-                                            </div>
+                                            </carousel>
+<!--                                            </div>-->
+<!--                                            <div id="sync2" class="owl-carousel owl-caro owl-theme">-->
+<!--                                                <template v-for="image in products.photos">-->
+<!--                                                    <template v-if="image.state === 1">-->
+<!--                                                        <div class="item">-->
+<!--                                                            <img :src="'https://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+image.photo" alt="">-->
+<!--                                                        </div>-->
+<!--                                                    </template>-->
+<!--                                                </template>-->
+<!--                                            </div>-->
                                         </div>
                                         <div class="col-lg-8 col-md-8">
                                             <div class="product-dt-right">

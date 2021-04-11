@@ -120,66 +120,18 @@
                     <a href="/"><img src="/images/logo-orion.png" alt="" class="p-4"></a>
                     <a href="/"><img class="logo-inverse p-4" src="/images/logo-orion-white.png" alt=""></a>
                 </div>
-                <!--                <div class="select_location">-->
-                <!--                    <div class="ui inline dropdown loc-title">-->
-                <!--                        <div class="text">-->
-                <!--                            <i class="uil uil-location-point"></i>-->
-                <!--                            Gurugram-->
-                <!--                        </div>-->
-                <!--                        <i class="uil uil-angle-down icon__14"></i>-->
-                <!--                        <div class="menu dropdown_loc">-->
-                <!--                            <div class="item channel_item">-->
-                <!--                                <i class="uil uil-location-point"></i>-->
-                <!--                                Gurugram-->
-                <!--                            </div>-->
-                <!--                            <div class="item channel_item">-->
-                <!--                                <i class="uil uil-location-point"></i>-->
-                <!--                                New Delhi-->
-                <!--                            </div>-->
-                <!--                            <div class="item channel_item">-->
-                <!--                                <i class="uil uil-location-point"></i>-->
-                <!--                                Bangaluru-->
-                <!--                            </div>-->
-                <!--                            <div class="item channel_item">-->
-                <!--                                <i class="uil uil-location-point"></i>-->
-                <!--                                Mumbai-->
-                <!--                            </div>-->
-                <!--                            <div class="item channel_item">-->
-                <!--                                <i class="uil uil-location-point"></i>-->
-                <!--                                Hyderabad-->
-                <!--                            </div>-->
-                <!--                            <div class="item channel_item">-->
-                <!--                                <i class="uil uil-location-point"></i>-->
-                <!--                                Kolkata-->
-                <!--                            </div>-->
-                <!--                            <div class="item channel_item">-->
-                <!--                                <i class="uil uil-location-point"></i>-->
-                <!--                                Ludhiana-->
-                <!--                            </div>-->
-                <!--                            <div class="item channel_item">-->
-                <!--                                <i class="uil uil-location-point"></i>-->
-                <!--                                Chandigrah-->
-                <!--                            </div>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
 
 
                 <div class="search120">
                     <span class="text-muted">La estrella de los precios bajos</span>
                 </div>
 
-{{--                <div class="search120">--}}
-{{--                    <div class="ui search">--}}
-{{--                        <div class="ui left icon input swdh10">--}}
-{{--                            <input class="prompt srch10" type="text" placeholder="Buscar productos.." data-toggle="modal" data-target="#search_model">--}}
-{{--                            <i class='uil uil-search-alt icon icon1'></i>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
 
                 <div class="header_right">
                     <ul>
+                        <li>
+                            <a href="http://190.117.145.74/BSEFact.Orion/Account/Consult" class="offer-link" target="_blank"><i class="uil uil-check"></i>Consulte su factura electrónica</a>
+                        </li>
                         <li>
                             <a href="{{asset('encarte-orion-abril-semana-santa.pdf')}}" class="offer-link" target="_blank"><i class="uil uil-file-alt"></i>Encarte Abril (Semana Santa)</a>
                         </li>
@@ -189,9 +141,9 @@
                         <li>
                             <a href="/products/category/ofertas" class="offer-link"><i class="uil uil-gift"></i>Ofertas</a>
                         </li>
-                        <li>
-                            <a href="{{route('faq')}}" class="offer-link"><i class="uil uil-question-circle"></i>Preguntas Frecuentes</a>
-                        </li>
+{{--                        <li>--}}
+{{--                            <a href="{{route('faq')}}" class="offer-link"><i class="uil uil-question-circle"></i>Preguntas Frecuentes</a>--}}
+{{--                        </li>--}}
                         <!--                        <li>-->
                         <!--                            <a href="dashboard_my_wishlist.html" class="option_links" title="Wishlist"><i class='uil uil-heart icon_wishlist'></i><span class="noti_count1">3</span></a>-->
                         <!--                        </li>-->
@@ -262,8 +214,8 @@
                         <button class="navbar-toggler menu_toggle_btn" type="button" data-target="#navbarSupportedContent"><i class="uil uil-bars"></i></button>
                         <div class="collapse navbar-collapse d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end bg-dark1 p-3 p-lg-0 mt-lg-0 mobileMenu" id="navbarSupportedContent">
                             <ul class="navbar-nav main_nav align-self-stretch">
-                                <li class="nav-item"><a href="/" class="nav-link active" title="Home">Inicio</a></li>
-                                <li class="nav-item"><a href="/products/category/nuevos" class="nav-link new_item" title="New Products">Nuevos Productos</a></li>
+{{--                                <li class="nav-item"><a href="/" class="nav-link active" title="Home">Inicio</a></li>--}}
+{{--                                <li class="nav-item"><a href="/products/category/nuevos" class="nav-link new_item" title="New Products">Nuevos Productos</a></li>--}}
                                 <li class="nav-item"><a href="/products/category/destacados" class="nav-link" title="Featured Products">Top Productos</a></li>
                                 <li class="nav-item"><a href="/products/category/fechas festivas" class="nav-link font-weight-bold" title="Featured Products">Productos por Campaña</a></li>
                                 <!--                                <li class="nav-item">-->
@@ -299,6 +251,7 @@
                                 <!--                                    </div>-->
                                 <!--                                </li>-->
                                 <li class="nav-item"><a href="{{route('about')}}" class="nav-link" title="Contact">Acerca de Nosotros</a></li>
+                                <li class="nav-item"><a href="{{route('faq')}}" class="nav-link" title="Contact">Preguntas Frecuentes</a></li>
                                 <li class="nav-item"><a href="{{route('contacto')}}" class="nav-link" title="Contact">Locales y Contacto</a></li>
 
                             </ul>
