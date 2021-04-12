@@ -62,10 +62,21 @@
                                                     <div class="order-dt47">
                                                         <div class="row">
                                                             <div class="col">
-                                                                <a :href="'/product/'+productos_or.producto.id"><h4>{{ productos_or.producto.detail }} <span class="font-weight-bold text-danger">S/{{ new Intl.NumberFormat("es-PE").format(productos_or.producto.price) }}</span></h4></a>
+                                                                <a :href="'/product/'+productos_or.producto.id"><h4>{{ productos_or.producto.detail }}
+                                                                    <span class="font-weight-bold text-danger">
+                                                                        <template v-if="productos_or.producto.price === 0">
+                                                                            Precio por definir
+                                                                        </template>
+                                                                        <template v-else>
+                                                                            S/{{ new Intl.NumberFormat("es-PE").format(productos_or.producto.price) }}
+                                                                        </template>
+                                                                    </span></h4></a>
                                                             </div>
                                                         </div>
                                                         <div class="order-title">Cantidad: {{productos_or.quantity}}</div>
+                                                        <template v-if="productos_or.producto.price === 0">
+                                                            <p class="small text-danger">Un asesor se contactara con ud. para fijar precio. Precio por kilo S/{{ new Intl.NumberFormat("es-PE").format(productos_or.producto.regular_price) }}.</p>
+                                                        </template>
                                                     </div>
                                                 </li>
                                             </ul>

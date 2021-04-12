@@ -478,6 +478,9 @@
                 items:6
             }
         }
+    });
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
     })
 </script>
 <!-- begin olark code -->

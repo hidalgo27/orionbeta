@@ -28,6 +28,10 @@
                     </div>
                     <div class="cart-text">
                         <h4>{{ prodCart.name }}</h4>
+                        <template v-if="prodCart.price === 0">
+                            <p class="small">Un asesor se contactara con ud. para fijar precio. precio por kilo S/{{ new Intl.NumberFormat("es-PE").format(prodCart.regular_price) }}</p>
+                        </template>
+
                         <!--                        <div class="cart-radio">-->
                         <!--                            <ul class="kggrm-now">-->
                         <!--                                <li>-->
@@ -50,12 +54,21 @@
                         <!--                        </div>-->
                         <div class="qty-group">
                             <div class="quantity buttons_added">
+                                <template v-if="prodCart.price > 0">
                                 <button type="button"  class="minus minus-btn" @click="removeToCart(prodCart)">-</button>
                                 <!--                                <input type="number" step="1" name="quantity" :value="prodCart.quantity" class="input-text qty text">-->
                                 <span class="qty text px-2">{{prodCart.quantity}}</span>
                                 <button type="button" value="+" class="plus plus-btn" :disabled="prodCart.stock === 0" @click="addToCart(prodCart)">+</button>
+                                </template>
                             </div>
-                            <div class="cart-item-price">S/{{ new Intl.NumberFormat("es-PE").format(prodCart.price) }}</div>
+                            <div class="cart-item-price">
+                                <template v-if="prodCart.price === 0">
+                                    Precio por definir
+                                </template>
+                                <template v-else>
+                                    S/{{ new Intl.NumberFormat("es-PE").format(prodCart.price) }}
+                                </template>
+                            </div>
                         </div>
 
                         <button type="button" class="cart-close-btn" @click="deleteToCart(prodCart)"><i class="uil uil-multiply"></i></button>

@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <carousel :settings="settings" :breakpoints="top_pro">
+                        <carousel :settings="settings" :breakpoints="new_pro">
                             <slide v-for="products in products_new" :key="products.id">
                                 <top-component
                                     :product="products"
@@ -163,7 +163,7 @@ export default {
             breakpoints: {
                 // 700px and up
                 700: {
-                    itemsToShow: 3.5,
+                    itemsToShow: 2,
                     snapAlign: 'center',
                 },
                 // 1024 and up
@@ -180,7 +180,19 @@ export default {
                 },
                 // 1024 and up
                 1024: {
-                    itemsToShow: 4,
+                    itemsToShow: 5,
+                    snapAlign: 'start',
+                },
+            },
+            new_pro: {
+                // 700px and up
+                700: {
+                    itemsToShow: 3,
+                    snapAlign: 'center',
+                },
+                // 1024 and up
+                1024: {
+                    itemsToShow: 5,
                     snapAlign: 'start',
                 },
             },

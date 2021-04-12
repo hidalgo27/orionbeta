@@ -28,6 +28,9 @@
                     </div>
                     <div class="cart-text">
                         <h4>{{ prodCart.name }}</h4>
+                        <template v-if="prodCart.price === 0">
+                            <p class="small">Un asesor se contactara con ud. para fijar precio. precio por kilo S/{{ new Intl.NumberFormat("es-PE").format(prodCart.regular_price) }}</p>
+                        </template>
                         <!--                        <div class="cart-radio">-->
                         <!--                            <ul class="kggrm-now">-->
                         <!--                                <li>-->
@@ -55,7 +58,15 @@
                                 <span class="qty text px-2">{{prodCart.quantity}}</span>
                                 <button type="button" value="+" class="plus plus-btn" :disabled="prodCart.stock === 0" @click="addToCart(prodCart)">+</button>
                             </div>
-                            <div class="cart-item-price">S/{{ new Intl.NumberFormat("es-PE").format(prodCart.price) }}</div>
+
+                            <div class="cart-item-price">
+                                <template v-if="prodCart.price === 0">
+                                    Por definir
+                                </template>
+                                <template v-else>
+                                    S/{{ new Intl.NumberFormat("es-PE").format(prodCart.price) }}
+                                </template>
+                            </div>
                         </div>
 
                         <button type="button" class="cart-close-btn" @click="deleteToCart(prodCart)"><i class="uil uil-multiply"></i></button>

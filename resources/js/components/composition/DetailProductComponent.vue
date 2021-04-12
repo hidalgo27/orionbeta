@@ -80,7 +80,20 @@
                                                 <p class="pp-descp">{{ products.description }}</p>
                                                 <div class="product-group-dt">
                                                     <ul>
-                                                        <li><div class="main-price color-discount">Precio<span>S/{{ products.price }}</span></div></li>
+                                                        <li>
+                                                            <div class="main-price color-discount">
+                                                                Precio
+                                                                <template v-if="products.price === 0">
+                                                                    Por definir
+                                                                </template>
+                                                                <template v-else>
+                                                                    S/{{ new Intl.NumberFormat("es-PE").format(products.price) }}
+                                                                </template>
+<!--                                                                <span>-->
+<!--                                                                    S/{{ products.price }}-->
+<!--                                                                </span>-->
+                                                            </div>
+                                                        </li>
 <!--                                                        <li><div class="main-price mrp-price">Price<span>S/{{ products.price }}</span></div></li>-->
                                                     </ul>
                                                     <ul class="gty-wish-share">
@@ -92,15 +105,17 @@
 <!--                                                                    <span class="qty text px-2">{{products.quantity}}</span>-->
 <!--                                                                    <button type="button" value="+" class="plus plus-btn" :disabled="products.stock === 0" @click="addToCart(products)">+</button>-->
 
-                                                                    <template v-for="carts in cart">
-                                                                        <template v-if="carts.id === products.id">
-                                                                            <button type="button" class="minus minus-btn" @click="removeToCart(products)">-</button>
-                                                                            <span class="qty px-2 text">{{carts.quantity}}</span>
-                                                                            <button type="button" :disabled="products.stock === 0" class="plus plus-btn" @click="addToCart(products)">+</button>
+                                                                    <template v-if="products.price > 0">
+                                                                        <template v-for="carts in cart">
+                                                                            <template v-if="carts.id === products.id">
+                                                                                <button type="button" class="minus minus-btn" @click="removeToCart(products)">-</button>
+                                                                                <span class="qty px-2 text">{{carts.quantity}}</span>
+                                                                                <button type="button" :disabled="products.stock === 0" class="plus plus-btn" @click="addToCart(products)">+</button>
+                                                                            </template>
+                                                                            <!--                            <template v-else>-->
+                                                                            <!--                                <span class="qty px-2 text">{{product.quantity}}</span>-->
+                                                                            <!--                            </template>-->
                                                                         </template>
-                                                                        <!--                            <template v-else>-->
-                                                                        <!--                                <span class="qty px-2 text">{{product.quantity}}</span>-->
-                                                                        <!--                            </template>-->
                                                                     </template>
 
                                                                 </div>
@@ -114,7 +129,7 @@
                                                             <template v-if="vs(products.id)">
                                                                 <template v-for="carts in cart">
                                                                     <template v-if="carts.id === products.id">
-                                                                        <button class="btn-success btn" :disabled="carts.stock === 0" @click="addToCart(products)"><i class="uil uil-shopping-cart-alt"></i>Agregar a Carro</button>
+                                                                        <button class="btn-success btn" :disabled="carts.stock === 0" @click="addToCart(products)"><i class="uil uil-shopping-cart-alt"></i>Agregado</button>
                                                                     </template>
                                                                 </template>
                                                             </template>
@@ -178,9 +193,13 @@
                                             </a>
                                             <div class="cart-text">
                                                 <h4>{{ pord_fam.name }}</h4>
+                                                <template v-if="pord_fam.price === 0">
+                                                    <p class="small">Un asesor se contactara con ud. para fijar precio.</p>
+                                                </template>
                                                 <div class="qty-group">
                                                     <template v-if="pord_fam.stock > 0">
                                                     <div class="quantity buttons_added">
+                                                        <template v-if="pord_fam.price > 0">
                                                         <template v-for="carts in cart">
                                                             <template v-if="carts.id === pord_fam.id">
                                                                 <button type="button" class="minus minus-btn" @click="removeToCart(pord_fam)">-</button>
@@ -188,10 +207,11 @@
                                                                 <button type="button" :disabled="pord_fam.stock === 0" class="plus plus-btn" @click="addToCart(pord_fam)">+</button>
                                                             </template>
                                                         </template>
+                                                        </template>
                                                         <template v-if="vs(pord_fam.id)">
                                                             <template v-for="carts in cart">
                                                                 <template v-if="carts.id === pord_fam.id">
-                                                                    <button type="button" class="cart-icon btn btn-link text-success font-weight-bold" :disabled="carts.stock === 0" @click="addToCart(pord_fam)"><i class="uil uil-shopping-cart-alt"></i> Agregar</button>
+                                                                    <button type="button" class="cart-icon btn btn-link text-success font-weight-bold" :disabled="carts.stock === 0" @click="addToCart(pord_fam)"><i class="uil uil-shopping-cart-alt"></i> Agregado</button>
                                                                 </template>
                                                             </template>
                                                         </template>
@@ -204,8 +224,13 @@
                                                         <span class="font-weight-bold">Sin Stock</span>
                                                     </template>
                                                     <div class="cart-item-price">
-                                                        S/{{ new Intl.NumberFormat("es-PE").format(pord_fam.price) }}
+                                                        <template v-if="pord_fam.price === 0">
+                                                            Precio x kilo S/{{ new Intl.NumberFormat("es-PE").format(pord_fam.regular_price) }}
 <!--                                                        <span>$15</span>-->
+                                                        </template>
+                                                        <template v-else>
+                                                            S/{{ new Intl.NumberFormat("es-PE").format(pord_fam.price) }}
+                                                        </template>
                                                     </div>
                                                 </div>
                                             </div>

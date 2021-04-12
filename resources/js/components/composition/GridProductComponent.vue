@@ -87,11 +87,18 @@
                                     </p>
                                     <h4>{{ product.name }}</h4>
                                     <div class="product-price">
-                                        S/.{{ new Intl.NumberFormat("es-PE").format(product.price) }}
+                                        <template v-if="(product.price === 0)">
+                                            Precio por kilo S/{{ new Intl.NumberFormat("es-PE").format(product.regular_price) }}
+                                            <p class="small">Un asesor se contactara con ud. para fijar precio.</p>
+                                        </template>
+                                        <template v-else>
+                                            S/{{ new Intl.NumberFormat("es-PE").format(product.price) }}
+                                        </template>
                                         <!--                    <span>$15</span>-->
                                     </div>
                                     <template v-if="product.stock > 0">
                                     <div class="qty-cart">
+                                        <template v-if="product.price > 0">
                                         <div class="quantity buttons_added">
                                             <template v-for="carts in cart">
                                                 <template v-if="carts.id === product.id">
@@ -101,6 +108,7 @@
                                                 </template>
                                             </template>
                                         </div>
+                                        </template>
                                         <template v-if="vs(product.id)">
                                             <template v-for="carts in cart">
                                                 <template v-if="carts.id === product.id">
@@ -117,11 +125,6 @@
                                 </div>
                             </div>
                         </div>
-<!--                        <div class="col-md-12">-->
-<!--                            <div class="more-product-btn">-->
-<!--                                <button class="show-more-btn hover-btn" onclick="window.location.href = '#';">Show More</button>-->
-<!--                            </div>-->
-<!--                        </div>-->
                     </div>
                 </div>
             </div>
@@ -168,6 +171,16 @@ export default {
                     }
                 }), cartState.o_x, cartState.o_ad)
             }),
+            products_category_cp : computed(() => {
+                return orderBy(products.value.filter((product) => {
+                    const cat = product.categorias.filter(
+                        ca => ca.name == props.namecategory.toUpperCase()
+                    )
+                    if (cat != "") {
+                        return product.categorias.filter(ca => ca.name == props.namecategory.toUpperCase() && ca.name == 'Consultar precio')
+                    }
+                }), cartState.o_x, cartState.o_ad)
+            }),
             is_category : computed(() => {
                 return categories.value.filter(category => category.name == props.namecategory)
             }),
@@ -187,7 +200,7 @@ export default {
         fetch("https://sistemaorion.nebulaperu.com/api/v1/categories")
             .then(res => res.json())
             .then(data => {
-                console.log("pre carga category")
+                // console.log("pre carga category")
                 categories.value = data;
             });
 

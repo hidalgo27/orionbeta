@@ -560,7 +560,17 @@
                                     </div>
                                     <div class="cart-text">
                                         <h4>{{ prodCart.name }}</h4>
-                                        <div class="cart-item-price">S/.{{ new Intl.NumberFormat("es-PE").format(prodCart.price) }}
+                                        <template v-if="prodCart.price === 0">
+                                            <p class="small">Un asesor se contactara con ud. para fijar precio. precio por kilo S/{{ new Intl.NumberFormat("es-PE").format(prodCart.regular_price) }}</p>
+                                        </template>
+                                        <div class="cart-item-price">
+                                            <template v-if="prodCart.price === 0">
+                                                Precio por definir
+                                            </template>
+                                            <template v-else>
+                                                S/{{ new Intl.NumberFormat("es-PE").format(prodCart.price) }}
+                                            </template>
+<!--                                            S/.{{ new Intl.NumberFormat("es-PE").format(prodCart.price) }}-->
 <!--                                            <span>$18</span>-->
                                         </div>
                                         <button type="button" class="cart-close-btn" @click="deleteToCart(prodCart)"><i class="uil uil-multiply"></i></button>
