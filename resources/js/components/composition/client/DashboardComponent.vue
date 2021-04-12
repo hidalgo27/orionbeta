@@ -65,7 +65,12 @@
                                                         <div class="order-status" v-if="order_d.state === 1">En tienda</div>
                                                         <div class="order-status" v-if="order_d.state === 2">Empacado</div>
                                                         <div class="order-status" v-if="order_d.state === 3">En Camino</div>
-                                                        <p>S/{{ new Intl.NumberFormat("es-PE").format(parseFloat(order_d.total) + parseFloat(order_d.tax)) }}</p>
+<!--                                                        <p>-->
+<!--                                                            {{order_d.productos_ordenados.pu}}-->
+<!--                                                            <template v-if="parseFloat(order_d.pu) === 0">-->
+<!--                                                                S/{{ new Intl.NumberFormat("es-PE").format(parseFloat(order_d.total) + parseFloat(order_d.tax)) }}-->
+<!--                                                            </template>-->
+<!--                                                        </p>-->
                                                     </div>
                                                 </li>
                                             </ul>
@@ -111,7 +116,7 @@ export default {
             }),
 
             order_p : computed(() => {
-                return orderBy(orders.value.filter(order => order.state < '4'), 'created_at', 'desc')
+                return orderBy(orders.value.filter(order => order.state < '4' && order.state > '0'), 'created_at', 'desc')
             }),
 
         });

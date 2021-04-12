@@ -60,7 +60,7 @@
                 </div>
                 <div class="product-list-view">
                     <div class="row">
-                        <div class="col-lg-3 col-md-6"
+                        <div class="col-lg-3 col-md-6 d-flex"
                              v-for="product in products_category"
                         >
                             <div class="product-item mb-30">
@@ -112,7 +112,7 @@
                                         <template v-if="vs(product.id)">
                                             <template v-for="carts in cart">
                                                 <template v-if="carts.id === product.id">
-                                                    <button type="button" class="cart-icon btn btn-small btn-success" :disabled="carts.stock === 0" @click="addToCart(product)"><i class="uil uil-shopping-cart-alt"></i> Agregar</button>
+                                                    <button type="button" class="cart-icon btn btn-small btn-success" :disabled="carts.stock === 0" @click="addToCart(product)"><i class="uil uil-shopping-cart-alt"></i> Agregado</button>
                                                 </template>
                                             </template>
                                         </template>

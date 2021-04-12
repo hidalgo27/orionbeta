@@ -44,7 +44,7 @@
                     <template v-if="vs(product.id)">
                         <template v-for="carts in cart">
                             <template v-if="carts.id === product.id">
-                                <button type="button" class="cart-icon btn btn-small btn-success" :disabled="carts.stock === 0" @click="sendToCart()"><i class="uil uil-shopping-cart-alt"></i> Agregar</button>
+                                <button type="button" class="cart-icon btn btn-small btn-success" :disabled="carts.stock === 0" @click="sendToCart()"><i class="uil uil-shopping-cart-alt"></i> Agregado</button>
                             </template>
                         </template>
                     </template>

@@ -64,7 +64,8 @@
                                                             <div class="col">
                                                                 <a :href="'/product/'+productos_or.producto.id"><h4>{{ productos_or.producto.detail }}
                                                                     <span class="font-weight-bold text-danger">
-                                                                        <template v-if="productos_or.producto.price === 0">
+
+                                                                        <template v-if="parseFloat(productos_or.pu) === 0">
                                                                             Precio por definir
                                                                         </template>
                                                                         <template v-else>
@@ -74,7 +75,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="order-title">Cantidad: {{productos_or.quantity}}</div>
-                                                        <template v-if="productos_or.producto.price === 0">
+                                                        <template v-if="parseFloat(productos_or.pu) === 0">
                                                             <p class="small text-danger">Un asesor se contactara con ud. para fijar precio. Precio por kilo S/{{ new Intl.NumberFormat("es-PE").format(productos_or.producto.regular_price) }}.</p>
                                                         </template>
                                                     </div>
