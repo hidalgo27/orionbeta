@@ -1,6 +1,6 @@
 <template>
     <header>
-        <h3>PlatziCommerce</h3>
+        <h3>Commerce</h3>
 
         <button class="cart" v-on:click="cartOpen = !cartOpen">Carro ({{ cart.length }})</button>
         <div class="cart-content" v-show="cartOpen">
