@@ -1,7 +1,6 @@
 @extends('layouts.default')
 @section('content')
     <div class="wrapper">
-
             <div class="row no-gutters d-none d-md-flex">
                 <div class="col-12 col-md-6 col-lg-8 bg-dark">
                     <div class="owl-carousel cate-banners owl-theme">
