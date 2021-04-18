@@ -135,8 +135,16 @@
                     <span class="text-muted">La estrella de los precios bajos</span>
                 </div>
 
+                <div class="mx-auto d-sm-none">
+                    <ul>
+                        <li>
+                            <a href="https://api.whatsapp.com/send?phone=51946565500" class="offer-link" target="_blank"><i class="uil uil-whatsapp text-success"></i> 946 565 500</a>
+                        </li>
+                    </ul>
+                </div>
 
                 <div class="header_right">
+
                     <ul>
                         <li>
                             <a href="http://190.117.145.74/BSEFact.Orion/Account/Consult" class="offer-link" target="_blank"><i class="uil uil-check"></i>Consulte su factura electrónica</a>
@@ -145,7 +153,7 @@
 {{--                            <a href="{{asset('encarte-orion-abril-semana-santa.pdf')}}" class="offer-link" target="_blank"><i class="uil uil-file-alt"></i>Encarte Abril (Semana Santa)</a>--}}
 {{--                        </li>--}}
                         <li>
-                            <a href="https://api.whatsapp.com/send?phone=51965642784" class="offer-link" target="_blank"><i class="uil uil-whatsapp text-success"></i> 965 642 784</a>
+                            <a href="https://api.whatsapp.com/send?phone=51946565500" class="offer-link" target="_blank"><i class="uil uil-whatsapp text-success"></i> 946 565 500</a>
                         </li>
                         <li>
                             <a href="/products/category/ofertas" class="offer-link"><i class="uil uil-gift"></i>Ofertas</a>
@@ -291,7 +299,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6">
                     <ul class="call-email-alt">
-                        <li><a href="https://api.whatsapp.com/send?phone=51965642784" class="callemail" target="_blank"><i class="uil uil-dialpad-alt"></i>965 642 784</a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=51946565500" class="callemail" target="_blank"><i class="uil uil-dialpad-alt"></i>946 565 500</a></li>
                         <li><a href="#" class="callemail"><i class="uil uil-envelope-alt"></i>info@orion.com.pe</a></li>
                     </ul>
                 </div>
