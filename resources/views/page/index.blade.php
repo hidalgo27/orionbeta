@@ -70,7 +70,7 @@
                 <div class="col-12 col-md-6 col-lg-4 bg-danger">
                     <div class="row">
                         <div class="col-12">
-                            <a href="/products/category/mascotas"><img src="{{asset('images/banners/1.jpeg')}}" alt="" class="w-100"></a>
+                            <a href="products/category/super combos"><img src="{{asset('images/banners/combos.jpg')}}" alt="" class="w-100"></a>
                         </div>
                     </div>
                 </div>

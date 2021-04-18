@@ -132,9 +132,9 @@
                         <li>
                             <a href="http://190.117.145.74/BSEFact.Orion/Account/Consult" class="offer-link" target="_blank"><i class="uil uil-check"></i>Consulte su factura electrónica</a>
                         </li>
-                        <li>
-                            <a href="{{asset('encarte-orion-abril-semana-santa.pdf')}}" class="offer-link" target="_blank"><i class="uil uil-file-alt"></i>Encarte Abril (Semana Santa)</a>
-                        </li>
+{{--                        <li>--}}
+{{--                            <a href="{{asset('encarte-orion-abril-semana-santa.pdf')}}" class="offer-link" target="_blank"><i class="uil uil-file-alt"></i>Encarte Abril (Semana Santa)</a>--}}
+{{--                        </li>--}}
                         <li>
                             <a href="https://api.whatsapp.com/send?phone=51965642784" class="offer-link" target="_blank"><i class="uil uil-whatsapp text-success"></i> 965 642 784</a>
                         </li>
@@ -149,7 +149,7 @@
                         <!--                        </li>-->
 
                         @if(!Auth::user())
-                        <li class="ui dropdown">
+                            <li class="ui dropdown">
                             <a href="#" class="opts_account">
                                 <img src="/images/avatar/img-21.jpg" alt="">
                                 <span class="user__name">Mi cuenta</span>
@@ -169,7 +169,7 @@
                             </div>
                         </li>
                         @else
-                        <li class="ui dropdown" >
+                            <li class="ui dropdown" >
                             <a href="#" class="opts_account">
                                 <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
                                 <span class="user__name">{{Auth::user()->name}}</span>
@@ -201,6 +201,7 @@
                         @endif
                     </ul>
                 </div>
+
             </div>
         </div>
         <div class="sub-header-group">
