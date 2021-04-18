@@ -1,8 +1,8 @@
 @extends('layouts.default')
 @section('content')
     <div class="wrapper">
-            <div class="row no-gutters d-none d-md-flex">
-                <div class="col-12 col-md-6 col-lg-8 bg-dark">
+            <div class="row no-gutters">
+                <div class="col-12 col-md-6 col-lg-8 bg-dark d-none d-md-block">
                     <div class="owl-carousel cate-banners owl-theme">
                         <div class="item">
                             {{--                    <a href="#" class="">--}}
