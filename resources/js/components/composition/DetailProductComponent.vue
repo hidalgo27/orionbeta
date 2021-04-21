@@ -5,7 +5,7 @@
         <!--        <a href="#" class="twitter" title="Share"><i class="fab fa-twitter"></i></a>-->
         <!--        <a href="#" class="google" title="Share"><i class="fab fa-google"></i></a>-->
         <a href="https://www.instagram.com/orioncusco" target="_blank" class="twitter" title="Share"><i class="fab fa-instagram"></i></a>
-        <a href="https://api.whatsapp.com/send?phone=51965642784" target="_blank" class="whatsapp" title="Share"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=51946565500" target="_blank" class="whatsapp" title="Share"><i class="fab fa-whatsapp"></i></a>
     </div>
     <!-- Share Icons End-->
     <!-- Cart Sidebar Offset Start-->

@@ -26,36 +26,35 @@
                         </div>
                         <div class="panel-group accordion pt-1" id="accordion0">
                             <div class="panel panel-default">
-                                <div class="panel-heading" id="headingOne">
-                                    <div class="panel-title">
-                                        <a class="collapsed" data-toggle="collapse" data-target="#collapseOne" href="#" aria-expanded="false" aria-controls="collapseOne">
-                                            Número de “servicio de atención al cliente”
-                                        </a>
-                                    </div>
-                                </div>
-                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion0" style="">
-                                    <div class="panel-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper faucibus erat a efficitur. Praesent vulputate mauris eget augue semper, at eleifend enim aliquam. Vivamus suscipit lacinia neque eget suscipit. Morbi vitae nisl ac justo placerat vulputate ac quis lectus. Vestibulum pellentesque, orci eu ultrices molestie, nisi libero hendrerit eros, vel interdum augue tortor vel urna. Nullam enim dolor, pulvinar in metus vitae, tincidunt dignissim neque. Pellentesque tempor nulla eu neque hendrerit fringilla. Suspendisse ultricies venenatis maximus. Suspendisse erat elit, ultricies eu porta nec, luctus sit amet dui. Fusce feugiat odio semper, hendrerit lectus vitae, convallis nisl. Ut a justo diam. Donec vitae leo lorem. Cras pharetra libero ut urna condimentum, non imperdiet leo posuere.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
                                 <div class="panel-heading" id="headingTwo">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo" href="#" aria-expanded="false" aria-controls="collapseTwo">
-                                            Donde están ubicados
+                                            ¿Donde están ubicados?
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion0">
                                     <div class="panel-body">
                                         <p>Buen día, puede visitarnos en nuestros 6 locales:</p>
-                                        <ol>
-                                            <li>- Av. Garcilaso nro. 700, Wanchaq, Plaza Túpac Amaru</li>
-                                            <li>- Calle Matara nro. 270, Cusco, esquina Ayacucho</li>
-                                            <li>- Calle Unión nro. 117, Centro Histórico, Cusco, Mercado San pedro</li>
-                                            <li>- Calle Meloc nro. 417, Cusco, Cusco. 👍 Lo esperamos con la mejor atención y los precios más bajos ✅ ✨Supermercados 𝐎𝐫𝐢𝐨́𝐧 ✨"𝐿𝑎 𝑒𝑠𝑡𝑟𝑒𝑙𝑙𝑎 𝑑𝑒 𝑙𝑜𝑠 𝑝𝑟𝑒𝑐𝑖𝑜𝑠 𝑏𝑎𝑗𝑜𝑠"</li>
-                                        </ol>
+
+                                        <h3>Orion Garcilaso</h3>
+                                        <p>Av. Prolongación Garcilaso N°700 Wanchaq – Cusco</p>
+
+                                        <h3>Orion Cultura</h3>
+                                        <p>Av de la Cultura Urb. Santa Rosa F-1Wanchaq – Cusco</p>
+
+                                        <h3>Orion Huayruropata</h3>
+                                        <p>Av. Huayruropata N° 931 Wanchaq</p>
+
+                                        <h3>Orion Union</h3>
+                                        <p>Calle Unión N°117 Cusco – Cusco</p>
+
+                                        <h3>Orion matara</h3>
+                                        <p>Calle Matará N°271 Cusco – Cusco</p>
+
+                                        <h3>Orion Cultura</h3>
+                                        <p>Av.de La Cultura N°1404 Urb. Chachacomayoc - Wanchaq – Cusco</p>
+
                                     </div>
                                 </div>
                             </div>
@@ -63,13 +62,14 @@
                                 <div class="panel-heading" id="headingThree">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" href="#" aria-expanded="false" aria-controls="collapseThree">
-                                            Precio del pollo
+                                            ¿Qué productos puedo comprar en orion.com.pe?
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion0">
                                     <div class="panel-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper faucibus erat a efficitur. Praesent vulputate mauris eget augue semper, at eleifend enim aliquam. Vivamus suscipit lacinia neque eget suscipit. Morbi vitae nisl ac justo placerat vulputate ac quis lectus. Vestibulum pellentesque, orci eu ultrices molestie, nisi libero hendrerit eros, vel interdum augue tortor vel urna. Nullam enim dolor, pulvinar in metus vitae, tincidunt dignissim neque. Pellentesque tempor nulla eu neque hendrerit fringilla. Suspendisse ultricies venenatis maximus. Suspendisse erat elit, ultricies eu porta nec, luctus sit amet dui. Fusce feugiat odio semper, hendrerit lectus vitae, convallis nisl. Ut a justo diam. Donec vitae leo lorem. Cras pharetra libero ut urna condimentum, non imperdiet leo posuere.</p>
+                                        <p>Puedes encontrar productos que tenemos exhibidos en  todos nuestros locales.</p>
+                                        <p>Para nosotros, es muy importante saber cuáles son tus necesidades en cada pedido, de modo de cumplir cada vez mejor con tus expectativas. Agradecemos que  puedas mencionarnos qué productos no encuentras, para incluirlos a la brevedad.</p>
                                     </div>
                                 </div>
                             </div>
@@ -77,13 +77,13 @@
                                 <div class="panel-heading" id="headingfour">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapsefour" href="#" aria-expanded="false" aria-controls="collapsefour">
-                                            Realizan Delivery
+                                            ¿Por qué comprar en Orion Supermercados?
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapsefour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour" data-parent="#accordion0">
                                     <div class="panel-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper faucibus erat a efficitur. Praesent vulputate mauris eget augue semper, at eleifend enim aliquam. Vivamus suscipit lacinia neque eget suscipit. Morbi vitae nisl ac justo placerat vulputate ac quis lectus. Vestibulum pellentesque, orci eu ultrices molestie, nisi libero hendrerit eros, vel interdum augue tortor vel urna. Nullam enim dolor, pulvinar in metus vitae, tincidunt dignissim neque. Pellentesque tempor nulla eu neque hendrerit fringilla. Suspendisse ultricies venenatis maximus. Suspendisse erat elit, ultricies eu porta nec, luctus sit amet dui. Fusce feugiat odio semper, hendrerit lectus vitae, convallis nisl. Ut a justo diam. Donec vitae leo lorem. Cras pharetra libero ut urna condimentum, non imperdiet leo posuere.</p>
+                                        <p>Porque podrás recibir un servicio de calidad, puntualidad y personalizado desde el punto donde te encuentres, ahorrando tiempo y dinero accediendo a nuestras ofertas y promociones exclusivas en orion.com.pe. Compra fácilmente desde nuestra plataforma fácil y rápida.</p>
                                     </div>
                                 </div>
                             </div>
@@ -91,13 +91,13 @@
                                 <div class="panel-heading" id="headingfive">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapsefive" href="#" aria-expanded="false" aria-controls="collapsefive">
-                                            Cobros y Reclamos
+                                            ¿Qué pasa si no logro hacer la compra? / ¿Qué pasa si no entiendo algo?
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapsefive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive" data-parent="#accordion0">
                                     <div class="panel-body">
-                                        <p>Reclamos: Contacto CEL: </p>
+                                        <p>Para obtener mayor información podrás comunicarte con uno de nuestros asesores. Srta. Eneida Coiso CEL: 965 642 784</p>
                                     </div>
                                 </div>
                             </div>
@@ -105,13 +105,13 @@
                                 <div class="panel-heading" id="headingsix">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapsesix" href="#" aria-expanded="false" aria-controls="collapsesix">
-                                            Ayuda Social
+                                            ¿Qué medios de pago puedo utilizar en Orion Supermercados?
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapsesix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingsix" data-parent="#accordion0">
                                     <div class="panel-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper faucibus erat a efficitur. Praesent vulputate mauris eget augue semper, at eleifend enim aliquam. Vivamus suscipit lacinia neque eget suscipit. Morbi vitae nisl ac justo placerat vulputate ac quis lectus. Vestibulum pellentesque, orci eu ultrices molestie, nisi libero hendrerit eros, vel interdum augue tortor vel urna. Nullam enim dolor, pulvinar in metus vitae, tincidunt dignissim neque. Pellentesque tempor nulla eu neque hendrerit fringilla. Suspendisse ultricies venenatis maximus. Suspendisse erat elit, ultricies eu porta nec, luctus sit amet dui. Fusce feugiat odio semper, hendrerit lectus vitae, convallis nisl. Ut a justo diam. Donec vitae leo lorem. Cras pharetra libero ut urna condimentum, non imperdiet leo posuere.</p>
+                                        <p>Los medios de pago que tenemos disponibles para ti son: Visa, Mastercard, American Express y Diners Club International.</p>
                                     </div>
                                 </div>
                             </div>
@@ -119,14 +119,13 @@
                                 <div class="panel-heading" id="headingseven">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapseseven" href="#" aria-expanded="false" aria-controls="collapseseven">
-                                            Precio de algunos productos
+                                            ¿Es resguardada la confidencialidad de mis datos?
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapseseven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingseven" data-parent="#accordion0">
                                     <div class="panel-body">
-                                        <p>Comunicarse Srta. Eneida CEL: 965 642 784</p>
-                                        <p>👍 Buen día, para una mejor atención y experiencia de servicio puedes comunicarte con la Srta. Eneida del área de precios y productos 📲CEL: 965 642 784. ✨Supermercados 𝐎𝐫𝐢𝐨𝐧 ✨"𝐿𝑎 𝑒𝑠𝑡𝑟𝑒𝑙𝑙𝑎 𝑑𝑒 𝑙𝑜𝑠 𝑝𝑟𝑒𝑐𝑖𝑜𝑠 𝑏𝑎𝑗𝑜𝑠"</p>
+                                        <p>Sí. Garantizamos que los datos ingresados son utilizados exclusivamente para generar tu pedido y lograr una comunicación personal contigo, con el objetivo de brindar un mejor servicio.</p>
                                     </div>
                                 </div>
                             </div>
@@ -134,13 +133,13 @@
                                 <div class="panel-heading" id="headingeight">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapseeight" href="#" aria-expanded="false" aria-controls="collapseeight">
-                                            Quieren ver la carta---- Atendemos Pollo a la Brasa
+                                            ¿Es seguro ingresar los datos de mi tarjeta de crédito?
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapseeight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
                                     <div class="panel-body">
-                                        <p>👍 Buen día, para una mejor atención y experiencia de servicio puedes comunicarte con la Srta. Eneida del área de precios y productos 📲CEL: 965 642 784. ✨Supermercados 𝐎𝐫𝐢𝐨𝐧 ✨"𝐿𝑎 𝑒𝑠𝑡𝑟𝑒𝑙𝑙𝑎 𝑑𝑒 𝑙𝑜𝑠 𝑝𝑟𝑒𝑐𝑖𝑜𝑠 𝑏𝑎𝑗𝑜𝑠"</p>
+                                        <p>Sí, orion.com.pe protege la confidencialidad de los datos de tu tarjeta a través de dos formas: encriptación SSL entre tu navegador y el sitio de orion.com.pe</p>
                                     </div>
                                 </div>
                             </div>
@@ -149,13 +148,13 @@
                                 <div class="panel-heading" id="headingeight">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapse9" href="#" aria-expanded="false" aria-controls="collapse9">
-                                            Quieren hacer reservas
+                                            ¿Hay gastos de envío?
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapse9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
                                     <div class="panel-body">
-                                        <p>Comunicarse CEL: 965 642 784</p>
+                                        <p>Sí, hay gastos de envíos, cuyo valor dependerá del día y del horario que elijas para tu despacho.</p>
                                     </div>
                                 </div>
                             </div>
@@ -163,13 +162,13 @@
                                 <div class="panel-heading" id="headingeight">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapse10" href="#" aria-expanded="false" aria-controls="collapse10">
-                                            Precios del pan - Panadería
+                                            El producto no es de mi agrado, ¿Lo puedo devolver?
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
                                     <div class="panel-body">
-                                        <p></p>
+                                        <p>Sí. Debes solicitar la devolución dentro de las primeras 24 horas y presentar la boleta o guía de despacho. El producto debe conservar las mismas características de cuando fue entregado* y considerar los accesorios respectivos, de modo de hacer el retiro más eficiente. * No debe ser abierto, ni probado ni usado. * Debe estar sellado, con sus embalajes originales completos. * No pueden estar rotos los sellos.</p>
                                     </div>
                                 </div>
                             </div>
@@ -177,13 +176,13 @@
                                 <div class="panel-heading" id="headingeight">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapse11" href="#" aria-expanded="false" aria-controls="collapse11">
-                                            Piden ayuda APV y AAHH
+                                            ¿Cómo comprar en orion.com.pe?
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
                                     <div class="panel-body">
-                                        <p></p>
+                                        <p>Una vez registrado, agrega al carro los productos seleccionados, que se encuentran ordenados por categorías. Finalizada la compra, presiona pagar y selecciona los criterios de sustitución y forma de pago. Luego, indica la dirección de despacho y el día y horario en que quieres recibir la compra. Para finalizar, revisa el total y confirma tu pago.</p>
                                     </div>
                                 </div>
                             </div>
@@ -191,13 +190,15 @@
                                 <div class="panel-heading" id="headingeight">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapse12" href="#" aria-expanded="false" aria-controls="collapse12">
-                                            Me olvide productos ¿¡Que debo hacer!?
+                                            ¿Por qué puedo comprar máximo 5 unidades por producto?
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
                                     <div class="panel-body">
-                                        <p></p>
+                                        <p>Orion.com.pe está orientado al consumo familiar, siendo 20 unidades un estándar considerado como uso personal. Si desea adquirir mayor cantidad, se sugiere comunicarse con la asesora. Srta. Eneida Coiso CEL: 965 642 784
+                                            Hay productos que utilizan otra unidad de medición, como la carne, en cuyo caso se considera un máximo de gramaje, información que puede ser consultada en nuestro call center 965 642 784.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -209,14 +210,13 @@
                                 <div class="panel-heading" id="headingeight">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapse13a" href="#" aria-expanded="false" aria-controls="collapse13a">
-                                            Quieren mostrar sus productos y catálogos con quien puedo comunicarme
+                                            Si no encuentro un producto ¿Qué puedo hacer?
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapse13a" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
                                     <div class="panel-body">
-                                        <p>👍 Buen día, para una mejor atención y experiencia de servicio puedes Comunicarte con el Área Comercial 📲CEL: 966 420 708. ✨Supermercados 𝐎𝐫𝐢𝐨𝐧 ✨"𝐿𝑎 𝑒𝑠𝑡𝑟𝑒𝑙𝑙𝑎 𝑑𝑒 𝑙𝑜𝑠 𝑝𝑟𝑒𝑐𝑖𝑜𝑠 𝑏𝑎𝑗𝑜𝑠"</p>
-                                        <p>Comunicarse con el área de Comercial CEL: 966 420 708</p>
+                                        <p>Puedes envíanos un correo a info@orion.com.pe mencionando cuáles fueron los productos no encontrados, de modo de trabajar en sumarlos a nuestro surtido.</p>
                                     </div>
                                 </div>
                             </div>
@@ -224,13 +224,15 @@
                                 <div class="panel-heading" id="headingeight">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapse13" href="#" aria-expanded="false" aria-controls="collapse13">
-                                            Quieren pagar por algunos alimentos y solo quieres ir a recojerlo
+                                            ¿Cómo saber el estado de mi pedido?
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
                                     <div class="panel-body">
-                                        <p></p>
+                                        <p>Podrás comunicarte con uno de nuestros asesores.
+                                            Srta. Eneida Coiso CEL: 965 642 784
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -238,13 +240,15 @@
                                 <div class="panel-heading" id="headingeight">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapse14" href="#" aria-expanded="false" aria-controls="collapse14">
-                                            Horario de atención
+                                            ¿Cómo saber si estoy dentro de la cobertura para realizar un pedido?
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapse14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
                                     <div class="panel-body">
-                                        <p>De 6:30 am A 6:30 pm (de Lunes a Sábado)</p>
+                                        <p>Podrás comunicarte con uno de nuestros asesores.
+                                            Srta. Eneida Coiso CEL: 965 642 784
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -252,103 +256,17 @@
                                 <div class="panel-heading" id="headingeight">
                                     <div class="panel-title">
                                         <a class="collapsed" data-toggle="collapse" data-target="#collapse15" href="#" aria-expanded="false" aria-controls="collapse15">
-                                            Algunos proveedores
+                                            Cobros y reclamos
                                         </a>
                                     </div>
                                 </div>
                                 <div id="collapse15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
                                     <div class="panel-body">
-                                        <p></p>
+                                        <p>Podras escribirnos y enviaros todos tus datos para poder comunicaros contigo a la dirección info@orion.com.pe, en breve nos comunicaremos contigo.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading" id="headingeight">
-                                    <div class="panel-title">
-                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse16" href="#" aria-expanded="false" aria-controls="collapse16">
-                                            Quiero pedido a domicilio
-                                        </a>
-                                    </div>
-                                </div>
-                                <div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
-                                    <div class="panel-body">
-                                        <p>Delivery Gratis compras mayores a s/. 200, CEL: 965 642 784    CEL: 984414322</p>
-                                        <p>👍 Buen día,, puedes comunicarte al siguiente número de Delivery 📲CEL: 965 642 784, Recuerda que el Delivery es Gratis por compras mayores a s/.200 ✨Supermercados 𝐎𝐫𝐢𝐨𝐧 ✨"𝐿𝑎 𝑒𝑠𝑡𝑟𝑒𝑙𝑙𝑎 𝑑𝑒 𝑙𝑜𝑠 𝑝𝑟𝑒𝑐𝑖𝑜𝑠 𝑏𝑎𝑗𝑜𝑠"</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading" id="headingeight">
-                                    <div class="panel-title">
-                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse17" href="#" aria-expanded="false" aria-controls="collapse17">
-                                            Teléfono de área contable
-                                        </a>
-                                    </div>
-                                </div>
-                                <div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
-                                    <div class="panel-body">
-                                        <p>Comunicarse cel: 953 268 582</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading" id="headingeight">
-                                    <div class="panel-title">
-                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse18" href="#" aria-expanded="false" aria-controls="collapse18">
-                                            Me olvide productos ¿¡Que debo hacer!?
-                                        </a>
-                                    </div>
-                                </div>
-                                <div id="collapse18" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
-                                    <div class="panel-body">
-                                        <p></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading" id="headingeight">
-                                    <div class="panel-title">
-                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse19" href="#" aria-expanded="false" aria-controls="collapse19">
-                                            Estoy buscando trabajo donde puedo postular
-                                        </a>
-                                    </div>
-                                </div>
-                                <div id="collapse19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
-                                    <div class="panel-body">
-                                        <p>Presentarse con cv, via expresa parque industrial e-7, wanchaq.</p>
-                                        <p>👍 Buen día, para presentar tu cv, debes llevarlo a la vía expresa parque industrial e-7 wanchaq, en horario de oficina, gracias. ✨supermercados 𝐎𝐫𝐢𝐨𝐧 ✨"𝐿𝑎 𝑒𝑠𝑡𝑟𝑒𝑙𝑙𝑎 𝑑𝑒 𝑙𝑜𝑠 𝑝𝑟𝑒𝑐𝑖𝑜𝑠 𝑏𝑎𝑗𝑜𝑠"</p>
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading" id="headingeight">
-                                    <div class="panel-title">
-                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse20" href="#" aria-expanded="false" aria-controls="collapse20">
-                                            Solo “hola” “buenas tardes/días/noches”
-                                        </a>
-                                    </div>
-                                </div>
-                                <div id="collapse20" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
-                                    <div class="panel-body">
-                                        <p>😃buen día, somos el supermercado 𝐎𝐫𝐢𝐨𝐧 ✨"𝐿𝑎 𝑒𝑠𝑡𝑟𝑒𝑙𝑙𝑎 𝑑𝑒 𝑙𝑜𝑠 𝑝𝑟𝑒𝑐𝑖𝑜𝑠 𝑏𝑎𝑗𝑜𝑠" en que podemos ayudarle?</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading" id="headingeight">
-                                    <div class="panel-title">
-                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse21" href="#" aria-expanded="false" aria-controls="collapse21">
-                                            Mala atención
-                                        </a>
-                                    </div>
-                                </div>
-                                <div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight" data-parent="#accordion0">
-                                    <div class="panel-body">
-                                        <p>buen día, sus observaciones son muy importantes para nosotros, nos disculpamos de antemano con usted por el mal servicio, no volverá a ocurrir; atentamente supermercados 𝐎𝐫𝐢𝐨𝐧</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
