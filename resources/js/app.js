@@ -29,7 +29,7 @@ import CategoryComponent from "./components/composition/CategoryComponent";
 // import HomeComponent from "./components/composition/HomeComponent";
 import mitt from "mitt";
 const emitter = mitt()
-import LoadScript from 'vue-plugin-load-script';
+// import LoadScript from 'vue-plugin-load-script';
 const app = createApp({
     components: {
         IndexComponent,
@@ -46,5 +46,5 @@ const app = createApp({
     }
 })
 app.provide('emitter', emitter);
-app.use(LoadScript);
+// app.provide('LoadScript',LoadScript);
 app.mount('#app')

@@ -753,12 +753,23 @@
                                   >Pago Contra entrega</label>
                                 </div>
                               </li>
-                              <!--                                                            <li>-->
-                              <!--                                                                <div class="radio-item_1">-->
-                              <!--                                                                    <input id="card1" value="pagotarjeta" name="paymentmethod" type="radio" data-minimum="50.0" v-model="picked_metodo">-->
-                              <!--                                                                    <label  for="card1" class="radio-label_1">Tarjeta de crédito / Tarjeta de débito </label>-->
-                              <!--                                                                </div>-->
-                              <!--                                                            </li>-->
+                              <li>
+                                <div class="radio-item_1">
+                                  <input
+                                    id="card1"
+                                    value="pagotarjeta"
+                                    name="paymentmethod"
+                                    type="radio"
+                                    data-minimum="50.0"
+                                    v-model="picked_metodo"
+                                  >
+                                  <label
+                                    for="card1"
+                                    class="radio-label_1"
+                                    @click="loadForm"
+                                  >Tarjeta de crédito / Tarjeta de débito </label>
+                                </div>
+                              </li>
                             </ul>
                           </div>
                           <div
@@ -774,106 +785,127 @@
                               </div>
                             </div>
                           </div>
+                          picked_metodo:{{ picked_metodo }}
+                          loader:{{ loader }}
                           <div
-                            class="form-group return-departure-dts"
+                            v-if="picked_metodo=='pagotarjeta'"
+                            class="form-group return-departure-dts1"
                             data-method="card"
                           >
-                            <div class="row">
+
+                            <div
+                              v-if="false"
+                              class="spinner-border text-danger"
+                              role="status"
+                            >
+                              <span class="sr-only">Loading...</span>
+                            </div>
+                            <div
+                              class="row"
+                              v-if="true"
+                            >
                               <div class="col-lg-12">
                                 <div class="mb-4 pymnt_title">
                                   <h4>Tarjeta de crédito / Tarjeta de débito</h4>
                                 </div>
                               </div>
-                              <div class="col-lg-6">
-                                <div class="mt-1 form-group">
-                                  <label class="control-label">Nombre del Titular*</label>
-                                  <div class="ui search focus">
-                                    <div class="ui left icon input swdh11 swdh19">
-                                      <input
-                                        class="prompt srch_explore"
-                                        type="text"
-                                        name="holdername"
-                                        value=""
-                                        id="holder[name]"
-                                        required=""
-                                        maxlength="64"
-                                        placeholder="Holder Name"
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-6">
+                              <div class="col-12">
+
                                 <div class="mt-1 form-group">
                                   <label class="control-label">Numero de tarjeta*</label>
-                                  <div class="ui search focus">
-                                    <div class="ui left icon input swdh11 swdh19">
-                                      <input
-                                        class="prompt srch_explore"
-                                        type="text"
-                                        name="cardnumber"
-                                        value=""
-                                        id="card[number]"
-                                        required=""
-                                        maxlength="64"
-                                        placeholder="Card Number"
-                                      >
-                                    </div>
-                                  </div>
+
+                                  <div
+                                    id="txtNumeroTarjeta"
+                                    class="form-control form-control-sm ncp-card"
+                                  ></div>
+                                  <small
+                                    id="msjNroTarjeta"
+                                    class="m-0 form-text text-muted red-text"
+                                  ></small>
+
                                 </div>
                               </div>
+
                               <div class="col-lg-4">
                                 <div class="mt-1 form-group">
                                   <label class="control-label">Mes de Expiración*</label>
-                                  <select
-                                    class="ui fluid search dropdown form-dropdown"
-                                    name="card[expire-month]"
-                                  >
-                                    <option value="">Month</option>
-                                    <option value="1">January</option>
-                                    <option value="2">February</option>
-                                    <option value="3">March</option>
-                                    <option value="4">April</option>
-                                    <option value="5">May</option>
-                                    <option value="6">June</option>
-                                    <option value="7">July</option>
-                                    <option value="8">August</option>
-                                    <option value="9">September</option>
-                                    <option value="10">October</option>
-                                    <option value="11">November</option>
-                                    <option value="12">December</option>
-                                  </select>
-                                </div>
-                              </div>
-                              <div class="col-lg-4">
-                                <div class="mt-1 form-group">
-                                  <label class="control-label">Año de expiración*</label>
-                                  <div class="ui search focus">
-                                    <div class="ui left icon input swdh11 swdh19">
-                                      <input
-                                        class="prompt srch_explore"
-                                        type="text"
-                                        name="card[expire-year]"
-                                        maxlength="4"
-                                        placeholder="Year"
-                                      >
-                                    </div>
-                                  </div>
+                                  <div
+                                    id="txtFechaVencimiento"
+                                    class="form-control form-control-sm"
+                                  ></div>
+                                  <small
+                                    id="msjFechaVencimiento"
+                                    class="m-0 form-text text-muted red-text"
+                                  ></small>
                                 </div>
                               </div>
                               <div class="col-lg-4">
                                 <div class="mt-1 form-group">
                                   <label class="control-label">CVV*</label>
-                                  <div class="ui search focus">
-                                    <div class="ui left icon input swdh11 swdh19">
-                                      <input
-                                        class="prompt srch_explore"
-                                        name="card[cvc]"
-                                        maxlength="3"
-                                        placeholder="CVV"
-                                      >
-                                    </div>
-                                  </div>
+                                  <div
+                                    id="txtCvv"
+                                    class="form-control form-control-sm"
+                                  ></div>
+                                  <small
+                                    id="msjCvv"
+                                    class="m-0 form-text text-muted red-text"
+                                  ></small>
+
+                                </div>
+                              </div>
+
+                              <div class="col-lg-6">
+                                <div class="form-group">
+                                  <label class="control-label">Nombre*</label>
+                                  <input
+                                    id="pname"
+                                    name="pname"
+                                    type="text"
+                                    placeholder="Nombre"
+                                    class="form-control input-md"
+                                    required
+                                    readonly
+                                    v-model="d_name"
+                                  >
+                                </div>
+                              </div>
+                              <div class="col-lg-6">
+                                <div class="form-group">
+                                  <label class="control-label">Nombre*</label>
+                                  <input
+                                    id="name"
+                                    name="name"
+                                    type="text"
+                                    placeholder="Nombre Completo"
+                                    class="form-control input-md"
+                                    required
+                                    v-model="d_name"
+                                    readonly
+                                  >
+                                </div>
+                              </div>
+                              <div class="col-lg-12">
+                                <div class="form-group">
+                                  <label class="control-label">Email*</label>
+                                  <input
+                                    id="d_email"
+                                    name="d_email"
+                                    type="text"
+                                    placeholder="Nombre Completo"
+                                    class="form-control input-md"
+                                    required
+                                    readonly
+                                    v-model="d_email"
+                                  >
+                                </div>
+                              </div>
+                              <div class="col-lg-4">
+                                <div class="mt-1 form-group">
+                                  <input
+                                    type="text"
+                                    v-model="txtCuotas"
+                                    style="display: none;"
+                                  >
                                 </div>
                               </div>
                             </div>
@@ -906,7 +938,7 @@
                           <!-- Boton de pago con tarjeta -->
                           <button
                             class="btn btn-primary"
-                            @click="PagoTarjeta()"
+                            @click="pagoTarjeta()"
                           ><i
                               v-if="!loader"
                               class="fas fa-credit-card"
@@ -1044,7 +1076,7 @@ import moment from "moment";
 import CartComponent from "./CartComponent";
 // import { useField, useForm } from "vee-validate"
 
-import { ref, toRefs, reactive, computed, inject } from "vue";
+import { ref, toRefs, reactive, computed, inject, onMounted } from "vue";
 import axios from "axios";
 export default {
   components: { HeaderComponent, TopComponent, CartComponent },
@@ -1112,88 +1144,360 @@ export default {
     ];
     // Variables para el pago por tarjeta
     const modalidadPago = ref(0);
-    const configuration= {
-        callbackurl: "",
-        sessionkey: "",
-        channel: "",
-        merchantid: "",
-        purchasenumber: "",
-        amount: "",
-        language: "",
-        font: "",
-        recurrencemaxamount: "",
-      },
-     const pay= ref(null),
-     const  elementStyles= {
-        base: {
-          color: "#666666",
-          fontWeight: 700,
-          fontFamily: "'Montserrat', sans-serif",
-          fontSize: "16px",
-          fontSmoothing: "antialiased",
-          placeholder: {
-            color: "#999999",
-          },
-          autofill: {
-            color: "#e39f48",
-          },
+    const configuration = {
+      callbackurl: "",
+      sessionkey: "",
+      channel: "",
+      merchantid: "",
+      purchasenumber: "",
+      amount: "",
+      language: "",
+      font: "",
+      recurrencemaxamount: "",
+    };
+    const elementStyles = {
+      base: {
+        color: "black",
+        margin: "0",
+        // width: '100% !important',
+        // fontWeight: 700,
+        fontFamily: "'Montserrat', sans-serif",
+        // fontSize: '16px',
+        fontSmoothing: "antialiased",
+        placeholder: {
+          color: "#999999",
         },
-        invalid: {
-          color: "#E25950",
-          "::placeholder": {
-            color: "#FFCCA5",
-          },
+        autofill: {
+          color: "#e39f48",
         },
       },
-      const loader = ref(false);
+      invalid: {
+        color: "#E25950",
+        "::placeholder": {
+          color: "#FFCCA5",
+        },
+      },
+    };
+    const pay = ref(null);
+    let loader = ref(false);
+    const txtCuotas = ref(0);
+    const amount = ref(0);
+    const dcc = ref("");
+    const purchase = ref("");
+    const credito = ref(false);
 
-    function PagoTarjeta() {
-      this.loader = true;
-      this.PagoTarjetaPasoDos();
+    const cardNumber = ref(null);
+    const cardExpiry = ref(null);
+    const cardCvv = ref(null);
+    const id_orden_ = ref(0);
+
+    async function loadForm() {
+      try {
+        console.log("se guardara temporalmente la orden");
+        id_orden_.value = await onSubmitAllTarjeta();
+        if (id_orden_.value > 0) {
+          axios
+            .get(
+              `http://ecommerce-backend1.test/api/v1/sesion/${id_orden_.value}`
+            )
+            .then(function (response) {
+              console.log("Response: ", response.data);
+              configuration.value = {
+                sessionkey: String(response.data.sesionkey),
+                channel: String(response.data.channel),
+                merchantid: String(response.data.merchantid),
+                purchasenumber: String(response.data.purchasenumber),
+                amount: String(response.data.amount),
+                callbackurl: "",
+                language: "es",
+                font:
+                  "https://fonts.googleapis.com/css?family=Montserrat:400&display=swap",
+              };
+
+              // console.log("configuration", configuration.value);
+              purchase.value = String(configuration.value.purchasenumber);
+              amount.value = String(configuration.value.amount);
+              dcc.value = false;
+              //   payform.resetData();
+              payform.setConfiguration(configuration.value);
+
+              // Número de tarjeta
+              cardNumber.value = payform.createElement(
+                "card-number",
+                {
+                  style: elementStyles,
+                  placeholder: "Número de Tarjeta",
+                },
+                "txtNumeroTarjeta"
+              );
+              cardNumber.value.then((element) => {
+                element.on("bin", function (data) {
+                  console.log("BIN: ", data);
+                });
+
+                element.on("dcc", function (data) {
+                  console.log("DCC", data);
+                  if (data != null) {
+                    var response = confirm(
+                      "Usted tiene la opción de pagar su factura en: PEN " +
+                        amount.value +
+                        " o " +
+                        data["currencyCodeAlpha"] +
+                        " " +
+                        data["amount"] +
+                        ". Una vez haya hecho su elección, la transacción continuará con la moneda seleccionada. Tasa de cambio PEN a " +
+                        data["currencyCodeAlpha"] +
+                        ": " +
+                        data["exchangeRate"] +
+                        " \n \n" +
+                        data["currencyCodeAlpha"] +
+                        " " +
+                        data["amount"] +
+                        "\nPEN = " +
+                        data["currencyCodeAlpha"] +
+                        " " +
+                        data["exchangeRate"] +
+                        "\nMARGEN FX: " +
+                        data["markup"]
+                    );
+                    if (response == true) {
+                      dcc = true;
+                    } else {
+                      dcc = false;
+                    }
+                  }
+                });
+
+                element.on("installments", function (data) {
+                  console.log("INSTALLMENTS: ", data);
+                  if (data != null && channel.value == "web") {
+                    credito.value = true;
+                    var cuotas = document.getElementById("cuotas");
+                    cuotas.style.display = "block";
+
+                    var select = document.createElement("select");
+                    select.setAttribute(
+                      "class",
+                      "form-control form-control-sm mb-4"
+                    );
+                    select.setAttribute("id", "selectCuotas");
+                    optionDefault = document.createElement("option");
+                    optionDefault.value = optionDefault.textContent =
+                      "Sin cuotas";
+                    select.appendChild(optionDefault);
+                    data.forEach(function (item) {
+                      option = document.createElement("option");
+                      option.value = option.textContent = item;
+                      select.appendChild(option);
+                    });
+                    cuotas.appendChild(select);
+                  } else {
+                    credito.value = false;
+                    var cuotas = document.getElementById("selectCuotas");
+                    if (cuotas != undefined) {
+                      cuotas.parentNode.removeChild(cuotas);
+                    }
+                  }
+                });
+
+                element.on("change", function (data) {
+                  console.log("CHANGE: ", data);
+                  document.getElementById("msjNroTarjeta").style.display =
+                    "none";
+                  document.getElementById("msjFechaVencimiento").style.display =
+                    "none";
+                  document.getElementById("msjCvv").style.display = "none";
+                  if (data.length != 0) {
+                    data.forEach(function (d) {
+                      if (d["code"] == "invalid_number") {
+                        document.getElementById("msjNroTarjeta").style.display =
+                          "block";
+                        document.getElementById("msjNroTarjeta").innerText =
+                          d["message"];
+                      }
+                      if (d["code"] == "invalid_expiry") {
+                        document.getElementById(
+                          "msjFechaVencimiento"
+                        ).style.display = "block";
+                        document.getElementById(
+                          "msjFechaVencimiento"
+                        ).innerText = d["message"];
+                      }
+                      if (d["code"] == "invalid_cvc") {
+                        document.getElementById("msjCvv").style.display =
+                          "block";
+                        document.getElementById("msjCvv").innerText =
+                          d["message"];
+                      }
+                    });
+                  }
+                });
+              });
+
+              // Cvv2
+              cardCvv.value = payform.createElement(
+                "card-cvc",
+                {
+                  style: elementStyles,
+                  placeholder: "CVV",
+                },
+                "txtCvv"
+              );
+
+              cardCvv.value.then((element) => {
+                element.on("change", function (data) {
+                  console.log("CHANGE CVV2: ", data);
+                });
+              });
+
+              // Fecha de vencimiento
+              cardExpiry.value = payform.createElement(
+                "card-expiry",
+                {
+                  style: elementStyles,
+                  placeholder: "MM/AAAA",
+                },
+                "txtFechaVencimiento"
+              );
+
+              cardExpiry.value.then((element) => {
+                element.on("change", function (data) {
+                  console.log("CHANGE F.V: ", data);
+                });
+              });
+
+              // loader.value = false;
+            });
+        }
+      } catch (error) {
+        console.log("error", error);
+      }
     }
-    async function PagoTarjetaPasoDos() {
-      await this.$loadScript(
-        "https://static-content-qas.vnforapps.com/v2/js/checkout.js"
-      )
-        .then(res => {
-          // Código en caso de que tu script cargue
-          // primero enviamos a guardar la orden y recojemos el id de la orden
-          cartState.error_v = [];
+    function pagoTarjeta() {
+      // Comparamos los montos para realizar el pago por tarjeta
 
-      if (!props.user.id) {
-        cartState.error_v.push("Requiere iniciar sesión");
+      let total_car = new Intl.NumberFormat("es-PE").format(
+        parseFloat(tax.value) + parseFloat(cartState.total)
+      );
+      console.log(`Montos a comprarar:${amount.value}=?${total_car}`);
+      if (parseFloat(amount.value) != parseFloat(total_car)) {
+        alert("Por favor actualize la pagina");
+
+        // location.reload();
       }
-      if (direccion.value.length === 0) {
-        cartState.error_v.push("Dirección es obligatorio");
+
+      loader.value = true;
+      let data = {
+        name: d_name.value,
+        lastName: d_name.value,
+        email: d_email.value,
+        alias: "KS",
+        phoneNumber: String(celular.value),
+        currencyConversion: dcc.value,
+        recurrence: false,
+      };
+      if (credito.value) {
+        let cuotaSeleccionada = $("#selectCuotas").val();
+        if (cuotaSeleccionada == "Sin cuotas") {
+          data.push("installment", 0);
+        } else {
+          data.push("installment", cuotaSeleccionada);
+        }
       }
-      if (referencia.value.length === 0) {
-        cartState.error_v.push("Referencia es obligatorio");
-      }
-      if (distrito.value.length === 0) {
-        cartState.error_v.push("Distrito es obligatorio");
-      }
-      if (celular.value.length === 0) {
-        cartState.error_v.push("Celular es obligatorio");
-      }
-      if (picked_fecha.value.length === 0) {
-        cartState.error_v.push("Fecha de entrega es obligatorio");
-      }
-      if (picked_hora.value.length === 0) {
-        cartState.error_v.push("Hora de entrega es obligatorio");
-      }
-      if (picked_metodo.value.length === 0) {
-        cartState.error_v.push("Metodo de pago es obligatorio");
-      }
-      if (cartState.cart.length === 0) {
-        cartState.error_v.push(
-          "Requiere agregar productos para proceder con el pago"
-        );
-      }
-      if (terminos.value.length === 0) {
-        cartState.error_v.push("Acepte términos y condiciones");
-      }
-      if (cartState.error_v.length === 0) {
-        let form = {
+      console.log(data);
+      console.log("configuration: ", configuration.value);
+      payform
+        .createToken([cardNumber.value, cardExpiry.value, cardCvv.value], data)
+        .then(function (data) {
+          console.log("data create token: ", data);
+          alert(
+            "BIN: " +
+              data.bin +
+              "\ntransactionToken: " +
+              data.transactionToken +
+              "\nchannel: " +
+              data.channel
+          );
+          debugger;
+
+          axios
+            .post(`http://ecommerce-backend1.test/api/v1/authorization`, {
+              transactionToken: data.transactionToken,
+              amount: amount.value,
+              purchase: purchase.value,
+            })
+            .then((response) => {
+              console.log(response.data);
+
+              debugger;
+              if (response.data["dataMap"] != undefined) {
+                if (response.data["dataMap"]["ACTION_CODE"] == "000") {
+                  axios
+                    .get(
+                      `http://ecommerce-backend1.test/api/v1/orders-confirm/${id_orden_.value}`
+                    )
+                    .then((res) => {
+                      if (res.data.status == 1) {
+                        loader.value = false;
+                        alert("Pago aprobado");
+                        window.location = "/client/pedidos";
+                        sessionStorage.clear();
+                      }
+                    });
+                }
+              } else if (response.data["data"] != undefined) {
+                if (response.data["data"]["ACTION_CODE"] != "000") {
+                  alert(
+                    "Pago denegado: " +
+                      response.data["data"]["ACTION_DESCRIPTION"] +
+                      ", por favor actualice la pagina y vulva a intentarlo"
+                  );
+
+                  loader.value = false;
+                }
+              }
+            });
+        })
+        .catch(function (error) {
+          console.log("data-error: ", error);
+          alert(error);
+        });
+    }
+    async function onSubmitAllTarjeta() {
+      try {
+        cartState.error_v = [];
+
+        if (!props.user.id) {
+          cartState.error_v.push("Requiere iniciar sesión");
+        }
+        if (direccion.value.length === 0) {
+          cartState.error_v.push("Dirección es obligatorio");
+        }
+        if (referencia.value.length === 0) {
+          cartState.error_v.push("Referencia es obligatorio");
+        }
+        if (distrito.value.length === 0) {
+          cartState.error_v.push("Distrito es obligatorio");
+        }
+        if (celular.value.length === 0) {
+          cartState.error_v.push("Celular es obligatorio");
+        }
+        if (picked_fecha.value.length === 0) {
+          cartState.error_v.push("Fecha de entrega es obligatorio");
+        }
+        if (picked_hora.value.length === 0) {
+          cartState.error_v.push("Hora de entrega es obligatorio");
+        }
+        if (picked_metodo.value.length === 0) {
+          cartState.error_v.push("Metodo de pago es obligatorio");
+        }
+        if (cartState.cart.length === 0) {
+          cartState.error_v.push(
+            "Requiere agregar productos para proceder con el pago"
+          );
+        }
+        if (cartState.error_v.length === 0) {
+          let form = {
             id_user: props.user.id,
             direccion: direccion.value,
             referencia: referencia.value,
@@ -1204,64 +1508,27 @@ export default {
             picked_metodo: picked_metodo.value,
             tax: tax.value,
             total_price: cartState.total,
-            };
-            axios
-          .post("https://sistemaorion.nebulaperu.com/api/v1/orders", {
-            form_data: form,
-            cart: cartState.cart,
-          })
-          .then(
-            function (response) {
-              console.log(response.data.status);
-              if (response.data.code > 0) {
-                // window.location = "/client/pedidos";
-                sessionStorage.clear();
-                let orderId = response.data.code;
+          };
 
-                axios.get(
-                    `https://sistemaorion.nebulaperu.com/api/v1/payment-desacoplado/${orderId}`
-                )
-                    .then(datos => {
-                    // primero enviamos a guardar la orden y recojemos el id de la orden
-                    console.log("rpt:", datos.data);
-                    this.configuration = datos.data;
-                    //   payform.setConfiguration(this.configuration);
-                    VisanetCheckout.configure({
-                        sessiontoken: this.configuration.sessionkey,
-                        channel: this.configuration.channel,
-                        merchantid: this.configuration.merchantid,
-                        purchasenumber: this.configuration.purchasenumber,
-                        amount: this.configuration.amount,
-                        expirationminutes: "20",
-                        timeouturl: "about:blank",
-                        merchantlogo: "https://orion.com.pe/images/logo-orion.png",
-                        formbuttoncolor: "#000000",
-                        cardholdername: this.configuration.name,
-                        cardholderlastname: this.configuration.lastname,
-                        cardholderemail: this.configuration.email,
-                        action: this.configuration.callbackurl,
-                        complete: function(params) {
-                        alert(JSON.stringify(params));
-                        }
-                    });
-                    VisanetCheckout.open();
-
-                    this.loader = false;
-                    })
-                    .catch(() => {
-                    // Código en caso de que la carga de tu script fallé
-                    });
-              }
-            },
-            function (er) {
-              error.value = er.response.data;
+          const rpt = await axios.post(
+            "http://ecommerce-backend1.test/api/v1/orders-api",
+            {
+              form_data: form,
+              cart: cartState.cart,
             }
           );
+          if (rpt.data.status > 0) {
+            console.log("order_id", rpt.data.order_id);
+            return rpt.data.order_id;
+            // window.location = "/client/pedidos";
+            // sessionStorage.clear();
+          } else {
+            return 0;
+          }
         }
-        })
-        .catch(() => {
-          // Código en caso de que la carga de tu script fallé
-        });
+      } catch (error) {
+        return 0;
+      }
     }
 
     function distrito_ch(event) {
@@ -1377,7 +1644,21 @@ export default {
           }
         );
     }
+    onMounted(() => {
+      cargarScripts();
+    });
+    async function cargarScripts() {
+      let visaDevelopment = true;
+      let visaUrlJs = visaDevelopment
+        ? "https://pocpaymentserve.s3.amazonaws.com/payform.min.js"
+        : "https://static-content.vnforapps.com/elements/v1/payform.min.js";
 
+      console.log("Inicio montando un script");
+      const externalScript = document.createElement("script");
+      await externalScript.setAttribute("src", visaUrlJs);
+      document.head.appendChild(externalScript);
+      console.log("Fin montando un script");
+    }
     let dataB = JSON.parse(sessionStorage.getItem("local-cart"));
     if (dataB === null) {
       cartState.cart = [];
@@ -1410,11 +1691,29 @@ export default {
 
       emitter.emit("myevent", cartState.cart.length);
     }
-
     return {
       ...toRefs(cartState),
       csrf,
       user,
+
+      pagoTarjeta,
+      loadForm,
+      onSubmitAllTarjeta,
+      //   PagoTarjetaPasoDos,
+      id_orden_,
+      cargarScripts,
+      modalidadPago,
+      pay,
+      elementStyles,
+      loader,
+      txtCuotas,
+      amount,
+      dcc,
+      purchase,
+      credito,
+      cardNumber,
+      cardExpiry,
+      cardCvv,
 
       onSubmit,
       onSubmitReg,
@@ -1753,4 +2052,8 @@ export default {
   padding-right: 10px;
   color: #43b02a;
 }
+</style>
+
+<style  scoped>
+@import "https://pocpaymentserve.s3.amazonaws.com/payform.min.css";
 </style>

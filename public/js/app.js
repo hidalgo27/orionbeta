@@ -1,6 +1,17 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/@babel/runtime/regenerator/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
+
+
+/***/ }),
+
 /***/ "./node_modules/@vue/compiler-core/dist/compiler-core.esm-bundler.js":
 /*!***************************************************************************!*\
   !*** ./node_modules/@vue/compiler-core/dist/compiler-core.esm-bundler.js ***!
@@ -16735,19 +16746,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _HeaderComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HeaderComponent */ "./resources/js/components/composition/HeaderComponent.vue");
-/* harmony import */ var _TopComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TopComponent */ "./resources/js/components/composition/TopComponent.vue");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _CartComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CartComponent */ "./resources/js/components/composition/CartComponent.vue");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _HeaderComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeaderComponent */ "./resources/js/components/composition/HeaderComponent.vue");
+/* harmony import */ var _TopComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TopComponent */ "./resources/js/components/composition/TopComponent.vue");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _CartComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CartComponent */ "./resources/js/components/composition/CartComponent.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
+
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
 
 
 
@@ -16758,48 +16779,48 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    HeaderComponent: _HeaderComponent__WEBPACK_IMPORTED_MODULE_0__.default,
-    TopComponent: _TopComponent__WEBPACK_IMPORTED_MODULE_1__.default,
-    CartComponent: _CartComponent__WEBPACK_IMPORTED_MODULE_3__.default
+    HeaderComponent: _HeaderComponent__WEBPACK_IMPORTED_MODULE_1__.default,
+    TopComponent: _TopComponent__WEBPACK_IMPORTED_MODULE_2__.default,
+    CartComponent: _CartComponent__WEBPACK_IMPORTED_MODULE_4__.default
   },
-  props: ['user'],
+  props: ["user"],
   setup: function setup(props) {
-    var user = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)(props.user);
-    var name = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)("");
-    var email = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)("");
-    var password = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)("");
-    var password_confirmation = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)("");
-    var csrf = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)(document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
-    var token = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)(csrf);
-    var modalShow = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)(true);
-    var error = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)("");
-    var emitter = (0,vue__WEBPACK_IMPORTED_MODULE_4__.inject)("emitter");
-    var today = moment__WEBPACK_IMPORTED_MODULE_2___default()().locale("es").format("DD MMMM YYYY");
-    var tomorrow = moment__WEBPACK_IMPORTED_MODULE_2___default()().locale("es").add(1, 'd').format("DD MMMM YYYY");
-    var today_3 = moment__WEBPACK_IMPORTED_MODULE_2___default()().locale("es").add(2, 'd').format("DD MMMM YYYY");
-    var today_4 = moment__WEBPACK_IMPORTED_MODULE_2___default()().locale("es").add(3, 'd').format("DD MMMM YYYY");
-    var today_5 = moment__WEBPACK_IMPORTED_MODULE_2___default()().locale("es").add(4, 'd').format("DD MMMM YYYY");
-    var today_6 = moment__WEBPACK_IMPORTED_MODULE_2___default()().locale("es").add(5, 'd').format("DD MMMM YYYY");
-    var today_7 = moment__WEBPACK_IMPORTED_MODULE_2___default()().locale("es").add(6, 'd').format("DD MMMM YYYY");
-    var today_8 = moment__WEBPACK_IMPORTED_MODULE_2___default()().locale("es").add(7, 'd').format("DD MMMM YYYY");
-    var d_name = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)(props.user.name);
-    var d_email = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)(props.user.email);
-    var direccion = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)([]);
-    var referencia = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)([]);
-    var distrito = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)([]);
-    var celular = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)([]);
-    var picked_fecha = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)(today);
-    var picked_hora = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)("8:00AM - 12:00PM");
-    var picked_metodo = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)("contraentrega");
-    var terminos = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)([]);
-    var tax = (0,vue__WEBPACK_IMPORTED_MODULE_4__.ref)("");
-    var cartState = (0,vue__WEBPACK_IMPORTED_MODULE_4__.reactive)({
+    var user = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(props.user);
+    var name = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)("");
+    var email = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)("");
+    var password = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)("");
+    var password_confirmation = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)("");
+    var csrf = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(document.querySelector('meta[name="csrf-token"]').getAttribute("content"));
+    var token = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(csrf);
+    var modalShow = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(true);
+    var error = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)("");
+    var emitter = (0,vue__WEBPACK_IMPORTED_MODULE_5__.inject)("emitter");
+    var today = moment__WEBPACK_IMPORTED_MODULE_3___default()().locale("es").format("DD MMMM YYYY");
+    var tomorrow = moment__WEBPACK_IMPORTED_MODULE_3___default()().locale("es").add(1, "d").format("DD MMMM YYYY");
+    var today_3 = moment__WEBPACK_IMPORTED_MODULE_3___default()().locale("es").add(2, "d").format("DD MMMM YYYY");
+    var today_4 = moment__WEBPACK_IMPORTED_MODULE_3___default()().locale("es").add(3, "d").format("DD MMMM YYYY");
+    var today_5 = moment__WEBPACK_IMPORTED_MODULE_3___default()().locale("es").add(4, "d").format("DD MMMM YYYY");
+    var today_6 = moment__WEBPACK_IMPORTED_MODULE_3___default()().locale("es").add(5, "d").format("DD MMMM YYYY");
+    var today_7 = moment__WEBPACK_IMPORTED_MODULE_3___default()().locale("es").add(6, "d").format("DD MMMM YYYY");
+    var today_8 = moment__WEBPACK_IMPORTED_MODULE_3___default()().locale("es").add(7, "d").format("DD MMMM YYYY");
+    var d_name = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(props.user.name);
+    var d_email = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(props.user.email);
+    var direccion = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)([]);
+    var referencia = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)([]);
+    var distrito = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)([]);
+    var celular = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)([]);
+    var picked_fecha = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(today);
+    var picked_hora = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)("8:00AM - 12:00PM");
+    var picked_metodo = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)("contraentrega");
+    var terminos = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)([]);
+    var tax = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)("");
+    var cartState = (0,vue__WEBPACK_IMPORTED_MODULE_5__.reactive)({
       cartOpen: false,
       cart: [],
-      o_ad: 'asc',
-      o_x: 'name',
+      o_ad: "asc",
+      o_x: "name",
       error_v: [],
-      total: (0,vue__WEBPACK_IMPORTED_MODULE_4__.computed)(function () {
+      total: (0,vue__WEBPACK_IMPORTED_MODULE_5__.computed)(function () {
         return cartState.cart.reduce(function (prev, curr) {
           var prevPrice = prev.price || prev;
           var prevQuantity = prev.quantity || 1;
@@ -16808,21 +16829,396 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })
     });
     var options_tax = [{
-      price: '5',
-      country: 'Cusco'
+      price: "5",
+      country: "Cusco"
     }, {
-      price: '6',
-      country: 'Santiago'
+      price: "6",
+      country: "Santiago"
     }, {
-      price: '7',
-      country: 'San Jeronimo'
+      price: "7",
+      country: "San Jeronimo"
     }, {
-      price: '7',
-      country: 'San Sebastian'
+      price: "7",
+      country: "San Sebastian"
     }, {
-      price: '5',
-      country: 'Wanchaq'
-    }];
+      price: "5",
+      country: "Wanchaq"
+    }]; // Variables para el pago por tarjeta
+
+    var modalidadPago = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(0);
+    var configuration = {
+      callbackurl: "",
+      sessionkey: "",
+      channel: "",
+      merchantid: "",
+      purchasenumber: "",
+      amount: "",
+      language: "",
+      font: "",
+      recurrencemaxamount: ""
+    };
+    var elementStyles = {
+      base: {
+        color: "black",
+        margin: "0",
+        // width: '100% !important',
+        // fontWeight: 700,
+        fontFamily: "'Montserrat', sans-serif",
+        // fontSize: '16px',
+        fontSmoothing: "antialiased",
+        placeholder: {
+          color: "#999999"
+        },
+        autofill: {
+          color: "#e39f48"
+        }
+      },
+      invalid: {
+        color: "#E25950",
+        "::placeholder": {
+          color: "#FFCCA5"
+        }
+      }
+    };
+    var pay = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(null);
+    var loader = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(false);
+    var txtCuotas = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(0);
+    var amount = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(0);
+    var dcc = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)("");
+    var purchase = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)("");
+    var credito = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(false);
+    var cardNumber = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(null);
+    var cardExpiry = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(null);
+    var cardCvv = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(null);
+    var id_orden_ = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(0);
+
+    function loadForm() {
+      return _loadForm.apply(this, arguments);
+    }
+
+    function _loadForm() {
+      _loadForm = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                console.log("se guardara temporalmente la orden");
+                _context.next = 4;
+                return onSubmitAllTarjeta();
+
+              case 4:
+                id_orden_.value = _context.sent;
+
+                if (id_orden_.value > 0) {
+                  axios__WEBPACK_IMPORTED_MODULE_6___default().get("http://ecommerce-backend1.test/api/v1/sesion/".concat(id_orden_.value)).then(function (response) {
+                    console.log("Response: ", response.data);
+                    configuration.value = {
+                      sessionkey: String(response.data.sesionkey),
+                      channel: String(response.data.channel),
+                      merchantid: String(response.data.merchantid),
+                      purchasenumber: String(response.data.purchasenumber),
+                      amount: String(response.data.amount),
+                      callbackurl: "",
+                      language: "es",
+                      font: "https://fonts.googleapis.com/css?family=Montserrat:400&display=swap"
+                    }; // console.log("configuration", configuration.value);
+
+                    purchase.value = String(configuration.value.purchasenumber);
+                    amount.value = String(configuration.value.amount);
+                    dcc.value = false; //   payform.resetData();
+
+                    payform.setConfiguration(configuration.value); // Número de tarjeta
+
+                    cardNumber.value = payform.createElement("card-number", {
+                      style: elementStyles,
+                      placeholder: "Número de Tarjeta"
+                    }, "txtNumeroTarjeta");
+                    cardNumber.value.then(function (element) {
+                      element.on("bin", function (data) {
+                        console.log("BIN: ", data);
+                      });
+                      element.on("dcc", function (data) {
+                        console.log("DCC", data);
+
+                        if (data != null) {
+                          var response = confirm("Usted tiene la opción de pagar su factura en: PEN " + amount.value + " o " + data["currencyCodeAlpha"] + " " + data["amount"] + ". Una vez haya hecho su elección, la transacción continuará con la moneda seleccionada. Tasa de cambio PEN a " + data["currencyCodeAlpha"] + ": " + data["exchangeRate"] + " \n \n" + data["currencyCodeAlpha"] + " " + data["amount"] + "\nPEN = " + data["currencyCodeAlpha"] + " " + data["exchangeRate"] + "\nMARGEN FX: " + data["markup"]);
+
+                          if (response == true) {
+                            dcc = (_readOnlyError("dcc"), true);
+                          } else {
+                            dcc = (_readOnlyError("dcc"), false);
+                          }
+                        }
+                      });
+                      element.on("installments", function (data) {
+                        console.log("INSTALLMENTS: ", data);
+
+                        if (data != null && channel.value == "web") {
+                          credito.value = true;
+                          var cuotas = document.getElementById("cuotas");
+                          cuotas.style.display = "block";
+                          var select = document.createElement("select");
+                          select.setAttribute("class", "form-control form-control-sm mb-4");
+                          select.setAttribute("id", "selectCuotas");
+                          optionDefault = document.createElement("option");
+                          optionDefault.value = optionDefault.textContent = "Sin cuotas";
+                          select.appendChild(optionDefault);
+                          data.forEach(function (item) {
+                            option = document.createElement("option");
+                            option.value = option.textContent = item;
+                            select.appendChild(option);
+                          });
+                          cuotas.appendChild(select);
+                        } else {
+                          credito.value = false;
+                          var cuotas = document.getElementById("selectCuotas");
+
+                          if (cuotas != undefined) {
+                            cuotas.parentNode.removeChild(cuotas);
+                          }
+                        }
+                      });
+                      element.on("change", function (data) {
+                        console.log("CHANGE: ", data);
+                        document.getElementById("msjNroTarjeta").style.display = "none";
+                        document.getElementById("msjFechaVencimiento").style.display = "none";
+                        document.getElementById("msjCvv").style.display = "none";
+
+                        if (data.length != 0) {
+                          data.forEach(function (d) {
+                            if (d["code"] == "invalid_number") {
+                              document.getElementById("msjNroTarjeta").style.display = "block";
+                              document.getElementById("msjNroTarjeta").innerText = d["message"];
+                            }
+
+                            if (d["code"] == "invalid_expiry") {
+                              document.getElementById("msjFechaVencimiento").style.display = "block";
+                              document.getElementById("msjFechaVencimiento").innerText = d["message"];
+                            }
+
+                            if (d["code"] == "invalid_cvc") {
+                              document.getElementById("msjCvv").style.display = "block";
+                              document.getElementById("msjCvv").innerText = d["message"];
+                            }
+                          });
+                        }
+                      });
+                    }); // Cvv2
+
+                    cardCvv.value = payform.createElement("card-cvc", {
+                      style: elementStyles,
+                      placeholder: "CVV"
+                    }, "txtCvv");
+                    cardCvv.value.then(function (element) {
+                      element.on("change", function (data) {
+                        console.log("CHANGE CVV2: ", data);
+                      });
+                    }); // Fecha de vencimiento
+
+                    cardExpiry.value = payform.createElement("card-expiry", {
+                      style: elementStyles,
+                      placeholder: "MM/AAAA"
+                    }, "txtFechaVencimiento");
+                    cardExpiry.value.then(function (element) {
+                      element.on("change", function (data) {
+                        console.log("CHANGE F.V: ", data);
+                      });
+                    }); // loader.value = false;
+                  });
+                }
+
+                _context.next = 11;
+                break;
+
+              case 8:
+                _context.prev = 8;
+                _context.t0 = _context["catch"](0);
+                console.log("error", _context.t0);
+
+              case 11:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[0, 8]]);
+      }));
+      return _loadForm.apply(this, arguments);
+    }
+
+    function pagoTarjeta() {
+      // Comparamos los montos para realizar el pago por tarjeta
+      var total_car = new Intl.NumberFormat("es-PE").format(parseFloat(tax.value) + parseFloat(cartState.total));
+      console.log("Montos a comprarar:".concat(amount.value, "=?").concat(total_car));
+
+      if (parseFloat(amount.value) != parseFloat(total_car)) {
+        alert("Por favor actualize la pagina"); // location.reload();
+      }
+
+      loader.value = true;
+      var data = {
+        name: d_name.value,
+        lastName: d_name.value,
+        email: d_email.value,
+        alias: "KS",
+        phoneNumber: String(celular.value),
+        currencyConversion: dcc.value,
+        recurrence: false
+      };
+
+      if (credito.value) {
+        var cuotaSeleccionada = $("#selectCuotas").val();
+
+        if (cuotaSeleccionada == "Sin cuotas") {
+          data.push("installment", 0);
+        } else {
+          data.push("installment", cuotaSeleccionada);
+        }
+      }
+
+      console.log(data);
+      console.log("configuration: ", configuration.value);
+      payform.createToken([cardNumber.value, cardExpiry.value, cardCvv.value], data).then(function (data) {
+        console.log("data create token: ", data);
+        alert("BIN: " + data.bin + "\ntransactionToken: " + data.transactionToken + "\nchannel: " + data.channel);
+        debugger;
+        axios__WEBPACK_IMPORTED_MODULE_6___default().post("http://ecommerce-backend1.test/api/v1/authorization", {
+          transactionToken: data.transactionToken,
+          amount: amount.value,
+          purchase: purchase.value
+        }).then(function (response) {
+          console.log(response.data);
+          debugger;
+
+          if (response.data["dataMap"] != undefined) {
+            if (response.data["dataMap"]["ACTION_CODE"] == "000") {
+              axios__WEBPACK_IMPORTED_MODULE_6___default().get("http://ecommerce-backend1.test/api/v1/orders-confirm/".concat(id_orden_.value)).then(function (res) {
+                if (res.data.status == 1) {
+                  loader.value = false;
+                  alert("Pago aprobado");
+                  window.location = "/client/pedidos";
+                  sessionStorage.clear();
+                }
+              });
+            }
+          } else if (response.data["data"] != undefined) {
+            if (response.data["data"]["ACTION_CODE"] != "000") {
+              alert("Pago denegado: " + response.data["data"]["ACTION_DESCRIPTION"] + ", por favor actualice la pagina y vulva a intentarlo");
+              loader.value = false;
+            }
+          }
+        });
+      })["catch"](function (error) {
+        console.log("data-error: ", error);
+        alert(error);
+      });
+    }
+
+    function onSubmitAllTarjeta() {
+      return _onSubmitAllTarjeta.apply(this, arguments);
+    }
+
+    function _onSubmitAllTarjeta() {
+      _onSubmitAllTarjeta = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var form, rpt;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                cartState.error_v = [];
+
+                if (!props.user.id) {
+                  cartState.error_v.push("Requiere iniciar sesión");
+                }
+
+                if (direccion.value.length === 0) {
+                  cartState.error_v.push("Dirección es obligatorio");
+                }
+
+                if (referencia.value.length === 0) {
+                  cartState.error_v.push("Referencia es obligatorio");
+                }
+
+                if (distrito.value.length === 0) {
+                  cartState.error_v.push("Distrito es obligatorio");
+                }
+
+                if (celular.value.length === 0) {
+                  cartState.error_v.push("Celular es obligatorio");
+                }
+
+                if (picked_fecha.value.length === 0) {
+                  cartState.error_v.push("Fecha de entrega es obligatorio");
+                }
+
+                if (picked_hora.value.length === 0) {
+                  cartState.error_v.push("Hora de entrega es obligatorio");
+                }
+
+                if (picked_metodo.value.length === 0) {
+                  cartState.error_v.push("Metodo de pago es obligatorio");
+                }
+
+                if (cartState.cart.length === 0) {
+                  cartState.error_v.push("Requiere agregar productos para proceder con el pago");
+                }
+
+                if (!(cartState.error_v.length === 0)) {
+                  _context2.next = 22;
+                  break;
+                }
+
+                form = {
+                  id_user: props.user.id,
+                  direccion: direccion.value,
+                  referencia: referencia.value,
+                  distrito: distrito.value,
+                  celular: celular.value,
+                  picked_fecha: picked_fecha.value,
+                  picked_hora: picked_hora.value,
+                  picked_metodo: picked_metodo.value,
+                  tax: tax.value,
+                  total_price: cartState.total
+                };
+                _context2.next = 15;
+                return axios__WEBPACK_IMPORTED_MODULE_6___default().post("http://ecommerce-backend1.test/api/v1/orders-api", {
+                  form_data: form,
+                  cart: cartState.cart
+                });
+
+              case 15:
+                rpt = _context2.sent;
+
+                if (!(rpt.data.status > 0)) {
+                  _context2.next = 21;
+                  break;
+                }
+
+                console.log("order_id", rpt.data.order_id);
+                return _context2.abrupt("return", rpt.data.order_id);
+
+              case 21:
+                return _context2.abrupt("return", 0);
+
+              case 22:
+                _context2.next = 27;
+                break;
+
+              case 24:
+                _context2.prev = 24;
+                _context2.t0 = _context2["catch"](0);
+                return _context2.abrupt("return", 0);
+
+              case 27:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 24]]);
+      }));
+      return _onSubmitAllTarjeta.apply(this, arguments);
+    }
 
     function distrito_ch(event) {
       // console.log(event);
@@ -16833,43 +17229,43 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       cartState.error_v = [];
 
       if (!props.user.id) {
-        cartState.error_v.push('Requiere iniciar sesión');
+        cartState.error_v.push("Requiere iniciar sesión");
       }
 
       if (direccion.value.length === 0) {
-        cartState.error_v.push('Dirección es obligatorio');
+        cartState.error_v.push("Dirección es obligatorio");
       }
 
       if (referencia.value.length === 0) {
-        cartState.error_v.push('Referencia es obligatorio');
+        cartState.error_v.push("Referencia es obligatorio");
       }
 
       if (distrito.value.length === 0) {
-        cartState.error_v.push('Distrito es obligatorio');
+        cartState.error_v.push("Distrito es obligatorio");
       }
 
       if (celular.value.length === 0) {
-        cartState.error_v.push('Celular es obligatorio');
+        cartState.error_v.push("Celular es obligatorio");
       }
 
       if (picked_fecha.value.length === 0) {
-        cartState.error_v.push('Fecha de entrega es obligatorio');
+        cartState.error_v.push("Fecha de entrega es obligatorio");
       }
 
       if (picked_hora.value.length === 0) {
-        cartState.error_v.push('Hora de entrega es obligatorio');
+        cartState.error_v.push("Hora de entrega es obligatorio");
       }
 
       if (picked_metodo.value.length === 0) {
-        cartState.error_v.push('Metodo de pago es obligatorio');
+        cartState.error_v.push("Metodo de pago es obligatorio");
       }
 
       if (cartState.cart.length === 0) {
-        cartState.error_v.push('Requiere agregar productos para proceder con el pago');
+        cartState.error_v.push("Requiere agregar productos para proceder con el pago");
       }
 
       if (terminos.value.length === 0) {
-        cartState.error_v.push('Acepte términos y condiciones');
+        cartState.error_v.push("Acepte términos y condiciones");
       }
 
       if (cartState.error_v.length === 0) {
@@ -16885,14 +17281,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           tax: tax.value,
           total_price: cartState.total
         };
-        axios__WEBPACK_IMPORTED_MODULE_5___default().post('https://sistemaorion.nebulaperu.com/api/v1/orders', {
+        axios__WEBPACK_IMPORTED_MODULE_6___default().post("https://sistemaorion.nebulaperu.com/api/v1/orders", {
           form_data: form,
           cart: cartState.cart
         }).then(function (response) {
           console.log(response.data.status);
 
           if (response.data.status > 0) {
-            window.location = '/client/pedidos';
+            window.location = "/client/pedidos";
             sessionStorage.clear();
           }
         }, function (er) {
@@ -16902,21 +17298,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
 
     function onSubmit() {
-      axios__WEBPACK_IMPORTED_MODULE_5___default().post('/login', {
+      axios__WEBPACK_IMPORTED_MODULE_6___default().post("/login", {
         email: email.value,
         password: password.value,
         _token: token.value
       }).then(function (res) {
         modalShow.value = false;
         error.value = "";
-        window.location = '/checkout';
+        window.location = "/checkout";
       }, function (er) {
         error.value = er.response.data;
       });
     }
 
     function onSubmitReg() {
-      axios__WEBPACK_IMPORTED_MODULE_5___default().post('/register', {
+      axios__WEBPACK_IMPORTED_MODULE_6___default().post("/register", {
         name: name.value,
         email: email.value,
         password: password.value,
@@ -16925,14 +17321,50 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }).then(function (res) {
         modalShow.value = false;
         error.value = "";
-        window.location = '/checkout';
+        window.location = "/checkout";
       }, function (er) {
         // console.log(er.response.data)
         error.value = er.response.data;
       });
     }
 
-    var dataB = JSON.parse(sessionStorage.getItem('local-cart'));
+    (0,vue__WEBPACK_IMPORTED_MODULE_5__.onMounted)(function () {
+      cargarScripts();
+    });
+
+    function cargarScripts() {
+      return _cargarScripts.apply(this, arguments);
+    }
+
+    function _cargarScripts() {
+      _cargarScripts = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        var visaDevelopment, visaUrlJs, externalScript;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                visaDevelopment = true;
+                visaUrlJs = visaDevelopment ? "https://pocpaymentserve.s3.amazonaws.com/payform.min.js" : "https://static-content.vnforapps.com/elements/v1/payform.min.js";
+                console.log("Inicio montando un script");
+                externalScript = document.createElement("script");
+                _context3.next = 6;
+                return externalScript.setAttribute("src", visaUrlJs);
+
+              case 6:
+                document.head.appendChild(externalScript);
+                console.log("Fin montando un script");
+
+              case 8:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }));
+      return _cargarScripts.apply(this, arguments);
+    }
+
+    var dataB = JSON.parse(sessionStorage.getItem("local-cart"));
 
     if (dataB === null) {
       cartState.cart = [];
@@ -16951,7 +17383,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         cartState.cart.splice(cartIndex, 1); // products.value[prodIndex].quantity = 1;
         // products.value[prodIndex].stock += qua;
 
-        sessionStorage.setItem('local-cart', JSON.stringify(cartState.cart)); // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
+        sessionStorage.setItem("local-cart", JSON.stringify(cartState.cart)); // sessionStorage.setItem('local-prod', JSON.stringify(products.value));
       } // else {
       //     axios.post('/session/remove')
       //         .then((res) =>{
@@ -16965,9 +17397,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       emitter.emit("myevent", cartState.cart.length);
     }
 
-    return _objectSpread(_objectSpread({}, (0,vue__WEBPACK_IMPORTED_MODULE_4__.toRefs)(cartState)), {}, {
+    return _objectSpread(_objectSpread({}, (0,vue__WEBPACK_IMPORTED_MODULE_5__.toRefs)(cartState)), {}, {
       csrf: csrf,
       user: user,
+      pagoTarjeta: pagoTarjeta,
+      loadForm: loadForm,
+      onSubmitAllTarjeta: onSubmitAllTarjeta,
+      //   PagoTarjetaPasoDos,
+      id_orden_: id_orden_,
+      cargarScripts: cargarScripts,
+      modalidadPago: modalidadPago,
+      pay: pay,
+      elementStyles: elementStyles,
+      loader: loader,
+      txtCuotas: txtCuotas,
+      amount: amount,
+      dcc: dcc,
+      purchase: purchase,
+      credito: credito,
+      cardNumber: cardNumber,
+      cardExpiry: cardExpiry,
+      cardCvv: cardCvv,
       onSubmit: onSubmit,
       onSubmitReg: onSubmitReg,
       onSubmitAll: onSubmitAll,
@@ -18847,10 +19297,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/composition/CheckoutComponent.vue?vue&type=template&id=17b4fdd7":
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/composition/CheckoutComponent.vue?vue&type=template&id=17b4fdd7 ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/composition/CheckoutComponent.vue?vue&type=template&id=17b4fdd7&scoped=true":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/composition/CheckoutComponent.vue?vue&type=template&id=17b4fdd7&scoped=true ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -18859,6 +19309,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("data-v-17b4fdd7");
+
+(0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-17b4fdd7");
 
 var _hoisted_1 = {
   key: 0,
@@ -18906,7 +19361,7 @@ var _hoisted_8 = {
   "class": "sign-inner"
 };
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"sign-logo mt-5\"><a href=\"index.html\"><img src=\"/images/logo-orion.png\" alt=\"\"></a><a href=\"index.html\"><img class=\"logo-inverse\" src=\"/images/logo-orion-white.png\" alt=\"\"></a></div>", 1);
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mt-5 sign-logo\" data-v-17b4fdd7><a href=\"index.html\" data-v-17b4fdd7><img src=\"/images/logo-orion.png\" alt=\"\" data-v-17b4fdd7></a><a href=\"index.html\" data-v-17b4fdd7><img class=\"logo-inverse\" src=\"/images/logo-orion-white.png\" alt=\"\" data-v-17b4fdd7></a></div>", 1);
 
 var _hoisted_10 = {
   "class": "form-dt"
@@ -19016,7 +19471,7 @@ var _hoisted_30 = {
   "class": "sign-inner"
 };
 
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"sign-logo mt-5\" id=\"logo\"><a href=\"/\"><img class=\"logo-inverse\" src=\"/images/logo-orion-white.png\" alt=\"\"></a><a href=\"/\"><img src=\"/images/logo-orion.png\" alt=\"\"></a></div>", 1);
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mt-5 sign-logo\" id=\"logo\" data-v-17b4fdd7><a href=\"/\" data-v-17b4fdd7><img class=\"logo-inverse\" src=\"/images/logo-orion-white.png\" alt=\"\" data-v-17b4fdd7></a><a href=\"/\" data-v-17b4fdd7><img src=\"/images/logo-orion.png\" alt=\"\" data-v-17b4fdd7></a></div>", 1);
 
 var _hoisted_32 = {
   "class": "form-dt"
@@ -19124,7 +19579,7 @@ var _hoisted_53 = {
   "class": "wrapper"
 };
 
-var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"gambo-Breadcrumb\"><div class=\"container\"><div class=\"row\"><div class=\"col-md-12\"><nav aria-label=\"breadcrumb\"><ol class=\"breadcrumb\"><li class=\"breadcrumb-item\"><a href=\"/\">Inicio</a></li><li class=\"breadcrumb-item active\" aria-current=\"page\">Checkout</li></ol></nav></div></div></div></div>", 1);
+var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"gambo-Breadcrumb\" data-v-17b4fdd7><div class=\"container\" data-v-17b4fdd7><div class=\"row\" data-v-17b4fdd7><div class=\"col-md-12\" data-v-17b4fdd7><nav aria-label=\"breadcrumb\" data-v-17b4fdd7><ol class=\"breadcrumb\" data-v-17b4fdd7><li class=\"breadcrumb-item\" data-v-17b4fdd7><a href=\"/\" data-v-17b4fdd7>Inicio</a></li><li class=\"breadcrumb-item active\" aria-current=\"page\" data-v-17b4fdd7>Checkout</li></ol></nav></div></div></div></div>", 1);
 
 var _hoisted_55 = {
   "class": "all-product-grid"
@@ -19174,7 +19629,7 @@ var _hoisted_63 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 );
 
 var _hoisted_64 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-  "class": "hover-btn next-btn16 mr-3",
+  "class": "mr-3 hover-btn next-btn16",
   "data-toggle": "modal",
   "data-target": "#session_model",
   title: "Session"
@@ -19346,7 +19801,7 @@ var _hoisted_98 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "address-btns"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                                                            <button class=\"save-btn14 hover-btn\">Guardar</button>"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
-  "class": "collapsed ml-auto next-btn16 hover-btn",
+  "class": "ml-auto collapsed next-btn16 hover-btn",
   role: "button",
   "data-toggle": "collapse",
   "data-parent": "#checkout_wizard",
@@ -19590,13 +20045,97 @@ var _hoisted_154 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)
 /* HOISTED */
 );
 
-var _hoisted_155 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-group return-departure-dts\" data-method=\"cashondelivery\"><div class=\"row\"><div class=\"col-lg-12\"><div class=\"pymnt_title\"><h4>Pago Contraentrega</h4><p>El pago contra entrega no estará disponible si el valor de su pedido supera los S/50.</p></div></div></div></div><div class=\"form-group return-departure-dts\" data-method=\"card\"><div class=\"row\"><div class=\"col-lg-12\"><div class=\"pymnt_title mb-4\"><h4>Tarjeta de crédito / Tarjeta de débito</h4></div></div><div class=\"col-lg-6\"><div class=\"form-group mt-1\"><label class=\"control-label\">Nombre del Titular*</label><div class=\"ui search focus\"><div class=\"ui left icon input swdh11 swdh19\"><input class=\"prompt srch_explore\" type=\"text\" name=\"holdername\" value=\"\" id=\"holder[name]\" required=\"\" maxlength=\"64\" placeholder=\"Holder Name\"></div></div></div></div><div class=\"col-lg-6\"><div class=\"form-group mt-1\"><label class=\"control-label\">Numero de tarjeta*</label><div class=\"ui search focus\"><div class=\"ui left icon input swdh11 swdh19\"><input class=\"prompt srch_explore\" type=\"text\" name=\"cardnumber\" value=\"\" id=\"card[number]\" required=\"\" maxlength=\"64\" placeholder=\"Card Number\"></div></div></div></div><div class=\"col-lg-4\"><div class=\"form-group mt-1\"><label class=\"control-label\">Mes de Expiración*</label><select class=\"ui fluid search dropdown form-dropdown\" name=\"card[expire-month]\"><option value=\"\">Month</option><option value=\"1\">January</option><option value=\"2\">February</option><option value=\"3\">March</option><option value=\"4\">April</option><option value=\"5\">May</option><option value=\"6\">June</option><option value=\"7\">July</option><option value=\"8\">August</option><option value=\"9\">September</option><option value=\"10\">October</option><option value=\"11\">November</option><option value=\"12\">December</option></select></div></div><div class=\"col-lg-4\"><div class=\"form-group mt-1\"><label class=\"control-label\">Año de expiración*</label><div class=\"ui search focus\"><div class=\"ui left icon input swdh11 swdh19\"><input class=\"prompt srch_explore\" type=\"text\" name=\"card[expire-year]\" maxlength=\"4\" placeholder=\"Year\"></div></div></div></div><div class=\"col-lg-4\"><div class=\"form-group mt-1\"><label class=\"control-label\">CVV*</label><div class=\"ui search focus\"><div class=\"ui left icon input swdh11 swdh19\"><input class=\"prompt srch_explore\" name=\"card[cvc]\" maxlength=\"3\" placeholder=\"CVV\"></div></div></div></div></div></div>", 2);
-
-var _hoisted_157 = {
-  "class": "custom-control custom-checkbox mb-4"
+var _hoisted_155 = {
+  "class": "radio-item_1"
 };
 
-var _hoisted_158 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+var _hoisted_156 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "form-group return-departure-dts",
+  "data-method": "cashondelivery"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "row"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "col-lg-12"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "pymnt_title"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, "Pago Contraentrega"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, "El pago contra entrega no estará disponible si el valor de su pedido supera los S/50.")])])])], -1
+/* HOISTED */
+);
+
+var _hoisted_157 = {
+  key: 0,
+  "class": "form-group return-departure-dts1",
+  "data-method": "card"
+};
+var _hoisted_158 = {
+  key: 0,
+  "class": "spinner-border text-danger",
+  role: "status"
+};
+
+var _hoisted_159 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+  "class": "sr-only"
+}, "Loading...", -1
+/* HOISTED */
+);
+
+var _hoisted_160 = {
+  key: 1,
+  "class": "row"
+};
+
+var _hoisted_161 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"col-lg-12\" data-v-17b4fdd7><div class=\"mb-4 pymnt_title\" data-v-17b4fdd7><h4 data-v-17b4fdd7>Tarjeta de crédito / Tarjeta de débito</h4></div></div><div class=\"col-12\" data-v-17b4fdd7><div class=\"mt-1 form-group\" data-v-17b4fdd7><label class=\"control-label\" data-v-17b4fdd7>Numero de tarjeta*</label><div id=\"txtNumeroTarjeta\" class=\"form-control form-control-sm ncp-card\" data-v-17b4fdd7></div><small id=\"msjNroTarjeta\" class=\"m-0 form-text text-muted red-text\" data-v-17b4fdd7></small></div></div><div class=\"col-lg-4\" data-v-17b4fdd7><div class=\"mt-1 form-group\" data-v-17b4fdd7><label class=\"control-label\" data-v-17b4fdd7>Mes de Expiración*</label><div id=\"txtFechaVencimiento\" class=\"form-control form-control-sm\" data-v-17b4fdd7></div><small id=\"msjFechaVencimiento\" class=\"m-0 form-text text-muted red-text\" data-v-17b4fdd7></small></div></div><div class=\"col-lg-4\" data-v-17b4fdd7><div class=\"mt-1 form-group\" data-v-17b4fdd7><label class=\"control-label\" data-v-17b4fdd7>CVV*</label><div id=\"txtCvv\" class=\"form-control form-control-sm\" data-v-17b4fdd7></div><small id=\"msjCvv\" class=\"m-0 form-text text-muted red-text\" data-v-17b4fdd7></small></div></div>", 4);
+
+var _hoisted_165 = {
+  "class": "col-lg-6"
+};
+var _hoisted_166 = {
+  "class": "form-group"
+};
+
+var _hoisted_167 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "control-label"
+}, "Nombre*", -1
+/* HOISTED */
+);
+
+var _hoisted_168 = {
+  "class": "col-lg-6"
+};
+var _hoisted_169 = {
+  "class": "form-group"
+};
+
+var _hoisted_170 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "control-label"
+}, "Nombre*", -1
+/* HOISTED */
+);
+
+var _hoisted_171 = {
+  "class": "col-lg-12"
+};
+var _hoisted_172 = {
+  "class": "form-group"
+};
+
+var _hoisted_173 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "class": "control-label"
+}, "Email*", -1
+/* HOISTED */
+);
+
+var _hoisted_174 = {
+  "class": "col-lg-4"
+};
+var _hoisted_175 = {
+  "class": "mt-1 form-group"
+};
+var _hoisted_176 = {
+  "class": "mb-4 custom-control custom-checkbox"
+};
+
+var _hoisted_177 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "class": "custom-control-label",
   "for": "terminos"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("He leído y acepto los "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
@@ -19606,78 +20145,96 @@ var _hoisted_158 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)
 /* HOISTED */
 );
 
-var _hoisted_159 = {
+var _hoisted_178 = {
   key: 0,
-  "class": "alert alert-danger mt-21"
+  "class": "fas fa-credit-card"
 };
-var _hoisted_160 = {
-  "class": "col-lg-4 col-md-5"
-};
-var _hoisted_161 = {
-  "class": "pdpt-bg mt-0"
+var _hoisted_179 = {
+  key: 1,
+  "class": "text-white spinner-border",
+  role: "status"
 };
 
-var _hoisted_162 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_180 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+  "class": "sr-only"
+}, "Loading...", -1
+/* HOISTED */
+);
+
+var _hoisted_181 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Pagar con tarjeta ");
+
+var _hoisted_182 = {
+  key: 1,
+  "class": "alert alert-danger mt-21"
+};
+var _hoisted_183 = {
+  "class": "col-lg-4 col-md-5"
+};
+var _hoisted_184 = {
+  "class": "mt-0 pdpt-bg"
+};
+
+var _hoisted_185 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "pdpt-title"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, "Resumen de pedido")], -1
 /* HOISTED */
 );
 
-var _hoisted_163 = {
+var _hoisted_186 = {
   "class": "cart-item border_radius"
 };
-var _hoisted_164 = {
+var _hoisted_187 = {
   "class": "cart-product-img"
 };
-var _hoisted_165 = {
+var _hoisted_188 = {
   "class": "cart-text"
 };
-var _hoisted_166 = {
+var _hoisted_189 = {
   key: 0,
   "class": "small"
 };
-var _hoisted_167 = {
+var _hoisted_190 = {
   "class": "cart-item-price"
 };
 
-var _hoisted_168 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Precio por definir ");
+var _hoisted_191 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Precio por definir ");
 
-var _hoisted_169 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
+var _hoisted_192 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
   "class": "uil uil-multiply"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_170 = {
+var _hoisted_193 = {
   "class": "total-checkout-group"
 };
-var _hoisted_171 = {
+var _hoisted_194 = {
   "class": "cart-total-dil"
 };
 
-var _hoisted_172 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, "Orion Super Mercado", -1
+var _hoisted_195 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, "Orion Super Mercado", -1
 /* HOISTED */
 );
 
-var _hoisted_173 = {
+var _hoisted_196 = {
   key: 0,
-  "class": "cart-total-dil pt-3"
+  "class": "pt-3 cart-total-dil"
 };
 
-var _hoisted_174 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, "Delivery", -1
+var _hoisted_197 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, "Delivery", -1
 /* HOISTED */
 );
 
-var _hoisted_175 = {
+var _hoisted_198 = {
   key: 0,
   "class": "main-total-cart"
 };
 
-var _hoisted_176 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", null, "Total", -1
+var _hoisted_199 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", null, "Total", -1
 /* HOISTED */
 );
 
-var _hoisted_177 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_200 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "payment-secure"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
   "class": "uil uil-padlock"
@@ -19685,7 +20242,7 @@ var _hoisted_177 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)
 /* HOISTED */
 );
 
-var _hoisted_178 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_201 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "checkout-safety-alerts"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
   "class": "uil uil-sync"
@@ -19697,7 +20254,9 @@ var _hoisted_178 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)
 /* HOISTED */
 );
 
-function render(_ctx, _cache, $props, $setup, $data, $options) {
+(0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
+
+var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_cart_component = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("cart-component");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Share Icons Start"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <div class=\"icon-bar\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <a href=\"#\" class=\"facebook\" title=\"Share\"><i class=\"fab fa-facebook-f\"></i></a>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <a href=\"#\" class=\"twitter\" title=\"Share\"><i class=\"fab fa-twitter\"></i></a>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <a href=\"#\" class=\"google\" title=\"Share\"><i class=\"fab fa-google\"></i></a>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <a href=\"#\" class=\"linkedin\" title=\"Share\"><i class=\"fab fa-linkedin-in\"></i></a>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <a href=\"#\" class=\"whatsapp\" title=\"Share\"><i class=\"fab fa-whatsapp\"></i></a>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Share Icons End"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Cart Sidebar Offset Start"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_cart_component, {
@@ -20041,23 +20600,96 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $setup.picked_metodo]]), _hoisted_154])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                                            <li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                                                <div class=\"radio-item_1\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                                                    <input id=\"card1\" value=\"pagotarjeta\" name=\"paymentmethod\" type=\"radio\" data-minimum=\"50.0\" v-model=\"picked_metodo\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                                                    <label  for=\"card1\" class=\"radio-label_1\">Tarjeta de crédito / Tarjeta de débito </label>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                                                </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                                            </li>")])]), _hoisted_155, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_157, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $setup.picked_metodo]]), _hoisted_154])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_155, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    id: "card1",
+    value: "pagotarjeta",
+    name: "paymentmethod",
+    type: "radio",
+    "data-minimum": "50.0",
+    "onUpdate:modelValue": _cache[28] || (_cache[28] = function ($event) {
+      return $setup.picked_metodo = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $setup.picked_metodo]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+    "for": "card1",
+    "class": "radio-label_1",
+    onClick: _cache[29] || (_cache[29] = function () {
+      return $setup.loadForm && $setup.loadForm.apply($setup, arguments);
+    })
+  }, "Tarjeta de crédito / Tarjeta de débito ")])])])]), _hoisted_156, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" picked_metodo:" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.picked_metodo) + " loader:" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.loader) + " ", 1
+  /* TEXT */
+  ), $setup.picked_metodo == 'pagotarjeta' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_157, [ false ? (0) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true),  true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_160, [_hoisted_161, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_165, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_166, [_hoisted_167, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    id: "pname",
+    name: "pname",
+    type: "text",
+    placeholder: "Nombre",
+    "class": "form-control input-md",
+    required: "",
+    readonly: "",
+    "onUpdate:modelValue": _cache[30] || (_cache[30] = function ($event) {
+      return $setup.d_name = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.d_name]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_168, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_169, [_hoisted_170, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    id: "name",
+    name: "name",
+    type: "text",
+    placeholder: "Nombre Completo",
+    "class": "form-control input-md",
+    required: "",
+    "onUpdate:modelValue": _cache[31] || (_cache[31] = function ($event) {
+      return $setup.d_name = $event;
+    }),
+    readonly: ""
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.d_name]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_171, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_172, [_hoisted_173, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    id: "d_email",
+    name: "d_email",
+    type: "text",
+    placeholder: "Nombre Completo",
+    "class": "form-control input-md",
+    required: "",
+    readonly: "",
+    "onUpdate:modelValue": _cache[32] || (_cache[32] = function ($event) {
+      return $setup.d_email = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.d_email]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_174, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_175, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "text",
+    "onUpdate:modelValue": _cache[33] || (_cache[33] = function ($event) {
+      return $setup.txtCuotas = $event;
+    }),
+    style: {
+      "display": "none"
+    }
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.txtCuotas]])])])])) : 0])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_176, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "checkbox",
     "class": "custom-control-input",
     name: "terminos",
     id: "terminos",
-    "onUpdate:modelValue": _cache[28] || (_cache[28] = function ($event) {
+    "onUpdate:modelValue": _cache[34] || (_cache[34] = function ($event) {
       return $setup.terminos = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.terminos]]), _hoisted_158]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.terminos]]), _hoisted_177]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     type: "button",
     "class": "next-btn16 hover-btn",
-    onClick: _cache[29] || (_cache[29] = function ($event) {
+    onClick: _cache[35] || (_cache[35] = function ($event) {
       return $setup.onSubmitAll();
     })
-  }, "Realizar Pedido"), _ctx.error_v.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_159, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.error_v, function (er) {
+  }, "Realizar Pedido"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Boton de pago con tarjeta "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    "class": "btn btn-primary",
+    onClick: _cache[36] || (_cache[36] = function ($event) {
+      return $setup.pagoTarjeta();
+    })
+  }, [!$setup.loader ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("i", _hoisted_178)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.loader ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_179, [_hoisted_180])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_181]), _ctx.error_v.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_182, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.error_v, function (er) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("li", {
       key: er
     }, " - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(er), 1
@@ -20065,11 +20697,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     );
   }), 128
   /* KEYED_FRAGMENT */
-  ))])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <li v-for=\"errores in error_v\">{{ errores }}</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <button @click=\"veri()\">sd</button>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_160, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_161, [_hoisted_162, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.cart, function (prodCart, index) {
+  ))])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <li v-for=\"errores in error_v\">{{ errores }}</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <button @click=\"veri()\">sd</button>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_183, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_184, [_hoisted_185, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.cart, function (prodCart, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
       "class": "right-cart-dt-body",
       key: prodCart.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_163, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_164, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                        <template v-for=\"(photos, index) in prodCart.photos\" :key=\"prodCart.name\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                            <img :src=\"photos.photo\" alt=\"\" v-if=\"index === 0\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                        </template>"), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(prodCart.photos, function (photos, index) {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_186, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_187, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                        <template v-for=\"(photos, index) in prodCart.photos\" :key=\"prodCart.name\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                            <img :src=\"photos.photo\" alt=\"\" v-if=\"index === 0\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                        </template>"), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(prodCart.photos, function (photos, index) {
       return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         key: prodCart.name
       }, [photos.state === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("img", {
@@ -20083,13 +20715,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       );
     }), 128
     /* KEYED_FRAGMENT */
-    )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                        <div class=\"offer-badge\">4% OFF</div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_165, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(prodCart.name), 1
+    )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                        <div class=\"offer-badge\">4% OFF</div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_188, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(prodCart.name), 1
     /* TEXT */
-    ), prodCart.price === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_166, "Un asesor se contactara con ud. para fijar precio. precio por kilo S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat("es-PE").format(prodCart.regular_price)), 1
+    ), prodCart.price === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_189, "Un asesor se contactara con ud. para fijar precio. precio por kilo S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat("es-PE").format(prodCart.regular_price)), 1
     /* TEXT */
-    )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_167, [prodCart.price === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_190, [prodCart.price === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
       key: 0
-    }, [_hoisted_168], 64
+    }, [_hoisted_191], 64
     /* STABLE_FRAGMENT */
     )) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
       key: 1
@@ -20103,21 +20735,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       onClick: function onClick($event) {
         return $setup.deleteToCart(prodCart);
       }
-    }, [_hoisted_169], 8
+    }, [_hoisted_192], 8
     /* PROPS */
     , ["onClick"])])])]);
   }), 128
   /* KEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_170, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_171, [_hoisted_172, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat("es-PE").format(parseFloat(_ctx.total))), 1
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_193, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_194, [_hoisted_195, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat("es-PE").format(parseFloat(_ctx.total))), 1
   /* TEXT */
-  )]), $setup.tax.length != 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_173, [_hoisted_174, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.tax), 1
+  )]), $setup.tax.length != 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_196, [_hoisted_197, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.tax), 1
   /* TEXT */
-  )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <div class=\"cart-total-dil saving-total \">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <h4>Total Saving</h4>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <span>$3</span>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            </div>"), $setup.tax.length != 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_175, [_hoisted_176, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat("es-PE").format(parseFloat(_ctx.total) + parseFloat($setup.tax))), 1
+  )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <div class=\"cart-total-dil saving-total \">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <h4>Total Saving</h4>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <span>$3</span>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            </div>"), $setup.tax.length != 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_198, [_hoisted_199, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat("es-PE").format(parseFloat(_ctx.total) + parseFloat($setup.tax))), 1
   /* TEXT */
-  )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_177]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <a href=\"#\" class=\"promo-link45\">Have a promocode?</a>"), _hoisted_178])])])])])], 64
+  )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_200]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <a href=\"#\" class=\"promo-link45\">Have a promocode?</a>"), _hoisted_201])])])])])], 64
   /* STABLE_FRAGMENT */
   );
-}
+});
 
 /***/ }),
 
@@ -22550,7 +23182,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_composition_SearchComponent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/composition/SearchComponent */ "./resources/js/components/composition/SearchComponent.vue");
 /* harmony import */ var _components_composition_CategoryComponent__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/composition/CategoryComponent */ "./resources/js/components/composition/CategoryComponent.vue");
 /* harmony import */ var mitt__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! mitt */ "./node_modules/mitt/dist/mitt.es.js");
-/* harmony import */ var vue_plugin_load_script__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vue-plugin-load-script */ "./node_modules/vue-plugin-load-script/index.js");
 // require('./bootstrap');
 // require('alpinejs');
 // import owl from 'owl.carousel/dist/owl.carousel'
@@ -22580,7 +23211,7 @@ __webpack_require__.r(__webpack_exports__);
  // import HomeComponent from "./components/composition/HomeComponent";
 
 
-var emitter = (0,mitt__WEBPACK_IMPORTED_MODULE_12__.default)();
+var emitter = (0,mitt__WEBPACK_IMPORTED_MODULE_12__.default)(); // import LoadScript from 'vue-plugin-load-script';
 
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)({
   components: {
@@ -22597,8 +23228,8 @@ var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)({
     CategoryComponent: _components_composition_CategoryComponent__WEBPACK_IMPORTED_MODULE_11__.default
   }
 });
-app.provide('emitter', emitter);
-app.use(vue_plugin_load_script__WEBPACK_IMPORTED_MODULE_13__.default);
+app.provide('emitter', emitter); // app.provide('LoadScript',LoadScript);
+
 app.mount('#app');
 
 /***/ }),
@@ -22644,7 +23275,32 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.modal-backdrop{\n    display: none !important;\n}\n.checkout-wrapper {\n    padding-top: 40px;\n    padding-bottom:40px;\n    background-color: #fafbfa;\n}\n.checkout {\n    background-color: #fff;\n    box-shadow: 0 1px 2px 0 #e9e9e9;\n    font-size: 14px;\n    border-radius: 5px;\n}\n.checkout-card {\n}\n.checkout-step {\n    border-top: 1px solid #f3f3f3;\n    color: #2b2f4c;\n    font-size: 14px;\n    padding: 30px;\n    position: relative;\n}\n.checkout-step:first-child {\n    border-top: 0;\n}\n.checkout-step-number {\n    border-radius: 50%;\n    border: 1px solid #f55d2c;\n    display: inline-block;\n    font-size: 14px;\n    font-weight: 600;\n    height: 32px;\n    margin-right: 20px;\n    padding: 6px;\n    text-align: center;\n    width: 32px;\n    color: #fff;\n    background: #f55d2c;\n}\n.checkout-step-title{\n    font-size: 18px;\n    font-weight: 500;\n    vertical-align: middle;\n    display: inline-block;\n    margin: 0px;\n}\n.wizard-btn {\n    background: transparent;\n    border: 0;\n    font-family: 'Roboto', sans-serif;\n    font-weight: 500;\n    font-size: 18px;\n    color: #2b2f4c;\n}\n.checout-address-step {\n}\n.checout-address-step .form-group{\n    margin-bottom: 18px;\n    display: inline-block;\n    width: 100%;\n}\n.checkout-step-body{\n    padding-left: 0;\n    padding-top: 30px;\n}\n.checkout-step-active{\n    display: block;\n}\n.checkout-step-disabled{\n    display: none;\n}\n.checkout-login{}\n.login-phone{\n    display: inline-block;\n}\n.login-phone:after {\n    content: '+91 - ';\n    font-size: 14px;\n    left: 36px;\n    top: 18px;\n    font-family: 'Rajdhani', sans-serif;\n    font-weight: 600;\n    color: #2b2f4c;\n}\n.login-phone:before {\n    content: \"\";\n    font-style: normal;\n    color: #333;\n    font-size: 18px;\n    left: 12px;\n    display: inline-block;\n    font: normal normal normal 14px/1 FontAwesome;\n    font-size: inherit;\n    text-rendering: auto;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n}\n.login-phone:after, .login-phone:before {\n    position: absolute;\n    transform: translateY(-50%);\n}\n.login-phone .form-control {\n    padding-left: 68px;\n    font-size: 14px;\n    font-family: 'Rajdhani', sans-serif;\n    font-weight: 600;\n    color: #2b2f4c;\n    border: 1px solid #efefef;\n}\n.checkout-login .btn {\n    height: 42px;\n    line-height: 1.8;\n}\n.otp-verifaction {\n    margin-top: 20px;\n}\n.checkout-sidebar {\n    background-color: #fff;\n    border:1px solid #eaefe9;\n    padding: 30px;\n    margin-bottom: 30px;\n}\n.checkout-sidebar-merchant-box {\n    background-color: #fff;\n    border:1px solid #eaefe9;\n    margin-bottom: 30px;\n}\n.checkout-total {\n    border-bottom: 1px solid #eaefe9;\n    padding-bottom: 10px;\n    margin-bottom: 10px;\n}\n.checkout-invoice {\n    display: inline-block;\n    width: 100%;\n}\n.checout-invoice-title {\n    float: left;\n    color: #30322f;\n}\n.checout-invoice-price {\n    float: right;\n    color: #30322f;\n}\n.checkout-charges {\n    display: inline-block;\n    width: 100%;\n}\n.checout-charges-title{\n    float: left;\n}\n.checout-charges-price {\n    float: right;\n}\n.charges-free {\n    color: #43b02a;\n    font-weight: 600;\n}\n.checkout-payable {\n    display: inline-block;\n    width: 100%;\n    color: #333;\n}\n.checkout-payable-title {\n    float: left;\n}\n.checkout-payable-price {\n    float: right;\n}\n.checkout-cart-merchant-box {\n    padding: 20px;\n    display: inline-block;\n    width: 100%;\n    border-bottom: 1px solid #eaefe9;\n    padding-bottom: 20px;\n}\n.checkout-cart-merchant-name {\n    color: #30322f;\n    float: left;\n}\n.checkout-cart-merchant-item {\n    float: right;\n    color: #30322f;\n}\n.checkout-cart-products {}\n.checkout-cart-products .checkout-charges {\n    padding: 10px 20px;\n    color: #333;\n}\n.checkout-cart-item {\n    border-bottom: 1px solid #eaefe9;\n    box-sizing: border-box;\n    display: table;\n    font-size: 12px;\n    padding: 22px 20px;\n    width: 100%;\n}\n.checkout-item-list {}\n.checkout-item-count {\n    float: left;\n}\n.checkout-item-img {\n    width: 60px;\n    float: left;\n}\n.checkout-item-name-box {\n    float: left;\n}\n.checkout-item-title {\n    color: #30322f;\n    font-size: 14px;\n}\n.checkout-item-unit {\n}\n.checkout-item-price {\n    float: right;\n    color: #30322f;\n    font-size: 14px;\n    font-weight: 600;\n}\n.checkout-viewmore-btn {\n    padding: 10px;\n    text-align: center;\n}\n.header-checkout-item {\n    text-align: right;\n    padding-top: 20px;\n}\n.checkout-promise-item {\n    background-repeat: no-repeat;\n    background-size: 14px;\n    display: inline-block;\n    margin-left: 20px;\n    padding-left: 24px;\n    color: #30322f;\n}\n.checkout-promise-item i{\n    padding-right: 10px;\n    color: #43b02a;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.modal-backdrop {\n  display: none !important;\n}\n.checkout-wrapper {\n  padding-top: 40px;\n  padding-bottom: 40px;\n  background-color: #fafbfa;\n}\n.checkout {\n  background-color: #fff;\n  box-shadow: 0 1px 2px 0 #e9e9e9;\n  font-size: 14px;\n  border-radius: 5px;\n}\n.checkout-card {\n}\n.checkout-step {\n  border-top: 1px solid #f3f3f3;\n  color: #2b2f4c;\n  font-size: 14px;\n  padding: 30px;\n  position: relative;\n}\n.checkout-step:first-child {\n  border-top: 0;\n}\n.checkout-step-number {\n  border-radius: 50%;\n  border: 1px solid #f55d2c;\n  display: inline-block;\n  font-size: 14px;\n  font-weight: 600;\n  height: 32px;\n  margin-right: 20px;\n  padding: 6px;\n  text-align: center;\n  width: 32px;\n  color: #fff;\n  background: #f55d2c;\n}\n.checkout-step-title {\n  font-size: 18px;\n  font-weight: 500;\n  vertical-align: middle;\n  display: inline-block;\n  margin: 0px;\n}\n.wizard-btn {\n  background: transparent;\n  border: 0;\n  font-family: \"Roboto\", sans-serif;\n  font-weight: 500;\n  font-size: 18px;\n  color: #2b2f4c;\n}\n.checout-address-step {\n}\n.checout-address-step .form-group {\n  margin-bottom: 18px;\n  display: inline-block;\n  width: 100%;\n}\n.checkout-step-body {\n  padding-left: 0;\n  padding-top: 30px;\n}\n.checkout-step-active {\n  display: block;\n}\n.checkout-step-disabled {\n  display: none;\n}\n.checkout-login {\n}\n.login-phone {\n  display: inline-block;\n}\n.login-phone:after {\n  content: \"+91 - \";\n  font-size: 14px;\n  left: 36px;\n  top: 18px;\n  font-family: \"Rajdhani\", sans-serif;\n  font-weight: 600;\n  color: #2b2f4c;\n}\n.login-phone:before {\n  content: \"\";\n  font-style: normal;\n  color: #333;\n  font-size: 18px;\n  left: 12px;\n  display: inline-block;\n  font: normal normal normal 14px/1 FontAwesome;\n  font-size: inherit;\n  text-rendering: auto;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.login-phone:after,\n.login-phone:before {\n  position: absolute;\n  transform: translateY(-50%);\n}\n.login-phone .form-control {\n  padding-left: 68px;\n  font-size: 14px;\n  font-family: \"Rajdhani\", sans-serif;\n  font-weight: 600;\n  color: #2b2f4c;\n  border: 1px solid #efefef;\n}\n.checkout-login .btn {\n  height: 42px;\n  line-height: 1.8;\n}\n.otp-verifaction {\n  margin-top: 20px;\n}\n.checkout-sidebar {\n  background-color: #fff;\n  border: 1px solid #eaefe9;\n  padding: 30px;\n  margin-bottom: 30px;\n}\n.checkout-sidebar-merchant-box {\n  background-color: #fff;\n  border: 1px solid #eaefe9;\n  margin-bottom: 30px;\n}\n.checkout-total {\n  border-bottom: 1px solid #eaefe9;\n  padding-bottom: 10px;\n  margin-bottom: 10px;\n}\n.checkout-invoice {\n  display: inline-block;\n  width: 100%;\n}\n.checout-invoice-title {\n  float: left;\n  color: #30322f;\n}\n.checout-invoice-price {\n  float: right;\n  color: #30322f;\n}\n.checkout-charges {\n  display: inline-block;\n  width: 100%;\n}\n.checout-charges-title {\n  float: left;\n}\n.checout-charges-price {\n  float: right;\n}\n.charges-free {\n  color: #43b02a;\n  font-weight: 600;\n}\n.checkout-payable {\n  display: inline-block;\n  width: 100%;\n  color: #333;\n}\n.checkout-payable-title {\n  float: left;\n}\n.checkout-payable-price {\n  float: right;\n}\n.checkout-cart-merchant-box {\n  padding: 20px;\n  display: inline-block;\n  width: 100%;\n  border-bottom: 1px solid #eaefe9;\n  padding-bottom: 20px;\n}\n.checkout-cart-merchant-name {\n  color: #30322f;\n  float: left;\n}\n.checkout-cart-merchant-item {\n  float: right;\n  color: #30322f;\n}\n.checkout-cart-products {\n}\n.checkout-cart-products .checkout-charges {\n  padding: 10px 20px;\n  color: #333;\n}\n.checkout-cart-item {\n  border-bottom: 1px solid #eaefe9;\n  box-sizing: border-box;\n  display: table;\n  font-size: 12px;\n  padding: 22px 20px;\n  width: 100%;\n}\n.checkout-item-list {\n}\n.checkout-item-count {\n  float: left;\n}\n.checkout-item-img {\n  width: 60px;\n  float: left;\n}\n.checkout-item-name-box {\n  float: left;\n}\n.checkout-item-title {\n  color: #30322f;\n  font-size: 14px;\n}\n.checkout-item-unit {\n}\n.checkout-item-price {\n  float: right;\n  color: #30322f;\n  font-size: 14px;\n  font-weight: 600;\n}\n.checkout-viewmore-btn {\n  padding: 10px;\n  text-align: center;\n}\n.header-checkout-item {\n  text-align: right;\n  padding-top: 20px;\n}\n.checkout-promise-item {\n  background-repeat: no-repeat;\n  background-size: 14px;\n  display: inline-block;\n  margin-left: 20px;\n  padding-left: 24px;\n  color: #30322f;\n}\n.checkout-promise-item i {\n  padding-right: 10px;\n  color: #43b02a;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/composition/CheckoutComponent.vue?vue&type=style&index=1&id=17b4fdd7&scoped=true&lang=css":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/composition/CheckoutComponent.vue?vue&type=style&index=1&id=17b4fdd7&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://pocpaymentserve.s3.amazonaws.com/payform.min.css);"]);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -48815,6 +49471,764 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
+/***/ "./node_modules/regenerator-runtime/runtime.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var runtime = (function (exports) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  function define(obj, key, value) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+    return obj[key];
+  }
+  try {
+    // IE 8 has a broken Object.defineProperty that only works on DOM objects.
+    define({}, "");
+  } catch (err) {
+    define = function(obj, key, value) {
+      return obj[key] = value;
+    };
+  }
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  exports.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  IteratorPrototype[iteratorSymbol] = function () {
+    return this;
+  };
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+  GeneratorFunctionPrototype.constructor = GeneratorFunction;
+  GeneratorFunction.displayName = define(
+    GeneratorFunctionPrototype,
+    toStringTagSymbol,
+    "GeneratorFunction"
+  );
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      define(prototype, method, function(arg) {
+        return this._invoke(method, arg);
+      });
+    });
+  }
+
+  exports.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  exports.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      define(genFun, toStringTagSymbol, "GeneratorFunction");
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  exports.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator, PromiseImpl) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return PromiseImpl.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return PromiseImpl.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function(error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new PromiseImpl(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
+    return this;
+  };
+  exports.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  exports.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+    if (PromiseImpl === void 0) PromiseImpl = Promise;
+
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList),
+      PromiseImpl
+    );
+
+    return exports.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        // Note: ["return"] must be used for ES3 parsing compatibility.
+        if (delegate.iterator["return"]) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  define(Gp, toStringTagSymbol, "Generator");
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  Gp[iteratorSymbol] = function() {
+    return this;
+  };
+
+  Gp.toString = function() {
+    return "[object Generator]";
+  };
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  exports.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  exports.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+
+  // Regardless of whether this script is executing as a CommonJS module
+  // or not, return the runtime object so that we can declare the variable
+  // regeneratorRuntime in the outer scope, which allows this module to be
+  // injected easily by `bin/regenerator --include-runtime script.js`.
+  return exports;
+
+}(
+  // If this script is executing as a CommonJS module, use module.exports
+  // as the regeneratorRuntime namespace. Otherwise create a new empty
+  // object. Either way, the resulting object will be used to initialize
+  // the regeneratorRuntime variable at the top of this file.
+   true ? module.exports : 0
+));
+
+try {
+  regeneratorRuntime = runtime;
+} catch (accidentalStrictMode) {
+  // This module should not be running in strict mode, so the above
+  // assignment should always work unless something is misconfigured. Just
+  // in case runtime.js accidentally runs in strict mode, we can escape
+  // strict mode using a global Function call. This could conceivably fail
+  // if a Content Security Policy forbids using Function, but in that case
+  // the proper solution is to fix the accidental strict mode problem. If
+  // you've misconfigured your bundler to force strict mode and applied a
+  // CSP to forbid Function, and you're not willing to fix either of those
+  // problems, please detail your unique predicament in a GitHub issue.
+  Function("r", "regeneratorRuntime = r")(runtime);
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/vue3-carousel/dist/carousel.css":
 /*!******************************************************!*\
   !*** ./node_modules/vue3-carousel/dist/carousel.css ***!
@@ -48872,6 +50286,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CheckoutComponent_vue_vue_type_style_index_0_id_17b4fdd7_lang_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/composition/CheckoutComponent.vue?vue&type=style&index=1&id=17b4fdd7&scoped=true&lang=css":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/composition/CheckoutComponent.vue?vue&type=style&index=1&id=17b4fdd7&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CheckoutComponent_vue_vue_type_style_index_1_id_17b4fdd7_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./CheckoutComponent.vue?vue&type=style&index=1&id=17b4fdd7&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/composition/CheckoutComponent.vue?vue&type=style&index=1&id=17b4fdd7&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CheckoutComponent_vue_vue_type_style_index_1_id_17b4fdd7_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CheckoutComponent_vue_vue_type_style_index_1_id_17b4fdd7_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -49326,15 +50770,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _CheckoutComponent_vue_vue_type_template_id_17b4fdd7__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckoutComponent.vue?vue&type=template&id=17b4fdd7 */ "./resources/js/components/composition/CheckoutComponent.vue?vue&type=template&id=17b4fdd7");
+/* harmony import */ var _CheckoutComponent_vue_vue_type_template_id_17b4fdd7_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckoutComponent.vue?vue&type=template&id=17b4fdd7&scoped=true */ "./resources/js/components/composition/CheckoutComponent.vue?vue&type=template&id=17b4fdd7&scoped=true");
 /* harmony import */ var _CheckoutComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CheckoutComponent.vue?vue&type=script&lang=js */ "./resources/js/components/composition/CheckoutComponent.vue?vue&type=script&lang=js");
 /* harmony import */ var _CheckoutComponent_vue_vue_type_style_index_0_id_17b4fdd7_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CheckoutComponent.vue?vue&type=style&index=0&id=17b4fdd7&lang=css */ "./resources/js/components/composition/CheckoutComponent.vue?vue&type=style&index=0&id=17b4fdd7&lang=css");
+/* harmony import */ var _CheckoutComponent_vue_vue_type_style_index_1_id_17b4fdd7_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CheckoutComponent.vue?vue&type=style&index=1&id=17b4fdd7&scoped=true&lang=css */ "./resources/js/components/composition/CheckoutComponent.vue?vue&type=style&index=1&id=17b4fdd7&scoped=true&lang=css");
 
 
 
 
 ;
-_CheckoutComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _CheckoutComponent_vue_vue_type_template_id_17b4fdd7__WEBPACK_IMPORTED_MODULE_0__.render
+
+_CheckoutComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _CheckoutComponent_vue_vue_type_template_id_17b4fdd7_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render
+_CheckoutComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__scopeId = "data-v-17b4fdd7"
 /* hot reload */
 if (false) {}
 
@@ -49985,18 +51432,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/composition/CheckoutComponent.vue?vue&type=template&id=17b4fdd7":
-/*!*************************************************************************************************!*\
-  !*** ./resources/js/components/composition/CheckoutComponent.vue?vue&type=template&id=17b4fdd7 ***!
-  \*************************************************************************************************/
+/***/ "./resources/js/components/composition/CheckoutComponent.vue?vue&type=template&id=17b4fdd7&scoped=true":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/js/components/composition/CheckoutComponent.vue?vue&type=template&id=17b4fdd7&scoped=true ***!
+  \*************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CheckoutComponent_vue_vue_type_template_id_17b4fdd7__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CheckoutComponent_vue_vue_type_template_id_17b4fdd7_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CheckoutComponent_vue_vue_type_template_id_17b4fdd7__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./CheckoutComponent.vue?vue&type=template&id=17b4fdd7 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/composition/CheckoutComponent.vue?vue&type=template&id=17b4fdd7");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CheckoutComponent_vue_vue_type_template_id_17b4fdd7_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./CheckoutComponent.vue?vue&type=template&id=17b4fdd7&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/composition/CheckoutComponent.vue?vue&type=template&id=17b4fdd7&scoped=true");
 
 
 /***/ }),
@@ -50190,6 +51637,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/composition/CheckoutComponent.vue?vue&type=style&index=1&id=17b4fdd7&scoped=true&lang=css":
+/*!***************************************************************************************************************************!*\
+  !*** ./resources/js/components/composition/CheckoutComponent.vue?vue&type=style&index=1&id=17b4fdd7&scoped=true&lang=css ***!
+  \***************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CheckoutComponent_vue_vue_type_style_index_1_id_17b4fdd7_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./CheckoutComponent.vue?vue&type=style&index=1&id=17b4fdd7&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/composition/CheckoutComponent.vue?vue&type=style&index=1&id=17b4fdd7&scoped=true&lang=css");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/composition/IndexComponent.vue?vue&type=style&index=0&id=78f7bdfb&lang=css":
 /*!************************************************************************************************************!*\
   !*** ./resources/js/components/composition/IndexComponent.vue?vue&type=style&index=0&id=78f7bdfb&lang=css ***!
@@ -50199,69 +51659,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_IndexComponent_vue_vue_type_style_index_0_id_78f7bdfb_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./IndexComponent.vue?vue&type=style&index=0&id=78f7bdfb&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/composition/IndexComponent.vue?vue&type=style&index=0&id=78f7bdfb&lang=css");
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-plugin-load-script/index.js":
-/*!******************************************************!*\
-  !*** ./node_modules/vue-plugin-load-script/index.js ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const LoadScript = {
-  install: function (app) {
-    app.config.globalProperties.$loadScript = function (src) {
-      // eslint-disable-line no-param-reassign
-      return new Promise(function (resolve, reject) {
-        let shouldAppend = false;
-        let el = document.querySelector('script[src="' + src + '"]');
-        if (!el) {
-          el = document.createElement('script');
-          el.type = 'text/javascript';
-          el.async = true;
-          el.src = src;
-          shouldAppend = true;
-        } else if (el.hasAttribute('data-loaded')) {
-          resolve(el);
-          return;
-        }
-
-        el.addEventListener('error', reject);
-        el.addEventListener('abort', reject);
-        el.addEventListener('load', function loadScriptHandler() {
-          el.setAttribute('data-loaded', true);
-          resolve(el);
-        });
-
-        if (shouldAppend) document.head.appendChild(el);
-      });
-    };
-
-    app.config.globalProperties.$unloadScript = function (src) {
-      // eslint-disable-line no-param-reassign
-      return new Promise(function (resolve, reject) {
-        const el = document.querySelector('script[src="' + src + '"]');
-
-        if (!el) {
-          reject();
-          return;
-        }
-
-        document.head.removeChild(el);
-
-        resolve();
-      });
-    };
-  },
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LoadScript);
 
 
 /***/ }),
