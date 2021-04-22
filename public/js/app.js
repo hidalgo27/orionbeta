@@ -16918,7 +16918,7 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
                 }
 
                 _context.next = 9;
-                return axios__WEBPACK_IMPORTED_MODULE_6___default().get("http://ecommerce-backend1.test/api/v1/sesion/".concat(id_orden_.value)).then(function (response) {
+                return axios__WEBPACK_IMPORTED_MODULE_6___default().get("https://sistemaorion.nebulaperu.com/api/v1/sesion/".concat(id_orden_.value)).then(function (response) {
                   console.log("Response: ", response.data);
                   configuration.value = {
                     sessionkey: String(response.data.sesionkey),
@@ -17093,7 +17093,7 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
         console.log("data create token: ", data);
         alert("BIN: " + data.bin + "\ntransactionToken: " + data.transactionToken + "\nchannel: " + data.channel);
         debugger;
-        axios__WEBPACK_IMPORTED_MODULE_6___default().post("http://ecommerce-backend1.test/api/v1/authorization", {
+        axios__WEBPACK_IMPORTED_MODULE_6___default().post("https://sistemaorion.nebulaperu.com/api/v1/authorization", {
           transactionToken: data.transactionToken,
           amount: amount.value,
           purchase: purchase.value
@@ -17103,7 +17103,7 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
 
           if (response.data["dataMap"] != undefined) {
             if (response.data["dataMap"]["ACTION_CODE"] == "000") {
-              axios__WEBPACK_IMPORTED_MODULE_6___default().get("http://ecommerce-backend1.test/api/v1/orders-confirm/".concat(id_orden_.value)).then(function (res) {
+              axios__WEBPACK_IMPORTED_MODULE_6___default().get("https://sistemaorion.nebulaperu.com/api/v1/orders-confirm/".concat(id_orden_.value)).then(function (res) {
                 if (res.data.status == 1) {
                   loader.value = false;
                   alert("Pago aprobado");
@@ -17193,7 +17193,7 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
                   total_price: cartState.total
                 };
                 _context2.next = 15;
-                return axios__WEBPACK_IMPORTED_MODULE_6___default().post("http://ecommerce-backend1.test/api/v1/orders-api", {
+                return axios__WEBPACK_IMPORTED_MODULE_6___default().post("https://sistemaorion.nebulaperu.com/api/v1/orders-api", {
                   form_data: form,
                   cart: cartState.cart
                 });
