@@ -787,6 +787,9 @@
                           </div>
                           picked_metodo:{{ picked_metodo }}
                           loader:{{ loader }}
+                          <p>
+                            <b>loaderTargeta:</b>{{ loaderTargeta }}
+                          </p>
                           <div
                             v-if="picked_metodo=='pagotarjeta'"
                             class="form-group return-departure-dts1"
@@ -794,7 +797,7 @@
                           >
 
                             <div
-                              v-if="false"
+                              v-show="loaderTargeta"
                               class="spinner-border text-danger"
                               role="status"
                             >
@@ -802,7 +805,7 @@
                             </div>
                             <div
                               class="row"
-                              v-if="true"
+                              v-show="!loaderTargeta"
                             >
                               <div class="col-lg-12">
                                 <div class="mb-4 pymnt_title">
@@ -930,6 +933,7 @@
                           </div>
 
                           <button
+                            v-if="picked_metodo=='contraentrega'"
                             type="button"
                             class="next-btn16 hover-btn"
                             @click="onSubmitAll()"
@@ -937,6 +941,7 @@
 
                           <!-- Boton de pago con tarjeta -->
                           <button
+                            v-if="picked_metodo=='pagotarjeta'"
                             class="btn btn-primary"
                             @click="pagoTarjeta()"
                           ><i
@@ -1180,6 +1185,7 @@ export default {
     };
     const pay = ref(null);
     let loader = ref(false);
+    let loaderTargeta = ref(false);
     const txtCuotas = ref(0);
     const amount = ref(0);
     const dcc = ref("");
@@ -1193,12 +1199,13 @@ export default {
 
     async function loadForm() {
       try {
+        loaderTargeta.value = true;
         console.log("se guardara temporalmente la orden");
         id_orden_.value = await onSubmitAllTarjeta();
         if (id_orden_.value > 0) {
-          axios
+          await axios
             .get(
-              `http://ecommerce-backend1.test/api/v1/sesion/${id_orden_.value}`
+              `https://sistemaorion.nebulaperu.com/api/v1/sesion/${id_orden_.value}`
             )
             .then(function (response) {
               console.log("Response: ", response.data);
@@ -1218,7 +1225,7 @@ export default {
               purchase.value = String(configuration.value.purchasenumber);
               amount.value = String(configuration.value.amount);
               dcc.value = false;
-              //   payform.resetData();
+              //   cargarScripts();
               payform.setConfiguration(configuration.value);
 
               // Número de tarjeta
@@ -1368,9 +1375,11 @@ export default {
 
               // loader.value = false;
             });
+          loaderTargeta.value = false;
         }
       } catch (error) {
         console.log("error", error);
+        loaderTargeta.value = false;
       }
     }
     function pagoTarjeta() {
@@ -1421,7 +1430,7 @@ export default {
           debugger;
 
           axios
-            .post(`http://ecommerce-backend1.test/api/v1/authorization`, {
+            .post(`https://sistemaorion.nebulaperu.com/api/v1/authorization`, {
               transactionToken: data.transactionToken,
               amount: amount.value,
               purchase: purchase.value,
@@ -1434,7 +1443,7 @@ export default {
                 if (response.data["dataMap"]["ACTION_CODE"] == "000") {
                   axios
                     .get(
-                      `http://ecommerce-backend1.test/api/v1/orders-confirm/${id_orden_.value}`
+                      `https://sistemaorion.nebulaperu.com/api/v1/orders-confirm/${id_orden_.value}`
                     )
                     .then((res) => {
                       if (res.data.status == 1) {
@@ -1511,7 +1520,7 @@ export default {
           };
 
           const rpt = await axios.post(
-            "http://ecommerce-backend1.test/api/v1/orders-api",
+            "https://sistemaorion.nebulaperu.com/api/v1/orders-api",
             {
               form_data: form,
               cart: cartState.cart,
@@ -1706,6 +1715,7 @@ export default {
       pay,
       elementStyles,
       loader,
+      loaderTargeta,
       txtCuotas,
       amount,
       dcc,
