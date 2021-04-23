@@ -1427,7 +1427,7 @@ export default {
               "\nchannel: " +
               data.channel
           );
-          debugger;
+          // debugger;
 
           axios
             .post(`https://sistemaorion.nebulaperu.com/api/v1/authorization`, {
@@ -1436,9 +1436,9 @@ export default {
               purchase: purchase.value,
             })
             .then((response) => {
-              console.log(response.data);
+              // console.log(response.data);
 
-              debugger;
+              // debugger;
               if (response.data["dataMap"] != undefined) {
                 if (response.data["dataMap"]["ACTION_CODE"] == "000") {
                   axios
@@ -1518,7 +1518,6 @@ export default {
             tax: tax.value,
             total_price: cartState.total,
           };
-
           const rpt = await axios.post(
             "https://sistemaorion.nebulaperu.com/api/v1/orders-api",
             {

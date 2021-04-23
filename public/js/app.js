@@ -17091,16 +17091,15 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
       console.log("configuration: ", configuration.value);
       payform.createToken([cardNumber.value, cardExpiry.value, cardCvv.value], data).then(function (data) {
         console.log("data create token: ", data);
-        alert("BIN: " + data.bin + "\ntransactionToken: " + data.transactionToken + "\nchannel: " + data.channel);
-        debugger;
+        alert("BIN: " + data.bin + "\ntransactionToken: " + data.transactionToken + "\nchannel: " + data.channel); // debugger;
+
         axios__WEBPACK_IMPORTED_MODULE_6___default().post("https://sistemaorion.nebulaperu.com/api/v1/authorization", {
           transactionToken: data.transactionToken,
           amount: amount.value,
           purchase: purchase.value
         }).then(function (response) {
-          console.log(response.data);
-          debugger;
-
+          // console.log(response.data);
+          // debugger;
           if (response.data["dataMap"] != undefined) {
             if (response.data["dataMap"]["ACTION_CODE"] == "000") {
               axios__WEBPACK_IMPORTED_MODULE_6___default().get("https://sistemaorion.nebulaperu.com/api/v1/orders-confirm/".concat(id_orden_.value)).then(function (res) {
