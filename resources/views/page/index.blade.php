@@ -18,7 +18,7 @@
 {{--                                                    Seleccionamos productos par tu día--}}
 {{--                                                </div>--}}
 {{--                                                <h2 class="owl-slide-animated owl-slide-title text-white">Feliz Dia Mamá</h2>--}}
-                                                <a class="btn btn-danger owl-slide-animated owl-slide-cta" href="http://orion.nu/products/category/fechas festivas" role="button">Ver Productos</a>
+                                                <a class="btn btn-danger owl-slide-animated owl-slide-cta" href="/products/category/fechas festivas" role="button">Ver Productos</a>
                                             </div>
                                         </div>
                                     </div>
