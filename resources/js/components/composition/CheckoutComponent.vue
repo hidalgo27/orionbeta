@@ -753,7 +753,7 @@
                                   >Pago Contra entrega</label>
                                 </div>
                               </li>
-                              <li>
+                              <li class="d-none">
                                 <div class="radio-item_1">
                                   <input
                                     id="card1"
@@ -785,11 +785,13 @@
                               </div>
                             </div>
                           </div>
+                            <div class="d-none">
                           picked_metodo:{{ picked_metodo }}
                           loader:{{ loader }}
                           <p>
                             <b>loaderTargeta:</b>{{ loaderTargeta }}
                           </p>
+                            </div>
                           <div
                             v-if="picked_metodo=='pagotarjeta'"
                             class="form-group return-departure-dts1"
