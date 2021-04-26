@@ -7,7 +7,7 @@
                     <div class="col-12 col-md-6 col-lg-8 bg-dark d-none d-md-block positive">
 
 
-                        <div class="owl-carousel owl-theme">
+                        <div class="owl-carousel owl-carousel-head owl-theme">
                             <div class="owl-slide d-flex align-items-center cover" style="background-image: url({{asset('images/banners/banner-madre.jpg')}});">
                                 <div class="container">
                                     <div class="row justify-content-center justify-content-md-end">

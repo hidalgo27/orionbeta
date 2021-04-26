@@ -33,6 +33,7 @@
     "dependencies": {
         "mitt": "^2.1.0",
         "moment": "^2.29.1",
+        "vue-plugin-load-script": "^2.0.1",
         "vue3-carousel": "^0.1.15"
     }
 }

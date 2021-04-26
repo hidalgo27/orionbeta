@@ -501,16 +501,40 @@
         $('[data-toggle="tooltip"]').tooltip()
     })
 
+    $('.date-slider').owlCarousel({
+        loop:false,
+        margin:10,
+        nav:false,
+        dots:false,
+        responsive:{
+            0:{
+                items:3
+            },
+            600:{
+                items:4
+            },
+            1000:{
+                items:5
+            },
+            1200:{
+                items:6
+            },
+            1400:{
+                items:7
+            }
+        }
+    })
 
 
-    $(".owl-carousel").on("initialized.owl.carousel", () => {
+
+    $(".owl-carousel-head").on("initialized.owl.carousel", () => {
         setTimeout(() => {
             $(".owl-item.active .owl-slide-animated").addClass("is-transitioned");
             $("section").show();
         }, 200);
     });
 
-    const $owlCarousel = $(".owl-carousel").owlCarousel({
+    const $owlCarousel = $(".owl-carousel-head").owlCarousel({
         items: 1,
         loop: true,
         nav: true,
@@ -551,7 +575,7 @@
         const {top, left} = el.position();
         const res = height + top + 20;
 
-        $(".owl-carousel .owl-dots").css({
+        $(".owl-carousel-head .owl-dots").css({
             top: `${res}px`,
             left: `${left}px`
         });
