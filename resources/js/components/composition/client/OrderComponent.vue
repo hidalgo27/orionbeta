@@ -68,7 +68,7 @@
                     :key="key"
                   >
                     <div class="pdpt-title">
-                      <h5># {{ order.code }} | Tarjeta: {{ order.card }} | Modeda: PEN</h5>
+                      <h6>Orden #{{ order.code }} | Tarjeta: {{ order.card }} | Moneda: PEN</h6>
                       <h6>Se entrega: {{ order.fecha_entrega }}, {{ order.hora_entrega }}</h6>
                     </div>
                     <div class="order-body10">

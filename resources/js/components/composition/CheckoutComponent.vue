@@ -753,7 +753,8 @@
                                   >Pago Contra entrega</label>
                                 </div>
                               </li>
-                              <li class="d-none">
+                              <!-- <li class="d-none"> -->
+                              <li>
                                 <div class="radio-item_1">
                                   <input
                                     id="card1"
@@ -968,10 +969,9 @@
                             v-if="error_pago"
                           >
                             <h3>Su pago no fue procesado!</h3>
-                            <p><b>Orden:</b> {{error_pago_numeroPedido}} | <b>Fecha:</b>{{ error_pago_fecha_hora }}</p>
+                            <p><b>Orden #</b> {{error_pago_numeroPedido}} | <b>Fecha:</b>{{ error_pago_fecha_hora }}</p>
                             <p><b>Mensaje:</b> {{error_pago_mensaje}}</p>
                             <p>Pruebe con otra tarjeta, si el inconveniente persiste pruebe el "Pago contra entrega"</p>
-
                           </div>
                           <div
                             class="alert alert-danger mt-21"
