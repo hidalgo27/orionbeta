@@ -16803,6 +16803,7 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
     var today_6 = moment__WEBPACK_IMPORTED_MODULE_3___default()().locale("es").add(5, "d").format("DD MMMM YYYY");
     var today_7 = moment__WEBPACK_IMPORTED_MODULE_3___default()().locale("es").add(6, "d").format("DD MMMM YYYY");
     var today_8 = moment__WEBPACK_IMPORTED_MODULE_3___default()().locale("es").add(7, "d").format("DD MMMM YYYY");
+    var hoy = moment__WEBPACK_IMPORTED_MODULE_3___default()().locale("es").format("MMMM Do YYYY, h:mm:ss a");
     var d_name = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(props.user.name);
     var d_email = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(props.user.email);
     var direccion = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)([]);
@@ -16883,6 +16884,10 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
     var pay = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(null);
     var loader = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(false);
     var loaderTargeta = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(false);
+    var error_pago = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(false);
+    var error_pago_mensaje = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)("");
+    var error_pago_numeroPedido = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)("");
+    var error_pago_fecha_hora = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)("");
     var txtCuotas = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(0);
     var amount = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(0);
     var dcc = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)("");
@@ -16893,31 +16898,64 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
     var cardCvv = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(null);
     var id_orden_ = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(0);
 
+    function settearVariables() {
+      return _settearVariables.apply(this, arguments);
+    }
+
+    function _settearVariables() {
+      _settearVariables = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                cardNumber.value = null;
+                cardExpiry.value = null;
+                cardCvv.value = null;
+                _context.next = 5;
+                return cargarScripts();
+
+              case 5:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+      return _settearVariables.apply(this, arguments);
+    }
+
     function loadForm() {
       return _loadForm.apply(this, arguments);
     }
 
     function _loadForm() {
-      _loadForm = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+      _loadForm = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
-            switch (_context.prev = _context.next) {
+            switch (_context2.prev = _context2.next) {
               case 0:
-                _context.prev = 0;
+                _context2.prev = 0;
                 loaderTargeta.value = true;
                 console.log("se guardara temporalmente la orden");
-                _context.next = 5;
+                _context2.next = 5;
                 return onSubmitAllTarjeta();
 
               case 5:
-                id_orden_.value = _context.sent;
+                id_orden_.value = _context2.sent;
+                console.log("id_orden_.value:", id_orden_.value);
 
                 if (!(id_orden_.value > 0)) {
-                  _context.next = 10;
+                  _context2.next = 17;
                   break;
                 }
 
-                _context.next = 9;
+                console.log("settearVariables inicio");
+                _context2.next = 11;
+                return settearVariables();
+
+              case 11:
+                console.log("settearVariables fin");
+                _context2.next = 14;
                 return axios__WEBPACK_IMPORTED_MODULE_6___default().get("https://sistemaorion.nebulaperu.com/api/v1/sesion/".concat(id_orden_.value)).then(function (response) {
                   console.log("Response: ", response.data);
                   configuration.value = {
@@ -16935,7 +16973,9 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
                   amount.value = String(configuration.value.amount);
                   dcc.value = false; //   cargarScripts();
 
-                  payform.setConfiguration(configuration.value); // Número de tarjeta
+                  console.log("setConfiguration inicio");
+                  payform.setConfiguration(configuration.value);
+                  console.log("setConfiguration fin"); // Número de tarjeta
 
                   cardNumber.value = payform.createElement("card-number", {
                     style: elementStyles,
@@ -17034,94 +17074,147 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
                   }); // loader.value = false;
                 });
 
-              case 9:
+              case 14:
                 loaderTargeta.value = false;
-
-              case 10:
-                _context.next = 16;
+                _context2.next = 23;
                 break;
 
-              case 12:
-                _context.prev = 12;
-                _context.t0 = _context["catch"](0);
-                console.log("error", _context.t0);
+              case 17:
+                loaderTargeta.value = false;
+                picked_metodo.value = "contraentrega";
+                document.getElementById("cashondelivery1").checked = true;
+                document.getElementById("card1").checked = false;
+                console.log("loaderTargeta:", loaderTargeta.value);
+                console.log("picked_metodo:", picked_metodo.value);
+
+              case 23:
+                _context2.next = 29;
+                break;
+
+              case 25:
+                _context2.prev = 25;
+                _context2.t0 = _context2["catch"](0);
+                console.log("error", _context2.t0);
                 loaderTargeta.value = false;
 
-              case 16:
+              case 29:
               case "end":
-                return _context.stop();
+                return _context2.stop();
             }
           }
-        }, _callee, null, [[0, 12]]);
+        }, _callee2, null, [[0, 25]]);
       }));
       return _loadForm.apply(this, arguments);
     }
 
     function pagoTarjeta() {
-      // Comparamos los montos para realizar el pago por tarjeta
-      var total_car = new Intl.NumberFormat("es-PE").format(parseFloat(tax.value) + parseFloat(cartState.total));
-      console.log("Montos a comprarar:".concat(amount.value, "=?").concat(total_car));
+      try {
+        // Comparamos los montos para realizar el pago por tarjeta
+        var total_car = new Intl.NumberFormat("es-PE").format(parseFloat(tax.value) + parseFloat(cartState.total));
+        console.log("Montos a comprarar:".concat(amount.value, "=?").concat(total_car));
 
-      if (parseFloat(amount.value) != parseFloat(total_car)) {
-        alert("Por favor actualize la pagina"); // location.reload();
-      }
+        if (parseFloat(amount.value) != parseFloat(total_car)) {
+          alert("Por favor actualize la pagina"); // location.reload();
+        } // settteamos los mensajes de error para procesar el pago
 
-      loader.value = true;
-      var data = {
-        name: d_name.value,
-        lastName: d_name.value,
-        email: d_email.value,
-        alias: "KS",
-        phoneNumber: String(celular.value),
-        currencyConversion: dcc.value,
-        recurrence: false
-      };
 
-      if (credito.value) {
-        var cuotaSeleccionada = $("#selectCuotas").val();
+        error_pago.value = false;
+        error_pago_mensaje.value = "";
+        error_pago_numeroPedido.value = "";
+        error_pago_fecha_hora.value = "";
+        loader.value = true;
+        var data = {
+          name: d_name.value,
+          lastName: d_name.value,
+          email: d_email.value,
+          alias: "KS",
+          phoneNumber: String(celular.value),
+          currencyConversion: dcc.value,
+          recurrence: false
+        };
 
-        if (cuotaSeleccionada == "Sin cuotas") {
-          data.push("installment", 0);
-        } else {
-          data.push("installment", cuotaSeleccionada);
-        }
-      }
+        if (credito.value) {
+          var cuotaSeleccionada = $("#selectCuotas").val();
 
-      console.log(data);
-      console.log("configuration: ", configuration.value);
-      payform.createToken([cardNumber.value, cardExpiry.value, cardCvv.value], data).then(function (data) {
-        console.log("data create token: ", data);
-        alert("BIN: " + data.bin + "\ntransactionToken: " + data.transactionToken + "\nchannel: " + data.channel); // debugger;
-
-        axios__WEBPACK_IMPORTED_MODULE_6___default().post("https://sistemaorion.nebulaperu.com/api/v1/authorization", {
-          transactionToken: data.transactionToken,
-          amount: amount.value,
-          purchase: purchase.value
-        }).then(function (response) {
-          // console.log(response.data);
-          // debugger;
-          if (response.data["dataMap"] != undefined) {
-            if (response.data["dataMap"]["ACTION_CODE"] == "000") {
-              axios__WEBPACK_IMPORTED_MODULE_6___default().get("https://sistemaorion.nebulaperu.com/api/v1/orders-confirm/".concat(id_orden_.value)).then(function (res) {
-                if (res.data.status == 1) {
-                  loader.value = false;
-                  alert("Pago aprobado");
-                  window.location = "/client/pedidos";
-                  sessionStorage.clear();
-                }
-              });
-            }
-          } else if (response.data["data"] != undefined) {
-            if (response.data["data"]["ACTION_CODE"] != "000") {
-              alert("Pago denegado: " + response.data["data"]["ACTION_DESCRIPTION"] + ", por favor actualice la pagina y vulva a intentarlo");
-              loader.value = false;
-            }
+          if (cuotaSeleccionada == "Sin cuotas") {
+            data.push("installment", 0);
+          } else {
+            data.push("installment", cuotaSeleccionada);
           }
+        }
+
+        console.log(data);
+        console.log("configuration: ", configuration.value);
+        payform.createToken([cardNumber.value, cardExpiry.value, cardCvv.value], data).then(function (data) {
+          console.log("data create token: ", data);
+          axios__WEBPACK_IMPORTED_MODULE_6___default().post("https://sistemaorion.nebulaperu.com/api/v1/authorization", {
+            transactionToken: data.transactionToken,
+            amount: amount.value,
+            purchase: purchase.value
+          }).then(function (response) {
+            console.log(response.data); // debugger;
+
+            if (response.data["dataMap"] != undefined) {
+              if (response.data["dataMap"]["ACTION_CODE"] == "000") {
+                var card = response.data["dataMap"]["CARD"];
+                var description = response.data["dataMap"]["ACTION_DESCRIPTION"];
+                var traceNumber = response.data["dataMap"]["TRACE_NUMBER"];
+                console.log("card:".concat(card, ", description:").concat(description, ", traceNumber:").concat(traceNumber));
+                axios__WEBPACK_IMPORTED_MODULE_6___default().get("https://sistemaorion.nebulaperu.com/api/v1/orders-confirm/".concat(id_orden_.value, "/1/").concat(card, "/").concat(traceNumber, "/").concat(description)).then(function (res) {
+                  if (res.data.status == 1) {
+                    loader.value = false; // alert("Pago aprobado");
+
+                    sessionStorage.clear();
+                    window.location = "/client/pedidos";
+                  }
+                });
+              }
+            } else if (response.data["data"] != undefined) {
+              if (response.data["data"]["ACTION_CODE"] != "000") {
+                // alert(
+                //   "Pago denegado: " +
+                //     response.data["data"]["ACTION_DESCRIPTION"] +
+                //     ", por favor actualice la pagina y vuelva a intentarlo"
+                // );
+                axios__WEBPACK_IMPORTED_MODULE_6___default().get("https://sistemaorion.nebulaperu.com/api/v1/orders-denegado/".concat(id_orden_.value)).then(function (res) {
+                  var description = response.data["data"]["ACTION_DESCRIPTION"];
+                  var numeroPedido = res.data.numeroPedido;
+                  var fecha_hora = res.data.fecha_hora;
+                  loader.value = false; // sessionStorage.clear();
+                  // alert(
+                  //   `Pedido deneagdo: ${description}_${numeroPedido}_${fecha_hora}`
+                  // );
+
+                  error_pago.value = true;
+                  error_pago_mensaje.value = description;
+                  error_pago_numeroPedido.value = numeroPedido; // error_pago_fecha_hora.value = moment().format(
+                  //   "MMMM Do YYYY, h:mm:ss a"
+                  // );
+
+                  error_pago_fecha_hora.value = hoy;
+                  loaderTargeta.value = false;
+                  picked_metodo.value = "contraentrega";
+                  document.getElementById("cashondelivery1").checked = true;
+                  document.getElementById("card1").checked = false;
+                  console.log("loaderTargeta:", loaderTargeta.value);
+                  console.log("picked_metodo:", picked_metodo.value); // loadForm();
+                  //   window.location = "/client/pedidos/denegado";
+                  // Enviar a una pagina
+                });
+              }
+            }
+          });
+        })["catch"](function (error) {
+          console.log("data2-error: ", error); // alert(error);
+
+          loader.value = false;
+          alert("Opps, algo salio mal por favor actialice la pagina");
         });
-      })["catch"](function (error) {
-        console.log("data-error: ", error);
-        alert(error);
-      });
+      } catch (error) {
+        console.log("data1-error: ", error);
+        loader.value = false;
+        alert("Opps, algo salio mal por favor actialice la pagina");
+      }
     }
 
     function onSubmitAllTarjeta() {
@@ -17129,13 +17222,13 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
     }
 
     function _onSubmitAllTarjeta() {
-      _onSubmitAllTarjeta = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-        var form, rpt;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+      _onSubmitAllTarjeta = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        var form, rpt, dato;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
           while (1) {
-            switch (_context2.prev = _context2.next) {
+            switch (_context3.prev = _context3.next) {
               case 0:
-                _context2.prev = 0;
+                _context3.prev = 0;
                 cartState.error_v = [];
 
                 if (!props.user.id) {
@@ -17175,7 +17268,7 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
                 }
 
                 if (!(cartState.error_v.length === 0)) {
-                  _context2.next = 22;
+                  _context3.next = 25;
                   break;
                 }
 
@@ -17191,41 +17284,46 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
                   tax: tax.value,
                   total_price: cartState.total
                 };
-                _context2.next = 15;
+                _context3.next = 15;
                 return axios__WEBPACK_IMPORTED_MODULE_6___default().post("https://sistemaorion.nebulaperu.com/api/v1/orders-api", {
                   form_data: form,
                   cart: cartState.cart
                 });
 
               case 15:
-                rpt = _context2.sent;
+                rpt = _context3.sent;
+                _context3.next = 18;
+                return rpt.data;
 
-                if (!(rpt.data.status > 0)) {
-                  _context2.next = 21;
+              case 18:
+                dato = _context3.sent;
+
+                if (!(dato.status > 0)) {
+                  _context3.next = 24;
                   break;
                 }
 
-                console.log("order_id", rpt.data.order_id);
-                return _context2.abrupt("return", rpt.data.order_id);
-
-              case 21:
-                return _context2.abrupt("return", 0);
-
-              case 22:
-                _context2.next = 27;
-                break;
+                console.log("order_id", dato.order_id);
+                return _context3.abrupt("return", dato.order_id);
 
               case 24:
-                _context2.prev = 24;
-                _context2.t0 = _context2["catch"](0);
-                return _context2.abrupt("return", 0);
+                return _context3.abrupt("return", 0);
+
+              case 25:
+                _context3.next = 30;
+                break;
 
               case 27:
+                _context3.prev = 27;
+                _context3.t0 = _context3["catch"](0);
+                return _context3.abrupt("return", 0);
+
+              case 30:
               case "end":
-                return _context2.stop();
+                return _context3.stop();
             }
           }
-        }, _callee2, null, [[0, 24]]);
+        }, _callee3, null, [[0, 27]]);
       }));
       return _onSubmitAllTarjeta.apply(this, arguments);
     }
@@ -17336,40 +17434,51 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
         // console.log(er.response.data)
         error.value = er.response.data;
       });
-    }
+    } // onMounted(() => {
+    //   cargarScripts();
+    // });
 
-    (0,vue__WEBPACK_IMPORTED_MODULE_5__.onMounted)(function () {
-      cargarScripts();
-    });
 
     function cargarScripts() {
       return _cargarScripts.apply(this, arguments);
     }
 
     function _cargarScripts() {
-      _cargarScripts = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+      _cargarScripts = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
         var visaDevelopment, visaUrlJs, externalScript;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
           while (1) {
-            switch (_context3.prev = _context3.next) {
+            switch (_context4.prev = _context4.next) {
               case 0:
                 visaDevelopment = true;
                 visaUrlJs = visaDevelopment ? "https://pocpaymentserve.s3.amazonaws.com/payform.min.js" : "https://static-content.vnforapps.com/elements/v1/payform.min.js";
                 console.log("Inicio montando un script");
                 externalScript = document.createElement("script");
-                _context3.next = 6;
+                _context4.next = 6;
                 return externalScript.setAttribute("src", visaUrlJs);
 
               case 6:
-                document.head.appendChild(externalScript);
+                if (!document.head.contains(externalScript)) {
+                  _context4.next = 9;
+                  break;
+                }
+
+                _context4.next = 9;
+                return document.head.removeChild(externalScript);
+
+              case 9:
+                _context4.next = 11;
+                return document.head.appendChild(externalScript);
+
+              case 11:
                 console.log("Fin montando un script");
 
-              case 8:
+              case 12:
               case "end":
-                return _context3.stop();
+                return _context4.stop();
             }
           }
-        }, _callee3);
+        }, _callee4);
       }));
       return _cargarScripts.apply(this, arguments);
     }
@@ -17412,6 +17521,7 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
       user: user,
       pagoTarjeta: pagoTarjeta,
       loadForm: loadForm,
+      settearVariables: settearVariables,
       onSubmitAllTarjeta: onSubmitAllTarjeta,
       //   PagoTarjetaPasoDos,
       id_orden_: id_orden_,
@@ -17421,6 +17531,11 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
       elementStyles: elementStyles,
       loader: loader,
       loaderTargeta: loaderTargeta,
+      error_pago: error_pago,
+      error_pago_numeroPedido: error_pago_numeroPedido,
+      error_pago_mensaje: error_pago_mensaje,
+      error_pago_fecha_hora: error_pago_fecha_hora,
+      hoy: hoy,
       txtCuotas: txtCuotas,
       amount: amount,
       dcc: dcc,
@@ -18771,8 +18886,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }),
       order_p: (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
         return lodash_orderBy__WEBPACK_IMPORTED_MODULE_6___default()(orders.value.filter(function (order) {
-          return order.state > '0';
-        }), 'created_at', 'desc');
+          return order.state > "0";
+        }), "created_at", "desc");
       })
     });
     fetch("https://sistemaorion.nebulaperu.com/api/v1/orders/" + props.user.id + "/get-all-client").then(function (res) {
@@ -18780,7 +18895,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }).then(function (data) {
       orders.value = data;
     });
-    var dataB = JSON.parse(sessionStorage.getItem('local-cart'));
+    var dataB = JSON.parse(sessionStorage.getItem("local-cart"));
 
     if (dataB === null) {
       cartState.cart = [];
@@ -20073,14 +20188,13 @@ var _hoisted_156 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)
 /* HOISTED */
 );
 
-var _hoisted_157 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("b", null, "loaderTargeta:", -1
-/* HOISTED */
-);
-
-var _hoisted_158 = {
+var _hoisted_157 = {
   key: 0,
   "class": "form-group return-departure-dts1",
   "data-method": "card"
+};
+var _hoisted_158 = {
+  "class": "text-center"
 };
 var _hoisted_159 = {
   "class": "spinner-border text-danger",
@@ -20180,74 +20294,99 @@ var _hoisted_183 = {
   key: 3,
   "class": "alert alert-danger mt-21"
 };
-var _hoisted_184 = {
+
+var _hoisted_184 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", null, "Su pago no fue procesado!", -1
+/* HOISTED */
+);
+
+var _hoisted_185 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("b", null, "Orden:", -1
+/* HOISTED */
+);
+
+var _hoisted_186 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("b", null, "Fecha:", -1
+/* HOISTED */
+);
+
+var _hoisted_187 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("b", null, "Mensaje:", -1
+/* HOISTED */
+);
+
+var _hoisted_188 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, "Pruebe con otra tarjeta, si el inconveniente persiste pruebe el \"Pago contra entrega\"", -1
+/* HOISTED */
+);
+
+var _hoisted_189 = {
+  key: 4,
+  "class": "alert alert-danger mt-21"
+};
+var _hoisted_190 = {
   "class": "col-lg-4 col-md-5"
 };
-var _hoisted_185 = {
+var _hoisted_191 = {
   "class": "mt-0 pdpt-bg"
 };
 
-var _hoisted_186 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_192 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "pdpt-title"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, "Resumen de pedido")], -1
 /* HOISTED */
 );
 
-var _hoisted_187 = {
+var _hoisted_193 = {
   "class": "cart-item border_radius"
 };
-var _hoisted_188 = {
+var _hoisted_194 = {
   "class": "cart-product-img"
 };
-var _hoisted_189 = {
+var _hoisted_195 = {
   "class": "cart-text"
 };
-var _hoisted_190 = {
+var _hoisted_196 = {
   key: 0,
   "class": "small"
 };
-var _hoisted_191 = {
+var _hoisted_197 = {
   "class": "cart-item-price"
 };
 
-var _hoisted_192 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Precio por definir ");
+var _hoisted_198 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Precio por definir ");
 
-var _hoisted_193 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
+var _hoisted_199 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
   "class": "uil uil-multiply"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_194 = {
+var _hoisted_200 = {
   "class": "total-checkout-group"
 };
-var _hoisted_195 = {
+var _hoisted_201 = {
   "class": "cart-total-dil"
 };
 
-var _hoisted_196 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, "Orion Super Mercado", -1
+var _hoisted_202 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, "Orion Super Mercado", -1
 /* HOISTED */
 );
 
-var _hoisted_197 = {
+var _hoisted_203 = {
   key: 0,
   "class": "pt-3 cart-total-dil"
 };
 
-var _hoisted_198 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, "Delivery", -1
+var _hoisted_204 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, "Delivery", -1
 /* HOISTED */
 );
 
-var _hoisted_199 = {
+var _hoisted_205 = {
   key: 0,
   "class": "main-total-cart"
 };
 
-var _hoisted_200 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", null, "Total", -1
+var _hoisted_206 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", null, "Total", -1
 /* HOISTED */
 );
 
-var _hoisted_201 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_207 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "payment-secure"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
   "class": "uil uil-padlock"
@@ -20255,7 +20394,7 @@ var _hoisted_201 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)
 /* HOISTED */
 );
 
-var _hoisted_202 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_208 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "checkout-safety-alerts"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
   "class": "uil uil-sync"
@@ -20630,13 +20769,9 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     onClick: _cache[29] || (_cache[29] = function () {
       return $setup.loadForm && $setup.loadForm.apply($setup, arguments);
     })
-  }, "Tarjeta de crédito / Tarjeta de débito ")])])])]), _hoisted_156, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" picked_metodo:" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.picked_metodo) + " loader:" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.loader) + " ", 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, [_hoisted_157, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.loaderTargeta), 1
-  /* TEXT */
-  )]), $setup.picked_metodo == 'pagotarjeta' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_158, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_159, [_hoisted_160], 512
+  }, "Tarjeta de crédito / Tarjeta de débito ")])])])]), _hoisted_156, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" picked_metodo:{{ picked_metodo }} "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" loader:{{ loader }} "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>\n                            <b>loaderTargeta:</b>{{ loaderTargeta }}\n                          </p> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p>fecha:{{ error_pago_fecha_hora }}</p> "), $setup.picked_metodo == 'pagotarjeta' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_157, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_158, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_159, [_hoisted_160], 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.loaderTargeta]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_161, [_hoisted_162, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_166, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_167, [_hoisted_168, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.loaderTargeta]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_161, [_hoisted_162, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_166, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_167, [_hoisted_168, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     id: "pname",
     name: "pname",
     type: "text",
@@ -20710,7 +20845,13 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     onClick: _cache[36] || (_cache[36] = function ($event) {
       return $setup.pagoTarjeta();
     })
-  }, [!$setup.loader ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("i", _hoisted_179)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.loader ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_180, [_hoisted_181])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_182])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.error_v.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_183, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.error_v, function (er) {
+  }, [!$setup.loader ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("i", _hoisted_179)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.loader ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_180, [_hoisted_181])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_182])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.error_pago ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_183, [_hoisted_184, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, [_hoisted_185, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.error_pago_numeroPedido) + " | ", 1
+  /* TEXT */
+  ), _hoisted_186, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.error_pago_fecha_hora), 1
+  /* TEXT */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, [_hoisted_187, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.error_pago_mensaje), 1
+  /* TEXT */
+  )]), _hoisted_188])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _ctx.error_v.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_189, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.error_v, function (er) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("li", {
       key: er
     }, " - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(er), 1
@@ -20718,11 +20859,11 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     );
   }), 128
   /* KEYED_FRAGMENT */
-  ))])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <li v-for=\"errores in error_v\">{{ errores }}</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <button @click=\"veri()\">sd</button>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_184, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_185, [_hoisted_186, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.cart, function (prodCart, index) {
+  ))])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <li v-for=\"errores in error_v\">{{ errores }}</li>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <button @click=\"veri()\">sd</button>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_190, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_191, [_hoisted_192, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.cart, function (prodCart, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
       "class": "right-cart-dt-body",
       key: prodCart.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_187, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_188, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                        <template v-for=\"(photos, index) in prodCart.photos\" :key=\"prodCart.name\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                            <img :src=\"photos.photo\" alt=\"\" v-if=\"index === 0\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                        </template>"), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(prodCart.photos, function (photos, index) {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_193, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_194, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                        <template v-for=\"(photos, index) in prodCart.photos\" :key=\"prodCart.name\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                            <img :src=\"photos.photo\" alt=\"\" v-if=\"index === 0\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                        </template>"), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(prodCart.photos, function (photos, index) {
       return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         key: prodCart.name
       }, [photos.state === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("img", {
@@ -20736,13 +20877,13 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
       );
     }), 128
     /* KEYED_FRAGMENT */
-    )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                        <div class=\"offer-badge\">4% OFF</div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_189, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(prodCart.name), 1
+    )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                        <div class=\"offer-badge\">4% OFF</div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_195, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(prodCart.name), 1
     /* TEXT */
-    ), prodCart.price === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_190, "Un asesor se contactara con ud. para fijar precio. precio por kilo S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat("es-PE").format(prodCart.regular_price)), 1
+    ), prodCart.price === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_196, "Un asesor se contactara con ud. para fijar precio. precio por kilo S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat("es-PE").format(prodCart.regular_price)), 1
     /* TEXT */
-    )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_191, [prodCart.price === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_197, [prodCart.price === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
       key: 0
-    }, [_hoisted_192], 64
+    }, [_hoisted_198], 64
     /* STABLE_FRAGMENT */
     )) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
       key: 1
@@ -20756,18 +20897,18 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
       onClick: function onClick($event) {
         return $setup.deleteToCart(prodCart);
       }
-    }, [_hoisted_193], 8
+    }, [_hoisted_199], 8
     /* PROPS */
     , ["onClick"])])])]);
   }), 128
   /* KEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_194, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_195, [_hoisted_196, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat("es-PE").format(parseFloat(_ctx.total))), 1
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_200, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_201, [_hoisted_202, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat("es-PE").format(parseFloat(_ctx.total))), 1
   /* TEXT */
-  )]), $setup.tax.length != 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_197, [_hoisted_198, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.tax), 1
+  )]), $setup.tax.length != 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_203, [_hoisted_204, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.tax), 1
   /* TEXT */
-  )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <div class=\"cart-total-dil saving-total \">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <h4>Total Saving</h4>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <span>$3</span>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            </div>"), $setup.tax.length != 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_199, [_hoisted_200, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat("es-PE").format(parseFloat(_ctx.total) + parseFloat($setup.tax))), 1
+  )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <div class=\"cart-total-dil saving-total \">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <h4>Total Saving</h4>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <span>$3</span>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            </div>"), $setup.tax.length != 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_205, [_hoisted_206, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, "S/" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Intl.NumberFormat("es-PE").format(parseFloat(_ctx.total) + parseFloat($setup.tax))), 1
   /* TEXT */
-  )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_201]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <a href=\"#\" class=\"promo-link45\">Have a promocode?</a>"), _hoisted_202])])])])])], 64
+  )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_207]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <a href=\"#\" class=\"promo-link45\">Have a promocode?</a>"), _hoisted_208])])])])])], 64
   /* STABLE_FRAGMENT */
   );
 });
@@ -22831,7 +22972,7 @@ var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 );
 
 var _hoisted_28 = {
-  "class": "cart-total-dil pt-3"
+  "class": "pt-3 cart-total-dil"
 };
 
 var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h4", null, "Delivery", -1
@@ -22966,7 +23107,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
       "class": "pdpt-bg",
       key: key
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h6", null, "Se entrega: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.fecha_entrega) + ", " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.hora_entrega), 1
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h5", null, "# " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.code) + " | Tarjeta: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.card) + " | Modeda: PEN", 1
+    /* TEXT */
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h6", null, "Se entrega: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.fecha_entrega) + ", " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(order.hora_entrega), 1
     /* TEXT */
     )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(order.productos_ordenados, function (productos_or) {
       return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("ul", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_16, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(productos_or.producto.photos, function (photos, index) {
