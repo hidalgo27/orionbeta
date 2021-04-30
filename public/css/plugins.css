@@ -8661,3 +8661,57 @@ Night Mood
     pointer-events: none;
 }
 
+.static {
+    position: static;
+}
+
+.cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.owl-carousel .owl-slide {
+    position: relative;
+    height: 40.5vh;
+    background-color: lightgray;
+}
+
+.owl-carousel .owl-slide-animated {
+    transform: translateX(20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.05s;
+}
+
+.owl-carousel .owl-slide-animated.is-transitioned {
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s;
+}
+
+.owl-carousel .owl-slide-title.is-transitioned {
+    transition-delay: 0.2s;
+}
+
+.owl-carousel .owl-slide-subtitle.is-transitioned {
+    transition-delay: 0.35s;
+}
+
+.owl-carousel .owl-slide-cta.is-transitioned {
+    transition-delay: 0.5s;
+}
+
+
+.bg-gradient-orion{
+    background: rgb(238,35,66);
+    background: linear-gradient(180deg, rgba(238,35,66,1) 0%, rgba(238,35,66,1) 50%, rgba(247,247,247,1) 100%);
+}
+.rgba-black-6{
+    background: rgba(0,0,0,.6);
+}
+.footer{
+    max-width: 100% !important;
+}
+

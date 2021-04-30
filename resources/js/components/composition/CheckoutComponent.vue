@@ -753,7 +753,7 @@
                                   >Pago Contra entrega</label>
                                 </div>
                               </li>
-                              <li>
+                              <li class="d-none">
                                 <div class="radio-item_1">
                                   <input
                                     id="card1"
@@ -785,13 +785,15 @@
                               </div>
                             </div>
                           </div>
-                          <!-- picked_metodo:{{ picked_metodo }} -->
-                          <!-- loader:{{ loader }} -->
-                          <!-- <p>
+
+                          <!-- <div class="d-none"> -->
+                          <!-- picked_metodo:{{ picked_metodo }}
+                          loader:{{ loader }}
+                          <p>
                             <b>loaderTargeta:</b>{{ loaderTargeta }}
                           </p> -->
+                          <!-- </div> -->
 
-                          <!-- <p>fecha:{{ error_pago_fecha_hora }}</p> -->
                           <div
                             v-if="picked_metodo=='pagotarjeta'"
                             class="form-group return-departure-dts1"
@@ -2160,6 +2162,6 @@ export default {
 }
 </style>
 
-<style  scoped>
-@import "https://pocpaymentserve.s3.amazonaws.com/payform.min.css";
+<style scoped>
+/*@import "https://pocpaymentserve.s3.amazonaws.com/payform.min.css";*/
 </style>
