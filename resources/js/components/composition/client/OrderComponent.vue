@@ -68,7 +68,7 @@
                     :key="key"
                   >
                     <div class="pdpt-title">
-                      <h6>Orden #{{ order.code }} | Tarjeta: {{ order.card }} | Moneda: PEN</h6>
+                      <h6>Orden #: {{ order.code }} | Fecha: {{ order.created_at}} | Tarjeta: {{ order.cardBrand }} {{ order.card }} | Moneda: PEN</h6>
                       <h6>Se entrega: {{ order.fecha_entrega }}, {{ order.hora_entrega }}</h6>
                     </div>
                     <div class="order-body10">
@@ -203,6 +203,16 @@
                           alt=""
                         >
                         Se paga contraentrega. El paso se realiza por Yape, tarjeta de credito o debito. No se acepta pago en efectivo.
+                      </div>
+
+                      <div class="alert-offer">
+                        <a
+                          href="#"
+                          target="_blank"
+                        >Términos, Condiciones y Política de reembolso.</a>
+                      </div>
+                      <div class="alert-offer">
+                        <b>Usted puede imprimir o guardar la información de su orden.</b>
                       </div>
                       <div class="call-bill">
                         <div class="delivery-man">

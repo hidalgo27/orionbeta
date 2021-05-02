@@ -970,6 +970,7 @@
                           >
                             <h3>Su pago no fue procesado!</h3>
                             <p><b>Orden #</b> {{error_pago_numeroPedido}} | <b>Fecha:</b>{{ error_pago_fecha_hora }}</p>
+                            <p><b>Tarjeta: </b> {{error_pago_brand}} {{ error_pago_card }}</p>
                             <p><b>Mensaje:</b> {{error_pago_mensaje}}</p>
                             <p>Pruebe con otra tarjeta, si el inconveniente persiste pruebe el "Pago contra entrega"</p>
                           </div>
@@ -1206,6 +1207,9 @@ export default {
     let error_pago_mensaje = ref("");
     let error_pago_numeroPedido = ref("");
     let error_pago_fecha_hora = ref("");
+    let error_pago_card = ref("");
+    let error_pago_brand = ref("");
+
     const txtCuotas = ref(0);
     const amount = ref(0);
     const dcc = ref("");
@@ -1439,11 +1443,48 @@ export default {
         error_pago_mensaje.value = "";
         error_pago_numeroPedido.value = "";
         error_pago_fecha_hora.value = "";
-
         loader.value = true;
+        let nom_ = "";
+        let ape_ = "";
+        let nombres = d_name.value;
+        if (nombres.length > 0) {
+          let nombresSplit = nombres.split(" ");
+          console.log("nombresSplit.length:", nombresSplit.length);
+          console.log("nombre:", nombresSplit[0]);
+          switch (nombresSplit.length) {
+            case 1: {
+              nom_ = nombresSplit[0];
+              ape_ = nombresSplit[0];
+              break;
+            }
+            case 2: {
+              nom_ = nombresSplit[0];
+              ape_ = nombresSplit[1];
+              break;
+            }
+            case 3: {
+              nom_ = nombresSplit[0];
+              ape_ = nombresSplit[1] + " " + nombresSplit[2];
+              break;
+            }
+            case 4: {
+              nom_ = nombresSplit[0] + " " + nombresSplit[1];
+              ape_ = nombresSplit[2] + " " + nombresSplit[3];
+              break;
+            }
+            default: {
+              nom_ = nombresSplit[0];
+              ape_ = nombresSplit[0];
+              break;
+            }
+          }
+        }
+
+        console.log(`nombre:${nom_},apellido:${ape_}`);
+        // debugger;
         let data = {
-          name: d_name.value,
-          lastName: d_name.value,
+          name: nom_,
+          lastName: ape_,
           email: d_email.value,
           alias: "KS",
           phoneNumber: String(celular.value),
@@ -1483,15 +1524,16 @@ export default {
                 if (response.data["dataMap"] != undefined) {
                   if (response.data["dataMap"]["ACTION_CODE"] == "000") {
                     let card = response.data["dataMap"]["CARD"];
+                    let cardBrand = response.data["dataMap"]["BRAND"];
                     let description =
                       response.data["dataMap"]["ACTION_DESCRIPTION"];
                     let traceNumber = response.data["dataMap"]["TRACE_NUMBER"];
                     console.log(
-                      `card:${card}, description:${description}, traceNumber:${traceNumber}`
+                      `cardBrand:${cardBrand}, card:${card}, description:${description}, traceNumber:${traceNumber}`
                     );
                     axios
                       .get(
-                        `https://sistemaorion.nebulaperu.com/api/v1/orders-confirm/${id_orden_.value}/1/${card}/${traceNumber}/${description}`
+                        `https://sistemaorion.nebulaperu.com/api/v1/orders-confirm/${id_orden_.value}/1/${card}/${cardBrand}/${traceNumber}/${description}`
                       )
                       .then((res) => {
                         if (res.data.status == 1) {
@@ -1515,8 +1557,11 @@ export default {
                         `https://sistemaorion.nebulaperu.com/api/v1/orders-denegado/${id_orden_.value}`
                       )
                       .then((res) => {
+                        console.log("res.data:", res.data);
                         let description =
                           response.data["data"]["ACTION_DESCRIPTION"];
+                        let card = response.data["data"]["CARD"];
+                        let cardBrand = response.data["data"]["BRAND"];
                         let numeroPedido = res.data.numeroPedido;
                         let fecha_hora = res.data.fecha_hora;
                         loader.value = false;
@@ -1527,6 +1572,8 @@ export default {
                         error_pago.value = true;
                         error_pago_mensaje.value = description;
                         error_pago_numeroPedido.value = numeroPedido;
+                        error_pago_card.value = card;
+                        error_pago_brand.value = cardBrand;
                         // error_pago_fecha_hora.value = moment().format(
                         //   "MMMM Do YYYY, h:mm:ss a"
                         // );
@@ -1813,6 +1860,8 @@ export default {
       error_pago_numeroPedido,
       error_pago_mensaje,
       error_pago_fecha_hora,
+      error_pago_card,
+      error_pago_brand,
       hoy,
       txtCuotas,
       amount,
