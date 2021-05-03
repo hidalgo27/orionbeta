@@ -4,7 +4,7 @@
         <div class="bg-gradient-orion">
             <div class="container">
                 <div class="row no-gutters">
-                    <div class="col-12 col-md-6 col-lg-8 bg-dark d-none d-md-block positive">
+                    <div class="col-12 bg-dark d-none d-md-block positive">
 
 
                         <div class="owl-carousel owl-carousel-head owl-theme">
@@ -12,13 +12,13 @@
                                 <div class="container">
                                     <div class="row justify-content-center justify-content-md-end">
                                         <div class="col-10 col-md-5 static">
-                                            <div class="owl-slide-text rgba-black-6 p-4 rounded shadow">
-                                                <h2 class="owl-slide-animated owl-slide-title text-white">Ofertas Especiales por tu día Mamá</h2>
+                                            <div class="owl-slide-text rgba-black-6 p-5 rounded shadow">
+                                                <h2 class="owl-slide-animated owl-slide-title h1 font-weight-bold text-white">Ofertas Especiales por tu día Mamá</h2>
 {{--                                                <div class="owl-slide-animated owl-slide-subtitle mb-3">--}}
 {{--                                                    Seleccionamos productos par tu día--}}
 {{--                                                </div>--}}
 {{--                                                <h2 class="owl-slide-animated owl-slide-title text-white">Feliz Dia Mamá</h2>--}}
-                                                <a class="btn btn-danger owl-slide-animated owl-slide-cta" href="/products/category/fechas festivas" role="button">Ver Productos</a>
+                                                <a class="btn btn-danger btn-lg mt-2 owl-slide-animated owl-slide-cta" href="{{asset('encartes/encarte-orion-dia-de-la-madre.pdf')}}" role="button" target="_blank">Ver Productos</a>
                                             </div>
                                         </div>
                                     </div>
@@ -98,13 +98,13 @@
 
 {{--                        </div>--}}
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4 bg-danger">
-                        <div class="row">
-                            <div class="col-12">
-                                <a href="/products/category/panaderia"><img src="{{asset('images/banners/tortas-2048.jpg')}}" alt="" class="w-100"></a>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="col-12 col-md-6 col-lg-4 bg-danger">--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-12">--}}
+{{--                                <a href="/products/category/panaderia"><img src="{{asset('images/banners/tortas-2048.jpg')}}" alt="" class="w-100"></a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
