@@ -68,7 +68,7 @@
                     :key="key"
                   >
                     <div class="pdpt-title">
-                      <h6>Orden #: {{ order.code }} | Fecha: {{ order.created_at}} | Tarjeta: {{ order.cardBrand }} {{ order.card }} | Moneda: PEN</h6>
+                      <h6>Orden #: {{ order.code }} | Creado: {{ order.created_at.replace('T',' ') }} | {{ order.metodo_pago=='pagotarjeta'?'Pago con tarjeta:':'Pago contra entrega' }} {{ order.metodo_pago=='pagotarjeta'?order.cardBrand:'' }} {{ order.metodo_pago=='pagotarjeta'?order.card:'' }} | Moneda: PEN</h6>
                       <h6>Se entrega: {{ order.fecha_entrega }}, {{ order.hora_entrega }}</h6>
                     </div>
                     <div class="order-body10">
@@ -207,7 +207,7 @@
 
                       <div class="alert-offer">
                         <a
-                          href="#"
+                          href="/terminos-condiciones-orion.pdf"
                           target="_blank"
                         >Términos, Condiciones y Política de reembolso.</a>
                       </div>
