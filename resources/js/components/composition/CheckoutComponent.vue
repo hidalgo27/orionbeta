@@ -753,8 +753,8 @@
                                   >Pago Contra entrega</label>
                                 </div>
                               </li>
-                              <!-- <li class="d-none"> -->
-                              <li>
+                              <li class="d-none">
+                              <!-- <li> -->
                                 <div class="radio-item_1">
                                   <input
                                     id="card1"
@@ -1434,178 +1434,187 @@ export default {
           parseFloat(tax.value) + parseFloat(cartState.total)
         );
         console.log(`Montos a comprarar:${amount.value}=?${total_car}`);
+
+        cartState.error_v = [];
         if (parseFloat(amount.value) != parseFloat(total_car)) {
-          alert("Por favor actualize la pagina");
+          //   alert("Por favor actualize la pagina");
+          cartState.error_v.push("Por favor actualize la pagina");
           // location.reload();
         }
-        // settteamos los mensajes de error para procesar el pago
-        error_pago.value = false;
-        error_pago_mensaje.value = "";
-        error_pago_numeroPedido.value = "";
-        error_pago_fecha_hora.value = "";
-        loader.value = true;
-        let nom_ = "";
-        let ape_ = "";
-        let nombres = d_name.value;
-        if (nombres.length > 0) {
-          let nombresSplit = nombres.split(" ");
-          console.log("nombresSplit.length:", nombresSplit.length);
-          console.log("nombre:", nombresSplit[0]);
-          switch (nombresSplit.length) {
-            case 1: {
-              nom_ = nombresSplit[0];
-              ape_ = nombresSplit[0];
-              break;
-            }
-            case 2: {
-              nom_ = nombresSplit[0];
-              ape_ = nombresSplit[1];
-              break;
-            }
-            case 3: {
-              nom_ = nombresSplit[0];
-              ape_ = nombresSplit[1] + " " + nombresSplit[2];
-              break;
-            }
-            case 4: {
-              nom_ = nombresSplit[0] + " " + nombresSplit[1];
-              ape_ = nombresSplit[2] + " " + nombresSplit[3];
-              break;
-            }
-            default: {
-              nom_ = nombresSplit[0];
-              ape_ = nombresSplit[0];
-              break;
+        if (terminos.value.length === 0) {
+          cartState.error_v.push("Acepte términos y condiciones");
+        }
+        if (cartState.error_v.length === 0) {
+          // settteamos los mensajes de error para procesar el pago
+          error_pago.value = false;
+          error_pago_mensaje.value = "";
+          error_pago_numeroPedido.value = "";
+          error_pago_fecha_hora.value = "";
+          loader.value = true;
+          let nom_ = "";
+          let ape_ = "";
+          let nombres = d_name.value;
+          if (nombres.length > 0) {
+            let nombresSplit = nombres.split(" ");
+            console.log("nombresSplit.length:", nombresSplit.length);
+            console.log("nombre:", nombresSplit[0]);
+            switch (nombresSplit.length) {
+              case 1: {
+                nom_ = nombresSplit[0];
+                ape_ = nombresSplit[0];
+                break;
+              }
+              case 2: {
+                nom_ = nombresSplit[0];
+                ape_ = nombresSplit[1];
+                break;
+              }
+              case 3: {
+                nom_ = nombresSplit[0];
+                ape_ = nombresSplit[1] + " " + nombresSplit[2];
+                break;
+              }
+              case 4: {
+                nom_ = nombresSplit[0] + " " + nombresSplit[1];
+                ape_ = nombresSplit[2] + " " + nombresSplit[3];
+                break;
+              }
+              default: {
+                nom_ = nombresSplit[0];
+                ape_ = nombresSplit[0];
+                break;
+              }
             }
           }
-        }
 
-        console.log(`nombre:${nom_},apellido:${ape_}`);
-        // debugger;
-        let data = {
-          name: nom_,
-          lastName: ape_,
-          email: d_email.value,
-          alias: "KS",
-          phoneNumber: String(celular.value),
-          currencyConversion: dcc.value,
-          recurrence: false,
-        };
-        if (credito.value) {
-          let cuotaSeleccionada = $("#selectCuotas").val();
-          if (cuotaSeleccionada == "Sin cuotas") {
-            data.push("installment", 0);
-          } else {
-            data.push("installment", cuotaSeleccionada);
+          console.log(`nombre:${nom_},apellido:${ape_}`);
+          // debugger;
+          let data = {
+            name: nom_,
+            lastName: ape_,
+            email: d_email.value,
+            alias: "KS",
+            phoneNumber: String(celular.value),
+            currencyConversion: dcc.value,
+            recurrence: false,
+          };
+          if (credito.value) {
+            let cuotaSeleccionada = $("#selectCuotas").val();
+            if (cuotaSeleccionada == "Sin cuotas") {
+              data.push("installment", 0);
+            } else {
+              data.push("installment", cuotaSeleccionada);
+            }
           }
-        }
-        console.log(data);
-        console.log("configuration: ", configuration.value);
-        payform
-          .createToken(
-            [cardNumber.value, cardExpiry.value, cardCvv.value],
-            data
-          )
-          .then(function (data) {
-            console.log("data create token: ", data);
+          console.log(data);
+          console.log("configuration: ", configuration.value);
+          payform
+            .createToken(
+              [cardNumber.value, cardExpiry.value, cardCvv.value],
+              data
+            )
+            .then(function (data) {
+              console.log("data create token: ", data);
 
-            axios
-              .post(
-                `https://sistemaorion.nebulaperu.com/api/v1/authorization`,
-                {
-                  transactionToken: data.transactionToken,
-                  amount: amount.value,
-                  purchase: purchase.value,
-                }
-              )
-              .then((response) => {
-                console.log(response.data);
-                // debugger;
-                if (response.data["dataMap"] != undefined) {
-                  if (response.data["dataMap"]["ACTION_CODE"] == "000") {
-                    let card = response.data["dataMap"]["CARD"];
-                    let cardBrand = response.data["dataMap"]["BRAND"];
-                    let description =
-                      response.data["dataMap"]["ACTION_DESCRIPTION"];
-                    let traceNumber = response.data["dataMap"]["TRACE_NUMBER"];
-                    console.log(
-                      `cardBrand:${cardBrand}, card:${card}, description:${description}, traceNumber:${traceNumber}`
-                    );
-                    axios
-                      .get(
-                        `https://sistemaorion.nebulaperu.com/api/v1/orders-confirm/${id_orden_.value}/1/${card}/${cardBrand}/${traceNumber}/${description}`
-                      )
-                      .then((res) => {
-                        if (res.data.status == 1) {
+              axios
+                .post(
+                  `https://sistemaorion.nebulaperu.com/api/v1/authorization`,
+                  {
+                    transactionToken: data.transactionToken,
+                    amount: amount.value,
+                    purchase: purchase.value,
+                  }
+                )
+                .then((response) => {
+                  console.log(response.data);
+                  // debugger;
+                  if (response.data["dataMap"] != undefined) {
+                    if (response.data["dataMap"]["ACTION_CODE"] == "000") {
+                      let card = response.data["dataMap"]["CARD"];
+                      let cardBrand = response.data["dataMap"]["BRAND"];
+                      let description =
+                        response.data["dataMap"]["ACTION_DESCRIPTION"];
+                      let traceNumber =
+                        response.data["dataMap"]["TRACE_NUMBER"];
+                      console.log(
+                        `cardBrand:${cardBrand}, card:${card}, description:${description}, traceNumber:${traceNumber}`
+                      );
+                      axios
+                        .get(
+                          `https://sistemaorion.nebulaperu.com/api/v1/orders-confirm/${id_orden_.value}/1/${card}/${cardBrand}/${traceNumber}/${description}`
+                        )
+                        .then((res) => {
+                          if (res.data.status == 1) {
+                            loader.value = false;
+                            // alert("Pago aprobado");
+                            sessionStorage.clear();
+                            window.location = "/client/pedidos";
+                          }
+                        });
+                    }
+                  } else if (response.data["data"] != undefined) {
+                    if (response.data["data"]["ACTION_CODE"] != "000") {
+                      // alert(
+                      //   "Pago denegado: " +
+                      //     response.data["data"]["ACTION_DESCRIPTION"] +
+                      //     ", por favor actualice la pagina y vuelva a intentarlo"
+                      // );
+
+                      axios
+                        .get(
+                          `https://sistemaorion.nebulaperu.com/api/v1/orders-denegado/${id_orden_.value}`
+                        )
+                        .then((res) => {
+                          console.log("res.data:", res.data);
+                          let description =
+                            response.data["data"]["ACTION_DESCRIPTION"];
+                          let card = response.data["data"]["CARD"];
+                          let cardBrand = response.data["data"]["BRAND"];
+                          let numeroPedido = res.data.numeroPedido;
+                          let fecha_hora = res.data.fecha_hora;
                           loader.value = false;
-                          // alert("Pago aprobado");
-                          sessionStorage.clear();
-                          window.location = "/client/pedidos";
-                        }
-                      });
+                          // sessionStorage.clear();
+                          // alert(
+                          //   `Pedido deneagdo: ${description}_${numeroPedido}_${fecha_hora}`
+                          // );
+                          error_pago.value = true;
+                          error_pago_mensaje.value = description;
+                          error_pago_numeroPedido.value = numeroPedido;
+                          error_pago_card.value = card;
+                          error_pago_brand.value = cardBrand;
+                          // error_pago_fecha_hora.value = moment().format(
+                          //   "MMMM Do YYYY, h:mm:ss a"
+                          // );
+                          error_pago_fecha_hora.value = hoy;
+
+                          loaderTargeta.value = false;
+                          picked_metodo.value = "contraentrega";
+
+                          document.getElementById(
+                            "cashondelivery1"
+                          ).checked = true;
+                          document.getElementById("card1").checked = false;
+                          console.log("loaderTargeta:", loaderTargeta.value);
+                          console.log("picked_metodo:", picked_metodo.value);
+                          // loadForm();
+                          //   window.location = "/client/pedidos/denegado";
+                          // Enviar a una pagina
+                        });
+                    }
                   }
-                } else if (response.data["data"] != undefined) {
-                  if (response.data["data"]["ACTION_CODE"] != "000") {
-                    // alert(
-                    //   "Pago denegado: " +
-                    //     response.data["data"]["ACTION_DESCRIPTION"] +
-                    //     ", por favor actualice la pagina y vuelva a intentarlo"
-                    // );
-
-                    axios
-                      .get(
-                        `https://sistemaorion.nebulaperu.com/api/v1/orders-denegado/${id_orden_.value}`
-                      )
-                      .then((res) => {
-                        console.log("res.data:", res.data);
-                        let description =
-                          response.data["data"]["ACTION_DESCRIPTION"];
-                        let card = response.data["data"]["CARD"];
-                        let cardBrand = response.data["data"]["BRAND"];
-                        let numeroPedido = res.data.numeroPedido;
-                        let fecha_hora = res.data.fecha_hora;
-                        loader.value = false;
-                        // sessionStorage.clear();
-                        // alert(
-                        //   `Pedido deneagdo: ${description}_${numeroPedido}_${fecha_hora}`
-                        // );
-                        error_pago.value = true;
-                        error_pago_mensaje.value = description;
-                        error_pago_numeroPedido.value = numeroPedido;
-                        error_pago_card.value = card;
-                        error_pago_brand.value = cardBrand;
-                        // error_pago_fecha_hora.value = moment().format(
-                        //   "MMMM Do YYYY, h:mm:ss a"
-                        // );
-                        error_pago_fecha_hora.value = hoy;
-
-                        loaderTargeta.value = false;
-                        picked_metodo.value = "contraentrega";
-
-                        document.getElementById(
-                          "cashondelivery1"
-                        ).checked = true;
-                        document.getElementById("card1").checked = false;
-                        console.log("loaderTargeta:", loaderTargeta.value);
-                        console.log("picked_metodo:", picked_metodo.value);
-                        // loadForm();
-                        //   window.location = "/client/pedidos/denegado";
-                        // Enviar a una pagina
-                      });
-                  }
-                }
-              });
-          })
-          .catch(function (error) {
-            console.log("data2-error: ", error);
-            // alert(error);
-            loader.value = false;
-            alert("Opps, algo salio mal por favor actialice la pagina");
-          });
+                });
+            })
+            .catch(function (error) {
+              console.log("data2-error: ", error);
+              // alert(error);
+              loader.value = false;
+              alert("Opps, algo salio mal por favor actialice la pagina");
+            });
+        }
       } catch (error) {
         console.log("data1-error: ", error);
         loader.value = false;
-        alert("Opps, algo salio mal por favor actialice la pagina");
+        alert("Opps, algo salio mal por favor actualice la pagina");
       }
     }
     async function onSubmitAllTarjeta() {
@@ -1642,6 +1651,7 @@ export default {
           );
         }
         if (cartState.error_v.length === 0) {
+          picked_metodo.value = "pagotarjeta";
           let form = {
             id_user: props.user.id,
             direccion: direccion.value,
@@ -1793,7 +1803,7 @@ export default {
     //   cargarScripts();
     // });
     async function cargarScripts() {
-      let visaDevelopment = true;
+      let visaDevelopment = false;
       let visaUrlJs = visaDevelopment
         ? "https://pocpaymentserve.s3.amazonaws.com/payform.min.js"
         : "https://static-content.vnforapps.com/elements/v1/payform.min.js";
