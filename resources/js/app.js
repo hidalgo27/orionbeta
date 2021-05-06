@@ -23,6 +23,7 @@ import DashboardComponent from "./components/composition/client/DashboardCompone
 import OrderComponent from "./components/composition/client/OrderComponent";
 import HistorialComponent from "./components/composition/client/HistorialComponent";
 import CartLength from "./components/composition/CartLength";
+import FixedComponent from "./components/composition/FixedComponent";
 import CartBlade from "./components/composition/CartBlade";
 import SearchComponent from "./components/composition/SearchComponent";
 import CategoryComponent from "./components/composition/CategoryComponent";
@@ -42,7 +43,8 @@ const app = createApp({
         CartLength,
         CartBlade,
         SearchComponent,
-        CategoryComponent
+        CategoryComponent,
+        FixedComponent
     }
 })
 app.provide('emitter', emitter);

@@ -87,19 +87,45 @@
             </div>
             <div class="checkout-cart">
                 <!--                <a href="#" class="promo-code">Have a promocode?</a>-->
-                <a href="/checkout" class="cart-checkout-btn hover-btn">Pasar por Caja</a>
+                <a href="/checkout" class="cart-checkout-btn hover-btn">Realizar Pedido</a>
             </div>
         </div>
     </div>
+
+    <div class="z-index-9999 fixed-bottom" v-show="cart.length > 0 && urltext !== '/checkout'">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="alert bg-dark shadow-sm alert-dismissible fade show  text-white p-4  w-100" role="alert">
+                        <div class="container">
+                            <div class="row no-gutters">
+                                <div class="col">
+                                    Tiene! <strong>{{ cart.length }} productos</strong> seleccionados con un <strong class="mr-2">total de S/{{ new Intl.NumberFormat("es-PE").format(total) }} </strong>
+                                    <a href="#" class="btn btn-outline-info pull-bs-canvas-left">Editar</a> ó <a href="/checkout" class="btn btn-danger">Realizar pedido ahora!</a>
+                                </div>
+                                <button type="button" class="close " data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </template>
 
 <script>
-import {computed, reactive, toRefs} from "vue";
+import {ref, computed, reactive, toRefs} from "vue";
 import mitt from "mitt";
 export default {
     props: ['cart'],
     setup(props){
         // const products = ref([]);
+
+        const urltext = ref(window.location.pathname);
+
         const emitter = mitt()
         const cartState = reactive({
             cartOpen: false,
@@ -115,6 +141,7 @@ export default {
                 }, 0);
             }),
         });
+
 
         function addToCart(product){
             const cartIndex = cartState.cart.findIndex(prod => prod.id === product.id);
@@ -223,6 +250,8 @@ export default {
             addToCart,
             removeToCart,
             deleteToCart,
+            urltext
+
         }
     }
 }
