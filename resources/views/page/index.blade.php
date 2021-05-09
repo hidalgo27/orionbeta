@@ -111,6 +111,47 @@
 
 {{--        <slider-home></slider-home>--}}
 {{--        <category-component></category-component>--}}
+        <section class="mt-4 d-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="offer-item">
+                            <div class="offer-item-img">
+                                <div class="gambo-overlay"></div>
+                                <!--                                        <img src="images/banners/offer-1.jpg" alt="">-->
+                                <img src="{{asset('images/banners/banner-pollos.jpg')}}" alt="" class="w-100 rounded shadow">
+                            </div>
+                            <div class="offer-text-dt">
+                                <div class="offer-top-text-banner">
+                                    <p>SUPER OFERTAS</p>
+                                    <div class="top-text-1">Ofertas en Pollos</div>
+                                    <span>Precios especiales en combos</span>
+                                </div>
+                                <a href="/products/category/pollo a la brasa" class="Offer-shop-btn hover-btn">Ver Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="offer-item">
+                            <div class="offer-item-img">
+                                <div class="gambo-overlay"></div>
+                                <!--                                        <img src="images/banners/offer-1.jpg" alt="">-->
+                                <img src="{{asset('images/banners/banner-torta.jpg')}}" alt="" class="w-100 rounded shadow">
+                            </div>
+                            <div class="offer-text-dt">
+                                <div class="offer-top-text-banner">
+                                    <p>SUPER OFERTAS</p>
+                                    <div class="top-text-1">Ofertas en tortas</div>
+                                    <span>Para ocaciones especiales</span>
+                                </div>
+                                <a href="/products/category/panaderia" class="Offer-shop-btn hover-btn">Ver Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="section145">
             <div class="container">
                 <div class="row">
@@ -131,6 +172,7 @@
                 </div>
             </div>
         </div>
+
 
         <index-component :user="{{$user}}"></index-component>
     </div>
