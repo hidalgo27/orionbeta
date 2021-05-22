@@ -62,6 +62,8 @@
 
 <body>
 <div id="app" class="position-relative">
+
+
 {{--    <table class="table">--}}
 {{--        <thead>--}}
 {{--        <tr>--}}
@@ -424,7 +426,6 @@
     </div>
 </footer>
 <!-- Footer End -->
-
 </div>
 
 
@@ -599,3 +600,10 @@
 <!-- end olark code -->
 </body>
 </html>
+<script>
+    import CartLength from "../../js/components/composition/CartLength";
+    import FixedComponent from "../../js/components/composition/FixedComponent";
+    export default {
+        components: {FixedComponent, CartLength}
+    }
+</script>

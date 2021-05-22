@@ -8673,7 +8673,7 @@ Night Mood
 
 .owl-carousel .owl-slide {
     position: relative;
-    height: 40.5vh;
+    height: 60vh;
     background-color: lightgray;
 }
 
@@ -8713,5 +8713,8 @@ Night Mood
 }
 .footer{
     max-width: 100% !important;
+}
+.z-index-9999{
+    z-index: 9999;
 }
 

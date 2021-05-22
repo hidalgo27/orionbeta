@@ -138,7 +138,7 @@
                                                             </template>
                                                         </li>
                                                         </template>
-                                                        <li><a href="/checkout" class="btn-primary btn">Pasar por Caja Ahora</a></li>
+<!--                                                        <li><a href="/checkout" class="btn-primary btn">Pasar por Caja Ahora</a></li>-->
                                                     </ul>
                                                 </div>
                                                 <div class="pdp-details">

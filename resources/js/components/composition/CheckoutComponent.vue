@@ -753,7 +753,8 @@
                                   >Pago Contra entrega</label>
                                 </div>
                               </li>
-                              <li v-if="false">
+                              <li class="d-none">
+                                <!-- <li> -->
                                 <div class="radio-item_1">
                                   <input
                                     id="card1"
@@ -788,10 +789,10 @@
 
                           <!-- <div class="d-none"> -->
                           <!-- picked_metodo:{{ picked_metodo }}
-                          loader:{{ loader }}
-                          <p>
-                            <b>loaderTargeta:</b>{{ loaderTargeta }}
-                          </p> -->
+                                                    loader:{{ loader }}
+                                                    <p>
+                                                      <b>loaderTargeta:</b>{{ loaderTargeta }}
+                                                    </p> -->
                           <!-- </div> -->
 
                           <div

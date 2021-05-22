@@ -20,12 +20,12 @@
                     <div class="col-md-12">
                         <carousel :settings="settings" :breakpoints="breakpoints">
                             <slide v-for="prod_off in products_offers" :key="prod_off">
-                                <div class="offer-item">
+                                <div class="offer-item w-100">
                                     <div class="offer-item-img">
                                         <div class="gambo-overlay"></div>
                                         <!--                                        <img src="images/banners/offer-1.jpg" alt="">-->
                                         <template v-for="(photos, index) in prod_off.photos" :key="photos.id">
-                                            <img :src="'https://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="" v-if="photos.state === 1">
+                                            <img :src="'https://sistemaorion.nebulaperu.com/api/v1/products/imagen/'+photos.photo" alt="{{ prod_off.name }}" v-if="photos.state === 1" class="w-100">
                                         </template>
                                     </div>
                                     <div class="offer-text-dt">
@@ -133,6 +133,7 @@ import CartComponent from "./CartComponent";
 import 'vue3-carousel/dist/carousel.css';
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 import {ref, toRefs, nextTick, reactive, computed, inject} from "vue";
+import orderBy from "lodash/orderBy";
 export default {
     components: { Carousel, Slide, Pagination, Navigation, TopComponent, BestComponent, CartComponent },
     props: ['user'],
@@ -207,23 +208,23 @@ export default {
                 }, 0);
             }),
             products_new : computed(() => {
-                return products.value.filter((product) => {
+                return orderBy(products.value.filter((product) => {
                     const cat = product.categorias.filter(ca => ca.name == 'NUEVOS' && ca.state > '0')
                     if (cat != "") {
                         badge_new.value = true
                         return product.categorias.filter(ca => ca.name == 'NUEVOS' && ca.state > '0')
                     }
-                })
+                }), 'name', 'asc')
             }),
 
             products_offers : computed(() => {
-                return products.value.filter((product) => {
+                return orderBy(products.value.filter((product) => {
                     const cat = product.categorias.filter(ca => ca.name == 'OFERTAS' && ca.state > '0')
                     if (cat != "") {
                         badge_new.value = true
                         return product.categorias.filter(ca => ca.name == 'OFERTAS' && ca.state > '0')
                     }
-                })
+                }), 'created_at', 'desc')
             }),
 
             products_top : computed(() => {
