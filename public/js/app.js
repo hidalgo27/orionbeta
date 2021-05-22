@@ -20240,7 +20240,7 @@ var _hoisted_154 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)
 );
 
 var _hoisted_155 = {
-  "class": "d-none"
+  key: 0
 };
 var _hoisted_156 = {
   "class": "radio-item_1"
@@ -20827,24 +20827,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $setup.picked_metodo]]), _hoisted_154])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_155, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_156, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
-    id: "card1",
-    value: "pagotarjeta",
-    name: "paymentmethod",
-    type: "radio",
-    "data-minimum": "50.0",
-    "onUpdate:modelValue": _cache[28] || (_cache[28] = function ($event) {
-      return $setup.picked_metodo = $event;
-    })
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $setup.picked_metodo]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
-    "for": "card1",
-    "class": "radio-label_1",
-    onClick: _cache[29] || (_cache[29] = function () {
-      return $setup.loadForm && $setup.loadForm.apply($setup, arguments);
-    })
-  }, "Tarjeta de crédito / Tarjeta de débito ")])])])]), _hoisted_157, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"d-none\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" picked_metodo:{{ picked_metodo }}\n                          loader:{{ loader }}\n                          <p>\n                            <b>loaderTargeta:</b>{{ loaderTargeta }}\n                          </p> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> "), $setup.picked_metodo == 'pagotarjeta' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_158, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_159, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_160, [_hoisted_161], 512
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $setup.picked_metodo]]), _hoisted_154])]),  false ? (0) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), _hoisted_157, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"d-none\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" picked_metodo:{{ picked_metodo }}\n                          loader:{{ loader }}\n                          <p>\n                            <b>loaderTargeta:</b>{{ loaderTargeta }}\n                          </p> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> "), $setup.picked_metodo == 'pagotarjeta' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_158, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_159, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_160, [_hoisted_161], 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.loaderTargeta]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_162, [_hoisted_163, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_167, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_168, [_hoisted_169, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     id: "pname",
