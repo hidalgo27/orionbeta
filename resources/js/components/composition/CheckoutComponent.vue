@@ -753,6 +753,7 @@
                                   >Pago Contra entrega</label>
                                 </div>
                               </li>
+
                               <li v-if="false">
                                 <div class="radio-item_1">
                                   <input
